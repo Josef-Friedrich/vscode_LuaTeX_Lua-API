@@ -1,0 +1,18 @@
+{
+  "name": "luatex-api",
+  "displayName": "luatex-api",
+  "description": "LuaTeX Lua API",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+  },
+  "extensionDependencies": [
+    "sumneko.lua"
+  ],
+  "main": "./src/extension.js"
+}
