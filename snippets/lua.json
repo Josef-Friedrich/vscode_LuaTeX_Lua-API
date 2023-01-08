@@ -1,0 +1,15 @@
+{
+  "Callback linebreak_filter": {
+    "prefix": [
+      "linebreak",
+      "linebreak-filter"
+    ],
+    "body": [
+      "---@type LinebreakFilter\n",
+      "local function(head, is_display)\n",
+      "\treturn true -- or false or new_node\n",
+      "end"
+    ],
+    "description": "Function for the linebreak_filter callback"
+  }
+}

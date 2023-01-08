@@ -2,13 +2,14 @@
   "name": "luatex",
   "displayName": "LuaTeX",
   "description": "Extension pack for the LuaTeX development.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "engines": {
     "vscode": "^1.74.0"
   },
   "publisher": "JosefFriedrich",
   "categories": [
-    "Extension Packs"
+    "Extension Packs",
+    "Snippets"
   ],
   "contributes": {},
   "extensionDependencies": [
@@ -27,5 +28,11 @@
     "url": "https://github.com/Josef-Friedrich/vscode_LuaTeX_Lua-API/issues",
     "email": "josef@friedrich.rocks"
   },
-  "license": "GPL-2.0-only"
+  "license": "GPL-2.0-only",
+  "snippets": [
+    {
+      "language": "lua",
+      "path": "./snippets/lua.json"
+    }
+  ]
 }
