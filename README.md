@@ -9,6 +9,12 @@ Bring the [LuaTeX API](https://github.com/Josef-Friedrich/LuaTeX_Lua-API) to you
 ## Development
 
 ```
-vsce package
-vsce publish
+make install
+make watch
+F5
+```
+
+```
+make package
+make publish
 ```

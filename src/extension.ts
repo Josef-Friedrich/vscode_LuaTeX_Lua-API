@@ -1,27 +1,62 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-import * as vscode from 'vscode';
+import * as vscode from 'vscode'
+import path from 'path'
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
+type Folder = 'lualatex' | 'lualibs' | 'luaotfload' | 'luatex'
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "luatex" is now active!');
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('luatex.helloWorld', () => {
-    const message = 'Hello World from luatex Yippie!'
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage(message);
-	});
-
-	context.subscriptions.push(disposable);
+function getLibraryPath (folder: Folder): string {
+  const extensionId = 'JosefFriedrich.luatex'
+  const extensionPath =
+    vscode.extensions.getExtension(extensionId)?.extensionPath
+  if (extensionPath == null) {
+    throw new Error('JosefFriedrich.luatex not installed')
+  }
+  return path.join(extensionPath, 'library', folder)
 }
 
-// This method is called when your extension is deactivated
-export function deactivate() {}
+function updateLibraryConfig (libraries: string[]) {
+  const config = vscode.workspace.getConfiguration('Lua')
+  config.update(
+    'workspace.library',
+    libraries,
+    vscode.ConfigurationTarget.Workspace
+  )
+}
+
+function addLibrary (folder: Folder) {
+  const config = vscode.workspace.getConfiguration('Lua')
+  const libraryPath = getLibraryPath(folder)
+  const library = config.get('workspace.library') as string[]
+  if (library.indexOf(libraryPath) === -1) {
+    console.log('Add library: ' + libraryPath)
+    library.push(libraryPath)
+  }
+  updateLibraryConfig(library)
+}
+
+function removeLibrary (folder: Folder) {
+  const config = vscode.workspace.getConfiguration('Lua')
+  const libraryPath = getLibraryPath(folder)
+  const library = config.get('workspace.library') as string[]
+  const index = library.indexOf(libraryPath)
+  if (index > -1) {
+    console.log('Remove library: ' + libraryPath)
+    library.splice(index, 1)
+  }
+  updateLibraryConfig(library)
+}
+
+export function activate (context: vscode.ExtensionContext) {
+  context.subscriptions.push(
+    vscode.commands.registerCommand('luatex.addLuatexLib', () => {
+      addLibrary('luatex')
+    })
+  )
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand('luatex.removeLuatexLib', () => {
+      removeLibrary('luatex')
+    })
+  )
+}
+
+export function deactivate () {}

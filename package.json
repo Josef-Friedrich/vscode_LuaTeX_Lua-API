@@ -34,8 +34,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "luatex.helloWorld",
-        "title": "Hello World"
+        "command": "luatex.addLuatexLib",
+        "title": "Add the `luatex` libary to your workspace"
+      },
+      {
+        "command": "luatex.removeLuatexLib",
+        "title": "Remove the `luatex` libary from your workspace"
       }
     ]
   },

@@ -15,6 +15,9 @@ install_yo:
 install_generator_code:
 	npm install -g generator-code
 
+watch:
+	npm run watch
+
 compile:
 	npm run compile
 
