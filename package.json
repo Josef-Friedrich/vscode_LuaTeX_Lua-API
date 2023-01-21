@@ -2,7 +2,7 @@
   "name": "luatex",
   "displayName": "LuaTeX",
   "description": "Extension pack for the LuaTeX development.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -18,7 +18,7 @@
     "James-Yu.latex-workshop",
     "sumneko.lua"
   ],
-  "icon": "images/luatex.jpg",
+  "icon": "images/luatex.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/Josef-Friedrich/vscode_LuaTeX_Lua-API"
@@ -27,22 +27,24 @@
     "url": "https://github.com/Josef-Friedrich/vscode_LuaTeX_Lua-API/issues",
     "email": "josef@friedrich.rocks"
   },
-  "activationEvents": [
-    "onCommand:luatex.helloWorld"
-  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "luatex.addLuatexLib",
-        "title": "Add the `luatex` libary to your workspace"
+        "title": "Add the `luatex` libary to your workspace",
+        "category": "LuaTeX"
       },
       {
         "command": "luatex.removeLuatexLib",
-        "title": "Remove the `luatex` libary from your workspace"
+        "title": "Remove the `luatex` libary from your workspace",
+        "category": "LuaTeX"
       }
     ]
   },
+  "activationEvents": [
+    "onLanguage:lua"
+  ],
   "license": "GPL-2.0-only",
   "snippets": [
     {
