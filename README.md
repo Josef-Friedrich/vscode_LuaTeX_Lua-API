@@ -1,3 +1,5 @@
+[![version](https://vsmarketplacebadges.dev/version-short/JosefFriedrich.luatex.svg)](https://marketplace.visualstudio.com/items?itemName=JosefFriedrich.luatex)
+
 # Visual Studio Code LuaTeX Extension
 
 Extension pack for the LuaTeX development.
