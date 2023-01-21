@@ -4,6 +4,12 @@ All notable changes to the "Visual Studio Code LuaTeX Extension" extension will 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [v0.3.0] - 2023-01-21
+
+### Added
+
+- Two commands: `luatex.addLuatexLib` and `luatex.removeLuatexLib`
+
 ## [v0.2.0] - 2023-01-08
 
 ### Added
