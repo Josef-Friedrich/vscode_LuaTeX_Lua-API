@@ -1,20 +1,24 @@
 [![version](https://vsmarketplacebadges.dev/version-short/JosefFriedrich.luatex.svg)](https://marketplace.visualstudio.com/items?itemName=JosefFriedrich.luatex)
 
-# Visual Studio Code LuaTeX Extension
+# Visual Studio Code `LuaTeX` Extension
 
-Extension pack for the LuaTeX development.
+Extension for the `LuaTeX` development.
 
-Planned:
+This extension brings the [LuaTeX API](https://github.com/Josef-Friedrich/LuaTeX_Lua-API) into your vscode.
 
-Bring the [LuaTeX API](https://github.com/Josef-Friedrich/LuaTeX_Lua-API) to your vscode.
+Open the Command Palette (`Ctrl + Shift + P`) and search for `luatex`
 
 ## Development
+
+### Debug
 
 ```
 make install
 make watch
 F5
 ```
+
+### Publish
 
 ```
 make package

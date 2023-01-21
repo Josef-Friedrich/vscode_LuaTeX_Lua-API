@@ -11,6 +11,12 @@
     "Extension Packs",
     "Snippets"
   ],
+  "keywords": [
+    "luatex",
+    "tex",
+    "latex",
+    "lua"
+  ],
   "extensionDependencies": [
     "sumneko.lua"
   ],
