@@ -18,7 +18,7 @@ function updateLibraryConfig (libraries: string[]) {
   config.update(
     'workspace.library',
     libraries,
-    vscode.ConfigurationTarget.Workspace
+    vscode.ConfigurationTarget.WorkspaceFolder
   )
 }
 
@@ -55,6 +55,14 @@ export function activate (context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.commands.registerCommand('luatex.removeLuatexLib', () => {
       removeLibrary('luatex')
+    })
+  )
+
+  context.subscriptions.push(
+    vscode.workspace.onDidChangeConfiguration(event => {
+      const updated = event.affectsConfiguration('luatex.library')
+      const config = vscode.workspace.getConfiguration('luatex')
+      console.log(config.get('library'))
     })
   )
 }

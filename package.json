@@ -46,10 +46,30 @@
         "title": "Remove the `luatex` libary from your workspace",
         "category": "LuaTeX"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "LuaTeX",
+      "properties": {
+        "luatex.library": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "all",
+              "luatex",
+              "lualatex",
+              "luaotfload",
+              "lualibs"
+            ]
+          },
+          "default": [],
+          "description": "LuaTeX library"
+        }
+      }
+    }
   },
   "activationEvents": [
-    "onLanguage:lua"
+    "*"
   ],
   "license": "GPL-2.0-only",
   "snippets": [
