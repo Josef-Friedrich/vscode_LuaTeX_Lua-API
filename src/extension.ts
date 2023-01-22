@@ -12,11 +12,14 @@ const extensionId = 'JosefFriedrich.luatex'
  *
  * @returns An absolute path
  */
-function getLibraryPath (folder: Folder): string {
+function getLibraryPath (folder?: Folder): string {
   const extensionPath =
     vscode.extensions.getExtension(extensionId)?.extensionPath
   if (extensionPath == null) {
     throw new Error('JosefFriedrich.luatex not installed')
+  }
+  if (folder == null) {
+    return path.join(extensionPath, 'library')
   }
   return path.join(extensionPath, 'library', folder)
 }
@@ -27,6 +30,8 @@ function getLibraryPath (folder: Folder): string {
  * @param libraries - An array of libraries
  */
 function setConfig (libraries: string[]) {
+  // vscode.ConfigurationTarget.Workspace -> .vscode/settings.json
+  // vscode.ConfigurationTarget.WorkspaceFolder -> ?
   vscode.workspace
     .getConfiguration()
     .update(
@@ -58,21 +63,24 @@ function removeLibrary (folder: Folder) {
 }
 
 /**
- * Set the config lua.workspace.library according to the settings in luatex.library.
+ * Set the config `lua.workspace.library` according to the settings in `luatex.library`.
  */
 function update () {
   let libraries = vscode.workspace
-    .getConfiguration('Lua')
-    .get<string[]>('workspace.library')
+    .getConfiguration()
+    .get<string[]>('Lua.workspace.library')
 
   if (libraries == null) {
     libraries = []
   }
 
-  const newLibraries: string[] = []
+  const basePath = getLibraryPath()
+
+  const newLibs = new Set<string>()
+
   for (const library of libraries) {
-    if (!libraries.includes(extensionId)) {
-      newLibraries.push(library)
+    if (!library.includes(basePath)) {
+      newLibs.add(library)
     }
   }
 
@@ -81,15 +89,19 @@ function update () {
     .get<string[]>('library')
 
   if (luatexLibFolders != null) {
-    for (const folder of luatexLibFolders) {
-      const f = folder as any
-      if (typeof folder === 'string' && folders.includes(f)) {
-        newLibraries.push(getLibraryPath(f))
+    if (luatexLibFolders?.includes('all')) {
+      newLibs.add(getLibraryPath())
+    } else {
+      for (const folder of luatexLibFolders) {
+        const f = folder as any
+        if (folders.includes(f)) {
+          newLibs.add(getLibraryPath(f))
+        }
       }
     }
   }
 
-  setConfig(newLibraries)
+  setConfig(Array.from(newLibs.values()))
 }
 
 export function activate (context: vscode.ExtensionContext) {
