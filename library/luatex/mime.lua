@@ -1,7 +1,10 @@
 ---@meta
 
+---
+---https://github.com/TeX-Live/luatex/blob/trunk/source/texk/web2c/luatexdir/luasocket/src/mime.lua
 mime = {}
 
+---
 ------------------------------------------------------------------------
 ---Undocumented functions listed in alphabetical order
 ---
@@ -19,7 +22,7 @@ function mime.b64() end
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function mime.decode() end
+function mime.decode(name, opt1, opt2) end
 
 ---
 ---Warning! Undocumented code!<p>
@@ -31,7 +34,7 @@ function mime.dot() end
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function mime.encode() end
+function mime.encode(name, opt1, opt2) end
 
 ---
 ---Warning! Undocumented code!<p>
@@ -43,7 +46,7 @@ function mime.eol() end
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function mime.normalize() end
+function mime.normalize(marker) end
 
 ---
 ---Warning! Undocumented code!<p>
@@ -79,7 +82,7 @@ function mime.unqp() end
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function mime.wrap() end
+function mime.wrap(name, opt1, opt2) end
 
 ---
 ---Warning! Undocumented code!<p>

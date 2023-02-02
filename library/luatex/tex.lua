@@ -7,598 +7,1033 @@ tex = {}
 
 _N._2_1_integer_parameters_read_write = 190
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\adjdemerits`: Penalty for adjacent visually incompatible lines. Plain TEX default: 10 000.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 175](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.adjdemerits = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\binoppenalty`: Penalty for breaking after a binary operator not enclosed in a subformula. Plain TEX default: 700
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 201](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.binoppenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\brokenpenalty`: Additional penalty for breaking a page after a hyphenated line. Plain TEX default: 100
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 226](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.brokenpenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.catcodetable = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\clubpenalty`: Extra penalty for breaking a page after the first line of a paragraph. In plain TEX this is 150. This amount, and the following penalties, are added to the `\interlinepenalty`, and a penalty of the resulting size is inserted after the `\hbox` containing the first line of a paragraph instead of the `\interlinepenalty`.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 227](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.clubpenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\day`: The day of the current job.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 257](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.day = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\defaulthyphenchar`: Value of `\hyphenchar` when a font is loaded. Plain TEX default: `‘\-`.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 52](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.defaulthyphenchar = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\defaultskewchar`: Value of `\skewchar` when a font is loaded.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 190](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.defaultskewchar = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\delimiterfactor`: 1000 times the fraction of a delimited formula that should be covered by a delimiter. Plain TEX default: 901
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 190](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.delimiterfactor = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\displaywidowpenalty`: Extra penalty for breaking a page before the last line above a display formula. The default value in plain TEX is 50.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 229](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.displaywidowpenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\doublehyphendemerits`: Penalty for consecutive lines ending with a hyphen. Plain TEX default: 10 000.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 175](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.doublehyphendemerits = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\endlinechar`: The character code of the end-of-line character appended to input lines. IniTEX default: 13.
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.endlinechar = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\errorcontextlines`: (TEX3 only) Number of additional context lines shown in error messages.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 272](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.errorcontextlines = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\escapechar`: Number of the character that is to be used for the escape character when control sequences are being converted into character tokens. IniTEX default: `92` (`\`).
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 43](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.escapechar = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\exhyphenpenalty`: Penalty for breaking a horizontal line at a discretionary item in the special case where the prebreak text is empty. Plain TEX default: 50.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 175](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.exhyphenpenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\fam`: The number of the current font family.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 196](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.fam = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\finalhyphendemerits`: Penalty added when the penultimate line of a paragraph ends with a hyphen. Plain TEX default: 5000.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 175](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.finalhyphendemerits = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\floatingpenalty`: Penalty added when an insertion is split.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 240](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.floatingpenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\globaldefs`: Parameter for overriding \global prefixes. IniTEX default: 0.
+---
+---`\globaldefs` is a TeX internal parameter. Normally set to 0. If set equal to a positive number, all following definitions and assignments are treated as if preceded by `\global`. If set equal to a negative number, none of the following definitions or assignments are global, meaning that an explicit `\global` is ignored. This remains in effect until `\globaldefs` is explicitly set to 0 again, or the group containing the `\globaldefs` reassignment ends (assuming it was not made global as well).
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 105](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---* [Wikibook/TeX](https://en.wikibooks.org/wiki/TeX/globaldefs)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.globaldefs = 0
 
+---
+---`\hangafter`: If positive, this denotes the number of lines before indenting starts; if negative, the absolute value of this is the number of indented lines starting with the first line of the paragraph. Default: 1.
+---
 ---A readable and writable integer parameter that accepts and returns
 ---Lua numbers.
----@type integer
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 170](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.hangafter = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\hbadness` \vbadness: Amount of tolerance before TEX reports an underfull or overfull horizontal/vertical box.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 57](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.hbadness = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\holdinginserts` (TEX3 only) If this is positive, insertions are not placed in their boxes at output time.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 240](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.holdinginserts = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\hyphenpenalty`: Penalty associated with break at a discretionary item in the general case. Plain TEX default: 50.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 175](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.hyphenpenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\interlinepenalty`: Penalty for breaking a page between lines of a paragraph. Plain TEX default: 0
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 57](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.interlinepenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\language`: Choose a set of hyphenation patterns and exceptions.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 176](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.language = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.lastlinefit = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\lefthyphenmin` (TEX3 only) Minimal number of characters before a hyphenation. Plain TEX default: 2.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 175](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.lefthyphenmin = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\linepenalty`: Penalty value associated with each line break. Plain TEX default: 10.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 175](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.linepenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.localbrokenpenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.localinterlinepenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\looseness`: Number of lines by which this paragraph has to be made longer than it would be ideally.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 175](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.looseness = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\mag`: 1000 times the magnification of the document.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 257](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.mag = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\maxdeadcycles`: hinteger parameteri The maximum number of times that the output routine is allowed to be called without a \shipout occurring. IniTEX default: 25.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 288](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.maxdeadcycles = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\month`: The month of the current job.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 257](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.month = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\newlinechar`: Number of the character that triggers a new line in `\write` statements.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 246](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.newlinechar = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\outputpenalty`: hinteger parameteri Value of the penalty at the current page break, or 10 000 if the break was not at a penalty.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 289](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.outputpenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\pausing`: Specify that TEX should pause after each line that is read from a file.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 246](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.pausing = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\postdisplaypenalty`: Penalty placed in the vertical list below a display. Plain TEX defaults: 0
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 210](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.postdisplaypenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.predisplaydirection = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\predisplaypenalty`: Penalty placed in the vertical list above a display. Plain TEX defaults: 10 000 .
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 210](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.predisplaypenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\pretolerance`: Tolerance value for a paragraph without hyphenation. Plain TEX default: 100.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 175](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.pretolerance = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\relpenalty`: Penalty for breaking after a binary relation not enclosed in a subformula. Plain TEX default: 500
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 201](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.relpenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\righthyphenmin`: (TEX3 only) Minimum number of characters after a hyphenation. Plain TEX default: 3.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 201](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.righthyphenmin = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.savinghyphcodes = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+-- @type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.savingvdiscards = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\showboxbreadth`: Number of successive elements on each level that are shown when boxes are displayed.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 267](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.showboxbreadth = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\showboxdepth`: The number of levels of box dump that are shown when boxes are displayed.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 267](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.showboxdepth = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\time`: Number of minutes after midnight that the current job started.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 257](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.time = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\tolerance`: Tolerance value for lines in a paragraph with hyphenation. Plain TEX default: 200.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 175](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tolerance = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tracingassigns = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\tracingcommands`: If this is 1 TEX displays primitive commands executed; if this is 2 or more the outcome of conditionals is also recorded.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 267](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tracingcommands = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tracinggroups = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tracingifs = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\tracinglostchars`: If this parameter is positive, TEX gives diagnostic messages whenever a character is accessed that is not present in a font. Plain default: 1.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 268](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tracinglostchars = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\tracingmacros`: hinteger parameteri If this is 1, the log file shows expansion of macros that are performed and the actual values of the arguments; if this is 2 or more htoken parameteris such as \output and \everypar are also traced.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 293](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tracingmacros = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tracingnesting = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\tracingonline`: If this parameter is positive, TEX will write trace information to the terminal in addition to the log file.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 267](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tracingonline = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\tracingoutput`: If this is positive, the log file shows a dump of boxes that are shipped to the dvi file.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 267](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tracingoutput = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\tracingpages`: If this parameter is positive, TEX generates a trace of the page breaking algorithm.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 57](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tracingpages = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\tracingparagraphs`: If this parameter is positive, TEX generates a trace of the line breaking algorithm.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 57](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tracingparagraphs = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\tracingrestores`: If this parameter is positive, TEX will report all values that are restored when a group ends.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 57](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tracingrestores = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tracingscantokens = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\tracingstats`: If this parameter is 1, TEX reports at the end of the job the usage of various internal arrays; if it is 2, the memory demands are given whenever a page is shipped out.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 268](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.tracingstats = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\uchyph`: Positive to allow hyphenation of words starting with a capital letter. Plain TEX default: 1.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 57](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.uchyph = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\hbadness`: Amount of tolerance before TEX reports an underfull or overfull horizontal box.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 57](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
+tex.hbadness = 0
+
+---
+---`\vbadness`: Amount of tolerance before TEX reports an underfull or overfull vertical box.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 57](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.vbadness = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\widowpenalty`: Additional penalty for breaking a page before the last line of a paragraph. Plain TEX default: 150
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 226](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.widowpenalty = 0
 
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
----@type integer
+---
+---`\year`: The year of the current job.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 257](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.year = 0
 
 _N._2_1_integer_parameters_read_only = 191
 
----A read-only integer parameter that returns  a Lua number.
----@type integer
+---
+---`\deadcycles`: Counter that keeps track of how many times the output routine has been called without a `\shipout` taking place.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 234](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A read-only integer parameter that returns a Lua number.
 tex.deadcycles = 0
 
----A read-only integer parameter that returns  a Lua number.
----@type integer
+---
+---`\insertpenalties` Total of penalties for split insertions. Inside the output routine, the number of held-over insertions.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 240](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A read-only integer parameter that returns a Lua number.
 tex.insertpenalties = 0
 
----A read-only integer parameter that returns  a Lua number.
----@type integer
+---
+---`\parshape`: Command for general paragraph shapes.
+---__Reference:__
+---
+---* [TeX by Topic, page 170](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A read-only integer parameter that returns a Lua number.
 tex.parshape = 0
 
----A read-only integer parameter that returns  a Lua number.
----@type integer
+---
+---@type integer # A read-only integer parameter that returns a Lua number.
 tex.interlinepenalties = 0
 
----A read-only integer parameter that returns  a Lua number.
----@type integer
+---
+---@type integer # A read-only integer parameter that returns a Lua number.
 tex.clubpenalties = 0
 
----A read-only integer parameter that returns  a Lua number.
----@type integer
+---
+---@type integer # A read-only integer parameter that returns a Lua number.
 tex.widowpenalties = 0
 
----A read-only integer parameter that returns  a Lua number.
----@type integer
+---
+---@type integer # A read-only integer parameter that returns a Lua number.
 tex.displaywidowpenalties = 0
 
----A read-only integer parameter that returns  a Lua number.
----@type integer
+---
+---`\prevgraf`: The number of lines in the paragraph last added to the vertical list.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 175](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A read-only integer parameter that returns a Lua number.
 tex.prevgraf = 0
 
----A read-only integer parameter that returns  a Lua number.
----@type integer
+---
+---`\spacefactor`: 1000 times the ratio by which the stretch (shrink) component of the interword glue should be multiplied (divided).
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 185](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A read-only integer parameter that returns a Lua number.
 tex.spacefactor = 0
 
 _N._2_2_dimension_parameters_read_write = 191
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\boxmaxdepth`: Maximum allowed depth of boxes. Plain TEX default: \maxdimen.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 57](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.boxmaxdepth = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\delimitershortfall`: Size of the part of a delimited formula that is allowed to go uncovered by a delimiter. Plain TEX default: 5pt
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 190](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.delimitershortfall = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\displayindent`: Distance by which the box, in which the display is centred, is indented owing to hanging indentation.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 210](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.displayindent = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\displaywidth`: Width of the box in which the display is centred.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 210](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.displaywidth = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\emergencystretch` (TEX3 only) Assumed extra stretchability in lines of a paragraph.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 175](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.emergencystretch = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\hangafter`: If positive, this denotes the number of lines before indenting starts; if negative, the absolute value of this is the number of indented lines starting with the first line of the paragraph. Default: 1.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 170](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.hangindent = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\hfuzz`: Excess size that TEX tolerates before it considers a horizontal box overfull.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 57](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.hfuzz = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\hoffset`:  Distance by which the page is shifted right with respect to the reference point.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 224](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.hoffset = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\hsize`: Line width used for typesetting a paragraph. Plain TeX default: 6.5in.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 170](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.hsize = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\lineskiplimit`: Distance to be maintained between the bottom and top of neighbouring boxes on a vertical list. Plain TEX default: 0pt.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 201](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.lineskiplimit = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\mathsurround`: Kern amount placed before and after in-line formulas.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 201](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.mathsurround = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\maxdepth`: Maximum depth of the page box. Plain TeX default: 4pt
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 224](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.maxdepth = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\nulldelimiterspace`: Width taken for empty delimiters. Plain TEX default: 1.2pt
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 190](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.nulldelimiterspace = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\overfullrule`: Width of the rule that is printed to indicate overfull horizontal boxes.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 57](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.overfullrule = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.pagebottomoffset = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.pageheight = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.pageleftoffset = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.pagerightoffset = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.pagetopoffset = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.pagewidth = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\parindent`: Width of the indentation box added in front of a paragraph. Plain TeX default: 20pt.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 170](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.parindent = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\predisplaysize` Effective width of the line preceding the display.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 210](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.predisplaysize = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\scriptspace` Extra space after subscripts and superscripts. Plain TEX default: 0.5pt
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 200](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.scriptspace = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\splitmaxdepth` Maximum depth of a box split off by a `\vsplit` operation. Plain TEX default: `\maxdimen`
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 224](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.splitmaxdepth = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\vfuzz`: Excess size that TEX tolerates before it considers a vertical box overfull.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 57](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.vfuzz = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\voffset` Distance by which the page is shifted right/down with respect to the reference point.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 224](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.voffset = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\vsize` Height of the page box. Plain TEX default: 8.9in
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 224](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.vsize = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---__Reference:__
+---
+---* [TeX by Topic, page ](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.prevdepth = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\prevdepth` Depth of the last box added to a vertical list as it is perceived by TEX.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 157](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.prevgraf = 0
 
----A readable and writable dimension parameter that accepts a Lua number
----(signifying scaled points) or a string (with included dimension).
----The result is always a number in scaled points.
----@type integer
+---
+---`\spacefactor` 1000 times the ratio by which the stretch (shrink) component of the interword glue should be multiplied (divided).
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 185](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.spacefactor = 0
 
 _N._2_2_dimension_parameters_read_only = 191
 
+---
+---`\pagedepth` Depth of the current page.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 226](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
 ---
 ---A read only dimension parameter. The result is always a number in scaled points.
 ---@type integer
 tex.pagedepth = 0
 
 ---
+---`\pagefilllstretch` Accumulated third-order stretch of the current page.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 226](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
 ---A read only dimension parameter. The result is always a number in scaled points.
 ---@type integer
 tex.pagefilllstretch = 0
 
+---
+---`\pagefillstretch` Accumulated second-order stretch of the current page.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 226](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
 ---
 ---A read only dimension parameter. The result is always a number in scaled points.
 ---@type integer
 tex.pagefillstretch = 0
 
 ---
+---`\pagefilstretch` Accumulated first-order stretch of the current page.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 226](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
 ---A read only dimension parameter. The result is always a number in scaled points.
 ---@type integer
 tex.pagefilstretch = 0
 
+---
+---`\pagegoal` Goal height of the page box. This starts at \vsize, and is diminished by heights of insertion items.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 226](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
 ---
 ---A read only dimension parameter. The result is always a number in scaled points.
 ---@type integer
 tex.pagegoal = 0
 
 ---
+---`\pageshrink` Accumulated shrink of the current page.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page 226](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+------
 ---A read only dimension parameter. The result is always a number in scaled points.
 ---@type integer
 tex.pageshrink = 0
 
 ---
+---`\pagestretch` Accumulated zeroth-order stretch of the current page.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page ](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
 ---A read only dimension parameter. The result is always a number in scaled points.
 ---@type integer
 tex.pagestretch = 0
 
+---
+---`\pagetotal` Accumulated natural height of the current page.
+---
+---__Reference:__
+---
+---* [TeX by Topic, page ](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
 ---
 ---A read only dimension parameter. The result is always a number in scaled points.
 ---@type integer
@@ -607,159 +1042,207 @@ tex.pagetotal = 0
 _N._2_3_direction_parameters = 192
 
 ---
----A read-only direction parameter that returns a *Lua* string.
----@type string
+---@type string A read-only direction parameter that returns a *Lua* string.
 tex.bodydir = ''
 
 ---
----A read-only direction parameter that returns a *Lua* string.
----@type string
+---@type string A read-only direction parameter that returns a *Lua* string.
 tex.mathdir = ''
 
 ---
----A read-only direction parameter that returns a *Lua* string.
----@type string
+---@type string A read-only direction parameter that returns a *Lua* string.
 tex.pagedir = ''
 
 ---
----A read-only direction parameter that returns a *Lua* string.
----@type string
+---@type string A read-only direction parameter that returns a *Lua* string.
 tex.pardir = ''
 
 ---
----A read-only direction parameter that returns a *Lua* string.
----@type string
+---@type string A read-only direction parameter that returns a *Lua* string.
 tex.textdir = ''
-
----
----A read-only direction parameter that returns a *Lua* string.
----@type string
 
 _N._2_4_glue_parameters = 193
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\abovedisplayshortskip` Glue abovea display if the line preceding the display was short. Plain TEX defaults: 0pt plus 3pt
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page 210](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.abovedisplayshortskip = nil
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\abovedisplayskip` Glue above a display. Plain TEX default: 12pt plus 3pt minus 9pt
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page 210](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.abovedisplayskip = nil
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\baselineskip` The ‘ideal’ baseline distance between neighbouring boxes on a vertical list. Plain TEX default: 12pt.
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page 157](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.baselineskip = nil
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\belowdisplayshortskip` Glue above/below a display if the line preceding the display was short. Plain TEX defaults: 0pt plus 3pt and 7pt plus 3pt minus 4pt respectively.
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page 210](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.belowdisplayshortskip = nil
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\belowdisplayskip` Glue below a display. Plain TEX default: 12pt plus 3pt minus 9pt
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page ](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.belowdisplayskip = nil
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\leftskip`: Glue that is placed to the left of all lines of a paragraph.
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page 170](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.leftskip = nil
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\lineskip` Glue added if the distance between bottom and top of neighbouring boxes is less than `\lineskiplimit`. Plain TEX default: 1pt.
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page 157](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.lineskip = nil
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\parfillskip` Glue that is placed between the last element of the paragraph and the line end. Plain TEX default: 0pt plus 1fil.
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page 166](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.parfillskip = nil
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\parskip` Amount of glue added to the surrounding vertical list when a paragraph starts. Plain TEX default: 0pt plus 1pt.
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page 161](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.parskip = nil
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\rightskip`: Glue that is placed to the right of all lines of a paragraph.
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page 170](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.rightskip = nil
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\spaceskip` Interword glue if non-zero.
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page 185](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.spaceskip = nil
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\splittopskip` Minimum distance between the top of what remains after a `\vsplit` operation, and the first item in that box. Plain TEX default: 10pt
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page 226](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.splittopskip = nil
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\tabskip` Amount of glue in between columns (rows) of an \halign (\valign).
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page 215](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.tabskip = nil
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\topskip` Minimum distance between the top of the page box and the baseline of the first box on the page. Plain TEX default: 10pt
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page 224](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.topskip = nil
 
 ---
----A readable and writeable glue parameter that accepts and returns
----a userdata object which in turn represents a `glue_spec` node.
+---`\xspaceskip` Interword glue if non-zero and `\spacefactor` ≥ 2000.
 ---
----@type GlueSpecNode
+---__Reference:__
+---
+---* [TeX by Topic, page 185](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.xspaceskip = nil
 
 _N._2_5_muglue_parameters = 193
 
 ---
----A read-only `muglue` parameter that returns a *Lua* string.
+---`\medmuskip` Medium amount of mu glue.
 ---
----@type string
+---__Reference:__
+---
+---* [TeX by Topic, page 201](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type string # A read-only `muglue` parameter that returns a *Lua* string.
 tex.medmuskip = ''
 
 ---
----A read-only `muglue` parameter that returns a *Lua* string.
+---`\thickmuskip` Large amount of mu glue.
 ---
----@type string
+---__Reference:__
+---
+---* [TeX by Topic, page 210](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type string # A read-only `muglue` parameter that returns a *Lua* string.
 tex.thickmuskip = ''
 
 ---
----A read-only `muglue` parameter that returns a *Lua* string.
+---`\thinmuskip` Small amount of mu glue.
 ---
----@type string
+---__Reference:__
+---
+---* [TeX by Topic, page 201](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---
+---@type string # A read-only `muglue` parameter that returns a *Lua* string.
 tex.thinmuskip = ''
 
 _N._2_6_tokenlist_parameters = 193
@@ -864,6 +1347,114 @@ tex.everyvbox = ''
 ---@type string
 tex.output = ''
 
+_N._3_convert_commands = 193
+
+---
+---@type string # for example `2.2`.
+tex.eTeXVersion = ''
+
+---
+---@type string # for example `2.2`.
+tex.eTeXrevision = ''
+
+---
+---@type string # for example `luatex`.
+tex.formatname = ''
+
+---
+---@type string
+tex.jobname = ''
+
+---
+---@type string # for example `This is LuaTeX, Version 1.15.1 (TeX Live 2023/dev)`.
+tex.luatexbanner = ''
+
+---
+---@type string # for example `1`.
+tex.luatexrevision = ''
+
+_N._3_last_item_commands = 194
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.lastpenalty = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.lastkern = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.lastskip = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.lastnodetype = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.inputlineno = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.lastxpos = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.lastypos = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.randomseed = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.luatexversion = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.eTeXminorversion = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.eTeXversion = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.currentgrouplevel = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.currentgrouptype = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.currentiflevel = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.currentiftype = 0
+
+---
+---All “last item” commands are read-only and return a number.
+---@type integer
+tex.currentifbranch = 0
+
 _N._5_registers = 194
 
 ---
@@ -919,6 +1510,104 @@ tex.skip = {}
 ---@type table
 tex.toks = {}
 
+---
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.setattribute() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.getattribute() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.setcount() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.getcount() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.setdimen() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.getdimen() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.setskip() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.getskip() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.setglue() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.getglue() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.getmuskip() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.setmuskip() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.setmuglue() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.getmuglue() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.settoks() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.gettoks() end
+
 _N._14_print = 201
 
 _N._14_1_print = 201
@@ -945,7 +1634,6 @@ _N._14_1_print = 201
 ---
 ---see `LuaTeX` manual: 10.3.14.1 `print`
 ---
----
 ---__Reference:__
 ---
 ---* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1172-L1196](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-tex.tex#L1172-L1196)
@@ -958,7 +1646,6 @@ function tex.print(...) end
 ---defined by `catcodetable` `n`.
 ---
 ---see `LuaTeX` manual: 10.3.14.1 `print`
----
 ---
 ---__Reference:__
 ---
@@ -975,7 +1662,6 @@ function tex.print(n, ...) end
 ---
 ---see `LuaTeX` manual: 10.3.14.1 `print`
 ---
----
 ---__Reference:__
 ---
 ---* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1222-L1224](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-tex.tex#L1222-L1224)
@@ -990,6 +1676,194 @@ function tex.print(t) end
 ---@param t table
 function tex.print(n, t) end
 
+---
+---Each string argument is treated by *TeX* as a special kind of input line that
+---makes it suitable for use as a partial line input mechanism:
+---
+---* *TeX* does not switch to the “new line” state, so that leading spaces
+---    are not ignored.
+---
+---* No `endlinechar` is inserted.
+---
+---* Trailing spaces are not removed. Note that this does not prevent *TeX* itself
+---    from eating spaces as result of interpreting the line. For example, in
+---
+---```tex
+---before\directlua{tex.sprint("\\relax")tex.sprint(" inbetween")}after
+---```
+---
+---    the space before `in between` will be gobbled as a result of the “normal” scanning of `relax`.
+---
+---If there is a table argument instead of a list of strings, this has to be a
+---consecutive array of strings to print (the first non-string value will stop the
+---printing process).
+---
+---The optional argument sets the catcode regime, as with `tex.print`. This
+---influences the string arguments (or numbers turned into strings).
+---
+---Although this needs to be used with care, you can also pass token or node
+---userdata objects. These get injected into the stream. Tokens had best be valid
+---tokens, while nodes need to be around when they get injected. Therefore it is
+---important to realize the following:
+---
+---* When you inject a token, you need to pass a valid token userdata object. This
+---    object will be collected by *Lua* when it no longer is referenced. When it gets
+---    printed to *TeX* the token itself gets copied so there is no interference with the
+---    *Lua* garbage collection. You manage the object yourself. Because tokens are
+---    actually just numbers, there is no real extra overhead at the *TeX* end.
+---
+---* When you inject a node, you need to pass a valid node userdata object. The
+---    node related to the object will not be collected by *Lua* when it no longer
+---    is referenced. It lives on at the *TeX* end in its own memory space. When it
+---    gets printed to *TeX* the node reference is used assuming that node stays
+---    around. There is no *Lua* garbage collection involved. Again, you manage the
+---    object yourself. The node itself is freed when *TeX* is done with it.
+---
+---If you consider the last remark you might realize that we have a problem when a
+---printed mix of strings, tokens and nodes is reused. Inside *TeX* the sequence
+---becomes a linked list of input buffers. So, `"123"` or `"\foo{123`"}
+---gets read and parsed on the fly, while `<token userdata>` already is
+---tokenized and effectively is a token list now. A `<node userdata>` is also
+---tokenized into a token list but it has a reference to a real node. Normally this
+---goes fine. But now assume that you store the whole lot in a macro: in that case
+---the tokenized node can be flushed many times. But, after the first such flush the
+---node is used and its memory freed. You can prevent this by using copies which is
+---controlled by setting `luacopyinputnodes` to a non-zero value. This is one
+---of these fuzzy areas you have to live with if you really mess with these low
+---level issues.
+---@param ... string
+function tex.sprint(...) end
+
+---
+---@param n integer
+---@param ... string
+function tex.sprint(n, ...) end
+
+---
+---@param t table
+function tex.sprint(t) end
+
+---
+---@param n integer # Print the strings using the catcode regime defined by `catcodetable` `n`.
+---@param t table
+function tex.sprint(n, t) end
+
+---
+---This function is basically a shortcut for repeated calls to `tex.sprint(<number> n, <string> s, ...)`, once for each of the supplied argument
+---tables.
+---@param ... table
+function tex.tprint(...) end
+
+---
+---This function takes a number indicating the to be used catcode, plus either a
+---table of strings or an argument list of strings that will be pushed into the
+---input stream.
+---
+---```tex
+---tex.cprint( 1," 1: `&{\\foo}") tex.print("\\par") -- a lot of \bgroup s
+---tex.cprint( 2," 2: `&{\\foo}") tex.print("\\par") -- matching \egroup s
+---tex.cprint( 9," 9: `&{\\foo}") tex.print("\\par") -- all get ignored
+---tex.cprint(10,"10: `&{\\foo}") tex.print("\\par") -- all become spaces
+---tex.cprint(11,"11: `&{\\foo}") tex.print("\\par") -- letters
+---tex.cprint(12,"12: `&{\\foo}") tex.print("\\par") -- other characters
+---tex.cprint(14,"12: $&{\\foo}") tex.print("\\par") -- comment triggers
+---```
+---@param n integer
+---@param ... string|table
+function tex.cprint(n, ...) end
+
+---
+---Each string argument is treated by *TeX* as a special kind of input line that
+---makes it suitable for use as a quick way to dump information:
+---
+---* All catcodes on that line are either “space” (for ' ') or “character” (for all others).
+---* There is no `endlinechar` appended.
+---
+---If there is a table argument instead of a list of strings, this has to be a
+---consecutive array of strings to print (the first non-string value will stop the
+---printing process).
+---@param ... string
+function tex.write(...) end
+
+---
+---@param t table
+function tex.write(t) end
+
+_N._15 = 203
+
+_N._15_1 = 203
+
+---
+---Rounds *Lua* number `o`, and returns a number that is in the range of a
+---valid *TeX* register value. If the number starts out of range, it generates a
+---“number too big” error as well.
+---
+---@param o number
+---
+---@return integer
+function tex.round(o) end
+
+_N._15_2 = 203
+
+---
+---Multiplies the *Lua* numbers `o` and `delta`, and returns a rounded
+---number that is in the range of a valid *TeX* register value. In the table
+---version, it creates a copy of the table with all numeric top-level values scaled
+---in that manner. If the multiplied number(s) are of range, it generates
+---“number too big” error(s) as well.
+---
+---Note: the precision of the output of this function will depend on your computer's
+---architecture and operating system, so use with care! An interface to *LuaTeX*'s
+---internal, 100% portable scale function will be added at a later date.
+---
+---@param o number
+---@param delta number
+---
+---@return number
+function tex.scale(o, delta) end
+
+---
+---@param o table
+---@param delta number
+---
+---@return table
+function tex.scale(o, delta) end
+
+_N._15_3 = 204
+
+---
+---@param n integer
+---
+---@return integer
+function tex.number(n) end
+
+---
+---@param n integer
+---
+---@return string
+function tex.romannumeral(n) end
+
+_N._15_4 = 204
+
+---
+---returns the `csname` string that matches a
+---font id number (if there is one).
+---
+---* Corresponding C source code: [L2047-L2050](https://github.com/TeX-Live/luatex/blob/16f2f7c88eeef85ce988cbe595481fa714f5dfc9/source/texk/web2c/luatexdir/lua/ltexlib.c#L2047-L2050)
+---@param font_id integer
+---
+---@return string # for example `\tenrm`.
+function tex.fontidentifier(font_id) end
+
+---
+---The first one returns the name only, the second one reports the size too.
+---
+---* Corresponding C source code: [L2042-L2045](https://github.com/TeX-Live/luatex/blob/16f2f7c88eeef85ce988cbe595481fa714f5dfc9/source/texk/web2c/luatexdir/lua/ltexlib.c#L2042-L2045)
+---@param font_id integer
+---
+---@return string # for example `cmr10`.
+function tex.fontname(font_id) end
+
 _N._15_5_sp = 204
 
 ---
@@ -997,7 +1871,6 @@ _N._15_5_sp = 204
 ---dimension into an integer number of scaled points.
 ---
 ---see `LuaTeX` manual: 10.3.15.5 `sp`
----
 ---
 ---__Reference:__
 ---
@@ -1037,6 +1910,10 @@ function tex.sp(o) end
 ---
 ---@return integer # The dimension in the scaled points format.
 function tex.sp(s) end
+
+_N._15_6 = 204
+
+-- Removed?
 
 _N._15_7_error_show_context = 204
 
@@ -1099,7 +1976,6 @@ _N._15_9_runtoks = 205
 ---
 ---When the `tracingnesting` parameter is set to a value larger than 2 some
 ---information is reported about the state of the local loop.
----
 ---
 ---Inside for instance an `\edef` the `runtoks` function behaves (at
 ---least tries to) like it were an `\the`. This prevents unwanted side
@@ -1196,7 +2072,6 @@ _N._16_primitives = 206
 _N._16_1_enableprimitives = 206
 
 ---
----
 ---This function accepts a prefix string and an array of primitive names. For each
 ---combination of “prefix” and “name”, the `tex.enableprimitives` first verifies that “name” is an actual primitive
 ---(it must be returned by one of the `tex.extraprimitives` calls explained
@@ -1244,24 +2119,7 @@ _N._16_1_enableprimitives = 206
 ---@param primitive_names table
 function tex.enableprimitives(prefix, primitive_names) end
 
-------------------------------------------------------------------------
----Undocumented functions listed in alphabetical order
----
----Document them by sliding them up and place them in the order of the
----official documentation
-------------------------------------------------------------------------
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.badness() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.cprint() end
+_N._16_2_extraprimitives = 205
 
 ---
 ---Warning! Undocumented code!<p>
@@ -1269,29 +2127,203 @@ function tex.cprint() end
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.extraprimitives() end
 
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.fontidentifier() end
+_N._16_3_primitives = 210
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.fontname() end
+function tex.primitives() end
+
+_N._17_core_functionality_interfaces = 210
+
+_N._17_1_badness = 210
 
 ---
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+---This helper function is useful during linebreak calculations. `t` and `s` are scaled values; the function returns the badness for when total `t`
+---is supposed to be made from amounts that sum to `s`. The returned number is
+---a reasonable approximation of `100(t/s)^3`.
+function tex.badness() end
+
+_N._17_2_resetparagraph = 210
+
+---
+---This function resets the parameters that *TeX* normally resets when a new paragraph
+---is seen.
+function tex.resetparagraph() end
+
+_N._17_3_linebreak = 210
+
+---
+---@class LinebreakParameters
+---@field pardir string
+---@field pretolerance integer
+---@field tracingparagraphs integer
+---@field tolerance integer
+---@field looseness integer
+---@field hyphenpenalty integer
+---@field exhyphenpenalty integer
+---@field pdfadjustspacing integer
+---@field adjdemerits integer
+---@field pdfprotrudechars integer
+---@field linepenalty integer
+---@field lastlinefit integer
+---@field doublehyphendemerits integer
+---@field finalhyphendemerits integer
+---@field hangafter integer
+---@field interlinepenalty integer|table # or table  if a table, then it is an array like `interlinepenalties`
+---@field clubpenalty integer|table # or table  if a table, then it is an array like `clubpenalties`
+---@field widowpenalty integer|table # or table  if a table, then it is an array like `widowpenalties`
+---@field brokenpenalty integer
+---@field emergencystretch integer # in scaled points
+---@field hangindent integer # in scaled points
+---@field hsize integer # in scaled points
+---@field leftskip GlueSpecNode
+---@field rightskip GlueSpecNode
+---@field parshape table
+---
+
+---
+---Note that there is no interface for `displaywidowpenalties`, you have to
+---pass the right choice for `widowpenalties` yourself.
+---
+---It is your own job to make sure that `listhead` is a proper paragraph list:
+---this function does not add any nodes to it. To be exact, if you want to replace
+---the core line breaking, you may have to do the following (when you are not
+---actually working in the `pre_linebreak_filter` or `linebreak_filter`
+---callbacks, or when the original list starting at listhead was generated in
+---horizontal mode):
+---
+---* add an “indent box” and perhaps a `local_par` node at the start
+---    (only if you need them)
+---
+---* replace any found final glue by an infinite penalty (or add such a penalty,
+---    if the last node is not a glue)
+---
+---* add a glue node for the `parfillskip` after that penalty node
+---
+---* make sure all the `prev` pointers are OK
+---
+---The result is a node list, it still needs to be vpacked if you want to assign it
+---to a `vbox`. The returned `info` table contains four values that are
+---all numbers:
+---
+--- name       explanation
+---
+--- prevdepth  depth of the last line in the broken paragraph
+--- prevgraf   number of lines in the broken paragraph
+--- looseness  the actual looseness value in the broken paragraph
+--- demerits   the total demerits of the chosen solution
+---
+---Note there are a few things you cannot interface using this function: You cannot
+---influence font expansion other than via `pdfadjustspacing`, because the
+---settings for that take place elsewhere. The same is true for hbadness and hfuzz
+---etc. All these are in the `hpack` routine, and that fetches its own
+---variables via globals.
+---
+---@param listhead Node
+---@param parameters LinebreakParameters
+---
+---@return Node
+---@return table
+function tex.linebreak(listhead, parameters) end
+
+---
+---Ships out box number `n` to the output file, and clears the box register.
+function tex.shipout() end
+
+---
+---This helper reports the current page state: `empty`, `box_there` or
+---`inserts_only` as integer value.
+function tex.getpagestate() end
+
+---
+---This integer reports the current level of the local loop. It's only useful for
+---debugging and the (relative state) numbers can change with the implementation.
+function tex.getlocallevel() end
+
+_N._18_randomizers = 212
+
+---
+---For practical reasons *LuaTeX* has its own random number generator. The original
+---*Lua* random function is available as `tex.lua_math_random`.
+function tex.lua_math_random() end
+
+---
+---You can
+---initialize with a new seed with `init_rand` (`lua_math_randomseed` is
+---equivalent to this one.)
+function tex.init_rand() end
+
+---
+---You can
+---initialize with a new seed with `lua_math_randomseed` (`init_rand` is
+---equivalent to this one.)
+function tex.lua_math_randomseed() end
+
+---
+---no argument is used
+function tex.normal_rand() end
+
+---
+---takes a number that will get rounded before being used
+function tex.uniform_rand() end
+
+---
+--- which behaves like the primitive and expects a scaled integer, so
+---
+---```
+---tex.print(tex.uniformdeviate(65536)/65536)
+---```
+---
+---will give a random number between zero and one.
+function tex.uniformdeviate() end
+
+_N._19_synctex = 212
+
+---
+---`0` is the default and used normal synctex logic, `1` uses the values set by the next helpers while `2` also sets these for glyph nodes; `3` sets glyphs and glue and `4` sets only glyphs
+function tex.set_synctex_mode() end
+
+---
+---set the current tag (file) value (obeys save stack)
+function tex.set_synctex_tag() end
+
+---
+---set the current line value (obeys save stack)
+function tex.set_synctex_line() end
+
+---
+---disable synctex file logging
+function tex.set_synctex_no_files() end
+
+---
+---returns the current mode (for values see above)
+function tex.get_synctex_mode() end
+
+---
+---get the currently set value of tag (file)
+function tex.get_synctex_tag() end
+
+---
+---get the currently set value of line
+function tex.get_synctex_line() end
+
+---
+---overload the tag (file) value (`0` resets)
 function tex.force_synctex_line() end
 
 ---
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+---overload the line value  (`0` resets)
 function tex.force_synctex_tag() end
+
+---
+------------------------------------------------------------------------
+---Undocumented functions listed in alphabetical order
+---
+---Document them by sliding them up and place them in the order of the
+---official documentation
+------------------------------------------------------------------------
 
 ---
 ---Warning! Undocumented code!<p>
@@ -1304,30 +2336,6 @@ function tex.forcehmode() end
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.get() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.get_synctex_line() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.get_synctex_mode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.get_synctex_tag() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getattribute() end
 
 ---
 ---Warning! Undocumented code!<p>
@@ -1357,12 +2365,6 @@ function tex.getcatcode() end
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getcount() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.getdelcode() end
 
 ---
@@ -1375,19 +2377,7 @@ function tex.getdelcodes() end
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getdimen() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.getfontoffamily() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getglue() end
 
 ---
 ---Warning! Undocumented code!<p>
@@ -1400,12 +2390,6 @@ function tex.getlccode() end
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.getlist() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getlocallevel() end
 
 ---
 ---Warning! Undocumented code!<p>
@@ -1441,25 +2425,7 @@ function tex.getmodevalues() end
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getmuglue() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getmuskip() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.getnest() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getpagestate() end
 
 ---
 ---Warning! Undocumented code!<p>
@@ -1471,25 +2437,7 @@ function tex.getsfcode() end
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getskip() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.gettoks() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.getuccode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.init_rand() end
 
 ---
 ---Warning! Undocumented code!<p>
@@ -1549,73 +2497,13 @@ function tex.istoks() end
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.linebreak() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.lua_math_random() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.lua_math_randomseed() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.normal_rand() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.number() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.primitives() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.quittoks() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.resetparagraph() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.romannumeral() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.round() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.saveboxresource() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.scale() end
 
 ---
 ---Warning! Undocumented code!<p>
@@ -1633,36 +2521,6 @@ function tex.set() end
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.set_synctex_line() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.set_synctex_mode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.set_synctex_no_files() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.set_synctex_tag() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setattribute() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.setbox() end
 
 ---
@@ -1675,25 +2533,7 @@ function tex.setcatcode() end
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setcount() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.setdelcode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setdimen() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setglue() end
 
 ---
 ---Warning! Undocumented code!<p>
@@ -1723,18 +2563,6 @@ function tex.setmathcode() end
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setmuglue() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setmuskip() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.setnest() end
 
 ---
@@ -1747,25 +2575,7 @@ function tex.setsfcode() end
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setskip() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.settoks() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.setuccode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.shipout() end
 
 ---
 ---Warning! Undocumented code!<p>
@@ -1783,40 +2593,10 @@ function tex.splitbox() end
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.sprint() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.tprint() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.triggerbuildpage() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.uniform_rand() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.uniformdeviate() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.useboxresource() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.write() end

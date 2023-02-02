@@ -2,6 +2,7 @@
 
 xzip = {}
 
+---
 ------------------------------------------------------------------------
 ---Undocumented functions listed in alphabetical order
 ---
@@ -50,3 +51,5 @@ function xzip.decompressobj() end
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function xzip.version() end
+
+return xzip

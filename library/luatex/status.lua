@@ -1,5 +1,6 @@
 ---@meta
 
+---
 ---This library contains a number of run-time configuration items that you may find useful in message
 ---reporting, as well as an iterator function that gets all of the names and values as a `table`.
 status = {}
@@ -7,7 +8,7 @@ status = {}
 ---
 ---@class StatusInfo
 ---@field banner string # terminal display banner, for example `This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)`.
----@field best_page_break # the current best break (a node)
+---@field best_page_break Node # the current best break (a node)
 ---@field buf_size integer # current allocated size of the line buffer, for example `200000`.
 ---@field callbacks integer # total number of executed callbacks so far, for example `9`.
 ---@field cs_count integer # of control sequences, for example `20658`.

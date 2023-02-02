@@ -1,6 +1,6 @@
 ---@meta
 
-utf = {}
+file = {}
 
 ---
 ------------------------------------------------------------------------
@@ -14,238 +14,250 @@ utf = {}
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.byte() end
+function file.addsuffix() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.char() end
+function file.basename() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.characters() end
+function file.checksum() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.chrlen() end
+function file.collapse_path() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.count() end
+function file.collapsepath() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.filetype() end
+function file.copy() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.is_valid() end
+function file.dirname() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.len() end
+function file.expandname() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.length() end
+function file.extname() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.lower() end
+function file.is_qualified_path() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.magic() end
+function file.is_readable() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.remapper() end
+function file.is_rootbased_path() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.replacer() end
+function file.is_writable() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.split() end
+function file.isreadable() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.splitlines() end
+function file.iswritable() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.sub() end
+function file.join() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.subtituter() end
+function file.joinpath() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.tocodes() end
+function file.loadchecksum() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.toeight() end
+function file.nameonly() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.toentities() end
+function file.nametotable() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.totable() end
+function file.needs_updating() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.toutf32string() end
+function file.needsupdating() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.upper() end
+function file.pathpart() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.ustring() end
+function file.readdata() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.utf16_to_utf8_be() end
+function file.removesuffix() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.utf16_to_utf8_be_t() end
+function file.replacesuffix() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.utf16_to_utf8_le() end
+function file.reslash() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.utf16_to_utf8_le_t() end
+function file.robustname() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.utf16_to_utf8_t() end
+function file.savechecksum() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.utf32_to_utf8_be() end
+function file.savedata() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.utf32_to_utf8_be_t() end
+function file.size() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.utf32_to_utf8_le() end
+function file.split_path() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.utf32_to_utf8_le_t() end
+function file.splitbase() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.utf32_to_utf8_t(t, endian) end
+function file.splitname() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.utf8_to_utf16(str, littleendian, nobom) end
+function file.splitpath() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.utf8_to_utf16_be(str, nobom) end
+function file.strip() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.utf8_to_utf16_le(str, nobom) end
+function file.suffix() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.utf8_to_utf8_t(t) end
+function file.suffixes() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.values() end
+function file.suffixesonly() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function utf.xstring(s) end
+function file.suffixonly() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function file.syncmtimes() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function file.withinbase() end

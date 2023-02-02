@@ -1,7 +1,8 @@
 ---@meta
 
-nodes = {}
+trackers = {}
 
+---
 ------------------------------------------------------------------------
 ---Undocumented functions listed in alphabetical order
 ---
@@ -13,16 +14,22 @@ nodes = {}
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function nodes.simple_font_handler() end
+function trackers.disable() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function nodes.tonode() end
+function trackers.enable() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function nodes.tonut() end
+function trackers.newline() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function trackers.register() end

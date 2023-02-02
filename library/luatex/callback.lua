@@ -1,5 +1,4 @@
 ---@meta
-
 ---A helper table to better navigate through the documentation using the
 ---outline: https://github.com/Josef-Friedrich/LuaTeX_Lua-API#navigation-table-_n
 _N = {}
@@ -22,6 +21,7 @@ _N = {}
 ---
 callback = {}
 
+---
 ---Source: `callback.list()`
 ---@alias CallbackName
 ---|"append_to_vlist_filter"
@@ -143,9 +143,124 @@ function callback.list() end
 ---@return function|nil f
 function callback.find(callback_name) end
 
+_N._2 = nil
+
+_N._2_1_find_read_file = nil
+_N._2_1_find_write_file = nil
+_N._2_2_find_font_file = nil
+_N._2_3_find_output_file = nil
+_N._2_4_find_format_file = nil
+_N._2_5_find_vf_file = nil
+_N._2_6_find_map_file = nil
+_N._2_7_find_enc_file = nil
+_N._2_8_find_pk_file = nil
+_N._2_9_find_data_file = nil
+_N._2_0_find_opentype_file = nil
+_N._2_1_find_truetype_file = nil
+_N._2_1_find_type1_file = nil
+_N._2_2_find_image_file = nil
+
+_N._3 = nil
+
+_N._3_1_open_read_file = nil
+
+_N._4 = nil
+
+_N._4_1_process_input_buffer = nil
+
+---
+---This callback allows you to change the contents of the line input buffer just
+---before *LuaTeX* actually starts looking at it.
+---
+---If you return `nil`, *LuaTeX* will pretend like your callback never
+---happened. You can gain a small amount of processing time from that. This callback
+---does not replace any internal code.
+---@alias ProcessInputBuffer fun(buffer: string): string|nil
+
+_N._4_2_process_output_buffer = nil
+
+---
+---This callback allows you to change the contents of the line output buffer just
+---before *LuaTeX* actually starts writing it to a file as the result of a `write` command. It is only called for output to an actual file (that is,
+---excluding the log, the terminal, and so called `write` 18 calls).
+---
+---If you return `nil`, *LuaTeX* will pretend like your callback never
+---happened. You can gain a small amount of processing time from that. This callback
+---does not replace any internal code.
+---@alias ProcessOutputBuffer fun(buffer: string): string|nil
+
+_N._4_3_process_jobname = nil
+
+---
+---This callback allows you to change the jobname given by `jobname` in *TeX*
+---and `tex.jobname` in Lua. It does not affect the internal job name or the
+---name of the output or log files.
+---
+---The only argument is the actual job name; you should not use `tex.jobname`
+---inside this function or infinite recursion may occur. If you return `nil`,
+---*LuaTeX* will pretend your callback never happened. This callback does not
+---replace any internal code.
+---@alias ProcessJobname fun(jobname: string): string|nil
+
+_N._5 = nil
+
 _N._5_1_contribute_filter = nil
+
+---
+---@alias ContributeFilterExtrainfo
+---|'pre_box'# interline material is being added
+---|'pre_adjust' # `vadjust` material is being added
+---|'box' # a typeset box is being added (always called)
+---|'adjust'# `vadjust` material is being added
+
+---
+---This callback is called when *LuaTeX* adds contents to list:
+---
+---The string reports the group code. From this you can deduce from
+---what list you can give a treat.
+---@alias ContributeFilter fun(extrainfo: ContributeFilterExtrainfo)
+
 _N._5_2_buildpage_filter = nil
+
+---
+---@alias BuildpageFilterExtrainfo
+---|'alignment' # a (partial) alignment is being added
+---|'after_output' # an output routine has just finished
+---|'new_graf' # the beginning of a new paragraph
+---|'vmode_par' # `par` was found in vertical mode
+---|'hmode_par' # `par` was found in horizontal mode
+---|'insert' # an insert is added
+---|'penalty' # a penalty (in vertical mode)
+---|'before_display' # immediately before a display starts
+---|'after_display' # a display is finished
+---|'end' # *LuaTeX* is terminating (it's all over)
+
+---
+---This callback is called whenever *LuaTeX* is ready to move stuff to the main
+---vertical list. You can use this callback to do specialized manipulation of the
+---page building stage like imposition or column balancing.
+---
+---The string `extrainfo` gives some additional information about what *TeX*'s
+---state is with respect to the “current page”.
+---@alias BuildpageFilter fun(extrainfo: ContributeFilterExtrainfo)
+
 _N._5_3_build_page_insert = nil
+
+---
+---This callback is called when the pagebuilder adds an insert. There is not much
+---control over this mechanism but this callback permits some last minute
+---manipulations of the spacing before an insert, something that might be handy when
+---for instance multiple inserts (types) are appended in a row.
+---
+---* `n`  the insert class
+---* `i`  the order of the insert
+---
+---The return value is a number indicating the skip register to use for the
+---prepended spacing. This permits for instance a different top space (when `i` equals one) and intermediate space (when `i` is larger than one). Of
+---course you can mess with the insert box but you need to make sure that *LuaTeX*
+---is happy afterwards.
+---@alias BuildPageInsert fun(n: integer, i: integer): integer
+
 _N._5_4_pre_linebreak_filter = nil
 
 ---
@@ -215,6 +330,7 @@ _N._5_5_linebreak_filter = nil
 ---possible you will end up in an unfixable “deadcycles loop”.
 ---@alias LinebreakFilter fun(head: Node, is_display: boolean): NodeCallbackReturn
 
+---
 ---@alias AppendToVlistFilterLocationcode
 ---| 'box'
 ---| 'alignment'
@@ -330,18 +446,31 @@ _N._5_16_kerning = nil
 _N._5_17_insert_local_par = nil
 _N._5_18_mlist_to_hlist = nil
 
-_N._6_1_pre_dump = nil
-_N._6_2_start_run = nil
-_N._6_3_stop_run = nil
-_N._6_4_start_page_number = nil
-_N._6_5_stop_page_number = nil
-_N._6_6_show_error_hook = nil
-_N._6_7_show_error_message = nil
-_N._6_8_show_lua_error_hook = nil
-_N._6_9_start_file = nil
-_N._6_10_stop_file = nil
-_N._6_11_call_edit = nil
-_N._6_12_finish_synctex = nil
-_N._6_13_wrapup_run = nil
+_N._6__ = 180
 
-_N._7__ = nil
+_N._6_1_pre_dump = 180
+_N._6_2_start_run = 181
+_N._6_3_stop_run = 181
+_N._6_4_start_page_number = 181
+_N._6_5_stop_page_number = 181
+_N._6_6_show_error_hook = 181
+_N._6_7_show_error_message = 182
+_N._6_8_show_lua_error_hook = 182
+_N._6_9_start_file = 182
+_N._6_10_stop_file = 182
+_N._6_11_call_edit = 182
+_N._6_12_finish_synctex = 183
+_N._6_13_wrapup_run = 183
+
+_N._7__ = 183
+
+_N._7_1_finish_pdffile = 183
+_N._7_2_finish_pdfpage = 183
+_N._7_3_page_order_index = 183
+_N._7_4_process_pdf_image_content = 184
+
+_N._8__ = 184
+
+_N._8_1_define_font = 184
+_N._8_2_glyph_info = 184
+_N._8_2_glyph_not_found = 184

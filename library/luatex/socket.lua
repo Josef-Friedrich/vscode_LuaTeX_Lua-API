@@ -4,13 +4,12 @@
 ---there are no external file dependencies.
 ---https://github.com/lunarmodules/luasocket
 ---https://lunarmodules.github.io/luasocket/socket.html
----
+---https://github.com/TeX-Live/luatex/blob/trunk/source/texk/web2c/luatexdir/luasocket/src/socket.lua
 ---The socket namespace
 ---
 ---The `socket` namespace contains the core functionality of LuaSocket.
 ---
 ---To obtain the `socket` namespace, run:
----
 ---
 ---```lua
 ----- loads the socket module
@@ -211,7 +210,6 @@ function socket.protect(func) end
 ---
 ---Using select with non-socket objects: Any object that implements `getfd` and `dirty` can be used with `select`, allowing objects from other libraries to be used within a `socket.select` driven loop.
 ---
----
 ---@param recvt table|nil # `recvt` is an array with the sockets to test for characters available for reading.
 ---@param sendt table|nil # Sockets in the `sendt` array are watched to see if it is OK to immediately write on them.
 ---@param timeout? integer # `timeout` is the
@@ -220,6 +218,7 @@ function socket.protect(func) end
 ---function to block indefinitely.
 function socket.select(recvt, sendt, timeout) end
 
+---
 ------------------------------------------------------------------------
 ---Undocumented functions listed in alphabetical order
 ---
@@ -304,3 +303,5 @@ function socket.udp4() end
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function socket.udp6() end
+
+return socket

@@ -1,9 +1,11 @@
 ---@meta
 
+---
 ---`lzlib`, by Tiago Dionizio, http://luaforge.net/projects/lzlib/.
 
 zlib = {}
 
+---
 ------------------------------------------------------------------------
 ---Undocumented functions listed in alphabetical order
 ---
@@ -54,3 +56,5 @@ function zlib.decompressobj() end
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 ---
 function zlib.version() end
+
+return zlib
