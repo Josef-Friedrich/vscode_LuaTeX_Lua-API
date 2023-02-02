@@ -1,7 +1,7 @@
 {
   "name": "luatex",
   "displayName": "LuaTeX",
-  "description": "Extension pack for the LuaTeX development.",
+  "description": "Extension for the LuaTeX development.",
   "version": "0.5.0",
   "engines": {
     "vscode": "^1.74.0"
