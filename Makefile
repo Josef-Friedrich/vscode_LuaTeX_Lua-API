@@ -1,5 +1,7 @@
 sync_library:
-	rsync -av --delete $(HOME)/repos/tex/lua-api/library/ library/
+	git submodule update --remote --merge
+	rsync -av --delete resources/api/library/ library/
+	./resources/remove-navigation-table.py
 
 install: install_vsce install_yo install_generator_code
 

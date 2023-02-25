@@ -144,6 +144,247 @@ function callback.list() end
 function callback.find(callback_name) end
 
 ---
+---Your callback function should have the following conventions:
+---
+---```
+---<string> actual_name =
+---    function (<number> id_number, <string> asked_name)
+---```
+---
+---Arguments:
+---
+---\sym{id_number}
+---
+---This number is zero for the log or `input` files. For *TeX*'s `read`
+---or `write` the number is incremented by one, so `\read0` becomes 1.
+---
+---\sym{asked_name}
+---
+---This is the user-supplied filename, as found by `input`, `openin`
+---or `openout`.
+---
+---Return value:
+---
+---\sym{actual_name}
+---
+---This is the filename used. For the very first file that is read in by *TeX*, you
+---have to make sure you return an `actual_name` that has an extension and
+---that is suitable for use as `jobname`. If you don't, you will have to
+---manually fix the name of the log file and output file after *LuaTeX* is finished,
+---and an eventual format filename will become mangled. That is because these file
+---names depend on the jobname.
+---
+---You have to return `nil` if the file cannot be found.
+---
+
+---
+---Your callback function should have the following conventions:
+---
+---```
+---<string> actual_name =
+---    function (<string> asked_name)
+---```
+---
+---The `asked_name` is an \OTF\ or \TFM\ font metrics file.
+---
+---Return `nil` if the file cannot be found.
+---
+
+---
+---Your callback function should have the following conventions:
+---
+---```
+---<string> actual_name =
+---    function (<string> asked_name)
+---```
+---
+---The `asked_name` is the *PDF* or \DVI\ file for writing.
+
+---
+---Your callback function should have the following conventions:
+---
+---```
+---<string> actual_name =
+---    function (<string> asked_name)
+---```
+---
+---The `asked_name` is a format file for reading (the format file for writing
+---is always opened in the current directory).
+---
+
+---
+---Like `find_font_file`, but for virtual fonts. This applies to both \ALEPH's
+---\OVF\ files and traditional Knuthian \VF\ files.
+
+---
+---Like `find_font_file`, but for map files.
+
+---
+---Like `find_font_file`, but for enc files.
+
+---
+---Like `find_font_file`, but for pk bitmap files. This callback takes two
+---arguments: `name` and `dpi`. In your callback you can decide to
+---look for:
+---
+---```
+---<base res>dpi/<fontname>.<actual res>pk
+---```
+---
+---but other strategies are possible. It is up to you to find a “reasonable”
+---bitmap file to go with that specification.
+---
+
+---
+---Like `find_font_file`, but for embedded files (`\pdfobj file '...'`).
+
+---
+---Like `find_font_file`, but for *OpenType* font files.
+
+---
+---Your callback function should have the following conventions:
+---
+---```
+---<string> actual_name =
+---    function (<string> asked_name)
+---```
+---
+---The `asked_name` is a font file. This callback is called while *LuaTeX* is
+---building its internal list of needed font files, so the actual timing may
+---surprise you. Your return value is later fed back into the matching `read_file` callback.
+---
+---Strangely enough, `find_type1_file` is also used for *OpenType* (\OTF)
+---fonts.
+---
+
+---
+---Your callback function should have the following conventions:
+---
+---```
+---<string> actual_name =
+---    function (<string> asked_name)
+---```
+---
+---The `asked_name` is a font file. This callback is called while *LuaTeX* is
+---building its internal list of needed font files, so the actual timing may
+---surprise you. Your return value is later fed back into the matching `read_file` callback.
+---
+---Strangely enough, `find_type1_file` is also used for *OpenType* (\OTF)
+---fonts.
+---
+
+---
+---Your callback function should have the following conventions:
+---
+---```
+---<string> actual_name =
+---    function (<string> asked_name)
+---```
+---
+---The `asked_name` is an image file. Your return value is used to open a file
+---from the hard disk, so make sure you return something that is considered the name
+---of a valid file by your operating system.
+---
+
+---
+---Your callback function should have the following conventions:
+---
+---```
+---<table> env =
+---    function (<string> file_name)
+---```
+---
+---Argument:
+---
+---\sym{file_name}
+---
+---The filename returned by a previous `find_read_file` or the return value of
+---`kpse.find_file()` if there was no such callback defined.
+---
+---Return value:
+---
+---\sym{env}
+---
+---This is a table containing at least one required and one optional callback
+---function for this file. The required field is `reader` and the associated
+---function will be called once for each new line to be read, the optional one is
+---`close` that will be called once when *LuaTeX* is done with the file.
+---
+---*LuaTeX* never looks at the rest of the table, so you can use it to store your
+---private per-file data. Both the callback functions will receive the table as
+---their only argument.
+---
+---# `reader`
+---
+---*LuaTeX* will run this function whenever it needs a new input line from the file.
+---
+---```
+---function(<table> env)
+---    return <string> line
+---end
+---```
+---
+---Your function should return either a string or `nil`. The value `nil`
+---signals that the end of file has occurred, and will make *TeX* call the optional
+---`close` function next.
+---
+---# `close`
+---
+---*LuaTeX* will run this optional function when it decides to close the file.
+---
+---```
+---function(<table> env)
+---end
+---```
+---
+---Your function should not return any value.
+---
+---# General file readers
+---
+---There is a set of callbacks for the loading of binary data files. These all use
+---the same interface:
+---
+---```
+---function(<string> name)
+---    return <boolean> success, <string> data, <number> data_size
+---end
+---```
+---
+---The `name` will normally be a full path name as it is returned by either
+---one of the file discovery callbacks or the internal version of `kpse.find_file()`.
+---
+---\sym{success}
+---
+---Return `false` when a fatal error occurred (e.g.\ when the file cannot be
+---found, after all).
+---
+---\sym{data}
+---
+---The bytes comprising the file.
+---
+---\sym{data_size}
+---
+---The length of the `data`, in bytes.
+---
+---Return an empty string and zero if the file was found but there was a
+---reading problem.
+---
+---The list of functions is:
+---
+--- function   usage
+---
+--- `read_font_file`      ofm or tfm files
+--- `read_vf_file`        virtual fonts
+--- `read_map_file`       map files
+--- `read_enc_file`       encoding files
+--- `read_pk_file`        pk bitmap files
+--- `read_data_file`      embedded files (as is possible with *PDF* objects)
+--- `read_truetype_file`  *TrueType* font files
+--- `read_type1_file`     \TYPEONE\ font files
+--- `read_opentype_file`  *OpenType* font files
+---
+
+---
 ---This callback allows you to change the contents of the line input buffer just
 ---before *LuaTeX* actually starts looking at it.
 ---
@@ -382,3 +623,323 @@ function callback.find(callback_name) end
 ---insertion pass.
 ---@alias HyphenateFilter fun(head: Node, tail: Node): false|nil
 
+---
+---```
+---function(<node> head, <node> tail)
+---end
+---```
+---
+---No return values. This callback has to apply ligaturing to the node list it
+---receives.
+---
+---You don't have to worry about return values because the `head` node that is
+---passed on to the callback is guaranteed not to be a glyph_node (if need be, a
+---temporary node will be prepended), and therefore it cannot be affected by the
+---mutations that take place. After the callback, the internal value of the “tail of the list” will be recalculated.
+---
+---The `next` of `head` is guaranteed to be non-nil.
+---
+---The `next` of `tail` is guaranteed to be nil, and therefore the
+---second callback argument can often be ignored. It is provided for orthogonality,
+---and because it can sometimes be handy when special processing has to take place.
+---
+---Setting this callback to `false` will prevent the internal ligature
+---creation pass.
+---
+---You must not ruin the node list. For instance, the head normally is a local par node,
+---and the tail a glue. Messing too much can push *LuaTeX* into panic mode.
+---
+
+---
+---```
+---function(<node> head, <node> tail)
+---end
+---```
+---
+---No return values. This callback has to apply kerning between the nodes in the
+---node list it receives. See `ligaturing` for calling conventions.
+---
+---Setting this callback to `false` will prevent the internal kern insertion
+---pass.
+---
+---You must not ruin the node list. For instance, the head normally is a local par node,
+---and the tail a glue. Messing too much can push *LuaTeX* into panic mode.
+---
+
+---
+---Each paragraph starts with a local par node that keeps track of for instance
+---the direction. You can hook a callback into the creator:
+---
+---```
+---function(<node> local_par, <string> location)
+---end
+---```
+---
+---There is no return value and you should make sure that the node stays valid
+---as otherwise *TeX* can get confused.
+
+---
+---This callback replaces *LuaTeX*'s math list to node list conversion algorithm.
+---
+---```
+---function(<node> head, <string> display_type, <boolean> need_penalties)
+---    return <node> newhead
+---end
+---```
+---
+---The returned node is the head of the list that will be added to the vertical or
+---horizontal list, the string argument is either “text” or “display”
+---depending on the current math mode, the boolean argument is `true` if
+---penalties have to be inserted in this list, `false` otherwise.
+---
+---Setting this callback to `false` is bad, it will almost certainly result in
+---an endless loop.
+
+---
+---```
+---function()
+---end
+---```
+---
+---This function is called just before dumping to a format file starts. It does not
+---replace any code and there are neither arguments nor return values.
+---
+
+---
+---```
+---function()
+---end
+---```
+---
+---This callback replaces the code that prints *LuaTeX*'s banner. Note that for
+---successful use, this callback has to be set in the *Lua* initialization script,
+---otherwise it will be seen only after the run has already started.
+---
+
+---
+---```
+---function()
+---end
+---```
+---
+---This callback replaces the code that prints *LuaTeX*'s statistics and “output written to” messages. The engine can still do housekeeping and therefore
+---you should not rely on this hook for postprocessing the *PDF* or log file.
+---
+
+---
+---```
+---function()
+---end
+---```
+---
+---Replaces the code that prints the `[` and the page number at the begin of
+---`shipout`. This callback will also override the printing of box information
+---that normally takes place when `tracingoutput` is positive.
+---
+
+---
+---```
+---function()
+---end
+---```
+---
+---Replaces the code that prints the `]` at the end of `shipout`.
+---
+
+---
+---```
+---function()
+---end
+---```
+---
+---This callback is run from inside the *TeX* error function, and the idea is to
+---allow you to do some extra reporting on top of what *TeX* already does (none of
+---the normal actions are removed). You may find some of the values in the `status` table useful. This callback does not replace any internal code.
+---
+
+---
+---```
+---function()
+---end
+---```
+---
+---This callback replaces the code that prints the error message. The usual
+---interaction after the message is not affected.
+
+---
+---```
+---function()
+---end
+---```
+---
+---This callback replaces the code that prints the extra *Lua* error message.
+---
+
+---
+---```
+---function(category,filename)
+---end
+---```
+---
+---This callback replaces the code that prints *LuaTeX*'s when a file is opened like
+---`(filename` for regular files. The category is a number:
+---
+--- value   meaning
+---
+--- 1  a normal data file, like a *TeX* source
+--- 2  a font map coupling font names to resources
+--- 3  an image file (`png`, `pdf`, etc)
+--- 4  an embedded font subset
+--- 5  a fully embedded font
+---
+
+---
+---```
+---function(category)
+---end
+---```
+---
+---This callback replaces the code that prints *LuaTeX*'s when a file is closed like
+---the `)` for regular files.
+
+---
+---```
+---function(filename,linenumber)
+---end
+---```
+---
+---This callback replaces the call to an external editor when “E” is pressed
+---in reply to an error message. Processing will end immediately after the callback
+---returns control to the main program.
+
+---
+---This callback can be used to wrap up alternative synctex methods. It kicks in
+---after the normal synctex finalizer (that happens to remove the synctex files
+---after a run when native synctex is not enabled).
+
+---
+---This callback is called after the *PDF* and log files are closed. Use it at your own
+---risk.
+
+---
+---```
+---function()
+---end
+---```
+---
+---This callback is called when all document pages are already written to the *PDF*
+---file and *LuaTeX* is about to finalize the output document structure. Its
+---intended use is final update of *PDF* dictionaries such as `/Catalog` or
+---`/Info`. The callback does not replace any code. There are neither
+---arguments nor return values.
+---
+
+---
+---```
+---function(shippingout)
+---end
+---```
+---
+---This callback is called after the *PDF* page stream has been assembled and before
+---the page object gets finalized.
+---
+
+---
+---This is one that experts can use to juggle the page tree, a data structure
+---that determines the order in a *PDF* file:
+---
+---```
+---function(pagenumber)
+---  return pagenumber
+---end
+---```
+---
+---Say that we have 12 pages, then we can do this:
+---
+---```
+---callback.register("page_order_index",function(page)
+---        if page ==  1 then return 12
+---    elseif page ==  2 then return 11
+---    elseif page == 11 then return  2
+---    elseif page == 12 then return  1
+---    else                   return page
+---    end
+---end)
+---```
+---
+---This will swap the first two and last two pages. You need to know the number of
+---pages which is a side effect of the implementation. When you mess things up
+---\unknown\ don't complain.
+
+---
+---When a page from a *PDF* file is embedded its page stream as well as related
+---objects are copied to the target file. However, it can be that the page stream
+---has operators that assume additional resources, for instance marked text. You can
+---decide to filter that for which *LuaTeX* provides a callback. Here is a simple
+---demonstration of use:
+---
+---```
+---pdf.setrecompress(1)
+---
+---callback.register("process_pdf_image_content",function(s)
+---    print(s)
+---    return s
+---end)
+---```
+---
+---You need to explicitly enable recompression because otherwise the content stream
+---gets just passed on in its original compressed form.
+
+---
+---```
+---function(<string> name, <number> size, <number> id)
+---    return <table> font | <number> id
+---end
+---```
+---
+---The string `name` is the filename part of the font specification, as given
+---by the user.
+---
+---The number `size` is a bit special:
+---
+---* If it is positive, it specifies an “at size” in scaled points.
+---
+---* If it is negative, its absolute value represents a “scaled” setting
+---    relative to the designsize of the font.
+---
+---The `id` is the internal number assigned to the font.
+---
+---The internal structure of the `font` table that is to be returned is
+---explained in \in {chapter} [fonts]. That table is saved internally, so you can
+---put extra fields in the table for your later *Lua* code to use. In alternative,
+---`retval` can be a previously defined fontid. This is useful if a previous
+---definition can be reused instead of creating a whole new font structure.
+---
+---Setting this callback to `false` is pointless as it will prevent font
+---loading completely but will nevertheless generate errors.
+---
+
+---
+---The `glyph_not_found` callback, when set, kicks in when the backend cannot
+---insert a glyph. When no callback is defined a message is written to the log.
+---
+---```
+---function(<number> id, <number> char)
+---    -- do something with font id and char code
+---end
+---```
+
+---
+---The `glyph_info` callback can be set to report a useful representation of a
+---glyph.
+---
+---```
+---function(<node> g)
+---    -- return a string or nil
+---end
+---```
+---
+---When `nil` is returned the character code is printed, otherwise the
+---returned string is used. By default the *UTF-8* representation is shown which is
+---not always that useful, especially when there is no real representation. Keep in
+---mind that setting this callback can change the log in an incompatible way.
