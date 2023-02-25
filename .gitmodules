@@ -1,0 +1,3 @@
+[submodule "resources/api"]
+	path = resources/api
+	url = git@github.com:Josef-Friedrich/LuaTeX_Lua-API.git
