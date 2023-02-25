@@ -12,7 +12,11 @@ def patch_file(file_name: str):
     with open(file_name) as src:
         content = src.read()
 
-    content = re.sub(r"\n_N\..*\n", r"\n", content)
+    # Remove the navigation table
+    content = re.sub(r"\n_N\..+(?=\n)", r"\n", content)
+
+    # Remove duplicate empty lines.
+    content = re.sub("\n\n+", "\n\n", content)
 
     with open(file_name, "w") as dest:
         dest.write(content)

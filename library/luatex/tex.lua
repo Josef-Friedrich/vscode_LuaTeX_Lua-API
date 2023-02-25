@@ -5,8 +5,6 @@ _N = {}
 
 tex = {}
 
-_N._2_1_integer_parameters_read_write = 190
-
 ---
 ---`\adjdemerits`: Penalty for adjacent visually incompatible lines. Plain TEX default: 10 000.
 ---
@@ -616,8 +614,6 @@ tex.widowpenalty = 0
 ---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 tex.year = 0
 
-_N._2_1_integer_parameters_read_only = 191
-
 ---
 ---`\deadcycles`: Counter that keeps track of how many times the output routine has been called without a `\shipout` taking place.
 ---
@@ -682,8 +678,6 @@ tex.prevgraf = 0
 ---
 ---@type integer # A read-only integer parameter that returns a Lua number.
 tex.spacefactor = 0
-
-_N._2_2_dimension_parameters_read_write = 191
 
 ---
 ---`\boxmaxdepth`: Maximum allowed depth of boxes. Plain TEX default: \maxdimen.
@@ -949,8 +943,6 @@ tex.prevgraf = 0
 ---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 tex.spacefactor = 0
 
-_N._2_2_dimension_parameters_read_only = 191
-
 ---
 ---`\pagedepth` Depth of the current page.
 ---
@@ -1039,8 +1031,6 @@ tex.pagestretch = 0
 ---@type integer
 tex.pagetotal = 0
 
-_N._2_3_direction_parameters = 192
-
 ---
 ---@type string A read-only direction parameter that returns a *Lua* string.
 tex.bodydir = ''
@@ -1060,8 +1050,6 @@ tex.pardir = ''
 ---
 ---@type string A read-only direction parameter that returns a *Lua* string.
 tex.textdir = ''
-
-_N._2_4_glue_parameters = 193
 
 ---
 ---`\abovedisplayshortskip` Glue abovea display if the line preceding the display was short. Plain TEX defaults: 0pt plus 3pt
@@ -1213,8 +1201,6 @@ tex.topskip = nil
 ---@type GlueSpecNode # A readable and writeable glue parameter that accepts and returns a userdata object which in turn represents a `glue_spec` node.
 tex.xspaceskip = nil
 
-_N._2_5_muglue_parameters = 193
-
 ---
 ---`\medmuskip` Medium amount of mu glue.
 ---
@@ -1244,8 +1230,6 @@ tex.thickmuskip = ''
 ---
 ---@type string # A read-only `muglue` parameter that returns a *Lua* string.
 tex.thinmuskip = ''
-
-_N._2_6_tokenlist_parameters = 193
 
 ---
 ---A `tokenlist` parameters that accepts and returns a *Lua* string.
@@ -1347,8 +1331,6 @@ tex.everyvbox = ''
 ---@type string
 tex.output = ''
 
-_N._3_convert_commands = 193
-
 ---
 ---@type string # for example `2.2`.
 tex.eTeXVersion = ''
@@ -1372,8 +1354,6 @@ tex.luatexbanner = ''
 ---
 ---@type string # for example `1`.
 tex.luatexrevision = ''
-
-_N._3_last_item_commands = 194
 
 ---
 ---All “last item” commands are read-only and return a number.
@@ -1454,8 +1434,6 @@ tex.currentiftype = 0
 ---All “last item” commands are read-only and return a number.
 ---@type integer
 tex.currentifbranch = 0
-
-_N._5_registers = 194
 
 ---
 ---see `LuaTeX` manual: 10.3.5 Accessing registers: `set*`, `get*` and `is*`
@@ -1607,10 +1585,6 @@ function tex.settoks() end
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.gettoks() end
-
-_N._14_print = 201
-
-_N._14_1_print = 201
 
 ---
 ---The `tex` table also contains the three print functions that are the major
@@ -1789,10 +1763,6 @@ function tex.write(...) end
 ---@param t table
 function tex.write(t) end
 
-_N._15 = 203
-
-_N._15_1 = 203
-
 ---
 ---Rounds *Lua* number `o`, and returns a number that is in the range of a
 ---valid *TeX* register value. If the number starts out of range, it generates a
@@ -1802,8 +1772,6 @@ _N._15_1 = 203
 ---
 ---@return integer
 function tex.round(o) end
-
-_N._15_2 = 203
 
 ---
 ---Multiplies the *Lua* numbers `o` and `delta`, and returns a rounded
@@ -1829,8 +1797,6 @@ function tex.scale(o, delta) end
 ---@return table
 function tex.scale(o, delta) end
 
-_N._15_3 = 204
-
 ---
 ---@param n integer
 ---
@@ -1842,8 +1808,6 @@ function tex.number(n) end
 ---
 ---@return string
 function tex.romannumeral(n) end
-
-_N._15_4 = 204
 
 ---
 ---returns the `csname` string that matches a
@@ -1863,8 +1827,6 @@ function tex.fontidentifier(font_id) end
 ---
 ---@return string # for example `cmr10`.
 function tex.fontname(font_id) end
-
-_N._15_5_sp = 204
 
 ---
 ---Converts the number `o` that represents an explicit
@@ -1911,11 +1873,7 @@ function tex.sp(o) end
 ---@return integer # The dimension in the scaled points format.
 function tex.sp(s) end
 
-_N._15_6 = 204
-
 -- Removed?
-
-_N._15_7_error_show_context = 204
 
 ---
 ---This creates an error somewhat like the combination of `\errhelp` and
@@ -1933,8 +1891,6 @@ _N._15_7_error_show_context = 204
 ---@param s string # An error message like `\errmessage`.
 ---@param help? table # The array part of the `help` table has to contain strings, one for each line of error help.
 function tex.error(s, help) end
-
-_N._15_8_run_finish = 205
 
 ---
 ---Start the interpretation.
@@ -1959,8 +1915,6 @@ function tex.run() end
 ---
 ---* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1464](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-tex.tex#L1464)
 function tex.finish() end
-
-_N._15_9_runtoks = 205
 
 ---
 ---Because of the fact that *TeX* is in a complex dance of expanding, dealing with
@@ -2015,8 +1969,6 @@ function tex.runtoks(token_register, force, grouped) end
 ---@param func function
 function tex.runtoks(func) end
 
-_N._15_10_forcehmode = 205
-
 ---
 ---An example of a (possible error triggering) complication is that *TeX* expects to
 ---be in some state, say horizontal mode, and you have to make sure it is when you
@@ -2025,8 +1977,6 @@ _N._15_10_forcehmode = 205
 ---can be situations that you need to run `forcehmode`. There is no recipe for
 ---this and intercepting possible cases would weaken *LuaTeX*'s flexibility.
 function tex.forcehmode() end
-
-_N._15_11_hashtokens = 205
 
 ---
 ---Return a list of names.
@@ -2046,8 +1996,6 @@ _N._15_11_hashtokens = 205
 ---
 function tex.hashtokens() end
 
-_N._15_12_definefont = 206
-
 ---
 ---Associates `csname` with the internal font number `fontid`. The
 ---definition is global if (and only if) `global` is specified and true (the
@@ -2066,10 +2014,6 @@ function tex.definefont(csname, fontid) end
 ---@param csname string
 ---@param fontid integer
 function tex.definefont(global, csname, fontid) end
-
-_N._16_primitives = 206
-
-_N._16_1_enableprimitives = 206
 
 ---
 ---This function accepts a prefix string and an array of primitive names. For each
@@ -2119,15 +2063,11 @@ _N._16_1_enableprimitives = 206
 ---@param primitive_names table
 function tex.enableprimitives(prefix, primitive_names) end
 
-_N._16_2_extraprimitives = 205
-
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.extraprimitives() end
-
-_N._16_3_primitives = 210
 
 ---
 ---Warning! Undocumented code!<p>
@@ -2135,24 +2075,16 @@ _N._16_3_primitives = 210
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.primitives() end
 
-_N._17_core_functionality_interfaces = 210
-
-_N._17_1_badness = 210
-
 ---
 ---This helper function is useful during linebreak calculations. `t` and `s` are scaled values; the function returns the badness for when total `t`
 ---is supposed to be made from amounts that sum to `s`. The returned number is
 ---a reasonable approximation of `100(t/s)^3`.
 function tex.badness() end
 
-_N._17_2_resetparagraph = 210
-
 ---
 ---This function resets the parameters that *TeX* normally resets when a new paragraph
 ---is seen.
 function tex.resetparagraph() end
-
-_N._17_3_linebreak = 210
 
 ---
 ---@class LinebreakParameters
@@ -2242,8 +2174,6 @@ function tex.getpagestate() end
 ---debugging and the (relative state) numbers can change with the implementation.
 function tex.getlocallevel() end
 
-_N._18_randomizers = 212
-
 ---
 ---For practical reasons *LuaTeX* has its own random number generator. The original
 ---*Lua* random function is available as `tex.lua_math_random`.
@@ -2278,8 +2208,6 @@ function tex.uniform_rand() end
 ---
 ---will give a random number between zero and one.
 function tex.uniformdeviate() end
-
-_N._19_synctex = 212
 
 ---
 ---`0` is the default and used normal synctex logic, `1` uses the values set by the next helpers while `2` also sets these for glyph nodes; `3` sets glyphs and glue and `4` sets only glyphs

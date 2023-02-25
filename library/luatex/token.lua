@@ -21,7 +21,6 @@ token = {}
 
 ---
 ---10.6 The token library
-_N._1_scanner = 215
 
 ---
 ---Scan and gobble a given keyword.
@@ -316,8 +315,6 @@ function token.scan_csname() end
 ---picks up a box specification and returns a `[h|v]list` node
 function token.scan_list() end
 
-_N._1_picking_one_token = 218
-
 ---
 ---Scan and gobble the next token.
 ---
@@ -349,8 +346,6 @@ function token.scan_token() end
 ---
 ---* Corresponding C source code: [lnewtokenlib.c#L729-L734](https://github.com/TeX-Live/luatex/blob/16f2f7c88eeef85ce988cbe595481fa714f5dfc9/source/texk/web2c/luatexdir/lua/lnewtokenlib.c#L729-L734)
 function token.expand() end
-
-_N._3_creating = 218
 
 ---
 ---* Corresponding C source code: [luatoken.c#L191-L349](https://github.com/TeX-Live/luatex/blob/16f2f7c88eeef85ce988cbe595481fa714f5dfc9/source/texk/web2c/luatexdir/lua/luatoken.c#L191-L349)
@@ -729,8 +724,6 @@ function token.is_defined(cs) end
 ---@return integer
 function token.biggest_char() end
 
-_N._4_macros = 219
-
 ---
 ---__Reference:__
 ---
@@ -779,8 +772,6 @@ function token.set_char(csname, number, global) end
 ---@param id integer
 ---@param ... 'global'|'protected'
 function token.set_lua(name, id, ...) end
-
-_N._5_pushing_back = 220
 
 ---
 ---There is a (for now) experimental putter.

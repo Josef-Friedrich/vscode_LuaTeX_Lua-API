@@ -1,9 +1,6 @@
 ---@meta
 img = {}
 
-_N._11_1_The_img_library = 0
-_N._11_1_1_new = 0
-
 ---
 ---@class Image
 
@@ -12,8 +9,6 @@ _N._11_1_1_new = 0
 ---
 ---@return Image
 function img.new(image_spec) end
-
-_N._11_1_2_fields = 0
 
 ---
 ---@return ImageSpec keys
@@ -52,8 +47,6 @@ function img.fields() end
 ---@field nolength boolean # don't add length key nor compress for streams
 ---@field nosize boolean # don't add size fields for streams
 
-_N._11_1_3_scan = 0
-
 ---
 ---When you say `img.scan(a)` for a new image, the file is scanned, and
 ---variables such as `xsize`, `ysize`, image `type`, number of
@@ -80,8 +73,6 @@ _N._11_1_3_scan = 0
 ---@return Image
 function img.scan(image) end
 
-_N._11_1_4_copy = 0
-
 ---
 ---If you say `a = b`, then both variables point to the same `<image>`
 ---object. if you want to write out an image with different sizes, you can do
@@ -95,8 +86,6 @@ _N._11_1_4_copy = 0
 ---
 ---@return Image
 function img.copy(image) end
-
-_N._11_1_5_write_immediatewrite_immediatewriteobject = 0
 
 ---
 ---By `img.write(a)` a *PDF* object number is allocated, and a rule node of
@@ -151,8 +140,6 @@ function img.immediatewrite(image) end
 ---@return Image
 function img.immediatewriteobject(image, objnum) end
 
-_N._11_1_6_node = 0
-
 ---
 ---This function allocates a *PDF* object number and returns a whatsit node of
 ---subtype `pdf_refximage`, filled with the image parameters `width`,
@@ -174,8 +161,6 @@ _N._11_1_6_node = 0
 ---@return Node
 function img.node(image) end
 
-_N._11_1_7_types = 0
-
 ---
 ---This function returns a list with the supported image file type names, currently
 ---these are `pdf`, `png`, `jpg`, `jp2` (JPEG 2000), and
@@ -187,8 +172,6 @@ _N._11_1_7_types = 0
 ---
 ---@return table
 function img.types() end
-
-_N._11_1_8_boxes = 0
 
 ---
 ---This function returns a list with the supported *PDF* page box names, currently
