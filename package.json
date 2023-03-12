@@ -69,7 +69,9 @@
     }
   },
   "activationEvents": [
-    "*"
+    "onLanguage:lua",
+    "onLanguage:tex",
+    "onLanguage:latex"
   ],
   "license": "GPL-2.0-only",
   "snippets": [
