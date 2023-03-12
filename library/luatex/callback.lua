@@ -17,7 +17,7 @@ _N = {}
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L17-L26](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-callbacks.tex#L17-L26)
+---* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L17-L26](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L17-L26)
 ---
 callback = {}
 
@@ -27,7 +27,7 @@ callback = {}
 ---|"append_to_vlist_filter"
 ---|"build_page_insert"
 ---|"buildpage_filter"
----|"call_edit
+---|"call_edit"
 ---|"contribute_filter"
 ---|"define_font"
 ---|"find_cidmap_file"
@@ -48,15 +48,15 @@ callback = {}
 ---|"finish_pdffile"
 ---|"finish_pdfpage"
 ---|"hpack_quality"
----|"hyphenate
+---|"hyphenate"
 ---|"input_level_string"
 ---|"insert_local_par"
----|"kerning
----|"ligaturing
+---|"kerning"
+---|"ligaturing"
 ---|"linebreak_filter"
 ---|"make_extensible"
 ---|"mlist_to_hlist"
----|"new_graf
+---|"new_graf"
 ---|"open_read_file"
 ---|"page_order_index"
 ---|"post_linebreak_filter"
@@ -83,12 +83,12 @@ callback = {}
 ---|"show_error_message"
 ---|"show_lua_error_hook"
 ---|"show_warning_message"
----|"start_file
+---|"start_file"
 ---|"start_page_number"
----|"start_run
----|"stop_file
+---|"start_run"
+---|"stop_file"
 ---|"stop_page_number"
----|"stop_run
+---|"stop_run"
 ---|"vpack_filter"
 ---|"vpack_quality"
 ---|"wrapup_run
@@ -111,7 +111,7 @@ callback = {}
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L28-L54](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-callbacks.tex#L28-L54)
+---* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L28-L54](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L28-L54)
 ---
 ---@param callback_name CallbackName
 ---@param func function|nil|false
@@ -126,7 +126,7 @@ function callback.register(callback_name, func) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L56-L62](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-callbacks.tex#L56-L62)
+---* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L56-L62](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L56-L62)
 ---
 ---@return table info
 function callback.list() end
@@ -136,7 +136,7 @@ function callback.list() end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L64-L68](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-callbacks.tex#L64-L68)
+---* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L64-L68](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L64-L68)
 ---
 ---@param callback_name CallbackName
 ---

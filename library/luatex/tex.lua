@@ -1436,10 +1436,27 @@ tex.currentiftype = 0
 tex.currentifbranch = 0
 
 ---
+---the attribute registers accept and return Lua numbers.
 ---see `LuaTeX` manual: 10.3.5 Accessing registers: `set*`, `get*` and `is*`
 ---
 ---@type table
 tex.attribute = {}
+
+---
+---* Corresponding C source code: [ltexlib.c#L1087-L1102](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1087-L1102)
+---
+function tex.setattribute() end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1104-L1114](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1104-L1114)
+---
+function tex.getattribute() end
+
+---
+---Warning! Undocumented code!<p>
+---TODO: Please contribute
+---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+function tex.isattribute() end
 
 ---
 ---see `LuaTeX` manual: 10.3.5 Accessing registers: `set*`, `get*` and `is*`
@@ -1489,18 +1506,6 @@ tex.skip = {}
 tex.toks = {}
 
 ---
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setattribute() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getattribute() end
 
 ---
 ---Warning! Undocumented code!<p>
@@ -1610,7 +1615,7 @@ function tex.gettoks() end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1172-L1196](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-tex.tex#L1172-L1196)
+---* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1172-L1196](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1172-L1196)
 ---
 ---@param ... string # Each string argument is treated by *TeX* as a separate input line.
 function tex.print(...) end
@@ -1623,7 +1628,7 @@ function tex.print(...) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1176-L1182](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-tex.tex#L1176-L1182)
+---* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1176-L1182](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1176-L1182)
 ---
 ---@param n integer If `n` is `-1`, the currently active catcode regime is used. If `n` is `-2`, the resulting catcodes are the result of `the` `toks`: all category codes are 12 (other) except for the space character, that has category code 10 (space). Otherwise, if `n` is not a valid catcode table, then it is ignored, and the currently active catcode regime is used instead.
 ---@param ... string
@@ -1638,7 +1643,7 @@ function tex.print(n, ...) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1222-L1224](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-tex.tex#L1222-L1224)
+---* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1222-L1224](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1222-L1224)
 ---
 ---@param t table
 function tex.print(t) end
@@ -1813,7 +1818,7 @@ function tex.romannumeral(n) end
 ---returns the `csname` string that matches a
 ---font id number (if there is one).
 ---
----* Corresponding C source code: [L2047-L2050](https://github.com/TeX-Live/luatex/blob/16f2f7c88eeef85ce988cbe595481fa714f5dfc9/source/texk/web2c/luatexdir/lua/ltexlib.c#L2047-L2050)
+---* Corresponding C source code: [L2047-L2050](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2047-L2050)
 ---@param font_id integer
 ---
 ---@return string # for example `\tenrm`.
@@ -1822,7 +1827,7 @@ function tex.fontidentifier(font_id) end
 ---
 ---The first one returns the name only, the second one reports the size too.
 ---
----* Corresponding C source code: [L2042-L2045](https://github.com/TeX-Live/luatex/blob/16f2f7c88eeef85ce988cbe595481fa714f5dfc9/source/texk/web2c/luatexdir/lua/ltexlib.c#L2042-L2045)
+---* Corresponding C source code: [L2042-L2045](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2042-L2045)
 ---@param font_id integer
 ---
 ---@return string # for example `cmr10`.
@@ -1836,7 +1841,7 @@ function tex.fontname(font_id) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1395-L1396](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-tex.tex#L1395-L1396)
+---* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1395-L1396](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1395-L1396)
 ---
 ---@param o integer
 ---
@@ -1866,7 +1871,7 @@ function tex.sp(o) end
 ---__Reference__:
 ---
 ---* `LuaTeX` manual: 10.3.15.5 `sp` page 204
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1386-L1413](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-tex.tex#L1386-L1413)
+---* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1386-L1413](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1386-L1413)
 ---
 ---@param s string # A string to convert into scaled points.
 ---
@@ -1886,7 +1891,7 @@ function tex.sp(s) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1438-L1457](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-tex.tex#L1438-L1457)
+---* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1438-L1457](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1438-L1457)
 ---
 ---@param s string # An error message like `\errmessage`.
 ---@param help? table # The array part of the `help` table has to contain strings, one for each line of error help.
@@ -1905,7 +1910,7 @@ function tex.error(s, help) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [L1459-L1470](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-tex.tex#L1459-L1470)
+---* Source code of the `LuaTeX` manual: [L1459-L1470](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1459-L1470)
 function tex.run() end
 
 ---
@@ -1913,7 +1918,7 @@ function tex.run() end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1464](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-tex.tex#L1464)
+---* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1464](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1464)
 function tex.finish() end
 
 ---
@@ -1957,8 +1962,8 @@ function tex.finish() end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1472-L1508](https://github.com/TeX-Live/luatex/blob/3f14129c06359e1a06dd2f305c8334a2964149d3/manual/luatex-tex.tex#L1472-L1508)
----* Corresponding C source code: [ltexlib.c#L3464-L3536](https://github.com/TeX-Live/luatex/blob/16f2f7c88eeef85ce988cbe595481fa714f5dfc9/source/texk/web2c/luatexdir/lua/ltexlib.c#L3464-L3536)
+---* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1472-L1508](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1472-L1508)
+---* Corresponding C source code: [ltexlib.c#L3464-L3536](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3464-L3536)
 ---
 ---@param token_register integer
 ---@param force? boolean # force the local main loop
@@ -1992,7 +1997,7 @@ function tex.forcehmode() end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [ltexlib.c#L2662-L2690](https://github.com/TeX-Live/luatex/blob/16f2f7c88eeef85ce988cbe595481fa714f5dfc9/source/texk/web2c/luatexdir/lua/ltexlib.c#L2662-L2690)
+---* Corresponding C source code: [ltexlib.c#L2662-L2690](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2662-L2690)
 ---
 function tex.hashtokens() end
 
@@ -2366,12 +2371,6 @@ function tex.getsfcode() end
 ---TODO: Please contribute
 ---https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
 function tex.getuccode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.isattribute() end
 
 ---
 ---Warning! Undocumented code!<p>
