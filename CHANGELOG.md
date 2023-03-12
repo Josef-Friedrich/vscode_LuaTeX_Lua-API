@@ -9,6 +9,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Changed
 
 - Sync with [91756a06](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/commit/91756a06f7707164416572998c91749119ecec47)
+- Restrict the `activationEvents`: Do not activate on `*`, but only on the events `onLanguage:lua`, `onLanguage:tex`, `onLanguage:luatex`.
 
 ## [v0.6.0] - 2023-02-25
 

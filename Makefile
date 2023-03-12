@@ -1,9 +1,11 @@
+all: sync_library install build package
+
 sync_library:
 	git submodule update --remote --merge
 	rsync -av --delete resources/api/library/ library/
 	./resources/remove-navigation-table.py
 
-install: install_vsce install_yo install_generator_code
+install: install_npm install_vsce install_yo install_generator_code
 
 install_npm:
 	npm install
