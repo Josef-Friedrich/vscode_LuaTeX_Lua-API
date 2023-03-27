@@ -5,15 +5,26 @@ img = {}
 ---@class Image
 
 ---
+---* Corresponding C source code: [limglib.c#L75-L102](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/limglib.c#L75-L102)
+---
 ---@param image_spec? table
 ---
 ---@return Image
 function img.new(image_spec) end
 
 ---
+---* Corresponding C source code: [limglib.c#L301-L304](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/limglib.c#L301-L304)
 ---@return ImageSpec keys
 function img.fields() end
 
+---
+---Alias for img.fields()
+---
+---* Corresponding C source code: [limglib.c#L301-L304](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/limglib.c#L301-L304)
+function img.keys() end
+
+---
+---* Corresponding C source code: [luatex-api.h#L506-L532](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/luatex-api.h#L506-L532)
 ---
 ---@class ImageSpec
 ---@field attr string # the image attributes for *LuaTeX*
@@ -68,6 +79,8 @@ function img.fields() end
 ---again by saying `a=nil`. In that case no image object will be reserved in
 ---the PDF, and the used memory will be cleaned up automatically.
 ---
+---* Corresponding C source code: [limglib.c#L145-L157](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/limglib.c#L145-L157)
+---
 ---@param image Image|ImageSpec
 ---
 ---@return Image
@@ -81,6 +94,8 @@ function img.scan(image) end
 ---Afterwards, `a` and `b` still reference the same actual image
 ---dictionary, but the dimensions for `b` can now be changed from their
 ---initial values that were just copies from `a`.
+---
+---* Corresponding C source code: [limglib.c#L104-L114](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/limglib.c#L104-L114)
 ---
 ---@param image Image|ImageSpec
 ---
@@ -102,6 +117,8 @@ function img.copy(image) end
 ---The `<image>` variable is returned in case you want it for later
 ---processing. You can also write an object.
 ---
+---* Corresponding C source code: [limglib.c#L267-L271](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/limglib.c#L267-L271)
+---
 ---@param image Image|ImageSpec
 ---
 ---@return Image
@@ -110,7 +127,7 @@ function img.write(image) end
 ---
 ---By `img.immediatewrite(a)` a *PDF* object number is allocated, and the
 ---image file for image `a` is written out immediately into the *PDF* file as
----an image stream object (like with `immediate``\pdfximage`). The object
+---an image stream object (like with `immediate` `\pdfximage`). The object
 ---number of the image stream dictionary is then available by the `objnum`
 ---key. No `pdf_refximage` whatsit node is generated. You will need an
 ---`img.write(a)` or `img.node(a)` call to let the image appear on the
@@ -125,6 +142,8 @@ function img.write(image) end
 ---
 ---The `<image>` variable is returned and you will most likely need it.
 ---
+---* Corresponding C source code: [limglib.c#L273-L282](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/limglib.c#L273-L282)
+---
 ---@param image Image|ImageSpec
 ---
 ---@return Image
@@ -133,6 +152,8 @@ function img.immediatewrite(image) end
 ---
 ---The next function is kind of special as it copies an object from a (*PDF*) image
 ---file. This features is experimental and might disappear.
+---
+---* Corresponding C source code: [limglib.c#L284-L293](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/limglib.c#L284-L293)
 ---
 ---@param image Image|ImageSpec
 ---@param objnum integer
@@ -156,10 +177,15 @@ function img.immediatewriteobject(image, objnum) end
 ---node.write(img.node{filename="foo.png"})
 ---```
 ---
+---* Corresponding C source code: [limglib.c#L295-L299](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/limglib.c#L295-L299)
+---
 ---@param image Image|ImageSpec
 ---
 ---@return Node
 function img.node(image) end
+
+---
+---@alias ImgType `pdf` | `png` | `jpg` | `jp2` | `jbig2`
 
 ---
 ---This function returns a list with the supported image file type names, currently
@@ -170,18 +196,25 @@ function img.node(image) end
 ---types = img.types()
 ---```
 ---
----@return table
+---* Corresponding C source code: [limglib.c#L306-L309](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/limglib.c#L306-L309)
+---
+---@return ImgType[]
 function img.types() end
 
 ---
----This function returns a list with the supported *PDF* page box names, currently
+---* Corresponding C source code: [luatex-api.h#L534-L540](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/luatex-api.h#L534-L540)
+---
+---@alias ImgBox `media` | `crop` | `bleed` | `trim` | `art`
+
+---
+---Return a list with the supported *PDF* page box names, currently
 ---these are `media`, `crop`, `bleed`, `trim`, and `art`, all in lowercase.
 ---
 ---```lua
 ---boxes = img.boxes()
 ---```
 ---
----@return table
+---* Corresponding C source code: [limglib.c#L311-L314](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/limglib.c#L311-L314)
+---
+---@return ImgBox[]
 function img.boxes() end
-
-function img.keys() end

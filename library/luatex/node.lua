@@ -2702,8 +2702,7 @@ function node.setglue(n, width, stretch, shrink, stretch_order, shrink_order) en
 ---@param shrink integer|any
 ---@param stretch_order integer|any
 ---@param shrink_order integer|any
-function node.direct.setglue(d, width, stretch, shrink, stretch_order,
-                             shrink_order) end
+function node.direct.setglue(d, width, stretch, shrink, stretch_order, shrink_order) end
 
 ---
 ---Return 5 values or nothing when no glue is passed.
@@ -3198,7 +3197,7 @@ function node.direct.getprev(n) end
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param prev integer
 ---@param next integer
-function node.direct.setboth(d,  prev, next) end
+function node.direct.setboth(d, prev, next) end
 
 ---
 ---Return the previous and next pointer of a node.
