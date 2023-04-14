@@ -209,7 +209,11 @@ function lua.getcalllevel() end
 ---\directlua {
 ---    local t = lua.get_functions_table()
 ---    t[1] = function() tex.print("!") end
+
+---
 ---    t[2] = function() tex.print("?") end
+
+---
 ---}
 ---
 ---\luafunction1
@@ -226,6 +230,8 @@ function lua.getcalllevel() end
 ---\directlua {
 ---    local t = lua.get_functions_table()
 ---    t[8] = function(slot) tex.print(slot) end
+
+---
 ---}
 ---```
 --- ---
