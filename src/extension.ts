@@ -1,7 +1,13 @@
 import * as vscode from 'vscode'
 import path from 'path'
 
-const folders = ['lualatex', 'lualibs', 'luaotfload', 'luatex'] as const
+const folders = [
+  'lualatex',
+  'lualibs',
+  'luametatex',
+  'luaotfload',
+  'luatex'
+] as const
 
 type Folder = typeof folders[number]
 

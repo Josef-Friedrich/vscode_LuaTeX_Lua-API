@@ -1,4 +1,4 @@
-all: sync_library install build package
+all: install build package
 
 install: install_npm install_vsce install_yo install_generator_code
 

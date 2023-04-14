@@ -15,7 +15,7 @@ This project is also an extension package for the most important extensions rela
 
 ```json
 {
-  "luatex.library": ["all", "luatex", "lualatex", "lualibs", "luaotfload"]
+  "luatex.library": ["all", "luatex", "luametatex", "lualatex", "lualibs", "luaotfload"]
 }
 ```
 
