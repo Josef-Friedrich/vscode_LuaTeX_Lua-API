@@ -4,6 +4,8 @@ All notable changes to the "Visual Studio Code LuaTeX Extension" extension will 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [Unreleased]
+
 ## [v0.10.0] - 2023-04-05
 
 ### Changed
