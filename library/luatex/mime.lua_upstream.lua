@@ -1,8 +1,3 @@
-_N._4_3_lua_modules = "page 67"
-
----
----https://github.com/TeX-Live/luatex/blob/trunk/source/texk/web2c/luatexdir/luasocket/src/mime.lua
----Changes to upstream: global mime table
 ---@meta
 ---The definitions are developed in this repository: https://github.com/LuaCATS/luasocket
 
@@ -33,7 +28,7 @@ _N._4_3_lua_modules = "page 67"
 ---```
 ---
 ---😱 [Types](https://github.com/LuaCATS/luasocket/blob/main/library/mime.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luasocket/pulls)
-mime = {}
+local mime = {}
 
 ---
 ---Returns a filter that decodes data from a given transfer content

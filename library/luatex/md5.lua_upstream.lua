@@ -1,10 +1,3 @@
----https://github.com/TeX-Live/luatex/tree/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luamd5
----https://github.com/TeX-Live/luatex/blob/517487384d3b0b4b003fb3180ea415f52eeb5f5f/source/texk/web2c/luatexdir/lua/luatex-core.lua#L220-L241
----Changes to upstream:
----* local md5 table
----* additional function md5.sumHEXA()
-
----
 ---@meta
 ---The definitions are developed in this repository: https://github.com/LuaCATS/md5
 
@@ -16,7 +9,7 @@
 ---All functions are registered inside a table `md5`.
 ---
 ---😱 [Types](https://github.com/LuaCATS/md5/blob/main/library/md5.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/md5/pulls)
-md5 = {}
+local md5 = {}
 
 ---
 ---Computes the MD5 message-digest of the string `message`.
@@ -48,15 +41,6 @@ function md5.sum(message) end
 ---
 ---😱 [Types](https://github.com/LuaCATS/md5/blob/main/library/md5.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/md5/pulls)
 function md5.sumhexa(message) end
-
----
----Similar to `md5.sum()`
----but returns its value as a string of 32 hexadecimal digits (upper case letters).
----
----@param message string
----
----@return string # for example `098F6BCD4621D373CADE4E832627B4F6`
-function md5.sumHEXA(message) end
 
 ---
 ---Encrypts a string, using MD5 in CFB (Cipher-feedback mode).

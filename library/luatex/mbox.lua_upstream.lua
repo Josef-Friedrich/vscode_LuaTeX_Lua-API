@@ -1,7 +1,3 @@
----https://github.com/TeX-Live/luatex/blob/trunk/source/texk/web2c/luatexdir/luasocket/src/mbox.lua
----Changes to upstream: global mbox table
-
----
 ---@meta
 ---The definitions are developed in this repository: https://github.com/LuaCATS/luasocket
 
@@ -9,7 +5,7 @@
 ---https://github.com/lunarmodules/luasocket/blob/master/src/mbox.lua
 ---
 ---😱 [Types](https://github.com/LuaCATS/luasocket/blob/main/library/mbox.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luasocket/pulls)
-mbox = {}
+local mbox = {}
 
 ---
 ---@param message_s string

@@ -6,22 +6,8 @@
 os = {}
 
 ---
----* Corresponding Lua source code: [lualibs-os.lua#L134-L144](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L134-L144)
----
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function os.setenv(k, v) end
-
----
----* Corresponding Lua source code: [lualibs-os.lua#L146-L154](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L146-L154)
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function os.getenv(k) end
-
----
----* Corresponding Lua source code: [lualibs-os.lua#L236-L238](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L236-L238)
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function os.pipeto(command) end
+function os.resultof(command) end
 
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L246-L251](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L246-L251)
@@ -30,10 +16,31 @@ function os.pipeto(command) end
 function os.launch(str) end
 
 ---
+---* Corresponding Lua source code: [lualibs-os.lua#L404](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L404)
+---
+os.platform = ""
+
+---
+---* Corresponding Lua source code: [lualibs-os.lua#L210-L214](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L210-L214)
+---
+os.libsuffix = ""
+
+---
+---* Corresponding Lua source code: [lualibs-os.lua#L210-L214](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L210-L214)
+---
+os.binsuffix = ""
+
+---
 ---* Corresponding Lua source code: [lualibs-os.lua#L262-L264](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L262-L264)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function os.runtime() end
+
+---
+---* Corresponding Lua source code: [lualibs-os.lua#L453-L469](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L453-L469)
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function os.timezone(difference) end
 
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L423-L431](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L423-L431)
@@ -42,10 +49,10 @@ function os.runtime() end
 function os.uuid() end
 
 ---
----* Corresponding Lua source code: [lualibs-os.lua#L453-L469](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L453-L469)
+---* Corresponding Lua source code: [lualibs-os.lua#L236-L238](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L236-L238)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function os.timezone(difference) end
+function os.pipeto(command) end
 
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L478-L492](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L478-L492)
@@ -128,11 +135,3 @@ function os.setexitcode(code) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function os.exit(c) end
-
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function os.gettimeofday() end
-
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function os.resultof(command) end

@@ -1,8 +1,3 @@
-_N._4_3_lua_modules = "page 67"
-
----
----https://github.com/TeX-Live/luatex/tree/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luazip
----Changes to upstream: global zip table
 ---@meta
 ---The definitions are developed in this repository: https://github.com/LuaCATS/luazip
 
@@ -18,7 +13,7 @@ _N._4_3_lua_modules = "page 67"
 ---HTML documentation: http://mpeterv.github.io/luazip
 ---
 ---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
-zip = {}
+local zip = {}
 
 ---
 ---@return nil|"closed zip file"|"zip file"
