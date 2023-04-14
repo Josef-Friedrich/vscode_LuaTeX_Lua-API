@@ -6,6 +6,17 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [v0.11.0] - 2023-04-14
+
+### Added
+
+- Inital support for LuaMetaTeX
+
+### Changed
+
+- Sync with (4754ebfc)[https://github.com/Josef-Friedrich/LuaTeX_Lua-API/commit/4754ebfc23974663a79318651472cee896d46050]
+
+
 ## [v0.10.0] - 2023-04-05
 
 ### Changed
