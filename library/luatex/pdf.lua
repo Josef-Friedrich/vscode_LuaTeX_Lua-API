@@ -872,6 +872,7 @@ function pdf.obj(objnum, file, filename) end
 ---@param stream string # Literal string `"stream"`.
 ---@param streamcontents string # Contents of the stream.
 ---@param streamdict string # Stream dictionary.
+---
 ---@return integer objnum # Object number.
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -936,7 +937,7 @@ function pdf.refobj(objnum) end
 ---
 ---Use `pdf.obj()` or `pdf.immediateobj()` to define this object.
 ---
----@return integer objnum  # Object number.
+---@return integer objnum # Object number.
 ---
 ---@see pdf.obj
 ---@see pdf.immediateobj
@@ -990,7 +991,6 @@ function pdf.registerannot(objnum) end
 ---@param s string
 ---@param literal_mode 'page'|'direct'|'origin'|'text'|'raw'
 ---@param page_start boolean
---
 ---
 ---@return integer color_stack_id
 ---

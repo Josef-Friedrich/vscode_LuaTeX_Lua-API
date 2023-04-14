@@ -28,6 +28,8 @@ fontloader = {}
 ---@field pfminfo FontloaderPfminfo #
 
 ---
+---Get various information fields from an font file.
+---
 ---This function returns either `nil`, or a `table`, or an array of
 ---small tables (in the case of a *TrueType* collection). The returned table(s) will
 ---contain some fairly interesting information items from the font(s) defined by the
@@ -46,6 +48,8 @@ fontloader = {}
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function fontloader.info(filename) end
 
+---
+---Parse a font file and return a table representing its contents. The optional argument is the name of the desired font in case of font collection files. The optional return value contains any parser error strings.
 ---
 ---Open an *OpenType* font.
 ---
@@ -97,6 +101,8 @@ function fontloader.to_table(font) end
 function fontloader.close(font) end
 
 ---
+---Apply a feature file to a fontloader table.
+---
 ---* Corresponding C source code: [luafflib.c#L313-L334](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L313-L334)
 ---
 ---@param font userdata
@@ -107,6 +113,8 @@ function fontloader.close(font) end
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function fontloader.apply_featurefile(font, filename) end
 
+---
+---Apply an AFM file to a fontloader table.
 ---
 ---* Corresponding C source code: [luafflib.c#L336-L355](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L336-L355)
 ---

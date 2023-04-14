@@ -66,122 +66,134 @@ node = {}
 node.direct = {}
 
 ---
----*LuaTeX* only understands 4 of the 16 direction specifiers of aleph: `TLT` (latin), `TRT` (arabic), `RTT` (cjk), `LTL` (mongolian). All other direction specifiers generate an error. In addition to a keyword driven model we also provide an integer driven one.
+---*LuaTeX* only understands 4 of the 16 direction specifiers of aleph: `TLT` (latin), `TRT` (arabic), `RTT` (cjk), `LTL` (mongolian). All other direction specifiers generate an error.
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias DirectionSpecifier
----| "TLT" # latin
----| "TRT" # arabic
----| "RTT" # cjk
----| "LTL" # mongolian
+---|"TLT" # 0 latin
+---|"TRT" # 1 arabic
+---|"LTL" # 2 mongolian
+---|"RTT" # 3 cjk
 
+---
+---In addition to a keyword driven model we also provide an integer driven one.
+---@alias DirectionSpecifierId
+---|0 # "TLT" latin
+---|1 # "TRT" arabic
+---|2 # "LTL" mongolian
+---|3 # "RTT" cjk
+
+---
+---* Corresponding C source code: [texnodes.c#L493-L542](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L493-L542)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias NodeTypeName
----| 'hlist' # 0
----| 'vlist' # 1
----| 'rule' # 2
----| 'ins' # 3
----| 'mark' # 4
----| 'adjust' # 5
----| 'boundary' # 6
----| 'disc' # 7
----| 'whatsit' # 8
----| 'local_par' # 9
----| 'dir' # 10
----| 'math' # 11
----| 'glue' # 12
----| 'kern' # 13
----| 'penalty' # 14
----| 'unset' # 15
----| 'style' # 16
----| 'choice' # 17
----| 'noad' # 18
----| 'radical' # 19
----| 'fraction' # 20
----| 'accent' # 21
----| 'fence' # 22
----| 'math_char' # 23
----| 'sub_box' # 24
----| 'sub_mlist' # 25
----| 'math_text_char' # 26
----| 'delim' # 27
----| 'margin_kern' # 28
----| 'glyph' # 29
----| 'align_record' # 30
----| 'pseudo_file' # 31
----| 'pseudo_line' # 32
----| 'page_insert' # 33
----| 'split_insert' # 34
----| 'expr_stack' # 35
----| 'nested_list' # 36
----| 'span' # 37
----| 'attribute' # 38
----| 'glue_spec' # 39
----| 'attribute_list' # 40
----| 'temp' # 41
----| 'align_stack' # 42
----| 'movement_stack' # 43
----| 'if_stack' # 44
----| 'unhyphenated' # 45
----| 'hyphenated' # 46
----| 'delta' # 47
----| 'passive' # 48
----| 'shape' # 49
+---| 'hlist' # 0 `hlist_node`
+---| 'vlist' # 1 `vlist_node`
+---| 'rule' # 2 `rule_node`
+---| 'ins' # 3 `ins_node`
+---| 'mark' # 4 `mark_node`
+---| 'adjust' # 5 `adjust_node`
+---| 'boundary' # 6 `boundary_node`
+---| 'disc' # 7 `disc_node`
+---| 'whatsit' # 8 `whatsit_node`
+---| 'local_par' # 9 `local_par_node`
+---| 'dir' # 10 `dir_node`
+---| 'math' # 11 `math_node`
+---| 'glue' # 12 `glue_node`
+---| 'kern' # 13 `kern_node`
+---| 'penalty' # 14 `penalty_node`
+---| 'unset' # 15 `unset_node`
+---| 'style' # 16 `style_node`
+---| 'choice' # 17 `choice_node`
+---| 'noad' # 18 `simple_noad`
+---| 'radical' # 19 `radical_noad`
+---| 'fraction' # 20 `fraction_noad`
+---| 'accent' # 21 `accent_noad`
+---| 'fence' # 22 `fence_noad`
+---| 'math_char' # 23 `math_char_node`
+---| 'sub_box' # 24 `sub_box_node`
+---| 'sub_mlist' # 25 `sub_mlist_node`
+---| 'math_text_char' # 26 `math_text_char_node`
+---| 'delim' # 27 `delim_node`
+---| 'margin_kern' # 28 `margin_kern_node`
+---| 'glyph' # 29 `glyph_node`
+---| 'align_record' # 30 `align_record_node`
+---| 'pseudo_file' # 31 `pseudo_file_node`
+---| 'pseudo_line' # 32 `pseudo_line_node`
+---| 'page_insert' # 33 `inserting_node`
+---| 'split_insert' # 34 `split_up_node`
+---| 'expr_stack' # 35 `expr_node`
+---| 'nested_list' # 36 `nesting_node`
+---| 'span' # 37 `span_node`
+---| 'attribute' # 38 `attribute_node`
+---| 'glue_spec' # 39 `glue_spec_node`
+---| 'attribute_list' # 40 `attribute_list_node`
+---| 'temp' # 41 `temp_node`
+---| 'align_stack' # 42 `align_stack_node`
+---| 'movement_stack' # 43 `movement_node`
+---| 'if_stack' # 44 `if_node`
+---| 'unhyphenated' # 45 `unhyphenated_node`
+---| 'hyphenated' # 46 `hyphenated_node`
+---| 'delta' # 47 `delta_node`
+---| 'passive' # 48 `passive_node`
+---| 'shape' # 49 `shape_node`
 
+---
+---* Corresponding C source code: [texnodes.c#L493-L542](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L493-L542)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias NodeTypeId
----| 0  # hlist
----| 1  # vlist
----| 2  # rule
----| 3  # ins
----| 4  # mark
----| 5  # adjust
----| 6  # boundary
----| 7  # disc
----| 8  # whatsit
----| 9  # local_par
----| 10 # dir
----| 11 # math
----| 12 # glue
----| 13 # kern
----| 14 # penalty
----| 15 # unset
----| 16 # style
----| 17 # choice
----| 18 # noad
----| 19 # radical
----| 20 # fraction
----| 21 # accent
----| 22 # fence
----| 23 # math_char
----| 24 # sub_box
----| 25 # sub_mlist
----| 26 # math_text_char
----| 27 # delim
----| 28 # margin_kern
----| 29 # glyph
----| 30 # align_record
----| 31 # pseudo_file
----| 32 # pseudo_line
----| 33 # page_insert
----| 34 # split_insert
----| 35 # expr_stack
----| 36 # nested_list
----| 37 # span
----| 38 # attribute
----| 39 # glue_spec
----| 40 # attribute_list
----| 41 # temp
----| 42 # align_stack
----| 43 # movement_stack
----| 44 # if_stack
----| 45 # unhyphenated
----| 46 # hyphenated
----| 47 # delta
----| 48 # passive
----| 49 # shape
+---| 0  # hlist `hlist_node`
+---| 1  # vlist `vlist_node`
+---| 2  # rule `rule_node`
+---| 3  # ins `ins_node`
+---| 4  # mark `mark_node`
+---| 5  # adjust `adjust_node`
+---| 6  # boundary `boundary_node`
+---| 7  # disc `disc_node`
+---| 8  # whatsit `whatsit_node`
+---| 9  # local_par `local_par_node`
+---| 10 # dir `dir_node`
+---| 11 # math `math_node`
+---| 12 # glue `glue_node`
+---| 13 # kern `kern_node`
+---| 14 # penalty `penalty_node`
+---| 15 # unset `unset_node`
+---| 16 # style `style_node`
+---| 17 # choice `choice_node`
+---| 18 # noad `simple_noad`
+---| 19 # radical `radical_noad`
+---| 20 # fraction `fraction_noad`
+---| 21 # accent `accent_noad`
+---| 22 # fence `fence_noad`
+---| 23 # math_char `math_char_node`
+---| 24 # sub_box `sub_box_node`
+---| 25 # sub_mlist `sub_mlist_node`
+---| 26 # math_text_char `math_text_char_node`
+---| 27 # delim `delim_node`
+---| 28 # margin_kern `margin_kern_node`
+---| 29 # glyph `glyph_node`
+---| 30 # align_record `align_record_node`
+---| 31 # pseudo_file `pseudo_file_node`
+---| 32 # pseudo_line `pseudo_line_node`
+---| 33 # page_insert `inserting_node`
+---| 34 # split_insert `split_up_node`
+---| 35 # expr_stack `expr_node`
+---| 36 # nested_list `nesting_node`
+---| 37 # span `span_node`
+---| 38 # attribute `attribute_node`
+---| 39 # glue_spec `glue_spec_node`
+---| 40 # attribute_list `attribute_list_node`
+---| 41 # temp `temp_node`
+---| 42 # align_stack `align_stack_node`
+---| 43 # movement_stack `movement_node`
+---| 44 # if_stack `if_node`
+---| 45 # unhyphenated `unhyphenated_node`
+---| 46 # hyphenated `hyphenated_node`
+---| 47 # delta `delta_node`
+---| 48 # passive `passive_node`
+---| 49 # shape `shape_node`
 
 ---
 ---A number in the range `[0,4]` indicating the glue order.
@@ -217,8 +229,10 @@ node.direct = {}
 ---@field id integer # the node’s type (id) number
 ---@field subtype integer # the node subtype identifier. The `subtype` is sometimes just a dummy entry because not all nodes actually use the `subtype`, but this way you can be sure that all nodes accept it as a valid field name, and that is often handy in node list traversal.
 ---@field head? Node
----@field attr Node # list of attributes. almost all nodes also have an `attr` field
+---@field attr Node # A list of attributes.. almost all nodes also have an `attr` field
 
+---
+---* Corresponding C source code: [texnodes.c#L633-L661](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L633-L661)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias HlistNodeSubtype
@@ -253,6 +267,22 @@ node.direct = {}
 ---|28 # radical
 
 ---
+---* Corresponding C source code: [texnodes.c#L841-L851](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L841-L851)
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---@class ListNode: Node
+---@field width integer # the width of the box
+---@field height integer # the height of the box
+---@field depth integer # the depth of the box
+---@field shift integer # a displacement perpendicular to the character progression direction
+---@field glue_order GlueOrder
+---@field glue_set GlueSet
+---@field glue_sign GlueSign
+---@field head Node # the first node of the body of this list
+---@field list Node # the first node of the body of this list
+---@field dir DirectionSpecifier
+
+---
 ---A warning: never assign a node list to the `head` field unless you are sure
 ---its internal link structure is correct, otherwise an error may result.
 ---
@@ -265,18 +295,8 @@ node.direct = {}
 ---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L78-L108](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L78-L108)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
----@class HlistNode: Node
+---@class HlistNode: ListNode
 ---@field subtype HlistNodeSubtype
----@field width number # the width of the box
----@field height number # the height of the box
----@field depth number # the depth of the box
----@field shift number # a displacement perpendicular to the character progression direction
----@field glue_order GlueOrder
----@field glue_set GlueSet
----@field glue_sign GlueSign
----@field head Node # the first node of the body of this list
----@field list Node # the first node of the body of this list
----@field dir DirectionSpecifier
 
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -287,8 +307,11 @@ node.direct = {}
 
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
----@class VlistNode: Node
+---@class VlistNode: ListNode
+---@field subtype VlistNodeSubtype
 
+---
+---* Corresponding C source code: [texnodes.c#L602-L611](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L602-L611)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias RuleNodeSubtype
@@ -298,7 +321,7 @@ node.direct = {}
 ---|3 # empty
 ---|4 # user
 ---|5 # over
----|6 # under,
+---|6 # under
 ---|7 # fraction
 ---|8 # radical
 ---|9 # outline
@@ -324,10 +347,12 @@ node.direct = {}
 ---__Reference:__
 ---
 ---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L119-L157](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L119-L157)
+---* Corresponding C source code: [texnodes.c#L912-L920](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L912-L920)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class RuleNode: Node
 ---@field subtype RuleNodeSubtype
+---@field attr Node # A list of attributes.
 ---@field width integer # the width of the rule where the special value −1073741824 is used for ‘running’ glue dimensions
 ---@field height integer # the height of the rule (can be negative)
 ---@field depth integer # the depth of the rule (can be negative)
@@ -338,24 +363,30 @@ node.direct = {}
 ---@field transform integer # an private variable (also used to specify outline width)
 
 ---
+---* Corresponding C source code: [texnodes.c#L818-L824](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L818-L824)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class InsNode: Node
 ---@field subtype number # the insertion class
----@field attr Node # list of attributes
----@field cost number # the penalty associated with this insert
----@field height number # height of the insert
----@field depth number # depth of the insert
+---@field attr Node # A list of attributes.
+---@field cost integer # the penalty associated with this insert
+---@field height integer # height of the insert
+---@field depth integer # depth of the insert
 ---@field head Node # the first node of the body of this insert
 ---@field list Node # the first node of the body of this insert
 
 ---
+---* Corresponding C source code: [texnodes.c#L868-L871](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L868-L871)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MarkNode: Node
----@field subtype number # unused
----@field attr Node # list of attributes
----@field class number # the mark class
+---@field subtype integer # unused
+---@field attr Node # A list of attributes.
+---@field class integer # the mark class
 ---@field mark table # a table representing a token list
 
+---
+---* Corresponding C source code: [texnodes.c#L669-L670](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L669-L670)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias AdjustNodeSubtype
@@ -363,13 +394,17 @@ node.direct = {}
 ---|1 # pre
 
 ---
+---* Corresponding C source code: [texnodes.c#L725-L727](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L725-L727)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class AdjustNode: Node
 ---@field subtype AdjustNodeSubtype
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 ---@field head Node # adjusted material
 ---@field list Node # adjusted material
 
+---
+---* Corresponding C source code: [texnodes.c#L620-L625](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L620-L625)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias DiscNodeSubtype
@@ -381,15 +416,19 @@ node.direct = {}
 ---|5 # second
 
 ---
+---* Corresponding C source code: [texnodes.c#L758-L763](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L758-L763)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class DiscNode: Node
 ---@field subtype DiscNodeSubtype
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 ---@field pre Node # pointer to the pre-break text
 ---@field post Node # pointer to the post-break text
 ---@field replace Node # pointer to the no-break text
----@field penalty number # the penalty associated with the break, normally `hyphenpenalty` or `exhyphenpenalty`
+---@field penalty integer # the penalty associated with the break, normally `hyphenpenalty` or `exhyphenpenalty`
 
+---
+---* Corresponding C source code: [texnodes.c#L663-L664](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L663-L664)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias MathNodeSubtype
@@ -397,11 +436,13 @@ node.direct = {}
 ---|1 # endmath
 
 ---
+---* Corresponding C source code: [texnodes.c#L873-L880](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L873-L880)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MathNode: Node
 ---@field subtype MathNodeSubtype
----@field attr Node # list of attributes
----@field surround number # width of the `mathsurround` kern
+---@field attr Node # A list of attributes.
+---@field surround integer # width of the `mathsurround` kern
 
 ---
 ---Skips are about the only type of data objects in traditional *TeX* that are not a
@@ -438,13 +479,15 @@ node.direct = {}
 ---`shrink`, and `shrink_order` fields. Note that we use the key `width` in both horizontal and vertical glue. This suits the *TeX* internals well
 ---so we decided to stick to that naming.
 ---
+---* Corresponding C source code: [texnodes.c#L794-L799](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L794-L799)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class GlueSpecNode: Node
----@field width          integer # the horizontal or vertical displacement
----@field stretch        integer # extra (positive) displacement or stretch amount
----@field stretch_order  integer # factor applied to stretch amount
----@field shrink         integer # extra (negative) displacement or shrink amount
----@field shrink_order   integer # factor applied to shrink amount
+---@field width integer # the horizontal or vertical displacement
+---@field stretch integer # extra (positive) displacement or stretch amount
+---@field stretch_order integer # factor applied to stretch amount
+---@field shrink integer # extra (negative) displacement or shrink amount
+---@field shrink_order integer # factor applied to shrink amount
 
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -480,6 +523,8 @@ node.direct = {}
 ---A regular word space also results in a `spaceskip` subtype (this used to be
 ---a `userskip` with subtype zero).
 ---
+---* Corresponding C source code: [texnodes.c#L785-L792](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L785-L792)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class GlueNode: Node
 ---@field subtype GlueNodeSubtype
@@ -491,20 +536,37 @@ node.direct = {}
 ---@field shrink_order integer # factor applied to shrink amount
 
 ---
----The effective_glue function that takes a glue node and a parent (hlist or vlist) returns the
----effective width of that glue item. When you pass true as third argument the value will be
----rounded.
+---Return the
+---effective width of a glue node.
 ---
----@param glue GlyphNode
+---* Corresponding C source code: [lnodelib.c#L8473-L8503](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8473-L8503)
+---
+---@param glue Node
 ---@param parent HlistNode|VlistNode
----@param round? boolean
+---@param round? boolean # When you pass true as third argument the value will be rounded.
 ---
----@return integer
+---@return number|integer|nil
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.effective_glue(glue, parent, round) end
-node.direct.effective_glue = node.effective_glue
 
+---
+---Return the
+---effective width of a glue node.
+---
+---* Corresponding C source code: [lnodelib.c#L8505-L8533](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8505-L8533)
+---
+---@param d integer # The index number of the node in the memory table for direct access.
+---@param parent HlistNode|VlistNode
+---@param round? boolean # When you pass true as third argument the value will be rounded.
+---
+---@return number|integer|nil
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function node.direct.effective_glue(d, parent, round) end
+
+---
+---* Corresponding C source code: [texnodes.c#L597-L600](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L597-L600)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias KernNodeSubtype
@@ -517,11 +579,15 @@ node.direct.effective_glue = node.effective_glue
 ---The `kern` command creates such nodes but for instance the font and math
 ---machinery can also add them.
 ---
+---* Corresponding C source code: [texnodes.c#L836-L839](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L836-L839)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class KernNode: Node
 ---@field subtype KernNodeSubtype
 ---@field kern integer # Fixed horizontal or vertical advance (in scaled points)
 
+---
+---* Corresponding C source code: [texnodes.c#L587-L595](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L587-L595)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PenaltyNodeSubtype
@@ -536,42 +602,51 @@ node.direct.effective_glue = node.effective_glue
 ---|8 # equationnumberpenalty
 
 ---
+---* Corresponding C source code: [texnodes.c#L898-L900](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L898-L900)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PenaltyNode: Node
 ---@field subtype PenaltyNodeSubtype
----@field attr Node # list of attributes
----@field penalty number # the penalty value
+---@field attr Node # A list of attributes.
+---@field penalty integer # the penalty value
 
+---
+---* Corresponding C source code: [texnodes.c#L613-L618](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L613-L618)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias GlyphNodeSubtype
+---|0 # character
 ---|1 # ligature
 ---|2 # ghost
 ---|3 # left
 ---|4 # right
 
 ---
+---* Corresponding C source code: [texnodes.c#L801-L816](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L801-L816)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class GlyphNode: Node
 ---@field subtype GlyphNodeSubtype # A bit field
 ---@field attr Node # A list of attributes
----@field char number # The character index in the font
----@field font number # The font identifier
----@field lang number # The language identifier
----@field left number # The frozen `\lefthyphenmnin` value
----@field right number # The frozen `\righthyphenmnin` value
+---@field char integer # The character index. in the font
+---@field font integer # The font identifier
+---@field lang integer # The language identifier
+---@field left integer # The frozen `\lefthyphenmnin` value
+---@field right integer # The frozen `\righthyphenmnin` value
 ---@field uchyph boolean # The frozen `uchyph` value
 ---@field components Node # A Pointer to ligature components
----@field xoffset number # A virtual displacement in horizontal direction
----@field yoffset number # A virtual displacement in vertical direction
----@field width number # The (original) width of the character
----@field height number # The (original) height of the character
----@field depth number # The (original) depth of the character
----@field expansion_factor number # The to be applied expansion factor
----@field data number # A general purpose field for users (we had room for it)
+---@field xoffset integer # A virtual displacement in horizontal direction
+---@field yoffset integer # A virtual displacement in vertical direction
+---@field width integer # The (original) width of the character
+---@field height integer # The (original) height of the character
+---@field depth integer # The (original) depth of the character
+---@field expansion_factor integer # The to be applied expansion factor
+---@field data integer # A general purpose field for users (we had room for it)
 
 ---
----The `uses_font` helpers takes a node and font id and returns `true` when a glyph or disc node references that font.
+---Return `true` when a glyph or disc node references that font.
+---
+---* Corresponding C source code: [lnodelib.c#L7639-L7655](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7639-L7655)
 ---
 ---@param n Node
 ---@param font integer
@@ -580,8 +655,22 @@ node.direct.effective_glue = node.effective_glue
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.uses_font(n, font) end
-node.direct.uses_font = node.uses_font
 
+---
+---Return `true` when a glyph or disc node references that font.
+---
+---* Corresponding C source code: [lnodelib.c#L7621-L7637](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7621-L7637)
+---
+---@param d integer # The index number of the node in the memory table for direct access.
+---@param font integer
+---
+---@return boolean
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function node.direct.uses_font(d, font) end
+
+---
+---* Corresponding C source code: [texnodes.c#L582-L585](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L582-L585)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias BoundaryNodeSubtype
@@ -591,31 +680,51 @@ node.direct.uses_font = node.uses_font
 ---|3 # word
 
 ---
+---* Corresponding C source code: [texnodes.c#L735-L737](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L735-L737)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class BoundaryNode: Node
 ---@field subtype BoundaryNodeSubtype
----@field attr Node # list of attributes
----@field value number # values 0--255 are reserved
+---@field attr Node # A list of attributes.
+---@field value integer # values 0-255 are reserved
 
+---
+---* Corresponding C source code: [texnodes.c#L853-L861](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L853-L861)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class LocalParNode: Node
----@field attr Node # list of attributes
----@field pen_inter number # local interline penalty (from `localinterlinepenalty`)
----@field pen_broken number # local broken penalty (from `localbrokenpenalty`)
+---@field attr Node # A list of attributes.
+---@field pen_inter integer # local interline penalty (from `localinterlinepenalty`)
+---@field pen_broken integer # local broken penalty (from `localbrokenpenalty`)
 ---@field dir string # the direction of this par. see \in [dirnodes]
 ---@field box_left Node # the `localleftbox`
----@field box_left_width number # width of the `localleftbox`
+---@field box_left_width integer # width of the `localleftbox`
 ---@field box_right Node # the `localrightbox`
----@field box_right_width number # width of the `localrightbox`
+---@field box_right_width integer # width of the `localrightbox`
 
+---
+---Direction specifiers are three-letter combinations of `T`, `B`,
+---`R`, and `L`. These are built up out of three separate items:
+---
+---* the first is the direction of the “top” of paragraphs
+---* the second is the direction of the “start” of lines
+---* the third is the direction of the “top” of glyphs
+---
+---However, only four combinations are accepted: `TLT`, `TRT`, `RTT`, and `LTL`. Inside actual `dir` nodes, the representation of
+---`dir` is not a three-letter but a combination of numbers. When printed the
+---direction is indicated by a `+` or `-`, indicating whether the value
+---is pushed or popped from the direction stack.
+---
+---* Corresponding C source code: [texnodes.c#L753-L756](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L753-L756)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class DirNode: Node
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 ---@field dir string # the direction (but see below)
----@field level number # nesting level of this direction whatsit
+---@field level integer # nesting level of this direction whatsit
 
+---
+---* Corresponding C source code: [texnodes.c#L666-L667](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L666-L667)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias MarginKernNodeSubtype
@@ -623,50 +732,82 @@ node.direct.uses_font = node.uses_font
 ---|1 # right
 
 ---
+---Margin kerns result from protrusion.
+---
+---* Corresponding C source code: [texnodes.c#L863-L866](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L863-L866)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MarginKernNode: Node
----@field subtype number # \showsubtypes{marginkern}
----@field attr Node # list of attributes
----@field width number # the advance of the kern
+---@field subtype MarginKernNodeSubtype
+---@field attr Node # A list of attributes.
+---@field width integer # the advance of the kern
 ---@field glyph Node # the glyph to be used
 
 ---
+---The `math_char` is the simplest subnode field, it contains the character
+---and family for a single glyph object.
+---
+---* Corresponding C source code: [texnodes.c#L882-L885](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L882-L885)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MathCharNode: Node
----@field attr Node # list of attributes
----@field char number # the character index
----@field fam number # the family number
+---@field attr Node # A list of attributes.
+---@field char integer # The character index.
+---@field fam integer # The family number.
 
+---
+---The `math_text_char` is a special
+---case that you will not normally encounter, it arises temporarily during math list
+---conversion (its sole function is to suppress a following italic correction).
+---
+---* Corresponding C source code: [texnodes.c#L887-L890](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L887-L890)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MathTextCharNode: Node
----@field attr Node # list of attributes
----@field char number # the character index
----@field fam number # the family number
+---@field attr Node # A list of attributes.
+---@field char integer # The character index.
+---@field fam integer # The family number.
 
+---
+---For subsidiary list items
+---
+---* Corresponding C source code: [texnodes.c#L933-L935](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L933-L935)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class SubBoxNode: Node
----@field attr Node # list of attributes
----@field head Node # list of nodes
----@field list Node # list of nodes
+---@field attr Node # A list of attributes.
+---@field head Node # A list of nodes. `head` points to a “normal” vbox or hbox.
 
+---
+---For subsidiary list items
+---
+---* Corresponding C source code: [texnodes.c#L937-L939](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L937-L939)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class SubMlistNode: Node
----@field attr Node # list of attributes
----@field head Node # list of nodes
----@field list Node # list of nodes
+---@field attr Node # A list of attributes.
+---@field head Node # A list of nodes. `head` points to a math list that is yet to be converted.
 
+---
+---There is a fifth subnode type that is used exclusively for delimiter fields. As
+---before, the `next` and `prev` fields are unused.
+---
+---The fields `large_char` and `large_fam` can be zero, in that case the
+---font that is set for the `small_fam` is expected to provide the large
+---version as an extension to the `small_char`.
+---
+---* Corresponding C source code: [texnodes.c#L746-L751](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L746-L751)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class DelimNode: Node
----@field attr Node # list of attributes
----@field small_char number # character index of base character
----@field small_fam number # family number of base character
----@field large_char number # character index of next larger character
----@field large_fam number # family number of next larger character
+---@field attr Node # A list of attributes.
+---@field small_char integer # character index of base character
+---@field small_fam integer # family number of base character
+---@field large_char integer # character index of next larger character
+---@field large_fam integer # family number of next larger character
 
+---
+---* Corresponding C source code: [texnodes.c#L672-L684](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L672-L684)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias NoadNodeSubtype
@@ -685,15 +826,41 @@ node.direct.uses_font = node.uses_font
 ---|12 # vcenter
 
 ---
+---First, there are the objects (the *TeX* book calls them “atoms”) that are
+---associated with the simple math objects: ord, op, bin, rel, open, close, punct,
+---inner, over, under, vcent. These all have the same fields, and they are combined
+---into a single node type with separate subtypes for differentiation.
+---
+---Some noads have an option field. The values in this bitset are common:
+---
+--- | meaning         |  bits           |
+--- |-----------------|-----------------|
+--- | set             |          `0x08` |
+--- | internal        | `0x00` + `0x08` |
+--- | internal        | `0x01` + `0x08` |
+--- | axis            | `0x02` + `0x08` |
+--- | no axis         | `0x04` + `0x08` |
+--- | exact           | `0x10` + `0x08` |
+--- | left            | `0x11` + `0x08` |
+--- | middle          | `0x12` + `0x08` |
+--- | right           | `0x14` + `0x08` |
+--- | no sub script   | `0x21` + `0x08` |
+--- | no super script | `0x22` + `0x08` |
+--- | no script       | `0x23` + `0x08` |
+---
+---* Corresponding C source code: [texnodes.c#L892-L896](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L892-L896)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class NoadNode: Node
 ---@field subtype NoadNodeSubtype
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 ---@field nucleus Node # base
 ---@field sub Node # subscript
 ---@field sup Node # superscript
----@field options number # bitset of rendering options
+---@field options integer # bitset of rendering options
 
+---
+---* Corresponding C source code: [texnodes.c#L694-L697](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L694-L697)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias AccentNodeSubtype
@@ -703,30 +870,45 @@ node.direct.uses_font = node.uses_font
 ---|3 # fixedboth
 
 ---
+---* Corresponding C source code: [texnodes.c#L714-L723](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L714-L723)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class AccentNode: Node
+---@field attr Node # A list of attributes.
 ---@field subtype AccentNodeSubtype
 ---@field nucleus Node # base
 ---@field sub Node # subscript
 ---@field sup Node # superscript
 ---@field accent Node # top accent
 ---@field bot_accent Node # bottom accent
----@field fraction number # larger step criterium (divided by 1000)
+---@field top_accent Node # top_accent
+---@field overlay_accent Node # overlay_accent
+---@field fraction integer # larger step criterium (divided by 1000)
 
+---
+---* Corresponding C source code: [texnodes.c#L929-L931](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L929-L931)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class StyleNode: Node
+---@field attr Node # A list of attributes.
 ---@field style string # contains the style
 
 ---
+---Warning: never assign a node list to the `display`, `text`, `script`, or `scriptscript` field unless you are sure its internal link
+---structure is correct, otherwise an error can occur.
+---
+---* Corresponding C source code: [texnodes.c#L739-L744](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L739-L744)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class ChoiceNode: Node
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 ---@field display Node # list of display size alternatives
 ---@field text Node # list of text size alternatives
 ---@field script Node # list of scriptsize alternatives
 ---@field scriptscript Node # list of scriptscriptsize alternatives
 
+---
+---* Corresponding C source code: [texnodes.c#L686-L692](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L686-L692)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias RadicalNodeSubtype
@@ -739,22 +921,45 @@ node.direct.uses_font = node.uses_font
 ---|6 # udelimiterover
 
 ---
+----
+--Warning: never assign a node list to the `nucleus`, `sub`, `sup`, `left`, or `degree` field unless you are sure its internal
+---link structure is correct, otherwise an error can be triggered.
+---
+---* Corresponding C source code: [texnodes.c#L902-L910](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L902-L910)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class RadicalNode: Node
 ---@field subtype RadicalNodeSubtype
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 ---@field nucleus KernNode # base
 ---@field sub KernNode # subscript
 ---@field sup KernNode # superscript
 ---@field left DelimNode
 ---@field degree KernNode # only set by `Uroot`
----@field width number # required width
----@field options number # bitset of rendering options
+---@field width integer # required width
+---@field options integer # bitset of rendering options
 
+---
+---Warning: never assign a node list to the `num`, or `denom` field
+---unless you are sure its internal link structure is correct, otherwise an error
+---can result.
+---
+---* Corresponding C source code: [texnodes.c#L774-L783](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L774-L783)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class FractionNode: Node
+---@field attr Node # A list of attributes.
+---@field width integer # (optional) width of the fraction
+---@field num KernNode # numerator
+---@field denom KernNode # denominator
+---@field left DelimNode # left side symbol
+---@field right DelimNode # right side symbol
+---@field middle DelimNode # middle symbol
+---@field options integer # bitset of rendering options
+---
 
+---
+---* Corresponding C source code: [texnodes.c#L627-L631](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L627-L631)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FenceNodeSubtype
@@ -765,36 +970,49 @@ node.direct.uses_font = node.uses_font
 ---|4 # no
 
 ---
+---Warning: some of these fields are used by the renderer and might get adapted in
+---the process.
+---
+---* Corresponding C source code: [texnodes.c#L765-L772](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L765-L772)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class FenceNode: Node
+---@field subtype FenceNodeSubtype
+---@field attr Node # list of attributes
+---@field delim DelimNode # delimiter specification
+---@field italic integer # italic correction
+---@field height integer # required height
+---@field depth integer # required depth
+---@field options integer # bitset of rendering options
+---@field class integer # spacing related class
 
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias WhatsitTypeId
----| 0  # open
----| 1  # write
----| 2  # close
----| 3  # special
----| 6  # save_pos
----| 7  # late_lua
----| 8  # user_defined
----| 16 # pdf_literal
----| 17 # pdf_refobj
----| 18 # pdf_annot
----| 19 # pdf_start_link
----| 20 # pdf_end_link
----| 21 # pdf_dest
----| 22 # pdf_action
----| 23 # pdf_thread
----| 24 # pdf_start_thread
----| 25 # pdf_end_thread
----| 26 # pdf_thread_data
----| 27 # pdf_link_data
----| 28 # pdf_colorstack
----| 29 # pdf_setmatrix
----| 30 # pdf_save
----| 31 # pdf_restore
----| 32 # pdf_link_state
+---|0  # open
+---|1  # write
+---|2  # close
+---|3  # special
+---|6  # save_pos
+---|7  # late_lua
+---|8  # user_defined
+---|16 # pdf_literal
+---|17 # pdf_refobj
+---|18 # pdf_annot
+---|19 # pdf_start_link
+---|20 # pdf_end_link
+---|21 # pdf_dest
+---|22 # pdf_action
+---|23 # pdf_thread
+---|24 # pdf_start_thread
+---|25 # pdf_end_thread
+---|26 # pdf_thread_data
+---|27 # pdf_link_data
+---|28 # pdf_colorstack
+---|29 # pdf_setmatrix
+---|30 # pdf_save
+---|31 # pdf_restore
+---|32 # pdf_link_state
 
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -840,7 +1058,7 @@ node.direct.uses_font = node.uses_font
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class OpenWhatsitNode: Node
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 ---@field stream integer # *TeX*'s stream id number
 ---@field name string # file name
 ---@field ext string # file extension
@@ -849,15 +1067,17 @@ node.direct.uses_font = node.uses_font
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class WriteWhatsitNode: Node
----@field attr Node # list of attributes
----@field stream number # *TeX*'s stream id number
+---@field attr Node # A list of attributes.
+---@field stream integer # *TeX*'s stream id number
 ---@field data table # a table representing the token list to be written
 
 ---
+---* Corresponding C source code: [texnodes.c#L1018-L1020](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1018-L1020)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class CloseWhatsitNode: Node
----@field attr Node # list of attributes
----@field stream number # *TeX*'s stream id number
+---@field attr Node # A list of attributes.
+---@field stream integer # *TeX*'s stream id number
 
 ---
 ---User-defined whatsit nodes can only be created and handled from *Lua* code. In
@@ -870,14 +1090,14 @@ node.direct.uses_font = node.uses_font
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class UserDefinedWhatsitNode: WhatsitNode
----@field user_id number # id number
+---@field user_id integer # id number
 ---@field type 97|100|108|110|115|116 # The `type` can have one of six distinct values. The number is the ASCII value if the first character of the type name (so you can use string.byte("l") instead of `108`): 97 “a” list of attributes (a node list), 100 “d” a *Lua* number, 108 “l” a *Lua* value (table, number, boolean, etc), 110 “n” a node list, 115 “s” a *Lua* string, 116 “t” a *Lua* token list in *Lua* table form (a list of triplets).
 ---@field value number|Node|string|table
 
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class SavePosWhatsitNode: WhatsitNode
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 
 ---
 ---The difference between `data` and `string` is that on assignment, the
@@ -887,10 +1107,12 @@ node.direct.uses_font = node.uses_font
 ---When a function is used, it gets called with as first argument the node that triggers
 ---the call.
 ---
+---* Corresponding C source code: [texnodes.c#L1022-L1027](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1022-L1027)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class LateLuaWhatsitNode: WhatsitNode
----@field attr Node # list of attributes
----@field data string # or function  the to be written information stored as *Lua* value
+---@field attr Node # A list of attributes.
+---@field data string|function # the to be written information stored as *Lua* value
 ---@field token string # the to be written information stored as token list
 ---@field name string # the name to use for *Lua* error reporting
 
@@ -900,7 +1122,7 @@ node.direct.uses_font = node.uses_font
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class SpecialWhatsitNode: WhatsitNode
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 ---@field data string # the `special` information
 
 ---
@@ -925,7 +1147,7 @@ node.direct.uses_font = node.uses_font
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfLiteralWhatsitNode: WhatsitNode
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 ---@field mode PdfLiteralModes # the “mode” setting of this literal
 ---@field data string # the to be written information stored as *Lua* string
 ---@field token string # the to be written information stored as token list
@@ -933,47 +1155,47 @@ node.direct.uses_font = node.uses_font
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfRefobjWhatsitNode: WhatsitNode
----@field attr Node # list of attributes
----@field objnum number # the referenced *PDF* object number
+---@field attr Node # A list of attributes.
+---@field objnum integer # the referenced *PDF* object number
 
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfAnnotWhatsitNode: WhatsitNode
----@field attr Node # list of attributes
----@field width number # the width (not used in calculations)
----@field height number # the height (not used in calculations)
----@field depth number # the depth (not used in calculations)
----@field objnum number # the referenced *PDF* object number
+---@field attr Node # A list of attributes.
+---@field width integer # the width (not used in calculations)
+---@field height integer # the height (not used in calculations)
+---@field depth integer # the depth (not used in calculations)
+---@field objnum integer # the referenced *PDF* object number
 ---@field data string # the annotation data
 
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfStartLinkWhatsitNode: WhatsitNode
----@field attr Node # list of attributes
----@field width number # the width (not used in calculations)
----@field height number # the height (not used in calculations)
----@field depth number # the depth (not used in calculations)
----@field objnum number # the referenced *PDF* object number
+---@field attr Node # A list of attributes.
+---@field width integer # the width (not used in calculations)
+---@field height integer # the height (not used in calculations)
+---@field depth integer # the depth (not used in calculations)
+---@field objnum integer # the referenced *PDF* object number
 ---@field link_attr table # the link attribute token list
 ---@field action Node # the action to perform
 
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfEndLinkWhatsitNode: WhatsitNode
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfDestWhatsitNode: WhatsitNode
----@field attr Node # list of attributes
----@field width number # the width (not used in calculations)
----@field height number # the height (not used in calculations)
----@field depth number # the depth (not used in calculations)
----@field named_id number # is the `dest_id` a string value?
----@field dest_id number # the destination id string the destination name
----@field dest_type number # type of destination
----@field xyz_zoom number # the zoom factor (times 1000)
----@field objnum number # the *PDF* object number; for structure references the *PDF* object number of the linked structure element
+---@field attr Node # A list of attributes.
+---@field width integer # the width (not used in calculations)
+---@field height integer # the height (not used in calculations)
+---@field depth integer # the depth (not used in calculations)
+---@field named_id integer # is the `dest_id` a string value?
+---@field dest_id integer|string # `integer`: the destination id `string`: the destination name
+---@field dest_type integer # type of destination
+---@field xyz_zoom integer # the zoom factor (times 1000)
+---@field objnum integer # the *PDF* object number; for structure references the *PDF* object number of the linked structure element
 
 ---
 ---* Corresponding C source code: [texnodes.c#L1090-L1093](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1090-L1093)
@@ -1000,11 +1222,11 @@ node.direct.uses_font = node.uses_font
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfActionWhatsitNode: WhatsitNode
 ---@field action_type PdfActionTypes # the kind of action involved
----@field named_id number # are `dest_id` and `struct_id` string values?
----@field action_id number|string # token list reference or string
+---@field named_id integer # are `dest_id` and `struct_id` string values?
+---@field action_id integer|string # token list reference or string
 ---@field file string # the target filename
 ---@field new_window PdfWindowTypes # the window state of the target
----@field struct_id nil|number|string # `nil`: the action does not reference a structure; `number`: id of the referenced structure; `string`: name of the referenced structure destination
+---@field struct_id nil|integer|string # `nil`: the action does not reference a structure; `integer`: id of the referenced structure; `string`: name of the referenced structure destination
 ---@field data string # the name of the destination
 
 ---
@@ -1012,33 +1234,33 @@ node.direct.uses_font = node.uses_font
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfThreadWhatsitNode
----@field attr Node # list of attributes
----@field width number # the width (not used in calculations)
----@field height number # the height (not used in calculations)
----@field depth number # the depth (not used in calculations)
----@field named_id number # is `tread_id` a string value?
----@field tread_id number # the thread id  string  the thread name
----@field thread_attr number # extra thread information
+---@field attr Node # A list of attributes.
+---@field width integer # the width (not used in calculations)
+---@field height integer # the height (not used in calculations)
+---@field depth integer # the depth (not used in calculations)
+---@field named_id integer # is `tread_id` a string value?
+---@field tread_id integer # the thread id  string  the thread name
+---@field thread_attr integer # extra thread information
 
 ---
 ---* Corresponding C source code: [texnodes.c#L1176-L1183](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1176-L1183)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfStartThreadWhatsitNode
----@field attr Node # list of attributes
----@field width number # the width (not used in calculations)
----@field height number # the height (not used in calculations)
----@field depth number # the depth (not used in calculations)
----@field named_id number # is `tread_id` a string value?
----@field tread_id number # the thread id  string  the thread name
----@field thread_attr number # extra thread information
+---@field attr Node # A list of attributes.
+---@field width integer # the width (not used in calculations)
+---@field height integer # the height (not used in calculations)
+---@field depth integer # the depth (not used in calculations)
+---@field named_id integer # is `tread_id` a string value?
+---@field tread_id integer # the thread id  string  the thread name
+---@field thread_attr integer # extra thread information
 
 ---
 ---* Corresponding C source code: [texnodes.c#L1145-L1146](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1145-L1146)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfEndThreadWhatsitNode
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 
 ---
 ---From the pdfTeX manual:
@@ -1066,22 +1288,35 @@ node.direct.uses_font = node.uses_font
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfSetmatrixWhatsitNode
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 ---@field data string # data
 
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfSaveWhatsitNode
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfRestoreWhatsitNode
----@field attr Node # list of attributes
+---@field attr Node # A list of attributes.
 
+---
+---* Corresponding C source code: [texnodes.c#L941-L952](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L941-L952)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class UnsetNode: Node
+---@field attr Node
+---@field width integer
+---@field depth integer
+---@field height integer
+---@field dir DirectionSpecifier
+---@field shrink integer
+---@field glue_order integer
+---@field glue_sign integer
+---@field stretch integer
+---@field span unknown
+---@field head Node
 
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -1096,65 +1331,108 @@ node.direct.uses_font = node.uses_font
 ---@class PseudoLineNode: Node
 
 ---
+---* Corresponding C source code: [texnodes.c#L826-L834](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L826-L834)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PageInsertNode: Node
 
 ---
+---* Corresponding C source code: [texnodes.c#L922-L927](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L922-L927)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
----@class Split_InsertNode: Node
+---@class SplitInsertNode: Node
+---@field height integer
+---@field last_ins_ptr integer
+---@field best_ins_ptr integer
+---@field broken_ptr integer
+---@field broken_ins integer
 
+---
+---* Corresponding C source code: [texnodes.c#L474](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L474)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class ExprStackNode: Node
 
 ---
+---* Corresponding C source code: [texnodes.c#L475](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L475)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
----@class Nested_ListNode: Node
+---@class NestedListNode: Node
 
+---
+---* Corresponding C source code: [texnodes.c#L476](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L476)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class SpanNode: Node
 
 ---
+---* Corresponding C source code: [texnodes.c#L729-L731](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L729-L731)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class AttributeNode: Node
+---@field number integer
+---@field value unknown
 
+---
+---* Corresponding C source code: [texnodes.c#L733](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L733)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class AttributeListNode: Node
 
 ---
+---* Corresponding C source code: [texnodes.c#L480](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L480)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class TempNode: Node
 
+---
+---* Corresponding C source code: [texnodes.c#L481](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L481)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class AlignStackNode: Node
 
 ---
+---* Corresponding C source code: [texnodes.c#L482](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L482)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MovementStackNode: Node
 
+---
+---* Corresponding C source code: [texnodes.c#L483](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L483)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class IfStackNode: Node
 
 ---
+---* Corresponding C source code: [texnodes.c#L484](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L484)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class UnhyphenatedNode: Node
 
+---
+---* Corresponding C source code: [texnodes.c#L485](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L485)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class HyphenatedNode: Node
 
 ---
+---* Corresponding C source code: [texnodes.c#L486](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L486)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class DeltaNode: Node
 
 ---
+---Used in the line breaking algorithm.
+---
+---* Corresponding C source code: [texnodes.c#L487](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L487)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PassiveNode: Node
 
+---
+---`\parshape`
+---
+---* Corresponding C source code: [texnodes.c#L488](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L488)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class ShapeNode: Node
@@ -1222,6 +1500,10 @@ function node.whatsits() end
 
 ---
 ---Convert a single type name to its internal numeric representation.
+---
+---```lua
+---node.id('glyph') -- 29
+---```
 ---
 ---__Reference:__
 ---
@@ -1322,7 +1604,7 @@ function node.has_field(n, field) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L3041-L3049](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3041-L3049)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param field string
 ---
 ---@return boolean t
@@ -1407,7 +1689,7 @@ function node.direct.free(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L2094-L2109](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2094-L2109)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return integer next
 ---
@@ -1435,7 +1717,7 @@ function node.flush_node(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L2126-L2133](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2126-L2133)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.direct.flush_node(d) end
@@ -1469,7 +1751,7 @@ function node.flush_list(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L2150-L2157](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2150-L2157)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.direct.flush_list(d) end
@@ -1497,7 +1779,7 @@ function node.copy(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L2489-L2500](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2489-L2500)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return integer e
 ---
@@ -1542,7 +1824,7 @@ function node.copy_list(n, m) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L2456-L2472](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2456-L2472)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param e? integer
 ---
 ---@return integer e
@@ -1585,7 +1867,7 @@ function node.next(n) end
 ---
 ---The intended usage of `current_attr` is as follows:
 ---
----```
+---```lua
 ---local x1 = node.new("glyph")
 ---x1.attr = node.current_attr()
 ---local x2 = node.new("glyph")
@@ -1594,7 +1876,7 @@ function node.next(n) end
 ---
 ---or:
 ---
----```
+---```lua
 ---local x1 = node.new("glyph")
 ---local x2 = node.new("glyph")
 ---local ca = node.current_attr()
@@ -1680,7 +1962,7 @@ function node.hpack(n, width, info, dir) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L2576-L2619](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2576-L2619)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param width? integer
 ---@param info? string
 ---@param dir? string
@@ -1692,54 +1974,56 @@ function node.hpack(n, width, info, dir) end
 function node.direct.hpack(d, width, info, dir) end
 
 ---
----Create a new `vlist` by packaging the list that begins at node `n` into a vertical box.
+---Create a new `vlist` by packaging the list that begins at node `head` into a vertical box.
 ---
 ---With only a single argument, this box is created using
----the natural height of its components. In the three argument form, `info`
----must be either `additional` or `exactly`, and `w` is the
+---the natural height of its components.
 ---
----The second return value is the badness of the generated box. See the description
----of `hpack` for a few memory allocation caveats.
+---Caveat: there can be unexpected side-effects to this function, like updating
+---some of the `marks` and `\inserts`. Also note that the content of
+---`new_head` is the original node list `head`: if you call `node.free(new_head)`
+---you will also free the node list itself, unless you explicitly set the `list` field to `nil` beforehand. And in a similar way, calling `node.free(head)` will invalidate `new_head` as well!
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L2673-L2716](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2673-L2716)
 ---
----@param n Node
----@param width? integer
----@param info? string
----@param dir? string
+---@param head Node
+---@param height? integer # The additional (`\vbox spread`) or exact (`\vbox to`) height to be used.
+---@param info? 'additional'|'exactly' # Must be either `additional` (`\vbox spread`) or `exactly` (`\vbox to`).
+---@param dir? DirectionSpecifier|DirectionSpecifierId
 ---
----@return Node n
----@return integer badness
+---@return Node new_head
+---@return integer badness # The second return value is the badness of the generated box.
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function node.vpack(n, width, info, dir) end
+function node.vpack(head, height, info, dir) end
 
 ---
----Create a new `vlist` by packaging the list that begins at node `n` into a vertical box.
+---Create a new `vlist` by packaging the list that begins at node `head` into a vertical box.
 ---
 ---With only a single argument, this box is created using
----the natural height of its components. In the three argument form, `info`
----must be either `additional` or `exactly`, and `w` is the
+---the natural height of its components.
 ---
----The second return value is the badness of the generated box. See the description
----of `hpack` for a few memory allocation caveats.
+---Caveat: there can be unexpected side-effects to this function, like updating
+---some of the `marks` and `\inserts`. Also note that the content of
+---`new_head` is the original node list `head`: if you call `node.free(new_head)`
+---you will also free the node list itself, unless you explicitly set the `list` field to `nil` beforehand. And in a similar way, calling `node.free(head)` will invalidate `new_head` as well!
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L2720-L2763](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2720-L2763)
 ---
----@param d integer
----@param width? integer
----@param info? string
----@param dir? string
+---@param head integer # The index number of the node in the memory table for direct access.
+---@param height? integer # The additional (`\vbox spread`) or exact (`\vbox to`) height to be used.
+---@param info? 'additional'|'exactly' # Must be either `additional` (`\vbox spread`) or `exactly` (`\vbox to`).
+---@param dir? DirectionSpecifier|DirectionSpecifierId
 ---
----@return integer d
----@return integer badness
+---@return integer new_head
+---@return integer badness # The second return value is the badness of the generated box.
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function node.direct.vpack(d, width, info, dir) end
+function node.direct.vpack(head, height, info, dir) end
 
 ---
 ---Add the interlinespace to a line keeping the baselineskip and lineskip into
@@ -1765,7 +2049,7 @@ function node.prepend_prevdepth(n, prevdepth) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L8803-L8840](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8803-L8840)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param prevdepth integer
 ---
 ---@return integer new_prevdepth
@@ -1813,7 +2097,7 @@ function node.dimensions(n, dir) end
 ---[Source: luatex-nodes.tex#L1490-L1546](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
 ---* Corresponding C source code: [lnodelib.c#L2838-L2880](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2838-L2880)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param dir? DirectionSpecifier
 ---
 ---@return integer width # scaled points
@@ -1852,7 +2136,7 @@ function node.dimensions(n, t, dir) end
 ---[Source: luatex-nodes.tex#L1490-L1546](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
 ---* Corresponding C source code: [lnodelib.c#L2838-L2880](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2838-L2880)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param t integer # terminating node
 ---@param dir? DirectionSpecifier
 ---
@@ -1937,7 +2221,7 @@ function node.dimensions(glue_set, glue_sign, glue_order, n, dir) end
 ---@param glue_set integer
 ---@param glue_sign integer
 ---@param glue_order integer
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param dir? DirectionSpecifier
 ---
 ---@return integer width # scaled points
@@ -1962,7 +2246,7 @@ function node.direct.dimensions(glue_set, glue_sign, glue_order, d, dir) end
 ---@param glue_set integer
 ---@param glue_sign integer
 ---@param glue_order integer
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param t integer # terminating node
 ---@param dir? DirectionSpecifier
 ---
@@ -2087,7 +2371,7 @@ function node.tail(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L3278-L3289](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3278-L3289)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return integer e
 ---
@@ -2122,7 +2406,7 @@ function node.length(n, m) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L4350-L4360](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4350-L4360)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param e? Node
 ---
 ---@return integer i
@@ -2164,7 +2448,7 @@ function node.count(id, n, m) end
 ---* Corresponding C source code: [lnodelib.c#L4362-L4369](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4362-L4369)
 ---
 ---@param id integer|string
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param e? Node
 ---
 ---@return integer i
@@ -2197,7 +2481,7 @@ function node.is_char(n, font) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L7572-L7592](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7572-L7592)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param font? integer
 ---
 ---@return boolean|integer|nil
@@ -2285,7 +2569,7 @@ function node.traverse(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L3937-L3953](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3937-L3953)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return fun(): t: integer, id: integer, subtype: integer
 ---
@@ -2317,7 +2601,7 @@ function node.traverse_id(id, n) end
 ---* Corresponding C source code: [lnodelib.c#L3980-L3995](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3980-L3995)
 ---
 ---@param id integer
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return fun(): t: integer, subtype: integer
 ---
@@ -2349,7 +2633,7 @@ function node.traverse_char(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L4022-L4038](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4022-L4038)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return fun(): d: integer, font: integer, char: integer
 ---
@@ -2379,7 +2663,7 @@ function node.traverse_glyph(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L4065-L4081](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4065-L4081)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return fun(): d: integer, font: integer, char: integer
 ---
@@ -2411,7 +2695,7 @@ function node.traverse_list(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L4318-L4330](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4318-L4330)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return fun(): d: integer, id: integer, subtype: integer, list: Node
 ---
@@ -2439,7 +2723,7 @@ function node.has_glyph(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L6368-L6382](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6368-L6382)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return integer|nil d
 ---
@@ -2477,7 +2761,7 @@ function node.end_of_math(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L3317-L3334](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3317-L3334)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return integer|nil t
 ---
@@ -2663,7 +2947,7 @@ function node.first_glyph(n, m) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L6341-L6362](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6341-L6362)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param e? integer
 ---
 ---@return integer|nil d
@@ -2760,7 +3044,7 @@ function node.unprotect_glyph(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L6272-L6278](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6272-L6278)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.direct.unprotect_glyph(d) end
@@ -2820,7 +3104,7 @@ function node.protect_glyph(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L6264-L6270](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6264-L6270)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.direct.protect_glyph(d) end
@@ -2912,7 +3196,7 @@ function node.write(n) end
 ---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L2518-L2521](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L2518-L2521), [luatex-nodes.tex#L1913-L1923](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1913-L1923)
 ---* Corresponding C source code: [lnodelib.c#L2529-L2552](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2529-L2552)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.direct.write(d) end
@@ -2940,7 +3224,7 @@ function node.protrusion_skippable(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L6497-L6506](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6497-L6506)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return boolean skippable
 ---
@@ -2997,7 +3281,7 @@ function node.setglue(n, width, stretch, shrink, stretch_order, shrink_order) en
 ---
 ---* Corresponding C source code: [lnodelib.c#L3798-L3818](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3798-L3818)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param width integer|any
 ---@param stretch integer|any
 ---@param shrink integer|any
@@ -3038,7 +3322,7 @@ function node.getglue(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L3776-L3796](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3776-L3796)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return integer|number|nil width_or_glue_set # When a list node (`vlist` or `hlist`) is passed, than the glue set is returned.
 ---@return integer|nil stretch_or_glue_order # When a list node (`vlist` or `hlist`) is passed, than the glue order is returned.
@@ -3072,7 +3356,7 @@ function node.is_zero_glue(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L3820-L3834](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3820-L3834)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return boolean isglue
 ---
@@ -3110,7 +3394,7 @@ function node.has_attribute(n, id, value) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L3357-L3371](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3357-L3371)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param id integer
 ---@param value? integer
 ---
@@ -3149,7 +3433,7 @@ function node.get_attribute(n, id) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L3450-L3481](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3450-L3481)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param id integer
 ---
 ---@return integer|nil value
@@ -3186,7 +3470,7 @@ function node.find_attribute(n, id) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L3503-L3538](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3503-L3538)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param id integer
 ---
 ---@return integer|nil value
@@ -3222,7 +3506,7 @@ function node.set_attribute(n, id, value) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L3483-L3501](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3483-L3501)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param id integer
 ---@param value? integer
 ---
@@ -3312,7 +3596,7 @@ function node.slide(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L3245-L3258](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3245-L3258)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return integer tail
 ---
@@ -3350,7 +3634,7 @@ function node.check_discretionaries(head) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L8550-L8562](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8550-L8562)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.direct.check_discretionaries(d) end
@@ -3386,7 +3670,7 @@ function node.check_discretionary(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L8564-L8573](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8564-L8573)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.direct.check_discretionary(d) end
@@ -3415,7 +3699,7 @@ function node.flatten_discretionaries(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L8575-L8613](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8575-L8613)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return Node head
 ---@return integer count
@@ -3463,7 +3747,7 @@ function node.direct.todirect(n) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L6570-L6581](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6570-L6581)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return Node n
 ---
@@ -4613,7 +4897,7 @@ function node.getproperty(node) end
 ---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L2520-L2523](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L2520-L2523)
 ---* Corresponding C source code: [lnodelib.c#L8391-L8401](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8391-L8401)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return any value
 ---
@@ -4706,7 +4990,7 @@ function node.hyphenating(n, m) end
 ---
 ---* Corresponding C source code: [lnodelib.c#L6124-L6142](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6124-L6142)
 ---
----@param d integer
+---@param d integer # The index number of the node in the memory table for direct access.
 ---@param e? integer
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -4728,13 +5012,19 @@ function node.direct.hyphenating(d, e) end
 function node.make_extensible(fnt, chr, size, overlap, horizontal, attlist) end
 
 ---
+---__Example:__
+---
+---```lua
+---node.subtypes('fence') -- {"left", "middle", "right", "no", [0] = "unset"}
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L3153-L3222](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3153-L3222)
 ---
 ---@param subtype string|integer
 ---
----@return string[]
+---@return table<integer, string>
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.subtypes(subtype) end
@@ -4782,13 +5072,26 @@ function node.usedlist() end
 function node.direct.usedlist() end
 
 ---
+---Report some used values.
+---
+---Valid arguments are `dir`, `direction`, `glue`, `pdf_literal`, `pdf_action`, `pdf_window` and `color_stack`. Keep
+---in mind that the setters normally expect a number, but this helper gives you a
+---list of what numbers matter. For practical reason the `pagestate` values
+---are also reported with this helper.
+---
+---__Example:__
+---
+---```lua
+---node.values('dir') -- { "TLT", "TRT", "LTL", "RTT" },
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L3117-L3151](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3117-L3151)
 ---
 ---@param type 'dir'|'direction'|'glue'|'pdf_literal'|'pdf_action'|'pdf_window'|'color_stack'|'pagestate'
 ---
----@return string[]
+---@return string[]|nil
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.values(type) end

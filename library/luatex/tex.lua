@@ -8,6 +8,38 @@ _N = {}
 tex = {}
 
 ---
+---Set the given TeX parameter.
+---
+---When you set a glue quantity you can either pass a `glue_spec` or upto five numbers.
+---It is possible to use `global` as the first argument to `tex.set`; this makes the assignment global instead of local.
+---
+---* Corresponding C source code: [ltexlib.c#L1714-L1813](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1714-L1813)
+---
+---@param parameter string
+---@param ... any
+function tex.set(parameter, ...) end
+
+---
+---Query the given TeX parameter.
+---
+---The return value
+---is a `glue_spec` node but when you pass `false` as last argument to
+---`tex.get` you get the width of the glue and when you pass `true` you
+---get all five values. Otherwise you get a node which is a copy of the internal
+---value so you are responsible for its freeing at the *Lua* end.
+---
+--- If
+---you pass `true` to `get` you get 5 values returned for a glue and
+---when you pass `false` you only get the width returned.
+---
+---* Corresponding C source code: [ltexlib.c#L2120-L2200](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2120-L2200)
+---@param parameter string
+---@param opts boolean
+---
+---@return any ...
+function tex.get(parameter, opts) end
+
+---
 ---`\adjdemerits`: Penalty for adjacent visually incompatible lines. Plain TEX default: 10 000.
 ---
 ---__Reference:__
@@ -40,7 +72,7 @@ tex.binoppenalty = 0
 ---
 ---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 ---
----[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 💁🏻 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.brokenpenalty = 0
 
 ---
@@ -1774,7 +1806,8 @@ tex.currentiftype = 0
 tex.currentifbranch = 0
 
 ---
----the attribute registers accept and return Lua numbers.
+---The attribute registers accept and return Lua numbers.
+---
 ---see `LuaTeX` manual: 10.3.5 Accessing registers: `set*`, `get*` and `is*`
 ---
 ---@type table
@@ -1785,21 +1818,44 @@ tex.attribute = {}
 ---
 ---* Corresponding C source code: [ltexlib.c#L1087-L1102](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1087-L1102)
 ---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param register string|integer # A register number or a predefined csname string from `\attributedef`.
+---@param value integer
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.setattribute() end
+function tex.setattribute(global, register, value) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1087-L1102](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1087-L1102)
+---
+---@param register string|integer # A register number or a predefined csname string from `\attributedef`.
+---@param value integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setattribute(register, value) end
 
 ---
 ---* Corresponding C source code: [ltexlib.c#L1104-L1114](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1104-L1114)
 ---
+---@param register string|integer # A register number or a predefined csname string from `\attributedef`.
+---
+---@return integer value
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.getattribute() end
+function tex.getattribute(register) end
 
 ---
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.isattribute() end
+---* Corresponding C source code: [ltexlib.c#L1080-L1083](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1080-L1083)
+---* Corresponding C source code: [ltexlib.c#L350-L358](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L350-L358)
+---
+---@param register string|integer # A register number or a predefined csname string from `\attributedef`.
+---
+---@return false|integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.isattribute(register) end
 
+---
+---The count registers accept and return *Lua* numbers.
 ---
 ---see `LuaTeX` manual: 10.3.5 Accessing registers: `set*`, `get*` and `is*`
 ---
@@ -1807,6 +1863,46 @@ function tex.isattribute() end
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.count = {}
+
+---
+---* Corresponding C source code: [ltexlib.c#L1051-L1066](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1051-L1066)
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param register string|integer # A register number or a predefined csname string from `\countdef`.
+---@param value integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setcount(global, register, value) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1051-L1066](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1051-L1066)
+---
+---@param register string|integer # A register number or a predefined csname string from `\countdef`.
+---@param value integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setcount(register, value) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1068-L1078](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1068-L1078)
+---
+---@param register string|integer # A register number or a predefined csname string from `\countdef`.
+---
+---@return integer value
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getcount(register) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1046-L1049](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1046-L1049)
+---* Corresponding C source code: [ltexlib.c#L350-L358](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L350-L358)
+---
+---@param register string|integer # A register number or a predefined csname string from `\countdef`.
+---
+---@return false|integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.iscount(register) end
 
 ---
 ---The dimension registers accept *Lua* numbers (in scaled points) or
@@ -1822,12 +1918,99 @@ tex.count = {}
 tex.dimen = {}
 
 ---
+---* Corresponding C source code: [ltexlib.c#L818-L834](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L818-L834)
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param register string|integer # A register number or a predefined csname string from `\dimendef`.
+---@param value integer|string
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setdimen(global, register, value) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L836-L846](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L836-L846)
+---
+---@param register string|integer # A register number or a predefined csname string from `\dimendef`.
+---
+---@return integer value
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getdimen(register) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L813-L816](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L813-L816)
+---* Corresponding C source code: [ltexlib.c#L350-L358](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L350-L358)
+---
+---@param register string|integer # A register number or a predefined csname string from `\dimendef`.
+---
+---@return false|integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.isdimen(register) end
+
+---
+---The glue registers are just skip registers but instead of userdata
+---are verbose.
+---
 ---see `LuaTeX` manual: 10.3.5 Accessing registers: `set*`, `get*` and `is*`
 ---
 ---@type table
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.glue = {}
+
+---
+---* Corresponding C source code: [ltexlib.c#L884-L903](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L884-L903)
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param register string|integer # A register number or a predefined csname string from `\skipdef`.
+---@param width? number
+---@param stretch? number
+---@param shrink? number
+---@param stretch_order? integer
+---@param shrink_order? integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setglue(global, register, width, stretch, shrink, stretch_order, shrink_order) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L884-L903](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L884-L903)
+---
+---@param register string|integer # A register number or a predefined csname string from `\skipdef`.
+---@param width? number
+---@param stretch? number
+---@param shrink? number
+---@param stretch_order? integer
+---@param shrink_order? integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setglue(register, width, stretch, shrink, stretch_order, shrink_order) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L905-L949](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L905-L949)
+---
+---@param register string|integer # A register number or a predefined csname string from `\skipdef`.
+---
+---@return integer width
+---@return integer stretch
+---@return integer shrink
+---@return integer stretch_order
+---@return integer shrink_order
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getglue(register) end
+
+---
+---Alias of tex.isskip()
+---
+---* Corresponding C source code: [ltexlib.c#L848-L851](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L848-L851)
+---
+---* Corresponding C source code: [ltexlib.c#L350-L358](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L350-L358)
+---
+---@param register string|integer # A register number or a predefined csname string from `\skipdef`.
+---
+---@return false|integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.isglue(register) end
 
 ---
 ---see `LuaTeX` manual: 10.3.5 Accessing registers: `set*`, `get*` and `is*`
@@ -1838,6 +2021,59 @@ tex.glue = {}
 tex.muglue = {}
 
 ---
+---* Corresponding C source code: [ltexlib.c#L979-L998](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L979-L998)
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param register string|integer # A register number or a predefined csname string from `\muskipdef`.
+---@param width? number
+---@param stretch? number
+---@param shrink? number
+---@param stretch_order? integer
+---@param shrink_order? integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setmuglue(global, register, width, stretch, shrink, stretch_order, shrink_order) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L979-L998](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L979-L998)
+---
+---@param register string|integer # A register number or a predefined csname string from `\muskipdef`.
+---@param width? number
+---@param stretch? number
+---@param shrink? number
+---@param stretch_order? integer
+---@param shrink_order? integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setmuglue(register, width, stretch, shrink, stretch_order, shrink_order) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1000-L1044](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1000-L1044)
+---
+---@param register string|integer # A register number or a predefined csname string from `\muskipdef`.
+---
+---@return integer width
+---@return integer stretch
+---@return integer shrink
+---@return integer stretch_order
+---@return integer shrink_order
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getmuglue(register) end
+
+---
+---Alias of tex.ismuskip()
+---
+---* Corresponding C source code: [ltexlib.c#L951-L954](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L951-L954)
+---* Corresponding C source code: [ltexlib.c#L350-L358](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L350-L358)
+---
+---@param register string|integer # A register number or a predefined csname string from `\muskipdef`.
+---
+---@return false|integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.ismuglue(register) end
+
+---
 ---see `LuaTeX` manual: 10.3.5 Accessing registers: `set*`, `get*` and `is*`
 ---
 ---@type table
@@ -1845,6 +2081,48 @@ tex.muglue = {}
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.muskip = {}
 
+---
+---* Corresponding C source code: [ltexlib.c#L956-L965](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L956-L965)
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param register string|integer # A register number or a predefined csname string from `\muskipdef`.
+---@param value Node
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setmuskip(global, register, value) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L956-L965](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L956-L965)
+---
+---@param register string|integer # A register number or a predefined csname string from `\muskipdef`.
+---@param value Node
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setmuskip(register, value) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L967-L977](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L967-L977)
+---
+---@param register string|integer # A register number or a predefined csname string from `\muskipdef`.
+---
+---@return Node value
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getmuskip(register) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L951-L954](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L951-L954)
+---* Corresponding C source code: [ltexlib.c#L350-L358](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L350-L358)
+---
+---@param register string|integer # A register number or a predefined csname string from `\muskipdef`.
+---
+---@return false|integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.ismuskip(register) end
+
+---
+---The skip registers accept and return `glue_spec` userdata node
+---objects.
 ---
 ---see `LuaTeX` manual: 10.3.5 Accessing registers: `set*`, `get*` and `is*`
 ---
@@ -1854,6 +2132,46 @@ tex.muskip = {}
 tex.skip = {}
 
 ---
+---* Corresponding C source code: [ltexlib.c#L853-L866](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L853-L866)
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param register string|integer # A register number or a predefined csname string from `\skipdef`.
+---@param skip GlueSpecNode
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setskip(global, register, skip) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L853-L866](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L853-L866)
+---
+---@param register string|integer # A register number or a predefined csname string from `\skipdef`.
+---@param skip GlueSpecNode
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setskip(register, skip) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L868-L882](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L868-L882)
+---
+---@param register string|integer # A register number or a predefined csname string from `\skipdef`.
+---
+---@return GlueSpecNode
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getskip(register) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L848-L851](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L848-L851)
+---* Corresponding C source code: [ltexlib.c#L350-L358](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L350-L358)
+---
+---@param register string|integer # A register number or a predefined csname string from `\skipdef`.
+---
+---@return false|integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.isskip(register) end
+
+---
+---The token registers accept and return *Lua* strings. *Lua* strings are
+---converted to and from token lists using `the` `toks` style
+---expansion: all category codes are either space (10) or other (12).
+---
 ---see `LuaTeX` manual: 10.3.5 Accessing registers: `set*`, `get*` and `is*`
 ---
 ---@type table
@@ -1862,186 +2180,536 @@ tex.skip = {}
 tex.toks = {}
 
 ---
----# Character code registers: `[get|set]*code[s]`
+---Set a toks register. Also accepts a predefined csname string.
 ---
+---* Corresponding C source code: [ltexlib.c#L1125-L1158](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1125-L1158)
 ---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param register string|integer # A register number or a predefined csname string from `\toksdef`.
+---@param toks string
 ---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.settoks(global, register, toks) end
+
 ---
+---Get a toks register. Also accepts a predefined csname string.
 ---
----*TeX*'s character code tables (`lccode`, `uccode`, `sfcode`, `catcode`, `mathcode`, `delcode`) can be accessed and written to using
----six virtual subtables of the `tex` table
+---* Corresponding C source code: [ltexlib.c#L1197-L1209](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1197-L1209)
 ---
----\startthreecolumns
+---@param register string|integer # A register number or a predefined csname string from `\toksdef`.
+---
+---@return string toks
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.gettoks(register) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1120-L1123](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1120-L1123)
+---* Corresponding C source code: [ltexlib.c#L350-L358](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L350-L358)
+---
+---@param register string|integer # A register number or a predefined csname string from `\toksdef`.
+---
+---@return false|integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.istoks(register) end
+
+---
+---For tokens registers we have an alternative where a catcode table is specified:
+---
+---```lua
+---tex.scantoks(0,3,"$e=mc^2$")
+---tex.scantoks("global",0,"$\\int\\limits^1_2$")
 ---```
----tex.lccode
----tex.uccode
----tex.sfcode
----tex.catcode
----tex.mathcode
----tex.delcode
----```
----\stopthreecolumns
 ---
----The function call interfaces are roughly as above, but there are a few twists.
----`sfcode`s are the simple ones:
+---* Corresponding C source code: [ltexlib.c#L1160-L1195](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1160-L1195)
 ---
----```
----tex.setsfcode (["global",] <number> n, <number> s)
----<number> s = tex.getsfcode (<number> n)
----```
+---@param global 'global'
+---@param register integer
+---@param catcodetable integer
+---@param toks string
 ---
----The function call interface for `lccode` and `uccode` additionally
----allows you to set the associated sibling at the same time:
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.scantoks(global, register, catcodetable, toks) end
+
 ---
----```
----tex.setlccode (["global"], <number> n, <number> lc)
----tex.setlccode (["global"], <number> n, <number> lc, <number> uc)
----<number> lc = tex.getlccode (<number> n)
----tex.setuccode (["global"], <number> n, <number> uc)
----tex.setuccode (["global"], <number> n, <number> uc, <number> lc)
----<number> uc = tex.getuccode (<number> n)
----```
+---When no arguments are given the current maximum number of classes is returned.
 ---
----The function call interface for `catcode` also allows you to specify a
+---* Corresponding C source code: [ltexlib.c#L1211-L1242](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1211-L1242)
+---
+---@param position? 'top'|'bottom'|'first'|'splitbottom'|'splitfirst' # one of top, bottom, first, splitbottom or splitfirst
+---@param class? integer marks class number.
+---
+---@return integer|string
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getmark(position, class) end
+
+---
+---*TeX*'s character code table `lccode` (lower case code) can be accessed and written to using
+---a virtual subtable of the `tex` table.
+---@type table
+tex.lccode = {}
+
+---
+---Set the `lccode` (lower case code) and additionally
+---the associated sibling for a character code at the same time.
+---
+---* Corresponding C source code: [ltexlib.c#L1369-L1397](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1369-L1397)
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param char_code integer
+---@param lc integer
+---@param uc? integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setlccode(global, char_code, lc, uc) end
+
+---
+---Set the `lccode` (lower case code) and additionally
+---the associated sibling for a character code at the same time.
+---
+---* Corresponding C source code: [ltexlib.c#L1369-L1397](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1369-L1397)
+---
+---@param char_code integer
+---@param lc integer
+---@param uc? integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setlccode(char_code, lc, uc) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1404-L1410](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1404-L1410)
+---
+---@param char_code integer
+---
+---@return integer lc
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getlccode(char_code) end
+
+---
+---*TeX*'s character code table `uccode` (upper case code) can be accessed and written to using
+---a virtual subtable of the `tex` table.
+---@type table
+tex.uccode = {}
+
+---
+---The function call interface for `uccode` (upper case code) additionally
+---allows you to set the associated sibling at the same time.
+---
+---* Corresponding C source code: [ltexlib.c#L1369-L1397](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1369-L1397)
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param char_code integer
+---@param uc integer
+---@param lc? integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setuccode(global, char_code, uc, lc) end
+
+---
+---The function call interface for `uccode` (upper case code) additionally
+---allows you to set the associated sibling at the same time.
+---
+---* Corresponding C source code: [ltexlib.c#L1369-L1397](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1369-L1397)
+---
+---@param char_code integer
+---@param uc integer
+---@param lc? integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setuccode(char_code, uc, lc) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1417-L1423](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1417-L1423)
+---
+---@param char_code integer
+---
+---@return integer uc
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getuccode(char_code) end
+
+---
+---*TeX*'s character code table `sfcode` (space factor code) can be accessed and written to using
+---a virtual subtable of the `tex` table.
+---@type table
+tex.sfcode = {}
+
+---
+---* Corresponding C source code: [ltexlib.c#L1425-L1428](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1425-L1428)
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param char_code integer
+---@param sf integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setsfcode(global, char_code, sf) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1425-L1428](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1425-L1428)
+---
+---@param char_code integer
+---@param sf integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setsfcode(char_code, sf) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1430-L1436](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1430-L1436)
+---
+---@param n integer
+---
+---@return integer s
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getsfcode(n) end
+
+---
+---*TeX*'s character code table `catcode` (category code) can be accessed and written to using
+---a virtual subtable of the `tex` table.
+---@type table
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+tex.catcode = {}
+
+---
+---Specify a
+---category table to use on assignment or on query (default in both cases is the
+---current one).
+---
+---* Corresponding C source code: [ltexlib.c#L1438-L1464](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1438-L1464)
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param char_code integer
+---@param cat_code integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setcatcode(global, char_code, cat_code) end
+
+---
+---Specify a
+---category table to use on assignment or on query (default in both cases is the
+---current one).
+---
+---* Corresponding C source code: [ltexlib.c#L1438-L1464](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1438-L1464)
+---
+---@param char_code integer
+---@param cat_code integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setcatcode(char_code, cat_code) end
+
+---
+---Specify a
+---category table to use on assignment or on query (default in both cases is the
+---current one).
+---
+---* Corresponding C source code: [ltexlib.c#L1438-L1464](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1438-L1464)
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param cat_table integer
+---@param char_code integer
+---@param cat_code integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setcatcode(global, cat_table, char_code, cat_code) end
+
+---
+---Specify a
+---category table to use on assignment or on query (default in both cases is the
+---current one).
+---
+---* Corresponding C source code: [ltexlib.c#L1438-L1464](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1438-L1464)
+---
+---@param cat_table integer
+---@param char_code integer
+---@param cat_code integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setcatcode(global, cat_table, char_code, cat_code) end
+
+---
+---The function call interface for `catcode` (category code) also allows you to specify a
 ---category table to use on assignment or on query (default in both cases is the
 ---current one):
 ---
----```
----tex.setcatcode (["global"], <number> n, <number> c)
----tex.setcatcode (["global"], <number> cattable, <number> n, <number> c)
----<number> lc = tex.getcatcode (<number> n)
----<number> lc = tex.getcatcode (<number> cattable, <number> n)
----```
+---@param cat_table integer
+---@param char_code integer
 ---
----The interfaces for `delcode` and `mathcode` use small array tables to
----set and retrieve values:
----
----```
----tex.setmathcode (["global"], <number> n, <table> mval )
----<table> mval = tex.getmathcode (<number> n)
----tex.setdelcode (["global"], <number> n, <table> dval )
----<table> dval = tex.getdelcode (<number> n)
----```
----
----Where the table for `mathcode` is an array of 3 numbers, like this:
----
----```
----{
----    <number> class,
----    <number> family,
----    <number> character
----}
----```
----
----And the table for `delcode` is an array with 4 numbers, like this:
----
----```
----{
----    <number> small_fam,
----    <number> small_char,
----    <number> large_fam,
----    <number> large_char
----}
----```
----
----You can also avoid the table:
----
----```
----tex.setmathcode (["global"], <number> n, <number> class,
----    <number> family, <number> character)
----class, family, char =
----    tex.getmathcodes (<number> n)
----tex.setdelcode (["global"], <number> n, <number> smallfam,
----    <number> smallchar, <number> largefam, <number> largechar)
----smallfam, smallchar, largefam, largechar =
----    tex.getdelcodes (<number> n)
----```
----
----Normally, the third and fourth values in a delimiter code assignment will be zero
----according to `Udelcode` usage, but the returned table can have values there
----(if the delimiter code was set using `delcode`, for example). Unset `delcode`'s can be recognized because `dval[1]` is `-1`.
----
+---@return integer cat_code
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getcatcode(cat_table, char_code) end
 
 ---
----# Box registers: `[get|set]box`
+---*TeX*'s character code table `mathcode` can be accessed and written to using
+---a virtual subtable of the `tex` table.
+---@type table
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+tex.mathcode = {}
+
 ---
----It is possible to set and query actual boxes, coming for instance from `hbox`, `vbox` or `vtop`, using the node interface as defined in the
----`node` library:
+---The table for `mathcode` is an array of 3 numbers, like this:
 ---
+---```lua
+---{
+---    -- class
+---    -- family
+---    -- character
+---}
 ---```
----tex.box
----```
 ---
----for array access, or
+---@alias MathCode integer[]
+
 ---
----```
----tex.setbox(["global",] <number> n, <node> s)
----tex.setbox(["global",] <string> cs, <node> s)
----<node> n = tex.getbox(<number> n)
----<node> n = tex.getbox(<string> cs)
----```
+---* Corresponding C source code: [ltexlib.c#L1524-L1561](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1524-L1561)
 ---
----for function-based access. In the function-based interface, it is possible to
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param char_code integer
+---@param class integer
+---@param family integer
+---@param character integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setmathcode(global, char_code, class, family, character) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1524-L1561](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1524-L1561)
+---
+---@param char_code integer
+---@param class integer
+---@param family integer
+---@param character integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setmathcode(global, char_code, class, family, character) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1524-L1561](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1524-L1561)
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param char_code integer
+---@param math_code MathCode
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setmathcode(global, char_code, math_code) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1524-L1561](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1524-L1561)
+---
+---@param char_code integer
+---@param math_code MathCode
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setmathcode(char_code, math_code) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1563-L1577](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1563-L1577)
+---
+---@param char_code integer
+---
+---@return MathCode math_code
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getmathcode(char_code) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1579-L1589](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1579-L1589)
+---
+---@param char_code integer
+---
+---@return integer class
+---@return integer family
+---@return integer character
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getmathcodes(char_code) end
+
+---
+---*TeX*'s character code tables `delcode` (delimiter code) can be accessed and written to using
+---a virtual subtable of the `tex` table.
+---@type table
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+tex.delcode = {}
+
+---
+---And the table for `delcode` (delimiter code) is an array with 4 numbers, like this:
+---
+---```lua
+---{
+---    -- small_family
+---    -- small_character
+---    -- large_family
+---    -- large_character
+---}
+---```
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---@alias DelCode integer[]
+
+---
+---* Corresponding C source code: [ltexlib.c#L1640-L1681](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1640-L1681)
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param char_code integer
+---@param small_family integer
+---@param small_character integer
+---@param large_family integer
+---@param large_character integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setdelcode(global, char_code, small_family, small_character, large_family, large_character) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1640-L1681](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1640-L1681)
+---
+---@param char_code integer
+---@param small_family integer
+---@param small_character integer
+---@param large_family integer
+---@param large_character integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setdelcode(char_code, small_family, small_character, large_family, large_character) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1640-L1681](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1640-L1681)
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param char_code integer
+---@param del_code DelCode
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setdelcode(global, char_code, del_code) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1640-L1681](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1640-L1681)
+---
+---@param char_code integer
+---@param del_code DelCode
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setdelcode(char_code, del_code) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1701-L1712](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1701-L1712)
+---
+---@param char_code integer
+---
+---@return integer small_family
+---@return integer small_character
+---@return integer large_family
+---@return integer large_character
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getdelcodes(char_code) end
+
+---
+---* Corresponding C source code: [ltexlib.c#L1683-L1699](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1683-L1699)
+---
+---@param char_code integer
+---
+---@return DelCode
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getdelcode(char_code) end
+
+---
+---Set a box, coming for instance from `hbox`, `vbox` or `vtop`.
+---
+---It is possible to
 ---define values globally by using the string `global` as the first function
 ---argument.
 ---
----Be warned that an assignment like
+---* Corresponding C source code: [ltexlib.c#L1352-L1362](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1352-L1362)
 ---
----```
----tex.box[0] = tex.box[2]
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param register integer # A box register number (0 to 65535).
+---@param head Node # A `hlist` or `vlist` node.
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setbox(global, register, head) end
+
+---
+---Set a box, coming for instance from `hbox`, `vbox` or `vtop`.
+---
+---It is possible to
+---define values globally by using the string `global` as the first function
+---argument.
+---
+---* Corresponding C source code: [ltexlib.c#L1352-L1362](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1352-L1362)
+---
+---@param register integer # A box register number (0 to 65535).
+---@param head Node # A `hlist` or `vlist` node.
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setbox(register, head) end
+
+---
+---Query an actual boxe, coming for instance from `hbox`, `vbox` or `vtop`.
+---
+---* Corresponding C source code: [ltexlib.c#L1272-L1280](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1272-L1280)
+---
+---@param register integer|string # A box register number (0 to 65535) or a cs name (for example `\newbox\MyBox`: `MyBox`)
+---
+---@return Node|nil head
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getbox(register) end
+
+---
+---Check if the given integer is a valid box register number.
+---
+---__Example:__
+---
+---```lua
+---print(tex.isbox(65535)) -- true
+---print(tex.isbox(65536)) -- false
 ---```
 ---
----does not copy the node list, it just duplicates a node pointer. If `\box2`
----will be cleared by *TeX* commands later on, the contents of `\box0` becomes
----invalid as well. To prevent this from happening, always use `node.copy_list` unless you are assigning to a temporary variable:
+---* Corresponding C source code: [ltexlib.c#L1310-L1315](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1310-L1315)
 ---
----```
----tex.box[0] = node.copy_list(tex.box[2])
----```
+---@param register integer|string # A box register number (0 to 65535) or a cs name (for example `\newbox\MyBox`: `MyBox`)
 ---
+---@return boolean
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.isbox(register) end
 
 ---
 ---Register a box for reuse (this is modelled after so
 ---called xforms in *PDF*). You can (re)use the box with `useboxresource` or
 ---by creating a rule node with subtype 2.
 ---
----The optional second and third arguments are strings, the fourth is a boolean. The
----fifth argument is a type. When set to non-zero the `/Type` entry is
----omitted. A value of 1 or 3 still writes a `/BBox`, while 2 or 3 will write
----a `/Matrix`. The sixth argument is the (virtual) margin that extends beyond
----the effective boundingbox as seen by *TeX*. Instead of a box number one can also
----pass a `[h|v]list` node.
+---* Corresponding C source code: [ltexlib.c#L3217-L3278](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3217-L3278)
 ---
----@param n Node|integer
+---@see tex.useboxresource
+---
+---@param n Node|integer # Instead of a box number one can also pass a `[h|v]list` node.
 ---@param attributes string
 ---@param resources string
 ---@param immediate boolean
----@param type any
----@param margin any
+---@param type integer # When set to non-zero the `/Type` entry is omitted. A value of 1 or 3 still writes a `/BBox`, while 2 or 3 will write a `/Matrix`.
+---@param margin integer # The (virtual) margin that extends beyond the effective boundingbox as seen by *TeX*.
 ---
 ---@return integer index
-function tex.saveboxresource(n,attributes,resources,immediate,type,margin) end
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.saveboxresource(n, attributes, resources, immediate, type, margin) end
 
 ---
----You can generate the reference (a rule type) with:
+---* Corresponding Lua source code: [ltexlib.c#L3346-L3355](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3346-L3355)
 ---
----```
----local reused = tex.useboxresource(n,wd,ht,dp)
----```
+---@param n integer
+---
+---@return Node
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getboxresourcebox(n) end
+
+---
+---Generate the reference (a rule type).
 ---
 ---The dimensions are optional and the final ones are returned as extra values.
 ---
----@param n Node
----@param wd integer
----@param ht integer
----@param dp integer
-function tex.useboxresource(n,wd,ht,dp) end
+---* Corresponding C source code: [ltexlib.c#L3280-L3325](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3280-L3325)
+---
+---@see tex.saveboxresource
+---
+---@param n integer
+---@param width? integer
+---@param height? integer
+---@param depth? integer
+---
+---@return Node|nil margin
+---@return integer|nil width
+---@return integer|nil height
+---@return integer|nil depth
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.useboxresource(n, width, height, depth) end
 
 ---
----Returns the width, height, depth and margin of the resource.
+---Return the width, height, depth and margin of the resource.
 ---
 ---No dimensions returned means that the resource is
 ---unknown.
+---
+---* Corresponding C source code: [ltexlib.c#L3327-L3344](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3327-L3344)
 ---
 ---@param n Node
 ---
@@ -2049,6 +2717,7 @@ function tex.useboxresource(n,wd,ht,dp) end
 ---@return integer|nil height
 ---@return integer|nil depth
 ---@return integer|nil margin
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.getboxresourcedimensions(n) end
 
 ---
@@ -2058,233 +2727,340 @@ function tex.getboxresourcedimensions(n) end
 ---You should not expect to much from the `triggerbuildpage` helpers because
 ---often *TeX* doesn't do much if it thinks nothing has to be done, but it might be
 ---useful for some applications.
+---
+---* Corresponding C source code: [ltexlib.c#L3357-L3361](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3357-L3361)
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.triggerbuildpage() end
 
 ---
 ---Split a box.
 ---
----```lua
----local vlist = tex.splitbox(n,height,mode)
----```
----
 ---The remainder is kept in the original box and a packaged vlist is returned. This
 ---operation is comparable to the `vsplit` operation. The mode can be `additional` or `exactly` and concerns the split off box.
+---
+---* Corresponding C source code: [ltexlib.c#L1282-L1308](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1282-L1308)
 ---
 ---@param n Node
 ---@param height integer
 ---@param mode 'additional' | 'exactly'
 ---
----@return Node vlist
+---@return Node|nil vlist
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.splitbox(n, height, mode) end
 
 ---
----# Accessing math parameters: `[get|set]math`
+---Set the internal math parameters.
 ---
----It is possible to set and query the internal math parameters using:
+---* Corresponding C source code: [ltexlib.c#L1986-L2015](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1986-L2015)
 ---
----```
----tex.setmath(["global",] <string> n, <string> t, <number> n)
----<number> n = tex.getmath(<string> n, <string> t)
----```
----
----As before an optional first parameter `global` indicates a global
----assignment.
----
----The first string is the parameter name minus the leading “Umath”, and the
----second string is the style name minus the trailing “style”. Just to be
----complete, the values for the math parameter name are:
----
----```
----quad                axis                operatorsize
----overbarkern         overbarrule         overbarvgap
----underbarkern        underbarrule        underbarvgap
----radicalkern         radicalrule         radicalvgap
----radicaldegreebefore radicaldegreeafter  radicaldegreeraise
----stackvgap           stacknumup          stackdenomdown
----fractionrule        fractionnumvgap     fractionnumup
----fractiondenomvgap   fractiondenomdown   fractiondelsize
----limitabovevgap      limitabovebgap      limitabovekern
----limitbelowvgap      limitbelowbgap      limitbelowkern
----underdelimitervgap  underdelimiterbgap
----overdelimitervgap   overdelimiterbgap
----subshiftdrop        supshiftdrop        subshiftdown
----subsupshiftdown     subtopmax           supshiftup
----supbottommin        supsubbottommax     subsupvgap
----spaceafterscript    connectoroverlapmin
----ordordspacing       ordopspacing        ordbinspacing     ordrelspacing
----ordopenspacing      ordclosespacing     ordpunctspacing   ordinnerspacing
----opordspacing        opopspacing         opbinspacing      oprelspacing
----opopenspacing       opclosespacing      oppunctspacing    opinnerspacing
----binordspacing       binopspacing        binbinspacing     binrelspacing
----binopenspacing      binclosespacing     binpunctspacing   bininnerspacing
----relordspacing       relopspacing        relbinspacing     relrelspacing
----relopenspacing      relclosespacing     relpunctspacing   relinnerspacing
----openordspacing      openopspacing       openbinspacing    openrelspacing
----openopenspacing     openclosespacing    openpunctspacing  openinnerspacing
----closeordspacing     closeopspacing      closebinspacing   closerelspacing
----closeopenspacing    closeclosespacing   closepunctspacing closeinnerspacing
----punctordspacing     punctopspacing      punctbinspacing   punctrelspacing
----punctopenspacing    punctclosespacing   punctpunctspacing punctinnerspacing
----innerordspacing     inneropspacing      innerbinspacing   innerrelspacing
----inneropenspacing    innerclosespacing   innerpunctspacing innerinnerspacing
----```
----
----The values for the style parameter are:
----
----```
----display       crampeddisplay
----text          crampedtext
----script        crampedscript
----scriptscript  crampedscriptscript
----```
----
----The value is either a number (representing a dimension or number) or a glue spec
----node representing a muskip for `ordordspacing` and similar spacing
----parameters.
----
+---@param math_param_name MathParamName
+---@param math_style_name MathStyleName
+---@param value integer
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setmath(math_param_name, math_style_name, value) end
 
 ---
----# Special list heads: `[get|set]list`
+---Set the internal math parameters.
+---
+---* Corresponding C source code: [ltexlib.c#L1986-L2015](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1986-L2015)
+---
+---@param global 'global' # Indicate a global assignment.
+---@param math_param_name MathParamName
+---@param math_style_name MathStyleName
+---@param value integer|Node # The value is either a number (representing a dimension or number) or a glue spec node representing a muskip for `ordordspacing` and similar spacing parameters.
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setmath(global, math_param_name, math_style_name, value) end
+
+---
+---Query the internal math parameters.
+---
+---* Corresponding C source code: [ltexlib.c#L2017-L2039](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2017-L2039)
+---
+---@param math_param_name MathParamName
+---@param math_style_name MathStyleName
+---
+---@return integer|Node value # The value is either a number (representing a dimension or number) or a glue spec node representing a muskip for `ordordspacing` and similar spacing parameters.
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getmath(math_param_name, math_style_name) end
+
+---
+---The style name minus the trailing “style”.
+---
+---* Corresponding C source code: [texmath.c#L510-L516](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texmath.c#L510-L516)
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---@alias MathStyleName
+---|'display'
+---|'crampeddisplay'
+---|'text'
+---|'crampedtext'
+---|'script'
+---|'crampedscript'
+---|'scriptscript'
+---|'crampedscriptscript'
+
+---
+---The parameter name minus the leading “Umath”.
+---
+---* Corresponding C source code: [texmath.c#L518-L558](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texmath.c#L518-L558)
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---@alias MathParamName
+---|'quad'
+---|'axis'
+---|'operatorsize'
+---|'overbarkern'
+---|'overbarrule'
+---|'overbarvgap'
+---|'underbarkern'
+---|'underbarrule'
+---|'underbarvgap'
+---|'radicalkern'
+---|'radicalrule'
+---|'radicalvgap'
+---|'radicaldegreebefore'
+---|'radicaldegreeafter'
+---|'radicaldegreeraise'
+---|'stackvgap'
+---|'stacknumup'
+---|'stackdenomdown'
+---|'fractionrule'
+---|'fractionnumvgap'
+---|'fractionnumup'
+---|'fractiondenomvgap'
+---|'fractiondenomdown'
+---|'fractiondelsize'
+---|'skewedfractionhgap'
+---|'skewedfractionvgap'
+---|'limitabovevgap'
+---|'limitabovebgap'
+---|'limitabovekern'
+---|'limitbelowvgap'
+---|'limitbelowbgap'
+---|'limitbelowkern'
+---|'nolimitsubfactor'
+---|'nolimitsupfactor'
+---|'underdelimitervgap'
+---|'underdelimiterbgap'
+---|'overdelimitervgap'
+---|'overdelimiterbgap'
+---|'subshiftdrop'
+---|'supshiftdrop'
+---|'subshiftdown'
+---|'subsupshiftdown'
+---|'subtopmax'
+---|'supshiftup'
+---|'supbottommin'
+---|'supsubbottommax'
+---|'subsupvgap'
+---|'spaceafterscript'
+---|'connectoroverlapmin'
+---|'ordordspacing'
+---|'ordopspacing'
+---|'ordbinspacing'
+---|'ordrelspacing'
+---|'ordopenspacing'
+---|'ordclosespacing'
+---|'ordpunctspacing'
+---|'ordinnerspacing'
+---|'opordspacing'
+---|'opopspacing'
+---|'opbinspacing'
+---|'oprelspacing'
+---|'opopenspacing'
+---|'opclosespacing'
+---|'oppunctspacing'
+---|'opinnerspacing'
+---|'binordspacing'
+---|'binopspacing'
+---|'binbinspacing'
+---|'binrelspacing'
+---|'binopenspacing'
+---|'binclosespacing'
+---|'binpunctspacing'
+---|'bininnerspacing'
+---|'relordspacing'
+---|'relopspacing'
+---|'relbinspacing'
+---|'relrelspacing'
+---|'relopenspacing'
+---|'relclosespacing'
+---|'relpunctspacing'
+---|'relinnerspacing'
+---|'openordspacing'
+---|'openopspacing'
+---|'openbinspacing'
+---|'openrelspacing'
+---|'openopenspacing'
+---|'openclosespacing'
+---|'openpunctspacing'
+---|'openinnerspacing'
+---|'closeordspacing'
+---|'closeopspacing'
+---|'closebinspacing'
+---|'closerelspacing'
+---|'closeopenspacing'
+---|'closeclosespacing'
+---|'closepunctspacing'
+---|'closeinnerspacing'
+---|'punctordspacing'
+---|'punctopspacing'
+---|'punctbinspacing'
+---|'punctrelspacing'
+---|'punctopenspacing'
+---|'punctclosespacing'
+---|'punctpunctspacing'
+---|'punctinnerspacing'
+---|'innerordspacing'
+---|'inneropspacing'
+---|'innerbinspacing'
+---|'innerrelspacing'
+---|'inneropenspacing'
+---|'innerclosespacing'
+---|'innerpunctspacing'
+---|'innerinnerspacing'
+
 ---
 ---The virtual table `tex.lists` contains the set of internal registers that
 ---keep track of building page lists.
 ---
---- field                       explanation
----
---- `page_ins_head`        circular list of pending insertions
---- `contrib_head`         the recent contributions
---- `page_head`            the current page content
----%NC `temp_head`
---- `hold_head`            used for held-over items for next page
---- `adjust_head`          head of the current `vadjust` list
---- `pre_adjust_head`      head of the current `\vadjust pre` list
----%NC `align_head`
---- `page_discards_head`   head of the discarded items of a page break
---- `split_discards_head`  head of the discarded items in a vsplit
----
----The getter and setter functions are `getlist` and `setlist`. You have
----to be careful with what you set as *TeX* can have expectations with regards to
----how a list is constructed or in what state it is.
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+tex.lists = {}
 
 ---
----# Semantic nest levels: `getnest` and `ptr`
+---circular list of pending insertions
 ---
----%libindex{setnest} % only a message
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+tex.lists.page_ins_head = nil
+
+---
+---the recent contributions
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+tex.lists.contrib_head = nil
+
+---
+---the current page content
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+tex.lists.page_head = nil
+
+---
+---used for held-over items for next page
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+tex.lists.hold_head = nil
+
+---
+---head of the current `vadjust` list
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+tex.lists.adjust_head = nil
+
+---
+---head of the current `\vadjust pre` list
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+tex.lists.pre_adjust_head = nil
+
+---
+---head of the discarded items of a page break
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+tex.lists.page_discards_head = nil
+
+---
+---head of the discarded items in a vsplit
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+tex.lists.split_discards_head = nil
+
+---
+---You have
+---to be careful with what you set as *TeX* can have expectations with regards to
+---how a list is constructed or in what state it is.
+---
+---* Corresponding C source code: [ltexlib.c#L2266-L2321](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2266-L2321)
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setlist() end
+
+---
+---* Corresponding C source code: [ltexlib.c#L2202-L2264](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2202-L2264)
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getlist() end
+
 ---
 ---The virtual table `nest` contains the currently active semantic nesting
 ---state. It has two main parts: a zero-based array of userdata for the semantic
 ---nest itself, and the numerical value `ptr`, which gives the highest
 ---available index. Neither the array items in `nest[]` nor `ptr` can be
 ---assigned to (as this would confuse the typesetting engine beyond repair), but you
----can assign to the individual values inside the array items, e.g.\ `tex.nest[tex.nest.ptr].prevdepth`.
+---can assign to the individual values inside the array items, e.g. `tex.nest[tex.nest.ptr].prevdepth`.
 ---
 ---`tex.nest[tex.nest.ptr]` is the current nest state, `nest[0]` the
----outermost (main vertical list) level. The getter function is `getnest`. You
+---outermost (main vertical list) level.
+---@type table<integer, Nest>
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+tex.nest = {}
+
+---
+---highest
+---available index.
+---@type integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+tex.nest.ptr = 0
+
+---
+---The getter function is `getnest`. You
 ---can pass a number (which gives you a list), nothing or `top`, which returns
 ---the topmost list, or the string `ptr` which gives you the index of the
 ---topmost list.
 ---
----The known fields are:
+---* Corresponding C source code: [ltexlib.c#L2422-L2455](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2422-L2455)
 ---
---- key                 type     modes  explanation
+---@return Nest
 ---
----@field mode number # all    the meaning of these numbers depends on the engine and sometimes even the version; you can use `tex.getmodevalues()` to get the mapping: positive values signal vertical, horizontal and math mode, while negative values indicate inner and inline variants
----@field modeline number # all    source input line where this mode was entered in, negative inside the output routine
----@field head node # all    the head of the current list
----@field tail node # all    the tail of the current list
----@field prevgraf number # vmode  number of lines in the previous paragraph
----@field prevdepth number # vmode  depth of the previous paragraph
----@field spacefactor number # hmode  the current space factor
----@field dirs node # hmode  used for temporary storage by the line break algorithm
----@field noad node # mmode  used for temporary storage of a pending fraction numerator, for `over` etc.
----@field delimptr node # mmode  used for temporary storage of the previous math delimiter, for `middle`
----@field mathdir boolean # mmode  true when during math processing the `mathdir` is not the same as the surrounding `textdir`
----@field mathstyle number # mmode  the current `mathstyle`
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getnest() end
+
+---
+---* Corresponding C source code: [ltexlib.c#L2457-L2461](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2457-L2461)
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.setnest() end
+
+---
+---* Corresponding C source code: [ltexlib.c#L2325-L2361](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2325-L2361)
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---@class Nest
+---@field mode number # the meaning of these numbers depends on the engine and sometimes even the version; you can use `tex.getmodevalues()` to get the mapping: positive values signal vertical, horizontal and math mode, while negative values indicate inner and inline variants (all modes).
+---@field modeline integer # source input line where this mode was entered in, negative inside the output routine (all modes).
+---@field head Node # the head of the current list (all modes).
+---@field tail Node # the tail of the current list (all modes).
+---@field prevgraf integer # number of lines in the previous paragraph (vertical mode).
+---@field prevdepth integer # depth of the previous paragraph (vertical mode).
+---@field spacefactor integer # the current space factor (horizontal mode).
+---@field dirs Node # used for temporary storage by the line break algorithm (horizontal mode).
+---@field noad Node #  used for temporary storage of a pending fraction numerator, for `over` etc. (math mode).
+---@field delimptr Node # used for temporary storage of the previous math delimiter, for `middle` (math mode).
+---@field mathdir boolean # true when during math processing the `mathdir` is not the same as the surrounding `textdir` (math mode).
+---@field mathstyle integer # mmode  the current `mathstyle`
 ---
 
 ---
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setcount() end
-
+---`tex.getmodevalues()` to get the mapping: positive values signal vertical, horizontal and math mode, while negative values indicate inner and inline variants (all modes).
 ---
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getcount() end
-
+---* Corresponding C source code: [ltexlib.c#L3549-L3565](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3549-L3565)
 ---
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setdimen() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getdimen() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setskip() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getskip() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setglue() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getglue() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getmuskip() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setmuskip() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setmuglue() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getmuglue() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.settoks() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.gettoks() end
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.getmodevalues() end
 
 ---
 ---The `tex` table also contains the three print functions that are the major
@@ -2619,11 +3395,10 @@ function tex.sp(s) end
 -- Removed?
 
 ---
----This creates an error somewhat like the combination of `\errhelp` and
----`\errmessage` would. During this error, deletions are disabled.
+---Create an error like the combination of `\errhelp` and
+---`\errmessage`.
 ---
----In case of an error the `show_context` function will show the current
----context where we're at (in the expansion).
+---During this error, deletions are disabled.
 ---
 ---see `LuaTeX` manual: 10.3.15.5 `sp`
 ---
@@ -2636,6 +3411,15 @@ function tex.sp(s) end
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.error(s, help) end
+
+---
+---Show the current
+---(expansion) context in case of an error.
+---
+---* Corresponding C source code: [/ltexlib.c#L3210-L3215](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3210-L3215)
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.show_context() end
 
 ---
 ---Start the interpretation.
@@ -2656,7 +3440,7 @@ function tex.error(s, help) end
 function tex.run() end
 
 ---
----Force the end of a interpretation.
+---Force the end of an interpretation.
 ---
 ---__Reference:__
 ---
@@ -2684,11 +3468,6 @@ function tex.finish() end
 ---least tries to) like it were an `\the`. This prevents unwanted side
 ---effects: normally in such an definition tokens remain tokens and (for instance)
 ---characters don't become nodes.
----
----You can quit the local loop with `\endlocalcontrol` or from the *Lua* end
----with `tex.quittoks`. In that case you end one level up! Of course in the
----end that can mean that you arrive at the main level in which case an extra end
----will trigger a redundancy warning (not an abort!).
 ---
 ---__Example:__
 ---
@@ -2723,6 +3502,15 @@ function tex.runtoks(token_register, force, grouped) end
 function tex.runtoks(func) end
 
 ---
+---You can quit the local loop with `\endlocalcontrol` or from the *Lua* end
+---with `tex.quittoks`. In that case you end one level up! Of course in the
+---end that can mean that you arrive at the main level in which case an extra end
+---will trigger a redundancy warning (not an abort!).
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.quittoks() end
+
+---
 ---An example of a (possible error triggering) complication is that *TeX* expects to
 ---be in some state, say horizontal mode, and you have to make sure it is when you
 ---start feeding back something from *Lua* into *TeX*. Normally a user will not run
@@ -2730,8 +3518,10 @@ function tex.runtoks(func) end
 ---can be situations that you need to run `forcehmode`. There is no recipe for
 ---this and intercepting possible cases would weaken *LuaTeX*'s flexibility.
 ---
+---@param indented? boolean
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.forcehmode() end
+function tex.forcehmode(indented) end
 
 ---
 ---Return a list of names.
@@ -2819,35 +3609,77 @@ function tex.definefont(global, csname, fontid) end
 ---code but not do much else. The defined csnames are (of course) saved in the
 ---format and will be available at runtime.
 ---
+---* Corresponding C source code: [ltexlib.c#L2752-L2809](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2752-L2809)
+---
 ---@param prefix string
----@param primitive_names table
+---@param primitive_names string[]
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.enableprimitives(prefix, primitive_names) end
 
 ---
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.extraprimitives() end
+---@alias TexEngine
+---|'etex'
+---|'tex'
+---|'core'
+---|'luatex'
 
 ---
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+---Return a list of the primitives that originate from the engine(s)
+---given by the requested string value(s).
+---
+---The possible values and their (current)
+---return values are given in the following table. In addition the somewhat special
+---primitives “\tex{ ”}, “\tex {/”} and “`-`” are defined.
+---
+---Note that `luatex` does not contain `directlua`, as that is
+---considered to be a core primitive, along with all the *TeX*82 primitives, so it is
+---part of the list that is returned from `core`.
+---
+---Running `tex.extraprimitives()` will give you the complete list of
+---primitives `-ini` startup. It is exactly equivalent to `tex.extraprimitives("etex","luatex")`.
+---
+---* Corresponding C source code: [ltexlib.c#L2710-L2750](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2710-L2750)
+---
+---@param ... TexEngine
+---
+---@return string[]
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.extraprimitives(...) end
+
+---
+---Return a list of all primitives that *LuaTeX* knows about.
+---
+---* Corresponding C source code: [ltexlib.c#L2691-L2708](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2691-L2708)
+---
+---@return string[]
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.primitives() end
 
 ---
----This helper function is useful during linebreak calculations. `t` and `s` are scaled values; the function returns the badness for when total `t`
----is supposed to be made from amounts that sum to `s`. The returned number is
----a reasonable approximation of `100(t/s)^3`.
+---Calculate the badness.
 ---
+---This helper function is useful during linebreak calculations. The function returns the badness for when total `total`
+---is supposed to be made from amounts that sum to `sum`. The returned number is
+---a reasonable approximation of `100(total/sum)^3`.
+---
+---* Corresponding C source code: [ltexlib.c#L3069-L3075](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3069-L3075)
+---* Corresponding C source code: [arithmetic.c#L275-L300](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/arithmetic.c#L275-L300)
+---
+---@param total integer # scaled values
+---@param sum integer # scaled values
+---
+---@return integer badness
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.badness() end
+function tex.badness(total, sum) end
 
 ---
----This function resets the parameters that *TeX* normally resets when a new paragraph
+---Reset the parameters that *TeX* normally resets when a new paragraph
 ---is seen.
+---
+---* Corresponding C source code: [ltexlib.c#L3054-L3059](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3054-L3059)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.resetparagraph() end
@@ -2949,31 +3781,73 @@ function tex.getpagestate() end
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.getlocallevel() end
 
----
----For practical reasons *LuaTeX* has its own random number generator. The original
----*Lua* random function is available as `tex.lua_math_random`.
----
----[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.lua_math_random() end
+-- { "uniform_rand",tex_unif_rand },
+-- { "normal_rand", tex_norm_rand },
+-- { "lua_math_randomseed", tex_init_rand }, /* syntactic sugar  */
 
 ---
----You can
----initialize with a new seed with `init_rand` (`lua_math_randomseed` is
----equivalent to this one.)
+---Initialize a new seed.
+---
+---`lua_math_randomseed` is
+---equivalent to this function.
+---
+---* Corresponding C source code: [ltexlib.c#L3132-L3142](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3132-L3142)
+---
+---@see tex.lua_math_randomseed
+---
+---@param seed integer
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.init_rand() end
+function tex.init_rand(seed) end
 
+---
+---Initialize a new seed.
+---
+---`init_rand` is
+---equivalent to this function.
+---
+---* Corresponding C source code: [ltexlib.c#L3132-L3142](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3132-L3142)
+---
+---@see tex.init_rand
+---
+---@param seed integer
 ---
 ---You can
 ---initialize with a new seed with `lua_math_randomseed` (`init_rand` is
 ---equivalent to this one.)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.lua_math_randomseed() end
+function tex.lua_math_randomseed(seed) end
+
+---
+---For practical reasons *LuaTeX* has its own random number generator. This is the original
+---*Lua* random function.
+---
+---* Corresponding C source code: [ltexlib.c#L3164-L3192](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3164-L3192)
+---
+---@param lower number
+---@param upper number
+---
+---@return number
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.lua_math_random(lower, upper) end
+
+---
+---For practical reasons *LuaTeX* has its own random number generator. This is the original
+---*Lua* random function.
+---
+---* Corresponding C source code: [ltexlib.c#L3164-L3192](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3164-L3192)
+---
+---@param upper? number
+---
+---@return number
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.lua_math_random(upper) end
 
 ---
 ---no argument is used
+---
+---* Corresponding C source code: [ltexlib.c#L3156-L3160](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3156-L3160)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.normal_rand() end
@@ -2981,319 +3855,119 @@ function tex.normal_rand() end
 ---
 ---takes a number that will get rounded before being used
 ---
+---* Corresponding C source code: [ltexlib.c#L3144-L3154](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3144-L3154)
+---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.uniform_rand() end
 
 ---
 --- which behaves like the primitive and expects a scaled integer, so
 ---
----```
+---```lua
 ---tex.print(tex.uniformdeviate(65536)/65536)
 ---```
 ---
 ---will give a random number between zero and one.
 ---
----[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.uniformdeviate() end
-
+---* Corresponding C source code: [ltexlib.c#L2051-L2054](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2051-L2054)
 ---
----`0` is the default and used normal synctex logic, `1` uses the values set by the next helpers while `2` also sets these for glyph nodes; `3` sets glyphs and glue and `4` sets only glyphs
+---@param n integer a scaled integer
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.set_synctex_mode() end
+function tex.uniformdeviate(n) end
 
----
----set the current tag (file) value (obeys save stack)
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.set_synctex_tag() end
+---@alias SyntexMode
+---|0 # is the default and used normal synctex logic
+---|1 # uses the values set by the next helpers
+---|2 # sets for glyph nodes
+---|3 # sets glyph and glue nodes
+---|4 # sets only glyph modes
 
 ---
----set the current line value (obeys save stack)
+---* Corresponding C source code: [ltexlib.c#L3377-L3382](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3377-L3382)
+---
+---@param mode SyntexMode
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.set_synctex_line() end
+function tex.set_synctex_mode(mode) end
 
 ---
----disable synctex file logging
+---Return the current mode.
 ---
----[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.set_synctex_no_files() end
-
+---* Corresponding C source code: [ltexlib.c#L3383-L3387](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3383-L3387)
 ---
----returns the current mode (for values see above)
+---@return SyntexMode mode
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.get_synctex_mode() end
 
 ---
----get the currently set value of tag (file)
+---Set the current tag (file) value (obeys save stack).
+---
+---* Corresponding C source code: [ltexlib.c#L3389-L3394](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3389-L3394)
+---
+---@param tag integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.set_synctex_tag(tag) end
+
+---
+---Get the currently set value of a tag (file).
+---
+---* Corresponding C source code: [ltexlib.c#L3396-L3400](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3396-L3400)
+---
+---@return integer tag
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.get_synctex_tag() end
 
 ---
----get the currently set value of line
+---Overload the tag (file) value  (`0` resets).
 ---
+---* Corresponding C source code: [ltexlib.c#L3402-L3407](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3402-L3407)
+---
+---@param tag integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.force_synctex_tag(tag) end
+
+---
+---Set the current line value (obeys save stack).
+---
+---* Corresponding C source code: [ltexlib.c#L3416-L3421](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3416-L3421)
+---
+---@param line integer
+---
+---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.set_synctex_line(line) end
+
+---
+---Get the currently set value of a line.
+---
+---* Corresponding C source code: [ltexlib.c#L3423-L3427](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3423-L3427)
+---
+---@return integer line
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.get_synctex_line() end
 
 ---
----overload the tag (file) value (`0` resets)
+---Overload the line value (`0` resets)
+---
+---* Corresponding C source code: [L3409-L3414](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3409-L3414)
+---
+---@param line integer
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.force_synctex_line() end
+function tex.force_synctex_line(line) end
 
 ---
----overload the line value  (`0` resets)
+---Disable synctex file logging.
+---
+---* Corresponding C source code: [ltexlib.c#L3429-L3434](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3429-L3434)
+---
+---@param flag integer
 ---
 ---[Type definition and documentation](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.force_synctex_tag() end
-
----
-------------------------------------------------------------------------
----Undocumented functions listed in alphabetical order
----
----Document them by sliding them up and place them in the order of the
----official documentation
-------------------------------------------------------------------------
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.forcehmode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.get() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getbox() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getboxresourcebox() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getcatcode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getdelcode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getdelcodes() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getfontoffamily() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getlccode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getlist() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getmark() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getmath() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getmathcode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getmathcodes() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getmodevalues() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getnest() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getsfcode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.getuccode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.isbox() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.iscount() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.isdimen() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.isglue() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.ismuglue() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.ismuskip() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.isskip() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.istoks() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.quittoks() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.scantoks() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.set() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setbox() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setcatcode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setdelcode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setlccode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setlist() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setmath() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setmathcode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setnest() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setsfcode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.setuccode() end
-
----
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
-function tex.show_context() end
+function tex.set_synctex_no_files(flag) end
