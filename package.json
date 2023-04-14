@@ -45,6 +45,50 @@
         "command": "luatex.removeLuatexLib",
         "title": "Remove the `luatex` libary from your workspace",
         "category": "LuaTeX"
+      },
+
+      {
+        "command": "luatex.addLuametatexLib",
+        "title": "Add the `luametatex` libary to your workspace",
+        "category": "LuaTeX"
+      },
+      {
+        "command": "luatex.removeLuametatexLib",
+        "title": "Remove the `luametatex` libary from your workspace",
+        "category": "LuaTeX"
+      },
+
+      {
+        "command": "luatex.addLualatexLib",
+        "title": "Add the `lualatex` libary to your workspace",
+        "category": "LuaTeX"
+      },
+      {
+        "command": "luatex.removeLualatexLib",
+        "title": "Remove the `lualatex` libary from your workspace",
+        "category": "LuaTeX"
+      },
+
+      {
+        "command": "luatex.addLualibsLib",
+        "title": "Add the `lualibs` libary to your workspace",
+        "category": "LuaTeX"
+      },
+      {
+        "command": "luatex.removeLuatexLib",
+        "title": "Remove the `lualibs` libary from your workspace",
+        "category": "LuaTeX"
+      },
+
+      {
+        "command": "luatex.addLuaotfloadLib",
+        "title": "Add the `luaotfload` libary to your workspace",
+        "category": "LuaTeX"
+      },
+      {
+        "command": "luatex.removeLuaotfloadLib",
+        "title": "Remove the `luaotfload` libary from your workspace",
+        "category": "LuaTeX"
       }
     ],
     "configuration": {
@@ -57,9 +101,10 @@
             "enum": [
               "all",
               "luatex",
+              "luametatex",
               "lualatex",
-              "luaotfload",
-              "lualibs"
+              "lualibs",
+              "luaotfload"
             ]
           },
           "default": [],

@@ -14,7 +14,10 @@ install_yo:
 install_generator_code:
 	npm install -g generator-code
 
+debug: install watch
+
 watch:
+	echo Press F5
 	npm run watch
 
 compile:

@@ -112,12 +112,46 @@ function update () {
 
 export function activate (context: vscode.ExtensionContext) {
   context.subscriptions.push(
+    // luatex
     vscode.commands.registerCommand('luatex.addLuatexLib', () => {
       addLibrary('luatex')
     }),
     vscode.commands.registerCommand('luatex.removeLuatexLib', () => {
       removeLibrary('luatex')
     }),
+
+    // luametatex
+    vscode.commands.registerCommand('luatex.addLuametatexLib', () => {
+      addLibrary('luametatex')
+    }),
+    vscode.commands.registerCommand('luatex.removeLuametatexLib', () => {
+      removeLibrary('luametatex')
+    }),
+
+    // lualatex
+    vscode.commands.registerCommand('luatex.addLualatexLib', () => {
+      addLibrary('lualatex')
+    }),
+    vscode.commands.registerCommand('luatex.removeLualatexLib', () => {
+      removeLibrary('lualatex')
+    }),
+
+    // lualibs
+    vscode.commands.registerCommand('luatex.addLualibsLib', () => {
+      addLibrary('lualibs')
+    }),
+    vscode.commands.registerCommand('luatex.removeLualibsLib', () => {
+      removeLibrary('lualibs')
+    }),
+
+    // luaotfload
+    vscode.commands.registerCommand('luatex.addLuaotfloadLib', () => {
+      addLibrary('luaotfload')
+    }),
+    vscode.commands.registerCommand('luatex.removeLuaotfloadLib', () => {
+      removeLibrary('luaotfload')
+    }),
+
     vscode.workspace.onDidChangeConfiguration(event => {
       if (event.affectsConfiguration('luatex.library')) {
         update()
