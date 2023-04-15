@@ -364,11 +364,6 @@ function fontloader.fields(font_glyph) end
 ---@field truetype integer # signals a *TrueType* font
 
 ---
----@type FontloaderField
-local test
-test.design_range_bottom = 1
-
----
 ---* Corresponding C source code: [luafflib.c#L959-L1120](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L959-L1120)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
