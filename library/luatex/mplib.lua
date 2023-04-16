@@ -197,15 +197,24 @@ function mplib.finish(mp) end
 function MpInstance:finish() end
 
 ---
+---@alias MpResultStatus
+---|0 # good
+---|1 # warning
+---|2 # errors
+---|3 # fatal error
+
+---
 ---The return value of `execute` and `finish` is a table with a
 ---few possible keys (only `status` is always guaranteed to be present).
+---
+---* Corresponding C source code: [lmplib.c#L649-L690](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L649-L690)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MpResult
 ---@field log? string # The output to the “log” stream.
 ---@field term? string # The output to the “term” stream.
 ---@field error? string # The output to the “error” stream (only used for “out of memory”).
----@field status number # The return value: `0` = good, `1` = warning, `2` = errors, `3` = fatal error.
+---@field status MpResultStatus # The return value: `0` = good, `1` = warning, `2` = errors, `3` = fatal error.
 ---@field fig? MpFig # An array of generated figures (if any).
 ---
 ---When `status` equals 3, you should stop using this *MPlib* instance
@@ -222,6 +231,10 @@ local MpFig = {}
 
 ---
 ---Return the bounding box, as an array of 4 values.
+---number.
+---
+---When the boundingbox represents a “negated rectangle”, i.e. when the
+---first set of coordinates is larger than the second set, the picture is empty.
 ---
 ---* Corresponding C source code: [lmplib.c#L1375-L1388](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1375-L1388)
 ---
@@ -263,6 +276,9 @@ function MpFig.png(options) end
 ---
 ---Return the actual array of graphic objects in this `fig`.
 ---
+---Note: you can call `fig:objects()` only once for any one `fig`
+---object!
+---
 ---* Corresponding C source code: [lmplib.c#L1213-L1233](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1213-L1233)
 ---@return table
 function MpFig.objects() end
@@ -284,7 +300,7 @@ function MpFig.copy_objects() end
 function MpFig.filename() end
 
 ---
----the `fontcharwd` value
+---Return the `fontcharwd` value.
 ---
 ---* Corresponding C source code: [lmplib.c#L1320-L1329](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1320-L1329)
 ---
@@ -292,7 +308,7 @@ function MpFig.filename() end
 function MpFig.width() end
 
 ---
----the `fontcharht` value
+---Return the `fontcharht` value.
 ---
 ---* Corresponding C source code: [lmplib.c#L1331-L1340](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1331-L1340)
 ---
@@ -300,7 +316,7 @@ function MpFig.width() end
 function MpFig.height() end
 
 ---
----the `fontchardp` value
+---Return the `fontchardp` value.
 ---
 ---* Corresponding C source code: [lmplib.c#L1342-L1351](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1342-L1351)
 ---
@@ -308,7 +324,7 @@ function MpFig.height() end
 function MpFig.depth() end
 
 ---
----the `fontcharit` value
+---Return the `fontcharit` value.
 ---
 ---* Corresponding C source code: [lmplib.c#L1353-L1362](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1353-L1362)
 ---
@@ -316,7 +332,7 @@ function MpFig.depth() end
 function MpFig.italcorr() end
 
 ---
----the (rounded) `charcode` value
+---Return the (rounded) `charcode` value.
 ---
 ---* Corresponding C source code: [lmplib.c#L1364-L1373](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1364-L1373)
 ---
@@ -324,11 +340,6 @@ function MpFig.italcorr() end
 function MpFig.charcode() end
 
 ---
----Note: you can call `fig:objects()` only once for any one `fig`
----object!
----
----When the boundingbox represents a “negated rectangle”, i.e. when the
----first set of coordinates is larger than the second set, the picture is empty.
 
 ---
 ---All graphical objects have a field `type` that gives the object type as a
@@ -495,17 +506,17 @@ function mplib.pen_info() end
 ---
 ---Report a character's width.
 ---
----These functions find the size of a glyph in a defined font. The `fontname`
+---This function finds the size of a glyph in a defined font. The `fontname`
 ---is the same name as the argument to `infont`; the `char` is a glyph
----id in the range 0 to 255; the returned `w` is in AFM units.
+---id in the range 0 to 255; the returned `width` is in AFM units.
 ---
 ---* Corresponding C source code: [lmplib.c#L748-L751](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L748-L751)
 ---
 ---@param mp MpInstance
 ---@param fontname string
----@param char string
+---@param char integer
 ---
----@return number width
+---@return number width # AFM units
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function mplib.char_width(mp, fontname, char) end
@@ -513,16 +524,16 @@ function mplib.char_width(mp, fontname, char) end
 ---
 ---Report a character's width.
 ---
----These functions find the size of a glyph in a defined font. The `fontname`
+---This function finds the size of a glyph in a defined font. The `fontname`
 ---is the same name as the argument to `infont`; the `char` is a glyph
----id in the range 0 to 255; the returned `w` is in AFM units.
+---id in the range 0 to 255; the returned `width` is in AFM units.
 ---
 ---* Corresponding C source code: [lmplib.c#L748-L751](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L748-L751)
 ---
 ---@param fontname string
----@param char string
+---@param char integer
 ---
----@return number width
+---@return number width # AFM units
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function MpInstance:char_width(fontname, char) end
@@ -530,17 +541,17 @@ function MpInstance:char_width(fontname, char) end
 ---
 ---Report a character's height.
 ---
----These functions find the size of a glyph in a defined font. The `fontname`
+---This function finds the size of a glyph in a defined font. The `fontname`
 ---is the same name as the argument to `infont`; the `char` is a glyph
----id in the range 0 to 255; the returned `w` is in AFM units.
+---id in the range 0 to 255; the returned `height` is in AFM units.
 ---
 ---* Corresponding C source code: [lmplib.c#L758-L761](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L758-L761)
 ---
 ---@param mp MpInstance
 ---@param fontname string
----@param char string
+---@param char integer
 ---
----@return number height
+---@return number height # AFM units
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function mplib.char_height(mp, fontname, char) end
@@ -548,16 +559,16 @@ function mplib.char_height(mp, fontname, char) end
 ---
 ---Report a character's height.
 ---
----These functions find the size of a glyph in a defined font. The `fontname`
+---This function finds the size of a glyph in a defined font. The `fontname`
 ---is the same name as the argument to `infont`; the `char` is a glyph
----id in the range 0 to 255; the returned `w` is in AFM units.
+---id in the range 0 to 255; the returned `height` is in AFM units.
 ---
 ---* Corresponding C source code: [lmplib.c#L758-L761](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L758-L761)
 ---
 ---@param fontname string
----@param char string
+---@param char integer
 ---
----@return number height
+---@return number height # FM units
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function MpInstance:char_height(fontname, char) end
@@ -565,17 +576,17 @@ function MpInstance:char_height(fontname, char) end
 ---
 ---Report a character's depth.
 ---
----These functions find the size of a glyph in a defined font. The `fontname`
+---This function finds the size of a glyph in a defined font. The `fontname`
 ---is the same name as the argument to `infont`; the `char` is a glyph
----id in the range 0 to 255; the returned `w` is in AFM units.
+---id in the range 0 to 255; the returned `depth` is in AFM units.
 ---
 ---* Corresponding C source code: [lmplib.c#L753-L756](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L753-L756)
 ---
 ---@param mp MpInstance
 ---@param fontname string
----@param char string
+---@param char integer
 ---
----@return number depth
+---@return number depth # AFM units
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function mplib.char_depth(mp, fontname, char) end
@@ -583,16 +594,16 @@ function mplib.char_depth(mp, fontname, char) end
 ---
 ---Report a character's depth.
 ---
----These functions find the size of a glyph in a defined font. The `fontname`
+---This function finds the size of a glyph in a defined font. The `fontname`
 ---is the same name as the argument to `infont`; the `char` is a glyph
----id in the range 0 to 255; the returned `w` is in AFM units.
+---id in the range 0 to 255; the returned `depth` is in AFM units.
 ---
 ---* Corresponding C source code: [lmplib.c#L753-L756](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L753-L756)
 ---
 ---@param fontname string
----@param char string
+---@param char integer
 ---
----@return number depth
+---@return number depth # AFM units
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function MpInstance:char_depth(fontname, char) end
