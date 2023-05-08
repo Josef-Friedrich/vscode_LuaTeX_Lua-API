@@ -40,6 +40,14 @@ function pdf.mapline(map_line) end
 ---
 ---Insert string <catalog> into the `/Catalog` dictionary.
 ---
+---This function complements the corresponding *PDF* backend token lists dealing
+---with metadata. The value is written to the *PDF*
+---file directly after the token registers set at the *TeX* end are written.
+---
+---* Corresponding C source code: [lpdflib.c#L612](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdflib.c#L612)
+---
+---@see pdf.getcatalog
+---
 ---@param catalog string # String.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -47,6 +55,12 @@ function pdf.setcatalog(catalog) end
 
 ---
 ---Return string <catalog> that was set by `pdf.setcatalog()`.
+---
+---This function complements the corresponding *PDF* backend token lists dealing
+---with metadata. The value is written to the *PDF*
+---file directly after the token registers set at the *TeX* end are written.
+---
+---@see pdf.setcatalog
 ---
 ---@return string | nil catalog # String.
 ---
@@ -56,6 +70,14 @@ function pdf.getcatalog() end
 ---
 ---Insert string <info> into the `/Info` dictionary.
 ---
+---This function complements the corresponding *PDF* backend token lists dealing
+---with metadata. The value is written to the *PDF*
+---file directly after the token registers set at the *TeX* end are written.
+---
+---* Corresponding C source code: [lpdflib.c#L613](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdflib.c#L613)
+---
+---@see pdf.getinfo
+---
 ---@param info string # String.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -63,6 +85,12 @@ function pdf.setinfo(info) end
 
 ---
 ---Return string <info> that was set by `pdf.setinfo()`.
+---
+---This function complements the corresponding *PDF* backend token lists dealing
+---with metadata. The value is written to the *PDF*
+---file directly after the token registers set at the *TeX* end are written.
+---
+---@see pdf.setinfo
 ---
 ---@return string | nil info # String.
 ---
@@ -72,6 +100,14 @@ function pdf.getinfo() end
 ---
 ---Insert string <names> into the `/Names` dictionary of the `/Catalog`.
 ---
+---This function complements the corresponding *PDF* backend token lists dealing
+---with metadata. The value is written to the *PDF*
+---file directly after the token registers set at the *TeX* end are written.
+---
+---* Corresponding C source code: [lpdflib.c#L614](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdflib.c#L614)
+---
+---@see pdf.getnames
+---
 ---@param names string # String.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -80,6 +116,12 @@ function pdf.setnames(names) end
 ---
 ---Return string <names> that was set by `pdf.setnames()`.
 ---
+---This function complements the corresponding *PDF* backend token lists dealing
+---with metadata. The value is written to the *PDF*
+---file directly after the token registers set at the *TeX* end are written.
+---
+---@see pdf.setnames
+---
 ---@return string | nil names # String.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -87,6 +129,14 @@ function pdf.getnames() end
 
 ---
 ---Insert string <trailer> into the `trailer` dictionary.
+---
+---This function complements the corresponding *PDF* backend token lists dealing
+---with metadata. The value is written to the *PDF*
+---file directly after the token registers set at the *TeX* end are written.
+---
+---* Corresponding C source code: [lpdflib.c#L615](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdflib.c#L615)
+---
+---@see pdf.gettrailer
 ---
 ---@param trailer string # String.
 ---FIXME: pdf.settrailer() not working. Bug?
@@ -97,6 +147,12 @@ function pdf.settrailer(trailer) end
 ---
 ---Return string <trailer> that was set by `pdf.settrailer()`.
 ---
+---This function complements the corresponding *PDF* backend token lists dealing
+---with metadata. The value is written to the *PDF*
+---file directly after the token registers set at the *TeX* end are written.
+---
+---@see pdf.settrailer
+---
 ---@return string | nil trailer # String.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -104,6 +160,15 @@ function pdf.gettrailer() end
 
 ---
 ---Insert string <attributes> into the current `/Page` dictionary.
+---
+---This function complements the corresponding *PDF* backend token lists dealing
+---with page resources. The variables have no interaction with the corresponding *PDF*
+---backend token register. They are written to the *PDF* file directly after the
+---token registers set at the *TeX* end are written.
+---
+------* Corresponding C source code: [lpdflib.c#L610](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdflib.c#L610)
+---
+---@see pdf.getpageattributes
 ---
 ---@param attributes string # String.
 ---
@@ -113,6 +178,13 @@ function pdf.setpageattributes(attributes) end
 ---
 ---Return string <attributes> that was set by `pdf.setpageattributes()`.
 ---
+---This function complements the corresponding *PDF* backend token lists dealing
+---with page resources. The variables have no interaction with the corresponding *PDF*
+---backend token register. They are written to the *PDF* file directly after the
+---token registers set at the *TeX* end are written.
+---
+---@see pdf.setpageattributes
+---
 ---@return string | nil attributes # String.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -120,6 +192,15 @@ function pdf.getpageattributes() end
 
 ---
 ---Insert string <resources> into the `/Resources` dictionary of the current page.
+---
+---This function complements the corresponding *PDF* backend token lists dealing
+---with page resources. The variables have no interaction with the corresponding *PDF*
+---backend token register. They are written to the *PDF* file directly after the
+---token registers set at the *TeX* end are written.
+---
+---* Corresponding C source code: [lpdflib.c#L609](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdflib.c#L609)
+---
+---@see pdf.getpageresources
 ---
 ---@param resources string # String.
 ---
@@ -129,6 +210,13 @@ function pdf.setpageresources(resources) end
 ---
 ---Return string <resources> that was set by `pdf.setpageresources()`.
 ---
+---This function complements the corresponding *PDF* backend token lists dealing
+---with page resources. The variables have no interaction with the corresponding *PDF*
+---backend token register. They are written to the *PDF* file directly after the
+---token registers set at the *TeX* end are written.
+---
+---@see pdf.setpageresources
+---
 ---@return string | nil resources # String.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -136,6 +224,15 @@ function pdf.getpageresources() end
 
 ---
 ---Insert string <attributes> into the `/Pages` dictionary of the `/Catalog`.
+---
+---This function complements the corresponding *PDF* backend token lists dealing
+---with page resources. The variables have no interaction with the corresponding *PDF*
+---backend token register. They are written to the *PDF* file directly after the
+---token registers set at the *TeX* end are written.
+---
+---* Corresponding C source code: [lpdflib.c#L611](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdflib.c#L611)
+---
+---@see pdf.setpageattributes
 ---
 ---@param attributes string # String.
 ---
@@ -145,39 +242,62 @@ function pdf.setpagesattributes(attributes) end
 ---
 ---Return string <attributes> that was set by `pdf.setpageattributes()`.
 ---
+---This function complements the corresponding *PDF* backend token lists dealing
+---with page resources. The variables have no interaction with the corresponding *PDF*
+---backend token register. They are written to the *PDF* file directly after the
+---token registers set at the *TeX* end are written.
+---
+---@see pdf.setpageattributes
+---
 ---@return string | nil attributes # String.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getpagesattributes() end
 
 ---
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+---This function complements the corresponding *PDF* backend token lists dealing
+---with reuseable boxes and images. The variables have no interaction with the
+---corresponding *PDF* backend token register. They are written to the *PDF*
+---file directly after the token registers set at the *TeX* end are written.
+---
+---@see pdf.getxformattributes
+---
+---* Corresponding C source code: [lpdflib.c#L617](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdflib.c#L617)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.setxformattributes() end
 
 ---
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+---This function complements the corresponding *PDF* backend token lists dealing
+---with reuseable boxes and images. The variables have no interaction with the
+---corresponding *PDF* backend token register. They are written to the *PDF*
+---file directly after the token registers set at the *TeX* end are written.
+---
+---@see pdf.setxformattributes
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getxformattributes() end
 
 ---
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+---This function complements the corresponding *PDF* backend token lists dealing
+---with reuseable boxes and images. The variables have no interaction with the
+---corresponding *PDF* backend token register. They are written to the *PDF*
+---file directly after the token registers set at the *TeX* end are written.
+---
+---@see pdf.getxformresources
+---
+---* Corresponding C source code: [lpdflib.c#L616](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdflib.c#L616)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.setxformresources() end
 
 ---
----Warning! Undocumented code!<p>
----TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+---This function complements the corresponding *PDF* backend token lists dealing
+---with reuseable boxes and images. The variables have no interaction with the
+---corresponding *PDF* backend token register. They are written to the *PDF*
+---file directly after the token registers set at the *TeX* end are written.
+---
+---@see pdf.setxformresources
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getxformresources() end
@@ -186,6 +306,20 @@ function pdf.getxformresources() end
 ---Set major version number of the PDF file format.
 ---
 ---Note: This function sets the version number of the file header. It does not set the `/Version` key of the `/Catalog` as recommended for PDF-1.4 and later.
+---
+---The major version is
+---normally 1 but when set to 2 some data will not be written to the file in order
+---to comply with the standard. What minor version you set depends on what *PDF*
+---features you use. This is out of control of *LuaTeX*.
+---
+---One can set the major version number to 2 but we cannot guarantee that the engine
+---adapts itself correctly, because there is no public and free specification that
+---we know of. Also, user constructed annotations are not checked and just passed
+---to the file. On the other hand, the *PDF* that the engine generated is rather
+---simple and not that version depending.
+---
+---@see pdf.getmajorversion
+---
 ---@param n integer # Major version number.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -205,6 +339,8 @@ function pdf.getmajorversion() end
 ---Set minor version number of the PDF file format.
 ---
 ---Note: This function sets the version number of the file header. It does not set the `/Version` key of the `/Catalog` as recommended for PDF-1.4 and later.
+---
+---@see pdf.getmajorversion
 ---
 ---@param n integer # Minor version number.
 ---
