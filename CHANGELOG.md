@@ -6,6 +6,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [v0.12.0] - 2023-05-08
+
+### Changed
+
+- Sync with [b781f36b](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/commit/b781f36bfe5d6014b5ccc2703bf41ba5033c5955)
+
 ## [v0.11.0] - 2023-04-14
 
 ### Added
@@ -14,8 +20,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ### Changed
 
-- Sync with (4754ebfc)[https://github.com/Josef-Friedrich/LuaTeX_Lua-API/commit/4754ebfc23974663a79318651472cee896d46050]
-
+- Sync with [4754ebfc](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/commit/4754ebfc23974663a79318651472cee896d46050)
 
 ## [v0.10.0] - 2023-04-05
 
