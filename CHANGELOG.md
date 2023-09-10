@@ -6,6 +6,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [v0.13.0] - 2023-09-10
+
+### Changed
+
+- Sync with [83f89236](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/commit/83f8923665b2852ccd312437c5ab1b0ace812ff4)
+
 ## [v0.12.0] - 2023-05-08
 
 ### Changed
