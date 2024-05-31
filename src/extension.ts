@@ -35,7 +35,7 @@ function getLibraryPath (folder?: Folder): string {
  *
  * @param libraries - An array of libraries
  */
-function setConfig (libraries: string[]) {
+function setConfig (libraries: string[]): void {
   // vscode.ConfigurationTarget.Workspace -> .vscode/settings.json
   // vscode.ConfigurationTarget.WorkspaceFolder -> ?
   vscode.workspace
@@ -47,7 +47,7 @@ function setConfig (libraries: string[]) {
     )
 }
 
-function addLibrary (folder: Folder) {
+function addLibrary (folder: Folder): void {
   const config = vscode.workspace.getConfiguration('Lua')
   const libraryPath = getLibraryPath(folder)
   const library = config.get('workspace.library') as string[]
@@ -57,7 +57,7 @@ function addLibrary (folder: Folder) {
   setConfig(library)
 }
 
-function removeLibrary (folder: Folder) {
+function removeLibrary (folder: Folder): void {
   const config = vscode.workspace.getConfiguration('Lua')
   const libraryPath = getLibraryPath(folder)
   const library = config.get('workspace.library') as string[]
@@ -71,7 +71,7 @@ function removeLibrary (folder: Folder) {
 /**
  * Set the config `lua.workspace.library` according to the settings in `luatex.library`.
  */
-function update () {
+function update (): void {
   let libraries = vscode.workspace
     .getConfiguration()
     .get<string[]>('Lua.workspace.library')
@@ -110,7 +110,7 @@ function update () {
   setConfig(Array.from(newLibs.values()))
 }
 
-export function activate (context: vscode.ExtensionContext) {
+export function activate (context: vscode.ExtensionContext): void {
   context.subscriptions.push(
     // luatex
     vscode.commands.registerCommand('luatex.addLuatexLib', () => {
@@ -165,4 +165,4 @@ export function activate (context: vscode.ExtensionContext) {
   )
 }
 
-export function deactivate () {}
+export function deactivate (): void {}
