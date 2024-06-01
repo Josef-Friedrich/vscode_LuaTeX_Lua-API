@@ -48,6 +48,9 @@ git clone https://github.com/Josef-Friedrich/LuaTeX_Lua-API.git <repo>
 
 ## Development
 
+* https://code.visualstudio.com/api/get-started/your-first-extension
+* https://code.visualstudio.com/api
+
 ### Debug
 
 ```

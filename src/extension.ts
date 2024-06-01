@@ -36,14 +36,12 @@ function getLibraryPath (folder?: Folder): string {
  * @param libraries - An array of libraries
  */
 function setConfig (libraries: string[]): void {
-  // vscode.ConfigurationTarget.Workspace -> .vscode/settings.json
-  // vscode.ConfigurationTarget.WorkspaceFolder -> ?
   vscode.workspace
-    .getConfiguration()
+    .getConfiguration('Lua')
     .update(
-      'Lua.workspace.library',
+      'workspace.library',
       libraries,
-      vscode.ConfigurationTarget.WorkspaceFolder
+      false
     )
 }
 
