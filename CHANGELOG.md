@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.15.0] - 2024-06-01
+
+### Fixed
+
+- Fix not finding symbols for tex API [acc8b2c](https://github.com/Josef-Friedrich/vscode_LuaTeX_Lua-API/commit/acc8b2cba7fbeabcb3c4fd8c59a07ed66a5cf8f5)
+
 ## [0.14.0] - 2024-01-29
 
 ### Changed

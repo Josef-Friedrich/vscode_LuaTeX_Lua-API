@@ -31,4 +31,4 @@ package:
 publish:
 	vsce publish
 
-.PHONY: sync_library
+.PHONY: all install install_npm install_vsce install_yo install_generator_code debug watch compile build package publish
