@@ -15,12 +15,18 @@ This project is also an extension package for the most important extensions rela
 
 ```json
 {
-  "luatex.library": ["all", "luatex", "luametatex", "lualatex", "lualibs", "luaotfload"]
+  "luatex.library": [
+    "all",
+    "luatex",
+    "luametatex",
+    "lualatex",
+    "lualibs",
+    "luaotfload"
+  ]
 }
 ```
 
-## Other methods to use the [LuaTeX
-API](https://github.com/Josef-Friedrich/LuaTeX_Lua-API):
+## Other methods to use the [LuaTeX API](https://github.com/Josef-Friedrich/LuaTeX_Lua-API):
 
 ### Lua Langauge Server Addon manager
 
@@ -40,16 +46,14 @@ git clone https://github.com/Josef-Friedrich/LuaTeX_Lua-API.git <repo>
 
 ```json
 {
-"Lua.workspace.library": [
-    "<repo>/library"
-  ]
+  "Lua.workspace.library": ["<repo>/library"]
 }
 ```
 
 ## Development
 
-* https://code.visualstudio.com/api/get-started/your-first-extension
-* https://code.visualstudio.com/api
+- https://code.visualstudio.com/api/get-started/your-first-extension
+- https://code.visualstudio.com/api
 
 ### Debug
 
