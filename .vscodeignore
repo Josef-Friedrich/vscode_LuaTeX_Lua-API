@@ -3,8 +3,10 @@
 .vscode/**
 .yarnrc
 **/.eslintrc.json
+**/.vscode-test.*
 **/*.map
 **/*.ts
+**/eslint.config.mjs
 **/tsconfig.json
 Makefile
 resources/**
