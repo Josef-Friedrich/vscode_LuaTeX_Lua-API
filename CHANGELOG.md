@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.18.0] - 2025-07-11
+
+### Changed
+
+- Sync with [6f0c386](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/commit/6f0c386573f0a5f3ede709173c16cf9a0c21249e)
+
 ## [0.17.0] - 2025-03-29
 
 ### Changed
