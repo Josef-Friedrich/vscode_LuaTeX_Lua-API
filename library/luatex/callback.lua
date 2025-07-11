@@ -20,13 +20,13 @@ _N = {}
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L17-L26](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L17-L26)
+---* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L17-L26](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L17-L26)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 callback = {}
 
 ---
----* Corresponding C source code: [lcallbacklib.c#L33-L90](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lcallbacklib.c#L33-L90)
+---* Corresponding C source code: [lcallbacklib.c#L33-L90](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lcallbacklib.c#L33-L90)
 ---
 ---Source: `callback.list()`
 ---
@@ -102,7 +102,7 @@ callback = {}
 ---|"wrapup_run
 
 ---
----* Corresponding C source code: [](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lcallbacklib.c#L198-L208)
+---* Corresponding C source code: [](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lcallbacklib.c#L198-L208)
 ---
 -- #define CALLBACK_BOOLEAN        'b'
 -- #define CALLBACK_INTEGER        'd'
@@ -136,8 +136,8 @@ callback = {}
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L28-L54](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L28-L54)
----* Corresponding C source code: [lcallbacklib.c#L517-L557](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lcallbacklib.c#L517-L557)
+---* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L28-L54](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L28-L54)
+---* Corresponding C source code: [lcallbacklib.c#L517-L557](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lcallbacklib.c#L517-L557)
 ---
 ---@param callback_name CallbackName
 ---@param func function|nil|false
@@ -156,8 +156,8 @@ function callback.register(callback_name, func) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L56-L62](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L56-L62)
----* Corresponding C source code: [lcallbacklib.c#L584-L599](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lcallbacklib.c#L584-L599)
+---* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L56-L62](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L56-L62)
+---* Corresponding C source code: [lcallbacklib.c#L584-L599](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lcallbacklib.c#L584-L599)
 ---
 ---@return table<string, boolean> info
 ---
@@ -169,8 +169,8 @@ function callback.list() end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L64-L68](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L64-L68)
----* Corresponding C source code: [lcallbacklib.c#L559-L582](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lcallbacklib.c#L559-L582)
+---* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L64-L68](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L64-L68)
+---* Corresponding C source code: [lcallbacklib.c#L559-L582](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lcallbacklib.c#L559-L582)
 ---
 ---@param callback_name CallbackName
 ---
@@ -482,7 +482,7 @@ function OpenReadFileEnv.close(env) end
 ---*LuaTeX* will pretend your callback never happened. This callback does not
 ---replace any internal code.
 ---
----* Corresponding C source code: [textoken.c#L2511](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/textoken.c#L2511)
+---* Corresponding C source code: [textoken.c#L2511](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/textoken.c#L2511)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ProcessJobnameCallback fun(jobname: string): string|nil
@@ -501,7 +501,7 @@ function OpenReadFileEnv.close(env) end
 ---The string reports the group code. From this you can deduce from
 ---what list you can give a treat.
 ---
----* Corresponding C source code: [luatexcallbackids.h#L163](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luatexcallbackids.h#L163)
+---* Corresponding C source code: [luatexcallbackids.h#L163](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luatexcallbackids.h#L163)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ContributeFilterCallback fun(extrainfo: ContributeFilterExtrainfo)
@@ -530,7 +530,7 @@ function OpenReadFileEnv.close(env) end
 ---The string `extrainfo` gives some additional information about what *TeX*'s
 ---state is with respect to the “current page”.
 ---
----* Corresponding C source code: [align.c#L1281](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/align.c#L1281)
+---* Corresponding C source code: [align.c#L1281](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/align.c#L1281)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias BuildpageFilterCallback fun(extrainfo: ContributeFilterExtrainfo)
@@ -549,7 +549,7 @@ function OpenReadFileEnv.close(env) end
 ---course you can mess with the insert box but you need to make sure that *LuaTeX*
 ---is happy afterwards.
 ---
----* Corresponding C source code: [buildpage.c#L507](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/buildpage.c#L507)
+---* Corresponding C source code: [buildpage.c#L507](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/buildpage.c#L507)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias BuildPageInsertCallback fun(n: integer, i: integer): integer
@@ -607,7 +607,7 @@ function OpenReadFileEnv.close(env) end
 ---
 ---This callback does not replace any internal code.
 ---
----* Corresponding C source code: [linebreak.c#L124](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/linebreak.c#L124)
+---* Corresponding C source code: [linebreak.c#L124](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/linebreak.c#L124)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PreLinebreakFilterCallback fun(head: Node, groupcode: PreLinebreakFilterGroupCode): NodeCallbackReturn
@@ -630,8 +630,8 @@ function OpenReadFileEnv.close(env) end
 ---Setting this callback to `false` is possible, but dangerous, because it is
 ---possible you will end up in an unfixable “deadcycles loop”.
 ---
----* Corresponding C source code: [luanode.c#L125](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/luanode.c#L125)
----* Corresponding C source code: [linebreak.c#L128](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/linebreak.c#L128)
+---* Corresponding C source code: [luanode.c#L125](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/luanode.c#L125)
+---* Corresponding C source code: [linebreak.c#L128](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/linebreak.c#L128)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias LinebreakFilterCallback fun(head: Node, is_display: boolean): NodeCallbackReturn
@@ -651,7 +651,7 @@ function OpenReadFileEnv.close(env) end
 ---It is ok to return nothing in which case you also need to flush the box or deal
 ---with it yourself. The prevdepth is also optional. You can pass `nil` instead of a node.
 ---
----* Corresponding C source code: [luanode.c#L164](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/luanode.c#L164)
+---* Corresponding C source code: [luanode.c#L164](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/luanode.c#L164)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias AppendToVlistFilterCallback fun(box: Node, locationcode: AppendToVlistFilterLocationcode, prevdepth: integer, mirrored: boolean): list: Node, prevdepth: integer
@@ -664,7 +664,7 @@ function OpenReadFileEnv.close(env) end
 ---
 ---This callback does not replace any internal code.
 ---
----* Corresponding C source code: [linebreak.c#L196](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/linebreak.c#L196)
+---* Corresponding C source code: [linebreak.c#L196](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/linebreak.c#L196)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PostLinebreakFilterCallback fun(head: Node, groupcode: string): NodeCallbackReturn
@@ -686,7 +686,7 @@ function OpenReadFileEnv.close(env) end
 ---
 ---This callback does not replace any internal code.
 ---
----* Corresponding C source code: [luanode.c#L205](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/luanode.c#L205)
+---* Corresponding C source code: [luanode.c#L205](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/luanode.c#L205)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias HpackFilterCallback fun(head: Node, groupcode: string, size: integer, packtype: 'additional'|'exactly', direction?: DirectionSpecifier, attributelist?: Node): NodeCallbackReturn
@@ -703,7 +703,7 @@ function OpenReadFileEnv.close(env) end
 ---
 ---This callback does not replace any internal code.
 ---
----* Corresponding C source code: [luanode.c#L264](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/luanode.c#L264)
+---* Corresponding C source code: [luanode.c#L264](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/luanode.c#L264)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias VpackFilterCallback fun(head: Node, groupcode: string, size: integer, packtype: 'additional'|'exactly', maxdepth: integer, direction?: DirectionSpecifier, attributelist?: Node): NodeCallbackReturn
@@ -718,8 +718,8 @@ function OpenReadFileEnv.close(env) end
 ---Optionally you can return a node, for instance an overfull rule indicator. That
 ---node will be appended to the list (just like *TeX*'s own rule would).
 ---
----* Corresponding C source code: [packaging.c#L862](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/packaging.c#L862)
----* Corresponding C source code: [packaging.c#L932](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/packaging.c#L932)
+---* Corresponding C source code: [packaging.c#L862](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/packaging.c#L862)
+---* Corresponding C source code: [packaging.c#L932](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/packaging.c#L932)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias HpackQualityCallback fun(incident: 'overfull'|'underfull'|'loose'|'tight', detail: integer, head: Node, first: integer, last: integer): Node
@@ -731,8 +731,8 @@ function OpenReadFileEnv.close(env) end
 ---The incident is one of `overfull`, `underfull`, `loose` or
 ---`tight`. The detail is either the amount of overflow in case of `overfull`, or the badness otherwise. The head is the list that is constructed.
 ---
----* Corresponding C source code: [packaging.c#L1345](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/packaging.c#L1345)
----* Corresponding C source code: [packaging.c#L1405](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/packaging.c#L1405)
+---* Corresponding C source code: [packaging.c#L1345](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/packaging.c#L1345)
+---* Corresponding C source code: [packaging.c#L1405](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/packaging.c#L1405)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias VpackQualityCallback fun(incident: 'overfull'|'underfull'|'loose'|'tight', detail: integer, head: Node, first: integer, last: integer)
@@ -743,7 +743,7 @@ function OpenReadFileEnv.close(env) end
 ---height. The callback can use `pdf.print` to write code to the *PDF*
 ---file but beware of not messing up the final result. No checking is done.
 ---
----* Corresponding C source code: [pdfshipout.c#L246](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/pdf/pdfshipout.c#L246)
+---* Corresponding C source code: [pdfshipout.c#L246](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/pdf/pdfshipout.c#L246)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ProcessRuleCallback fun(node: Node, width: integer, height: integer)
@@ -755,7 +755,7 @@ function OpenReadFileEnv.close(env) end
 ---
 ---This callback does not replace any internal code.
 ---
----* Corresponding C source code: [luanode.c#L262](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/luanode.c#L262)
+---* Corresponding C source code: [luanode.c#L262](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/luanode.c#L262)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PreOutputFilterCallback fun(head: Node, groupcode: string, size: integer, packtype: 'additional'|'exactly', maxdepth: integer, direction?: DirectionSpecifier): NodeCallbackReturn
@@ -766,7 +766,7 @@ function OpenReadFileEnv.close(env) end
 ---Setting this callback to `false` will prevent the internal discretionary
 ---insertion pass.
 ---
----* Corresponding C source code: [texlang.c#L1179](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lang/texlang.c#L1179)
+---* Corresponding C source code: [texlang.c#L1179](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lang/texlang.c#L1179)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias HyphenateCallback fun(head: Node, tail: Node): false|nil
@@ -794,7 +794,7 @@ function OpenReadFileEnv.close(env) end
 ---You must not ruin the node list. For instance, the head normally is a local par node,
 ---and the tail a glue. Messing too much can push *LuaTeX* into panic mode.
 ---
----* Corresponding C source code: [luafont.c#L2688](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/font/luafont.c#L2688)
+---* Corresponding C source code: [luafont.c#L2688](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/font/luafont.c#L2688)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias LigaturingCallback fun(head: Node, tail: Node): false|nil
@@ -811,7 +811,7 @@ function OpenReadFileEnv.close(env) end
 ---You must not ruin the node list. For instance, the head normally is a local par node,
 ---and the tail a glue. Messing too much can push *LuaTeX* into panic mode.
 ---
----* Corresponding C source code: [luafont.c#L2704](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/font/luafont.c#L2704)
+---* Corresponding C source code: [luafont.c#L2704](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/font/luafont.c#L2704)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias KerningCallback fun(head: Node, tail: Node): false|nil
@@ -823,7 +823,7 @@ function OpenReadFileEnv.close(env) end
 ---There is no return value and you should make sure that the node stays valid
 ---as otherwise *TeX* can get confused.
 ---
----* Corresponding C source code: [texnodes.c#L4812](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L4812)
+---* Corresponding C source code: [texnodes.c#L4812](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L4812)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias InsertLocalParCallback fun(local_par: Node, location: string)
@@ -841,7 +841,7 @@ function OpenReadFileEnv.close(env) end
 ---Setting this callback to `false` is bad, it will almost certainly result in
 ---an endless loop.
 ---
----* Corresponding C source code: [mlist.c#L1866](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/mlist.c#L1866)
+---* Corresponding C source code: [mlist.c#L1866](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/mlist.c#L1866)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias MlistToHlistCallback fun(head: Node, display_type: string, need_penalties: boolean): newhead: Node
@@ -852,7 +852,7 @@ function OpenReadFileEnv.close(env) end
 ---This function is called just before dumping to a format file starts. It does not
 ---replace any code and there are neither arguments nor return values.
 ---
----* Corresponding C source code: [dumpdata.c#L95](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/dumpdata.c#L95)
+---* Corresponding C source code: [dumpdata.c#L95](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/dumpdata.c#L95)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PreDumpCallback fun()
@@ -864,8 +864,8 @@ function OpenReadFileEnv.close(env) end
 ---successful use, this callback has to be set in the *Lua* initialization script,
 ---otherwise it will be seen only after the run has already started.
 ---
----* Corresponding C source code: [printing.c#L557](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/printing.c#L557)
----* Corresponding C source code: [texfileio.c#L917](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texfileio.c#L917)
+---* Corresponding C source code: [printing.c#L557](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/printing.c#L557)
+---* Corresponding C source code: [texfileio.c#L917](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texfileio.c#L917)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias StartRunCallback fun()
@@ -876,9 +876,9 @@ function OpenReadFileEnv.close(env) end
 ---This callback replaces the code that prints *LuaTeX*'s statistics and “output written to” messages. The engine can still do housekeeping and therefore
 ---you should not rely on this hook for postprocessing the *PDF* or log file.
 ---
----* Corresponding C source code: [mainbody.c#L609](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/mainbody.c#L609)
----* Corresponding C source code: [dvigen.c#L1447](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/dvi/dvigen.c#L1447)
----* Corresponding C source code: [pdfgen.c#L2243](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/pdf/pdfgen.c#L2243)
+---* Corresponding C source code: [mainbody.c#L609](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/mainbody.c#L609)
+---* Corresponding C source code: [dvigen.c#L1447](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/dvi/dvigen.c#L1447)
+---* Corresponding C source code: [pdfgen.c#L2243](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/pdf/pdfgen.c#L2243)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias StopRunCallback fun()
@@ -890,7 +890,7 @@ function OpenReadFileEnv.close(env) end
 ---`shipout`. This callback will also override the printing of box information
 ---that normally takes place when `tracingoutput` is positive.
 ---
----* Corresponding C source code: [pdfshipout.c#L61](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/pdf/pdfshipout.c#L61)
+---* Corresponding C source code: [pdfshipout.c#L61](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/pdf/pdfshipout.c#L61)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias StartPageNumberCallback fun()
@@ -900,7 +900,7 @@ function OpenReadFileEnv.close(env) end
 ---
 ---Replaces the code that prints the `]` at the end of `shipout`.
 ---
----* Corresponding C source code: [pdfshipout.c#L62](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/pdf/pdfshipout.c#L62)
+---* Corresponding C source code: [pdfshipout.c#L62](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/pdf/pdfshipout.c#L62)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias StopPageNumberCallback fun()
@@ -912,8 +912,8 @@ function OpenReadFileEnv.close(env) end
 ---allow you to do some extra reporting on top of what *TeX* already does (none of
 ---the normal actions are removed). You may find some of the values in the `status` table useful. This callback does not replace any internal code.
 ---
----* Corresponding C source code: [filename.c#L282](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/filename.c#L282)
----* Corresponding C source code: [errors.c#L430](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/errors.c#L430)
+---* Corresponding C source code: [filename.c#L282](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/filename.c#L282)
+---* Corresponding C source code: [errors.c#L430](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/errors.c#L430)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ShowErrorHookCallback fun()
@@ -922,7 +922,7 @@ function OpenReadFileEnv.close(env) end
 ---This callback replaces the code that prints the error message. The usual
 ---interaction after the message is not affected.
 ---
----* Corresponding C source code: [errors.c#L105](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/errors.c#L105)
+---* Corresponding C source code: [errors.c#L105](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/errors.c#L105)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ShowErrorMessageCallback fun()
@@ -930,7 +930,7 @@ function OpenReadFileEnv.close(env) end
 ---
 ---This callback replaces the code that prints the extra *Lua* error message.
 ---
----* Corresponding C source code: [errors.c#L995](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/errors.c#L995)
+---* Corresponding C source code: [errors.c#L995](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/errors.c#L995)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ShowLuaErrorHookCallback fun()
@@ -948,7 +948,7 @@ function OpenReadFileEnv.close(env) end
 ---This callback replaces the code that prints *LuaTeX*'s when a file is opened like
 ---`(filename` for regular files.
 ---
----* Corresponding C source code: [luatexcallbackids.h#L127](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luatexcallbackids.h#L127)
+---* Corresponding C source code: [luatexcallbackids.h#L127](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luatexcallbackids.h#L127)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias StartFileCallback fun(category: StartFileCallbackCategory, filename: string)
@@ -957,7 +957,7 @@ function OpenReadFileEnv.close(env) end
 ---This callback replaces the code that prints *LuaTeX*'s when a file is closed like
 ---the `)` for regular files.
 ---
----* Corresponding C source code: [luatexcallbackids.h#L150](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luatexcallbackids.h#L150)
+---* Corresponding C source code: [luatexcallbackids.h#L150](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luatexcallbackids.h#L150)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias StopFileCallback fun(category: integer)
@@ -967,7 +967,7 @@ function OpenReadFileEnv.close(env) end
 ---in reply to an error message. Processing will end immediately after the callback
 ---returns control to the main program.
 ---
----* Corresponding C source code: [errors.c#L531](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/errors.c#L531)
+---* Corresponding C source code: [errors.c#L531](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/errors.c#L531)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias CallEditCallback fun(filename: string, linenumber: integer)
@@ -977,7 +977,7 @@ function OpenReadFileEnv.close(env) end
 ---after the normal synctex finalizer (that happens to remove the synctex files
 ---after a run when native synctex is not enabled).
 ---
----* Corresponding C source code: [mainbody.c#L668](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/mainbody.c#L668)
+---* Corresponding C source code: [mainbody.c#L668](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/mainbody.c#L668)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FinishSynctexCallback fun()
@@ -986,7 +986,7 @@ function OpenReadFileEnv.close(env) end
 ---This callback is called after the *PDF* and log files are closed. Use it at your own
 ---risk.
 ---
----* Corresponding C source code: [mainbody.c#L687](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/mainbody.c#L687)
+---* Corresponding C source code: [mainbody.c#L687](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/mainbody.c#L687)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias WrapupRunCallback fun()
@@ -1000,7 +1000,7 @@ function OpenReadFileEnv.close(env) end
 ---`/Info`. The callback does not replace any code. There are neither
 ---arguments nor return values.
 ---
----* Corresponding C source code: [pdfgen.c#L2244](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/pdf/pdfgen.c#L2244)
+---* Corresponding C source code: [pdfgen.c#L2244](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/pdf/pdfgen.c#L2244)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FinishPdffileCallback fun()
@@ -1014,7 +1014,7 @@ function OpenReadFileEnv.close(env) end
 ---This callback is called after the *PDF* page stream has been assembled and before
 ---the page object gets finalized.
 ---
----* Corresponding C source code: [pdfgen.c#L1788](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/pdf/pdfgen.c#L1788)
+---* Corresponding C source code: [pdfgen.c#L1788](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/pdf/pdfgen.c#L1788)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FinishPdfpageCallback fun(shippingout: string)
@@ -1040,7 +1040,7 @@ function OpenReadFileEnv.close(env) end
 ---pages which is a side effect of the implementation. When you mess things up
 ---\unknown\ don't complain.
 ---
----* Corresponding C source code: [pdfgen.c#L1793](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/pdf/pdfgen.c#L1793)
+---* Corresponding C source code: [pdfgen.c#L1793](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/pdf/pdfgen.c#L1793)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PageOrderIndexCallback fun(pagenumber: integer): pagenumber: string
@@ -1064,7 +1064,7 @@ function OpenReadFileEnv.close(env) end
 ---You need to explicitly enable recompression because otherwise the content stream
 ---gets just passed on in its original compressed form.
 ---
----* Corresponding C source code: [pdftoepdf.c#L440](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/image/pdftoepdf.c#L440)
+---* Corresponding C source code: [pdftoepdf.c#L440](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/image/pdftoepdf.c#L440)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ProcessPdfImageContentCallback fun(s: string): string
@@ -1095,7 +1095,7 @@ function OpenReadFileEnv.close(env) end
 ---Setting this callback to `false` is pointless as it will prevent font
 ---loading completely but will nevertheless generate errors.
 ---
----* Corresponding C source code: [dofont.c#L52](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/font/dofont.c#L52)
+---* Corresponding C source code: [dofont.c#L52](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/font/dofont.c#L52)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias DefineFontCallback fun(name: string, size: number, id: number): Font|integer
@@ -1104,7 +1104,7 @@ function OpenReadFileEnv.close(env) end
 ---The `glyph_not_found` callback, when set, kicks in when the backend cannot
 ---insert a glyph. When no callback is defined a message is written to the log.
 ---
----* Corresponding C source code: [texfont.c#L364](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/font/texfont.c#L364)
+---* Corresponding C source code: [texfont.c#L364](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/font/texfont.c#L364)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias GlyphNotFoundCallback fun(id: number, char: number)
@@ -1118,7 +1118,7 @@ function OpenReadFileEnv.close(env) end
 ---not always that useful, especially when there is no real representation. Keep in
 ---mind that setting this callback can change the log in an incompatible way.
 ---
----* Corresponding C source code: [printing.c#L1036](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/printing.c#L1036)
+---* Corresponding C source code: [printing.c#L1036](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/printing.c#L1036)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias GlyphInfoCallback fun(g: Node): string|nil

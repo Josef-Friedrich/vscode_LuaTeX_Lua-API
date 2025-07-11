@@ -84,7 +84,7 @@ node.direct = {}
 ---|3 # "RTT" cjk
 
 ---
----* Corresponding C source code: [texnodes.c#L493-L542](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L493-L542)
+---* Corresponding C source code: [texnodes.c#L493-L542](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L493-L542)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias NodeTypeName
@@ -140,7 +140,7 @@ node.direct = {}
 ---| 'shape' # 49 `shape_node`
 
 ---
----* Corresponding C source code: [texnodes.c#L493-L542](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L493-L542)
+---* Corresponding C source code: [texnodes.c#L493-L542](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L493-L542)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias NodeTypeId
@@ -220,7 +220,7 @@ node.direct = {}
 ---
 --- __Reference:__
 ---
----* Source code of the `LuaTeX` manual:  [luatex-nodes.tex#L49-L76](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L49-L76)
+---* Source code of the `LuaTeX` manual:  [luatex-nodes.tex#L49-L76](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L49-L76)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class Node
@@ -232,7 +232,7 @@ node.direct = {}
 ---@field attr Node # A list of attributes.. almost all nodes also have an `attr` field
 
 ---
----* Corresponding C source code: [texnodes.c#L633-L661](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L633-L661)
+---* Corresponding C source code: [texnodes.c#L633-L661](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L633-L661)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias HlistNodeSubtype
@@ -267,7 +267,7 @@ node.direct = {}
 ---|28 # radical
 
 ---
----* Corresponding C source code: [texnodes.c#L841-L851](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L841-L851)
+---* Corresponding C source code: [texnodes.c#L841-L851](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L841-L851)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class ListNode: Node
@@ -292,7 +292,7 @@ node.direct = {}
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L78-L108](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L78-L108)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L78-L108](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L78-L108)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class HlistNode: ListNode
@@ -311,7 +311,7 @@ node.direct = {}
 ---@field subtype VlistNodeSubtype
 
 ---
----* Corresponding C source code: [texnodes.c#L602-L611](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L602-L611)
+---* Corresponding C source code: [texnodes.c#L602-L611](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L602-L611)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias RuleNodeSubtype
@@ -346,8 +346,8 @@ node.direct = {}
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L119-L157](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L119-L157)
----* Corresponding C source code: [texnodes.c#L912-L920](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L912-L920)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L119-L157](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L119-L157)
+---* Corresponding C source code: [texnodes.c#L912-L920](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L912-L920)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class RuleNode: Node
@@ -363,7 +363,7 @@ node.direct = {}
 ---@field transform integer # an private variable (also used to specify outline width)
 
 ---
----* Corresponding C source code: [texnodes.c#L818-L824](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L818-L824)
+---* Corresponding C source code: [texnodes.c#L818-L824](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L818-L824)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class InsNode: Node
@@ -376,7 +376,7 @@ node.direct = {}
 ---@field list Node # the first node of the body of this insert
 
 ---
----* Corresponding C source code: [texnodes.c#L868-L871](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L868-L871)
+---* Corresponding C source code: [texnodes.c#L868-L871](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L868-L871)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MarkNode: Node
@@ -386,7 +386,7 @@ node.direct = {}
 ---@field mark table # a table representing a token list
 
 ---
----* Corresponding C source code: [texnodes.c#L669-L670](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L669-L670)
+---* Corresponding C source code: [texnodes.c#L669-L670](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L669-L670)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias AdjustNodeSubtype
@@ -394,7 +394,7 @@ node.direct = {}
 ---|1 # pre
 
 ---
----* Corresponding C source code: [texnodes.c#L725-L727](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L725-L727)
+---* Corresponding C source code: [texnodes.c#L725-L727](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L725-L727)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class AdjustNode: Node
@@ -404,7 +404,7 @@ node.direct = {}
 ---@field list Node # adjusted material
 
 ---
----* Corresponding C source code: [texnodes.c#L620-L625](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L620-L625)
+---* Corresponding C source code: [texnodes.c#L620-L625](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L620-L625)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias DiscNodeSubtype
@@ -416,7 +416,7 @@ node.direct = {}
 ---|5 # second
 
 ---
----* Corresponding C source code: [texnodes.c#L758-L763](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L758-L763)
+---* Corresponding C source code: [texnodes.c#L758-L763](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L758-L763)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class DiscNode: Node
@@ -428,7 +428,7 @@ node.direct = {}
 ---@field penalty integer # the penalty associated with the break, normally `hyphenpenalty` or `exhyphenpenalty`
 
 ---
----* Corresponding C source code: [texnodes.c#L663-L664](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L663-L664)
+---* Corresponding C source code: [texnodes.c#L663-L664](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L663-L664)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias MathNodeSubtype
@@ -436,7 +436,7 @@ node.direct = {}
 ---|1 # endmath
 
 ---
----* Corresponding C source code: [texnodes.c#L873-L880](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L873-L880)
+---* Corresponding C source code: [texnodes.c#L873-L880](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L873-L880)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MathNode: Node
@@ -479,7 +479,7 @@ node.direct = {}
 ---`shrink`, and `shrink_order` fields. Note that we use the key `width` in both horizontal and vertical glue. This suits the *TeX* internals well
 ---so we decided to stick to that naming.
 ---
----* Corresponding C source code: [texnodes.c#L794-L799](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L794-L799)
+---* Corresponding C source code: [texnodes.c#L794-L799](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L794-L799)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class GlueSpecNode: Node
@@ -523,7 +523,7 @@ node.direct = {}
 ---A regular word space also results in a `spaceskip` subtype (this used to be
 ---a `userskip` with subtype zero).
 ---
----* Corresponding C source code: [texnodes.c#L785-L792](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L785-L792)
+---* Corresponding C source code: [texnodes.c#L785-L792](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L785-L792)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class GlueNode: Node
@@ -539,7 +539,7 @@ node.direct = {}
 ---Return the
 ---effective width of a glue node.
 ---
----* Corresponding C source code: [lnodelib.c#L8473-L8503](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8473-L8503)
+---* Corresponding C source code: [lnodelib.c#L8473-L8503](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8473-L8503)
 ---
 ---@param glue Node
 ---@param parent HlistNode|VlistNode
@@ -554,7 +554,7 @@ function node.effective_glue(glue, parent, round) end
 ---Return the
 ---effective width of a glue node.
 ---
----* Corresponding C source code: [lnodelib.c#L8505-L8533](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8505-L8533)
+---* Corresponding C source code: [lnodelib.c#L8505-L8533](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8505-L8533)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param parent HlistNode|VlistNode
@@ -566,7 +566,7 @@ function node.effective_glue(glue, parent, round) end
 function node.direct.effective_glue(d, parent, round) end
 
 ---
----* Corresponding C source code: [texnodes.c#L597-L600](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L597-L600)
+---* Corresponding C source code: [texnodes.c#L597-L600](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L597-L600)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias KernNodeSubtype
@@ -579,7 +579,7 @@ function node.direct.effective_glue(d, parent, round) end
 ---The `kern` command creates such nodes but for instance the font and math
 ---machinery can also add them.
 ---
----* Corresponding C source code: [texnodes.c#L836-L839](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L836-L839)
+---* Corresponding C source code: [texnodes.c#L836-L839](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L836-L839)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class KernNode: Node
@@ -587,7 +587,7 @@ function node.direct.effective_glue(d, parent, round) end
 ---@field kern integer # Fixed horizontal or vertical advance (in scaled points)
 
 ---
----* Corresponding C source code: [texnodes.c#L587-L595](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L587-L595)
+---* Corresponding C source code: [texnodes.c#L587-L595](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L587-L595)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PenaltyNodeSubtype
@@ -602,7 +602,7 @@ function node.direct.effective_glue(d, parent, round) end
 ---|8 # equationnumberpenalty
 
 ---
----* Corresponding C source code: [texnodes.c#L898-L900](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L898-L900)
+---* Corresponding C source code: [texnodes.c#L898-L900](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L898-L900)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PenaltyNode: Node
@@ -611,7 +611,7 @@ function node.direct.effective_glue(d, parent, round) end
 ---@field penalty integer # the penalty value
 
 ---
----* Corresponding C source code: [texnodes.c#L613-L618](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L613-L618)
+---* Corresponding C source code: [texnodes.c#L613-L618](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L613-L618)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias GlyphNodeSubtype
@@ -622,7 +622,7 @@ function node.direct.effective_glue(d, parent, round) end
 ---|4 # right
 
 ---
----* Corresponding C source code: [texnodes.c#L801-L816](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L801-L816)
+---* Corresponding C source code: [texnodes.c#L801-L816](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L801-L816)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class GlyphNode: Node
@@ -646,7 +646,7 @@ function node.direct.effective_glue(d, parent, round) end
 ---
 ---Return `true` when a glyph or disc node references that font.
 ---
----* Corresponding C source code: [lnodelib.c#L7639-L7655](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7639-L7655)
+---* Corresponding C source code: [lnodelib.c#L7639-L7655](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7639-L7655)
 ---
 ---@param n Node
 ---@param font integer
@@ -659,7 +659,7 @@ function node.uses_font(n, font) end
 ---
 ---Return `true` when a glyph or disc node references that font.
 ---
----* Corresponding C source code: [lnodelib.c#L7621-L7637](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7621-L7637)
+---* Corresponding C source code: [lnodelib.c#L7621-L7637](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7621-L7637)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param font integer
@@ -670,7 +670,7 @@ function node.uses_font(n, font) end
 function node.direct.uses_font(d, font) end
 
 ---
----* Corresponding C source code: [texnodes.c#L582-L585](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L582-L585)
+---* Corresponding C source code: [texnodes.c#L582-L585](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L582-L585)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias BoundaryNodeSubtype
@@ -680,7 +680,7 @@ function node.direct.uses_font(d, font) end
 ---|3 # word
 
 ---
----* Corresponding C source code: [texnodes.c#L735-L737](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L735-L737)
+---* Corresponding C source code: [texnodes.c#L735-L737](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L735-L737)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class BoundaryNode: Node
@@ -689,7 +689,7 @@ function node.direct.uses_font(d, font) end
 ---@field value integer # values 0-255 are reserved
 
 ---
----* Corresponding C source code: [texnodes.c#L853-L861](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L853-L861)
+---* Corresponding C source code: [texnodes.c#L853-L861](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L853-L861)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class LocalParNode: Node
@@ -715,7 +715,7 @@ function node.direct.uses_font(d, font) end
 ---direction is indicated by a `+` or `-`, indicating whether the value
 ---is pushed or popped from the direction stack.
 ---
----* Corresponding C source code: [texnodes.c#L753-L756](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L753-L756)
+---* Corresponding C source code: [texnodes.c#L753-L756](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L753-L756)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class DirNode: Node
@@ -724,7 +724,7 @@ function node.direct.uses_font(d, font) end
 ---@field level integer # nesting level of this direction whatsit
 
 ---
----* Corresponding C source code: [texnodes.c#L666-L667](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L666-L667)
+---* Corresponding C source code: [texnodes.c#L666-L667](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L666-L667)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias MarginKernNodeSubtype
@@ -734,7 +734,7 @@ function node.direct.uses_font(d, font) end
 ---
 ---Margin kerns result from protrusion.
 ---
----* Corresponding C source code: [texnodes.c#L863-L866](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L863-L866)
+---* Corresponding C source code: [texnodes.c#L863-L866](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L863-L866)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MarginKernNode: Node
@@ -747,7 +747,7 @@ function node.direct.uses_font(d, font) end
 ---The `math_char` is the simplest subnode field, it contains the character
 ---and family for a single glyph object.
 ---
----* Corresponding C source code: [texnodes.c#L882-L885](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L882-L885)
+---* Corresponding C source code: [texnodes.c#L882-L885](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L882-L885)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MathCharNode: Node
@@ -760,7 +760,7 @@ function node.direct.uses_font(d, font) end
 ---case that you will not normally encounter, it arises temporarily during math list
 ---conversion (its sole function is to suppress a following italic correction).
 ---
----* Corresponding C source code: [texnodes.c#L887-L890](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L887-L890)
+---* Corresponding C source code: [texnodes.c#L887-L890](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L887-L890)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MathTextCharNode: Node
@@ -771,7 +771,7 @@ function node.direct.uses_font(d, font) end
 ---
 ---For subsidiary list items
 ---
----* Corresponding C source code: [texnodes.c#L933-L935](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L933-L935)
+---* Corresponding C source code: [texnodes.c#L933-L935](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L933-L935)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class SubBoxNode: Node
@@ -781,7 +781,7 @@ function node.direct.uses_font(d, font) end
 ---
 ---For subsidiary list items
 ---
----* Corresponding C source code: [texnodes.c#L937-L939](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L937-L939)
+---* Corresponding C source code: [texnodes.c#L937-L939](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L937-L939)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class SubMlistNode: Node
@@ -796,7 +796,7 @@ function node.direct.uses_font(d, font) end
 ---font that is set for the `small_fam` is expected to provide the large
 ---version as an extension to the `small_char`.
 ---
----* Corresponding C source code: [texnodes.c#L746-L751](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L746-L751)
+---* Corresponding C source code: [texnodes.c#L746-L751](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L746-L751)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class DelimNode: Node
@@ -807,7 +807,7 @@ function node.direct.uses_font(d, font) end
 ---@field large_fam integer # family number of next larger character
 
 ---
----* Corresponding C source code: [texnodes.c#L672-L684](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L672-L684)
+---* Corresponding C source code: [texnodes.c#L672-L684](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L672-L684)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias NoadNodeSubtype
@@ -848,7 +848,7 @@ function node.direct.uses_font(d, font) end
 --- | no super script | `0x22` + `0x08` |
 --- | no script       | `0x23` + `0x08` |
 ---
----* Corresponding C source code: [texnodes.c#L892-L896](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L892-L896)
+---* Corresponding C source code: [texnodes.c#L892-L896](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L892-L896)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class NoadNode: Node
@@ -860,7 +860,7 @@ function node.direct.uses_font(d, font) end
 ---@field options integer # bitset of rendering options
 
 ---
----* Corresponding C source code: [texnodes.c#L694-L697](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L694-L697)
+---* Corresponding C source code: [texnodes.c#L694-L697](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L694-L697)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias AccentNodeSubtype
@@ -870,7 +870,7 @@ function node.direct.uses_font(d, font) end
 ---|3 # fixedboth
 
 ---
----* Corresponding C source code: [texnodes.c#L714-L723](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L714-L723)
+---* Corresponding C source code: [texnodes.c#L714-L723](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L714-L723)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class AccentNode: Node
@@ -886,7 +886,7 @@ function node.direct.uses_font(d, font) end
 ---@field fraction integer # larger step criterium (divided by 1000)
 
 ---
----* Corresponding C source code: [texnodes.c#L929-L931](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L929-L931)
+---* Corresponding C source code: [texnodes.c#L929-L931](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L929-L931)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class StyleNode: Node
@@ -897,7 +897,7 @@ function node.direct.uses_font(d, font) end
 ---Warning: never assign a node list to the `display`, `text`, `script`, or `scriptscript` field unless you are sure its internal link
 ---structure is correct, otherwise an error can occur.
 ---
----* Corresponding C source code: [texnodes.c#L739-L744](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L739-L744)
+---* Corresponding C source code: [texnodes.c#L739-L744](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L739-L744)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class ChoiceNode: Node
@@ -908,7 +908,7 @@ function node.direct.uses_font(d, font) end
 ---@field scriptscript Node # list of scriptscriptsize alternatives
 
 ---
----* Corresponding C source code: [texnodes.c#L686-L692](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L686-L692)
+---* Corresponding C source code: [texnodes.c#L686-L692](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L686-L692)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias RadicalNodeSubtype
@@ -925,7 +925,7 @@ function node.direct.uses_font(d, font) end
 --Warning: never assign a node list to the `nucleus`, `sub`, `sup`, `left`, or `degree` field unless you are sure its internal
 ---link structure is correct, otherwise an error can be triggered.
 ---
----* Corresponding C source code: [texnodes.c#L902-L910](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L902-L910)
+---* Corresponding C source code: [texnodes.c#L902-L910](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L902-L910)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class RadicalNode: Node
@@ -944,7 +944,7 @@ function node.direct.uses_font(d, font) end
 ---unless you are sure its internal link structure is correct, otherwise an error
 ---can result.
 ---
----* Corresponding C source code: [texnodes.c#L774-L783](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L774-L783)
+---* Corresponding C source code: [texnodes.c#L774-L783](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L774-L783)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class FractionNode: Node
@@ -959,7 +959,7 @@ function node.direct.uses_font(d, font) end
 ---
 
 ---
----* Corresponding C source code: [texnodes.c#L627-L631](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L627-L631)
+---* Corresponding C source code: [texnodes.c#L627-L631](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L627-L631)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FenceNodeSubtype
@@ -973,7 +973,7 @@ function node.direct.uses_font(d, font) end
 ---Warning: some of these fields are used by the renderer and might get adapted in
 ---the process.
 ---
----* Corresponding C source code: [texnodes.c#L765-L772](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L765-L772)
+---* Corresponding C source code: [texnodes.c#L765-L772](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L765-L772)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class FenceNode: Node
@@ -1050,7 +1050,7 @@ function node.direct.uses_font(d, font) end
 ---specific to the chosen backend: *DVI* or \PDF. Here we discuss the generic
 ---font-end nodes nodes.
 ---
----Source: [luatex-nodes.tex#L781-L797](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L781-L797)
+---Source: [luatex-nodes.tex#L781-L797](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L781-L797)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class WhatsitNode: Node
@@ -1072,7 +1072,7 @@ function node.direct.uses_font(d, font) end
 ---@field data table # a table representing the token list to be written
 
 ---
----* Corresponding C source code: [texnodes.c#L1018-L1020](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1018-L1020)
+---* Corresponding C source code: [texnodes.c#L1018-L1020](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1018-L1020)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class CloseWhatsitNode: Node
@@ -1086,7 +1086,7 @@ function node.direct.uses_font(d, font) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L833-L864](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L833-L864)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L833-L864](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L833-L864)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class UserDefinedWhatsitNode: WhatsitNode
@@ -1107,7 +1107,7 @@ function node.direct.uses_font(d, font) end
 ---When a function is used, it gets called with as first argument the node that triggers
 ---the call.
 ---
----* Corresponding C source code: [texnodes.c#L1022-L1027](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1022-L1027)
+---* Corresponding C source code: [texnodes.c#L1022-L1027](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1022-L1027)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class LateLuaWhatsitNode: WhatsitNode
@@ -1126,7 +1126,7 @@ function node.direct.uses_font(d, font) end
 ---@field data string # the `special` information
 
 ---
----* Corresponding C source code: [texnodes.c#L1082-L1088](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1082-L1088)
+---* Corresponding C source code: [texnodes.c#L1082-L1088](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1082-L1088)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PdfLiteralModes
@@ -1143,7 +1143,7 @@ function node.direct.uses_font(d, font) end
 ---Especially the `raw` variant can produce bad *PDF* so you can best check
 ---what you generate.
 ---
----* Corresponding C source code: [texnodes.c#L1148-L1151](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1148-L1151)
+---* Corresponding C source code: [texnodes.c#L1148-L1151](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1148-L1151)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfLiteralWhatsitNode: WhatsitNode
@@ -1198,7 +1198,7 @@ function node.direct.uses_font(d, font) end
 ---@field objnum integer # the *PDF* object number; for structure references the *PDF* object number of the linked structure element
 
 ---
----* Corresponding C source code: [texnodes.c#L1090-L1093](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1090-L1093)
+---* Corresponding C source code: [texnodes.c#L1090-L1093](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1090-L1093)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PdfActionTypes
@@ -1208,7 +1208,7 @@ function node.direct.uses_font(d, font) end
 ---|3 'user'
 
 ---
----* Corresponding C source code: [texnodes.c#L1095-L1097](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1095-L1097)
+---* Corresponding C source code: [texnodes.c#L1095-L1097](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1095-L1097)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PdfWindowTypes
@@ -1217,7 +1217,7 @@ function node.direct.uses_font(d, font) end
 ---|2 'nonew'
 
 ---
----* Corresponding C source code: [texnodes.c#L1104-L1111](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1104-L1111)
+---* Corresponding C source code: [texnodes.c#L1104-L1111](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1104-L1111)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfActionWhatsitNode: WhatsitNode
@@ -1230,7 +1230,7 @@ function node.direct.uses_font(d, font) end
 ---@field data string # the name of the destination
 
 ---
-------* Corresponding C source code: [texnodes.c#L1185-L1192](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1185-L1192)
+------* Corresponding C source code: [texnodes.c#L1185-L1192](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1185-L1192)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfThreadWhatsitNode
@@ -1243,7 +1243,7 @@ function node.direct.uses_font(d, font) end
 ---@field thread_attr integer # extra thread information
 
 ---
----* Corresponding C source code: [texnodes.c#L1176-L1183](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1176-L1183)
+---* Corresponding C source code: [texnodes.c#L1176-L1183](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1176-L1183)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfStartThreadWhatsitNode
@@ -1256,7 +1256,7 @@ function node.direct.uses_font(d, font) end
 ---@field thread_attr integer # extra thread information
 
 ---
----* Corresponding C source code: [texnodes.c#L1145-L1146](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1145-L1146)
+---* Corresponding C source code: [texnodes.c#L1145-L1146](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1145-L1146)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfEndThreadWhatsitNode
@@ -1277,12 +1277,12 @@ function node.direct.uses_font(d, font) end
 ---__Reference:__
 ---
 ---* Source code of the `LuaTeX` manual: [pdftex-t.tex#L3954-L3980](https://github.com/tex-mirror/pdftex/blob/6fb2352aa70a23ad3830f1434613170be3f3cd74/doc/manual/pdftex-t.tex#L3954-L3980)
----Source: [luatex-nodes.tex#L1097-L1107](https://github.com/TeX-Live/luatex/blob/e1cb50f34dc1451c9c5319dc953305b52a7a96fd/manual/luatex-nodes.tex#L1097-L1107)
+---Source: [luatex-nodes.tex#L1097-L1107](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/e1cb50f34dc1451c9c5319dc953305b52a7a96fd/manual/luatex-nodes.tex#L1097-L1107)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfColorstackWhatsitNode: WhatsitNode
 ---@field stack integer # The colorstack id number.
----@field command integer # The command to execute. ⟨stack action⟩ → set (0) | push (1) | pop (2) | current (3) [texnodes.c#L3523-L3545](https://github.com/TeX-Live/luatex/blob/6472bd794fea67de09f01e1a89e9b12141be7474/source/texk/web2c/luatexdir/tex/texnodes.c#L3523-L3545)
+---@field command integer # The command to execute. ⟨stack action⟩ → set (0) | push (1) | pop (2) | current (3) [texnodes.c#L3523-L3545](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/6472bd794fea67de09f01e1a89e9b12141be7474/source/texk/web2c/luatexdir/tex/texnodes.c#L3523-L3545)
 ---@field data string # General text that is placed on top of the stack, for example `1 0 0 rg 1 0 0 RG`. `rg` only colors filled outlines while the stroke color is set with `RG`. From the [PDF Reference, fourth edition](https://opensource.adobe.com/dc-acrobat-sdk-docs/pdfstandards/pdfreference1.5_v6.pdf), 4.5.7 Color Operators Page 251: `gray G`: Set the stroking color space to DeviceGray. `gray` is a number between 0.0 (black) and 1.0 (white). `gray g`: Same as `G`, but for nonstroking operations. `r g b RG`: Set the stroking color space to DeviceRGB. Each operand must be a number between 0.0 (minimum intensity) and 1.0 (maximum intensity). `r g b rg`: same as `RG`, but for nonstroking operations. `c m y k K`: Set the stroking color space to DeviceCMYK. Each operand must be a number between 0.0 (zero concentration) and 1.0 (maximum concentration). `c m y k k`: Same as `K`, but for nonstroking operations.
 
 ---
@@ -1302,7 +1302,7 @@ function node.direct.uses_font(d, font) end
 ---@field attr Node # A list of attributes.
 
 ---
----* Corresponding C source code: [texnodes.c#L941-L952](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L941-L952)
+---* Corresponding C source code: [texnodes.c#L941-L952](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L941-L952)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class UnsetNode: Node
@@ -1331,13 +1331,13 @@ function node.direct.uses_font(d, font) end
 ---@class PseudoLineNode: Node
 
 ---
----* Corresponding C source code: [texnodes.c#L826-L834](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L826-L834)
+---* Corresponding C source code: [texnodes.c#L826-L834](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L826-L834)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PageInsertNode: Node
 
 ---
----* Corresponding C source code: [texnodes.c#L922-L927](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L922-L927)
+---* Corresponding C source code: [texnodes.c#L922-L927](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L922-L927)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class SplitInsertNode: Node
@@ -1348,25 +1348,25 @@ function node.direct.uses_font(d, font) end
 ---@field broken_ins integer
 
 ---
----* Corresponding C source code: [texnodes.c#L474](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L474)
+---* Corresponding C source code: [texnodes.c#L474](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L474)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class ExprStackNode: Node
 
 ---
----* Corresponding C source code: [texnodes.c#L475](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L475)
+---* Corresponding C source code: [texnodes.c#L475](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L475)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class NestedListNode: Node
 
 ---
----* Corresponding C source code: [texnodes.c#L476](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L476)
+---* Corresponding C source code: [texnodes.c#L476](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L476)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class SpanNode: Node
 
 ---
----* Corresponding C source code: [texnodes.c#L729-L731](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L729-L731)
+---* Corresponding C source code: [texnodes.c#L729-L731](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L729-L731)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class AttributeNode: Node
@@ -1374,49 +1374,49 @@ function node.direct.uses_font(d, font) end
 ---@field value unknown
 
 ---
----* Corresponding C source code: [texnodes.c#L733](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L733)
+---* Corresponding C source code: [texnodes.c#L733](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L733)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class AttributeListNode: Node
 
 ---
----* Corresponding C source code: [texnodes.c#L480](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L480)
+---* Corresponding C source code: [texnodes.c#L480](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L480)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class TempNode: Node
 
 ---
----* Corresponding C source code: [texnodes.c#L481](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L481)
+---* Corresponding C source code: [texnodes.c#L481](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L481)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class AlignStackNode: Node
 
 ---
----* Corresponding C source code: [texnodes.c#L482](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L482)
+---* Corresponding C source code: [texnodes.c#L482](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L482)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MovementStackNode: Node
 
 ---
----* Corresponding C source code: [texnodes.c#L483](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L483)
+---* Corresponding C source code: [texnodes.c#L483](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L483)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class IfStackNode: Node
 
 ---
----* Corresponding C source code: [texnodes.c#L484](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L484)
+---* Corresponding C source code: [texnodes.c#L484](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L484)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class UnhyphenatedNode: Node
 
 ---
----* Corresponding C source code: [texnodes.c#L485](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L485)
+---* Corresponding C source code: [texnodes.c#L485](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L485)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class HyphenatedNode: Node
 
 ---
----* Corresponding C source code: [texnodes.c#L486](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L486)
+---* Corresponding C source code: [texnodes.c#L486](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L486)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class DeltaNode: Node
@@ -1424,7 +1424,7 @@ function node.direct.uses_font(d, font) end
 ---
 ---Used in the line breaking algorithm.
 ---
----* Corresponding C source code: [texnodes.c#L487](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L487)
+---* Corresponding C source code: [texnodes.c#L487](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L487)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PassiveNode: Node
@@ -1432,7 +1432,7 @@ function node.direct.uses_font(d, font) end
 ---
 ---`\parshape`
 ---
----* Corresponding C source code: [texnodes.c#L488](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L488)
+---* Corresponding C source code: [texnodes.c#L488](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L488)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class ShapeNode: Node
@@ -1443,8 +1443,8 @@ function node.direct.uses_font(d, font) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1199-L1211](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1199-L1211)
----* Corresponding C source code: [lnodelib.c#L8295-L8303](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8295-L8303)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1199-L1211](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1199-L1211)
+---* Corresponding C source code: [lnodelib.c#L8295-L8303](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8295-L8303)
 ---
 ---@param item any
 ---
@@ -1459,7 +1459,7 @@ function node.is_node(item) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8326-L8343](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8326-L8343)
+---* Corresponding C source code: [lnodelib.c#L8326-L8343](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8326-L8343)
 ---
 ---@param item any
 ---
@@ -1474,8 +1474,8 @@ function node.direct.is_node(item) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1218-L1224](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1218-L1224)
----* Corresponding C source code: [lnodelib.c#L3066-L3069](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3066-L3069)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1218-L1224](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1218-L1224)
+---* Corresponding C source code: [lnodelib.c#L3066-L3069](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3066-L3069)
 ---
 ---@return table
 ---
@@ -1490,8 +1490,8 @@ function node.types() end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1226-L1233](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1226-L1233)
----* Corresponding C source code: [lnodelib.c#L3073-L3076](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3073-L3076)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1226-L1233](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1226-L1233)
+---* Corresponding C source code: [lnodelib.c#L3073-L3076](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3073-L3076)
 ---
 ---@return table
 ---
@@ -1507,8 +1507,8 @@ function node.whatsits() end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1235-L1244](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1235-L1244)
----* Corresponding C source code: [lnodelib.c#L470-L483](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L470-L483)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1235-L1244](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1235-L1244)
+---* Corresponding C source code: [lnodelib.c#L470-L483](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L470-L483)
 ---
 ---@param type NodeTypeName
 ---
@@ -1534,7 +1534,7 @@ function node.id(type) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1993-L2009](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1993-L2009)
+---* Corresponding C source code: [lnodelib.c#L1993-L2009](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1993-L2009)
 ---
 ---@param n NodeTypeId # The numeric node type id.
 ---
@@ -1553,7 +1553,7 @@ function node.type(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1976-L1989](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1976-L1989)
+---* Corresponding C source code: [lnodelib.c#L1976-L1989](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1976-L1989)
 ---
 ---@param whatsit_type_name WhatsitTypeName
 ---
@@ -1572,7 +1572,7 @@ function node.subtype(whatsit_type_name) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3080-L3115](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3080-L3115)
+---* Corresponding C source code: [lnodelib.c#L3080-L3115](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3080-L3115)
 ---
 ---@param id NodeTypeId
 ---@param subtype? number
@@ -1587,7 +1587,7 @@ function node.fields(id, subtype) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2993-L3000](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2993-L3000)
+---* Corresponding C source code: [lnodelib.c#L2993-L3000](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2993-L3000)
 ---
 ---@param n Node
 ---@param field string
@@ -1602,7 +1602,7 @@ function node.has_field(n, field) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3041-L3049](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3041-L3049)
+---* Corresponding C source code: [lnodelib.c#L3041-L3049](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3041-L3049)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param field string
@@ -1623,8 +1623,8 @@ function node.direct.has_field(d, field) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1299-L1314](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1299-L1314)
----* Corresponding C source code: [lnodelib.c#L2055-L2060](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2055-L2060)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1299-L1314](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1299-L1314)
+---* Corresponding C source code: [lnodelib.c#L2055-L2060](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2055-L2060)
 ---
 ---@param id integer|NodeTypeName
 ---@param subtype? integer|string
@@ -1645,8 +1645,8 @@ function node.new(id, subtype) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1299-L1314](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1299-L1314)
----* Corresponding C source code: [lnodelib.c#L2064-L2069](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2064-L2069)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1299-L1314](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1299-L1314)
+---* Corresponding C source code: [lnodelib.c#L2064-L2069](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2064-L2069)
 ---
 ---@param id integer|NodeTypeName
 ---@param subtype? integer|string
@@ -1667,7 +1667,7 @@ function node.direct.new(id, subtype) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2073-L2090](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2073-L2090)
+---* Corresponding C source code: [lnodelib.c#L2073-L2090](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2073-L2090)
 ---
 ---@param n Node
 ---
@@ -1687,7 +1687,7 @@ function node.direct.free(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2094-L2109](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2094-L2109)
+---* Corresponding C source code: [lnodelib.c#L2094-L2109](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2094-L2109)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -1702,7 +1702,7 @@ function node.direct.free(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2113-L2122](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2113-L2122)
+---* Corresponding C source code: [lnodelib.c#L2113-L2122](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2113-L2122)
 ---
 ---@param n Node
 ---
@@ -1715,7 +1715,7 @@ function node.flush_node(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2126-L2133](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2126-L2133)
+---* Corresponding C source code: [lnodelib.c#L2126-L2133](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2126-L2133)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -1732,7 +1732,7 @@ function node.direct.flush_node(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2137-L2146](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2137-L2146)
+---* Corresponding C source code: [lnodelib.c#L2137-L2146](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2137-L2146)
 ---
 ---@param n Node
 ---
@@ -1749,7 +1749,7 @@ function node.flush_list(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2150-L2157](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2150-L2157)
+---* Corresponding C source code: [lnodelib.c#L2150-L2157](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2150-L2157)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -1762,7 +1762,7 @@ function node.direct.flush_list(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2476-L2485](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2476-L2485)
+---* Corresponding C source code: [lnodelib.c#L2476-L2485](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2476-L2485)
 ---
 ---@param n Node
 ---
@@ -1777,7 +1777,7 @@ function node.copy(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2489-L2500](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2489-L2500)
+---* Corresponding C source code: [lnodelib.c#L2489-L2500](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2489-L2500)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -1799,7 +1799,7 @@ function node.direct.copy(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2440-L2452](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2440-L2452)
+---* Corresponding C source code: [lnodelib.c#L2440-L2452](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2440-L2452)
 ---
 ---@param n Node
 ---@param m? Node
@@ -1822,7 +1822,7 @@ function node.copy_list(n, m) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2456-L2472](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2456-L2472)
+---* Corresponding C source code: [lnodelib.c#L2456-L2472](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2456-L2472)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param e? integer
@@ -1838,7 +1838,7 @@ function node.direct.copy_list(d, e) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L379-L388](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L379-L388)
+---* Corresponding C source code: [lnodelib.c#L379-L388](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L379-L388)
 ---
 ---@param n Node
 ---
@@ -1853,7 +1853,7 @@ function node.prev(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L390-L399](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L390-L399)
+---* Corresponding C source code: [lnodelib.c#L390-L399](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L390-L399)
 ---
 ---@param n Node
 ---
@@ -1896,7 +1896,7 @@ function node.next(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6511-L6532](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6511-L6532)
+---* Corresponding C source code: [lnodelib.c#L6511-L6532](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6511-L6532)
 ---
 ---@return Node|nil m
 ---
@@ -1908,7 +1908,7 @@ function node.current_attr() end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6511-L6532](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6511-L6532)
+---* Corresponding C source code: [lnodelib.c#L6511-L6532](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6511-L6532)
 ---
 ---@return integer|nil e
 ---
@@ -1931,7 +1931,7 @@ function node.direct.current_attr() end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2576-L2619](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2576-L2619)
+---* Corresponding C source code: [lnodelib.c#L2576-L2619](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2576-L2619)
 ---
 ---@param n Node
 ---@param width? integer
@@ -1960,7 +1960,7 @@ function node.hpack(n, width, info, dir) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2576-L2619](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2576-L2619)
+---* Corresponding C source code: [lnodelib.c#L2576-L2619](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2576-L2619)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param width? integer
@@ -1986,7 +1986,7 @@ function node.direct.hpack(d, width, info, dir) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2673-L2716](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2673-L2716)
+---* Corresponding C source code: [lnodelib.c#L2673-L2716](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2673-L2716)
 ---
 ---@param head Node
 ---@param height? integer # The additional (`\vbox spread`) or exact (`\vbox to`) height to be used.
@@ -2012,7 +2012,7 @@ function node.vpack(head, height, info, dir) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2720-L2763](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2720-L2763)
+---* Corresponding C source code: [lnodelib.c#L2720-L2763](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2720-L2763)
 ---
 ---@param head integer # The index number of the node in the memory table for direct access.
 ---@param height? integer # The additional (`\vbox spread`) or exact (`\vbox to`) height to be used.
@@ -2031,7 +2031,7 @@ function node.direct.vpack(head, height, info, dir) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8763-L8801](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8763-L8801)
+---* Corresponding C source code: [lnodelib.c#L8763-L8801](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8763-L8801)
 ---
 ---@param n Node # vlist or hlist
 ---@param prevdepth integer
@@ -2047,7 +2047,7 @@ function node.prepend_prevdepth(n, prevdepth) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8803-L8840](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8803-L8840)
+---* Corresponding C source code: [lnodelib.c#L8803-L8840](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8803-L8840)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param prevdepth integer
@@ -2069,8 +2069,8 @@ function node.direct.prepend_prevdepth(d, prevdepth) end
 ---
 ---__Reference:__
 ---
----[Source: luatex-nodes.tex#L1490-L1546](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
----* Corresponding C source code: [lnodelib.c#L2767-L2812](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2767-L2812)
+---[Source: luatex-nodes.tex#L1490-L1546](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
+---* Corresponding C source code: [lnodelib.c#L2767-L2812](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2767-L2812)
 ---
 ---@param n Node
 ---@param dir? DirectionSpecifier
@@ -2094,8 +2094,8 @@ function node.dimensions(n, dir) end
 ---
 ---__Reference:__
 ---
----[Source: luatex-nodes.tex#L1490-L1546](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
----* Corresponding C source code: [lnodelib.c#L2838-L2880](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2838-L2880)
+---[Source: luatex-nodes.tex#L1490-L1546](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
+---* Corresponding C source code: [lnodelib.c#L2838-L2880](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2838-L2880)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param dir? DirectionSpecifier
@@ -2113,8 +2113,8 @@ function node.direct.dimensions(d, dir) end
 ---
 ---__Reference:__
 ---
----[Source: luatex-nodes.tex#L1490-L1546](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
----* Corresponding C source code: [lnodelib.c#L2767-L2812](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2767-L2812)
+---[Source: luatex-nodes.tex#L1490-L1546](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
+---* Corresponding C source code: [lnodelib.c#L2767-L2812](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2767-L2812)
 ---
 ---@param n Node
 ---@param t Node # terminating node
@@ -2133,8 +2133,8 @@ function node.dimensions(n, t, dir) end
 ---
 ---__Reference:__
 ---
----[Source: luatex-nodes.tex#L1490-L1546](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
----* Corresponding C source code: [lnodelib.c#L2838-L2880](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2838-L2880)
+---[Source: luatex-nodes.tex#L1490-L1546](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
+---* Corresponding C source code: [lnodelib.c#L2838-L2880](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2838-L2880)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param t integer # terminating node
@@ -2173,8 +2173,8 @@ function node.direct.dimensions(d, t, dir) end
 ---
 ---__Reference:__
 ---
----[Source: luatex-nodes.tex#L1490-L1546](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
----* Corresponding C source code: [lnodelib.c#L2838-L2880](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2838-L2880)
+---[Source: luatex-nodes.tex#L1490-L1546](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
+---* Corresponding C source code: [lnodelib.c#L2838-L2880](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2838-L2880)
 ---
 ---@param glue_set integer
 ---@param glue_sign integer
@@ -2215,8 +2215,8 @@ function node.dimensions(glue_set, glue_sign, glue_order, n, dir) end
 ---
 ---__Reference:__
 ---
----[Source: luatex-nodes.tex#L1490-L1546](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
----* Corresponding C source code: [lnodelib.c#L2838-L2880](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2838-L2880)
+---[Source: luatex-nodes.tex#L1490-L1546](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
+---* Corresponding C source code: [lnodelib.c#L2838-L2880](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2838-L2880)
 ---
 ---@param glue_set integer
 ---@param glue_sign integer
@@ -2240,8 +2240,8 @@ function node.direct.dimensions(glue_set, glue_sign, glue_order, d, dir) end
 ---
 ---__Reference:__
 ---
----[Source: luatex-nodes.tex#L1490-L1546](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
----* Corresponding C source code: [lnodelib.c#L2767-L2812](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2767-L2812)
+---[Source: luatex-nodes.tex#L1490-L1546](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
+---* Corresponding C source code: [lnodelib.c#L2767-L2812](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2767-L2812)
 ---
 ---@param glue_set integer
 ---@param glue_sign integer
@@ -2266,8 +2266,8 @@ function node.dimensions(glue_set, glue_sign, glue_order, d, t, dir) end
 ---
 ---__Reference:__
 ---
----[Source: luatex-nodes.tex#L1490-L1546](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
----* Corresponding C source code: [lnodelib.c#L2838-L2880](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2838-L2880)
+---[Source: luatex-nodes.tex#L1490-L1546](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1490-L1546)
+---* Corresponding C source code: [lnodelib.c#L2838-L2880](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2838-L2880)
 ---
 ---@param glue_set integer
 ---@param glue_sign integer
@@ -2292,7 +2292,7 @@ function node.direct.dimensions(glue_set, glue_sign, glue_order, n, t, dir) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2814-L2834](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2814-L2834)
+---* Corresponding C source code: [lnodelib.c#L2814-L2834](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2814-L2834)
 ---
 ---@param parent Node
 ---@param first Node
@@ -2314,7 +2314,7 @@ function node.rangedimensions(parent, first, last) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2882-L2902](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2882-L2902)
+---* Corresponding C source code: [lnodelib.c#L2882-L2902](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2882-L2902)
 ---
 ---@param parent integer
 ---@param first integer
@@ -2336,7 +2336,7 @@ function node.direct.rangedimensions(parent, first, last) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2906-L2918](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2906-L2918)
+---* Corresponding C source code: [lnodelib.c#L2906-L2918](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2906-L2918)
 ---
 ---@param n Node
 ---@param display_type string
@@ -2355,7 +2355,7 @@ function node.mlist_to_hlist(n, display_type, penalties) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3262-L3274](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3262-L3274)
+---* Corresponding C source code: [lnodelib.c#L3262-L3274](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3262-L3274)
 ---
 ---@param n Node
 ---
@@ -2369,7 +2369,7 @@ function node.tail(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3278-L3289](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3278-L3289)
+---* Corresponding C source code: [lnodelib.c#L3278-L3289](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3278-L3289)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -2386,7 +2386,7 @@ function node.direct.tail(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L4374-L4386](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4374-L4386)
+---* Corresponding C source code: [lnodelib.c#L4374-L4386](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4374-L4386)
 ---
 ---@param n Node
 ---@param m? Node
@@ -2404,7 +2404,7 @@ function node.length(n, m) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L4350-L4360](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4350-L4360)
+---* Corresponding C source code: [lnodelib.c#L4350-L4360](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4350-L4360)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param e? Node
@@ -2424,7 +2424,7 @@ function node.direct.length(d, e) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L4388-L4401](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4388-L4401)
+---* Corresponding C source code: [lnodelib.c#L4388-L4401](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4388-L4401)
 ---
 ---@param id integer|string
 ---@param n Node
@@ -2445,7 +2445,7 @@ function node.count(id, n, m) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L4362-L4369](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4362-L4369)
+---* Corresponding C source code: [lnodelib.c#L4362-L4369](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4362-L4369)
 ---
 ---@param id integer|string
 ---@param d integer # The index number of the node in the memory table for direct access.
@@ -2462,7 +2462,7 @@ function node.direct.count(id, d, e) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3004-L3024](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3004-L3024)
+---* Corresponding C source code: [lnodelib.c#L3004-L3024](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3004-L3024)
 ---
 ---@param n Node
 ---@param font? integer
@@ -2479,7 +2479,7 @@ function node.is_char(n, font) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L7572-L7592](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7572-L7592)
+---* Corresponding C source code: [lnodelib.c#L7572-L7592](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7572-L7592)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param font? integer
@@ -2496,7 +2496,7 @@ function node.direct.is_char(d, font) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3026-L3037](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3026-L3037)
+---* Corresponding C source code: [lnodelib.c#L3026-L3037](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3026-L3037)
 ---
 ---@param n Node
 ---
@@ -2512,7 +2512,7 @@ function node.is_glyph(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L7594-L7605](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7594-L7605)
+---* Corresponding C source code: [lnodelib.c#L7594-L7605](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7594-L7605)
 ---
 ---@param n Node
 ---
@@ -2540,7 +2540,7 @@ function node.direct.is_glyph(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L4156-L4168](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4156-L4168)
+---* Corresponding C source code: [lnodelib.c#L4156-L4168](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4156-L4168)
 ---
 ---@param n Node
 ---
@@ -2567,7 +2567,7 @@ function node.traverse(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3937-L3953](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3937-L3953)
+---* Corresponding C source code: [lnodelib.c#L3937-L3953](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3937-L3953)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -2582,7 +2582,7 @@ function node.direct.traverse(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L4196-L4209](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4196-L4209)
+---* Corresponding C source code: [lnodelib.c#L4196-L4209](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4196-L4209)
 ---
 ---@param id integer
 ---@param n Node
@@ -2598,7 +2598,7 @@ function node.traverse_id(id, n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3980-L3995](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3980-L3995)
+---* Corresponding C source code: [lnodelib.c#L3980-L3995](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3980-L3995)
 ---
 ---@param id integer
 ---@param d integer # The index number of the node in the memory table for direct access.
@@ -2615,7 +2615,7 @@ function node.direct.traverse_id(id, d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L4237-L4249](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4237-L4249)
+---* Corresponding C source code: [lnodelib.c#L4237-L4249](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4237-L4249)
 ---
 ---@param n Node
 ---
@@ -2631,7 +2631,7 @@ function node.traverse_char(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L4022-L4038](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4022-L4038)
+---* Corresponding C source code: [lnodelib.c#L4022-L4038](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4022-L4038)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -2646,7 +2646,7 @@ function node.direct.traverse_char(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L4277-L4289](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4277-L4289)
+---* Corresponding C source code: [lnodelib.c#L4277-L4289](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4277-L4289)
 ---
 ---@param n Node
 ---
@@ -2661,7 +2661,7 @@ function node.traverse_glyph(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L4065-L4081](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4065-L4081)
+---* Corresponding C source code: [lnodelib.c#L4065-L4081](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4065-L4081)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -2677,7 +2677,7 @@ function node.direct.traverse_glyph(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L4318-L4330](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4318-L4330)
+---* Corresponding C source code: [lnodelib.c#L4318-L4330](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4318-L4330)
 ---
 ---@param n Node
 ---
@@ -2693,7 +2693,7 @@ function node.traverse_list(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L4318-L4330](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4318-L4330)
+---* Corresponding C source code: [lnodelib.c#L4318-L4330](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L4318-L4330)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -2707,7 +2707,7 @@ function node.direct.traverse_list(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6368-L6382](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6368-L6382)
+---* Corresponding C source code: [lnodelib.c#L6368-L6382](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6368-L6382)
 ---
 ---@param n Node
 ---
@@ -2721,7 +2721,7 @@ function node.has_glyph(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6368-L6382](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6368-L6382)
+---* Corresponding C source code: [lnodelib.c#L6368-L6382](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6368-L6382)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -2740,7 +2740,7 @@ function node.direct.has_glyph(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3293-L3313](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3293-L3313)
+---* Corresponding C source code: [lnodelib.c#L3293-L3313](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3293-L3313)
 ---
 ---@param n Node
 ---
@@ -2759,7 +2759,7 @@ function node.end_of_math(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3317-L3334](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3317-L3334)
+---* Corresponding C source code: [lnodelib.c#L3317-L3334](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3317-L3334)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -2781,8 +2781,8 @@ function node.direct.end_of_math(d) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1775-L1791](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1775-L1791)
----* Corresponding C source code: [lnodelib.c#L2176-L2215](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2176-L2215)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1775-L1791](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1775-L1791)
+---* Corresponding C source code: [lnodelib.c#L2176-L2215](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2176-L2215)
 ---
 ---@param head Node
 ---@param current Node # A node following the list `head`.
@@ -2807,8 +2807,8 @@ function node.remove(head, current) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1775-L1791](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1775-L1791)
----* Corresponding C source code: [lnodelib.c#L2219-L2267](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2219-L2267)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1775-L1791](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1775-L1791)
+---* Corresponding C source code: [lnodelib.c#L2219-L2267](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2219-L2267)
 ---
 ---@param head integer
 ---@param current integer # A node following the list `head`.
@@ -2831,8 +2831,8 @@ function node.direct.remove(head, current) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1793-L1807](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1793-L1807)
----* Corresponding C source code: [lnodelib.c#L2271-L2315](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2271-L2315)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1793-L1807](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1793-L1807)
+---* Corresponding C source code: [lnodelib.c#L2271-L2315](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2271-L2315)
 ---
 ---@param head Node
 ---@param current Node
@@ -2855,8 +2855,8 @@ function node.insert_before(head, current, new) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1793-L1807](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1793-L1807)
----* Corresponding C source code: [lnodelib.c#L2319-L2357](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2319-L2357)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1793-L1807](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1793-L1807)
+---* Corresponding C source code: [lnodelib.c#L2319-L2357](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2319-L2357)
 ---
 ---@param head integer
 ---@param current integer
@@ -2878,8 +2878,8 @@ function node.direct.insert_before(head, current, new) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1809-L1822](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1809-L1822)
----* Corresponding C source code: [lnodelib.c#L2361-L2395](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2361-L2395)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1809-L1822](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1809-L1822)
+---* Corresponding C source code: [lnodelib.c#L2361-L2395](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2361-L2395)
 ---
 ---@param head Node
 ---@param current Node
@@ -2901,8 +2901,8 @@ function node.insert_after(head, current, new) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1809-L1822](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1809-L1822)
----* Corresponding C source code: [lnodelib.c#L2399-L2430](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2399-L2430)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L1809-L1822](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1809-L1822)
+---* Corresponding C source code: [lnodelib.c#L2399-L2430](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2399-L2430)
 ---
 ---@param head integer
 ---@param current integer
@@ -2924,7 +2924,7 @@ function node.direct.insert_after(head, current, new) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6312-L6337](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6312-L6337)
+---* Corresponding C source code: [lnodelib.c#L6312-L6337](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6312-L6337)
 ---
 ---@param n Node
 ---@param m? Node
@@ -2945,7 +2945,7 @@ function node.first_glyph(n, m) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6341-L6362](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6341-L6362)
+---* Corresponding C source code: [lnodelib.c#L6341-L6362](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6341-L6362)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param e? integer
@@ -2960,7 +2960,7 @@ function node.direct.first_glyph(d, e) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L5945-L5984](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5945-L5984)
+---* Corresponding C source code: [lnodelib.c#L5945-L5984](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5945-L5984)
 ---
 ---@param head Node
 ---@param tail? Node
@@ -2977,7 +2977,7 @@ function node.ligaturing(head, tail) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L5986-L6017](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5986-L6017)
+---* Corresponding C source code: [lnodelib.c#L5986-L6017](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5986-L6017)
 ---
 ---@param head integer
 ---@param tail? integer
@@ -2994,7 +2994,7 @@ function node.direct.ligaturing(head, tail) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6021-L6060](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6021-L6060)
+---* Corresponding C source code: [lnodelib.c#L6021-L6060](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6021-L6060)
 ---
 ---@param head Node
 ---@param tail? Node
@@ -3011,7 +3011,7 @@ function node.kerning(head, tail) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6062-L6097](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6062-L6097)
+---* Corresponding C source code: [lnodelib.c#L6062-L6097](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6062-L6097)
 ---
 ---@param head integer
 ---@param tail? integer
@@ -3029,7 +3029,7 @@ function node.direct.kerning(head, tail) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6217-L6223](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6217-L6223)
+---* Corresponding C source code: [lnodelib.c#L6217-L6223](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6217-L6223)
 ---
 ---@param n Node
 ---
@@ -3042,7 +3042,7 @@ function node.unprotect_glyph(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6272-L6278](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6272-L6278)
+---* Corresponding C source code: [lnodelib.c#L6272-L6278](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6272-L6278)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3055,7 +3055,7 @@ function node.direct.unprotect_glyph(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6243-L6259](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6243-L6259)
+---* Corresponding C source code: [lnodelib.c#L6243-L6259](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6243-L6259)
 ---
 ---@param head Node
 ---@param tail? Node
@@ -3069,7 +3069,7 @@ function node.unprotect_glyphs(head, tail) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6295-L6308](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6295-L6308)
+---* Corresponding C source code: [lnodelib.c#L6295-L6308](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6295-L6308)
 ---
 ---@param head integer
 ---@param tail? integer
@@ -3086,7 +3086,7 @@ function node.direct.unprotect_glyphs(head, tail) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6209-L6215](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6209-L6215)
+---* Corresponding C source code: [lnodelib.c#L6209-L6215](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6209-L6215)
 ---
 ---@param n Node
 ---
@@ -3102,7 +3102,7 @@ function node.protect_glyph(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6264-L6270](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6264-L6270)
+---* Corresponding C source code: [lnodelib.c#L6264-L6270](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6264-L6270)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3118,7 +3118,7 @@ function node.direct.protect_glyph(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6225-L6241](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6225-L6241)
+---* Corresponding C source code: [lnodelib.c#L6225-L6241](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6225-L6241)
 ---
 ---@param head Node
 ---@param tail? Node
@@ -3135,7 +3135,7 @@ function node.protect_glyphs(head, tail) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6280-L6293](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6280-L6293)
+---* Corresponding C source code: [lnodelib.c#L6280-L6293](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6280-L6293)
 ---
 ---@param head integer
 ---@param tail? integer
@@ -3148,7 +3148,7 @@ function node.direct.protect_glyphs(head, tail) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2556-L2563](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2556-L2563)
+---* Corresponding C source code: [lnodelib.c#L2556-L2563](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2556-L2563)
 ---
 ---@return Node|nil n
 ---
@@ -3160,7 +3160,7 @@ function node.last_node() end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2567-L2572](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2567-L2572)
+---* Corresponding C source code: [lnodelib.c#L2567-L2572](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2567-L2572)
 ---
 ---@return integer|nil n
 ---
@@ -3176,8 +3176,8 @@ function node.direct.last_node() end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L2518-L2521](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L2518-L2521), [luatex-nodes.tex#L1913-L1923](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1913-L1923)
----* Corresponding C source code: [lnodelib.c#L2505-L2525](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2505-L2525)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L2518-L2521](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L2518-L2521), [luatex-nodes.tex#L1913-L1923](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1913-L1923)
+---* Corresponding C source code: [lnodelib.c#L2505-L2525](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2505-L2525)
 ---
 ---@param n Node
 ---
@@ -3193,8 +3193,8 @@ function node.write(n) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L2518-L2521](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L2518-L2521), [luatex-nodes.tex#L1913-L1923](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1913-L1923)
----* Corresponding C source code: [lnodelib.c#L2529-L2552](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2529-L2552)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L2518-L2521](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L2518-L2521), [luatex-nodes.tex#L1913-L1923](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1913-L1923)
+---* Corresponding C source code: [lnodelib.c#L2529-L2552](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2529-L2552)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3207,7 +3207,7 @@ function node.direct.write(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6488-L6493](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6488-L6493)
+---* Corresponding C source code: [lnodelib.c#L6488-L6493](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6488-L6493)
 ---
 ---@param n Node
 ---
@@ -3222,7 +3222,7 @@ function node.protrusion_skippable(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6497-L6506](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6497-L6506)
+---* Corresponding C source code: [lnodelib.c#L6497-L6506](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6497-L6506)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3249,7 +3249,7 @@ function node.direct.protrusion_skippable(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3862-L3883](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3862-L3883)
+---* Corresponding C source code: [lnodelib.c#L3862-L3883](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3862-L3883)
 ---
 ---@param n Node
 ---@param width integer|any
@@ -3279,7 +3279,7 @@ function node.setglue(n, width, stretch, shrink, stretch_order, shrink_order) en
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3798-L3818](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3798-L3818)
+---* Corresponding C source code: [lnodelib.c#L3798-L3818](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3798-L3818)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param width integer|any
@@ -3299,7 +3299,7 @@ function node.direct.setglue(d, width, stretch, shrink, stretch_order, shrink_or
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3840-L3860](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3840-L3860)
+---* Corresponding C source code: [lnodelib.c#L3840-L3860](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3840-L3860)
 ---
 ---@param n Node
 ---
@@ -3320,7 +3320,7 @@ function node.getglue(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3776-L3796](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3776-L3796)
+---* Corresponding C source code: [lnodelib.c#L3776-L3796](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3776-L3796)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3339,7 +3339,7 @@ function node.direct.getglue(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3885-L3899](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3885-L3899)
+---* Corresponding C source code: [lnodelib.c#L3885-L3899](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3885-L3899)
 ---
 ---@param n Node
 ---
@@ -3354,7 +3354,7 @@ function node.is_zero_glue(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3820-L3834](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3820-L3834)
+---* Corresponding C source code: [lnodelib.c#L3820-L3834](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3820-L3834)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3372,7 +3372,7 @@ function node.direct.is_zero_glue(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3339-L3353](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3339-L3353)
+---* Corresponding C source code: [lnodelib.c#L3339-L3353](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3339-L3353)
 ---
 ---@param n Node
 ---@param id integer
@@ -3392,7 +3392,7 @@ function node.has_attribute(n, id, value) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3357-L3371](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3357-L3371)
+---* Corresponding C source code: [lnodelib.c#L3357-L3371](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3357-L3371)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param id integer
@@ -3412,7 +3412,7 @@ function node.direct.has_attribute(d, id, value) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3375-L3406](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3375-L3406)
+---* Corresponding C source code: [lnodelib.c#L3375-L3406](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3375-L3406)
 ---
 ---@param n Node
 ---@param id integer
@@ -3431,7 +3431,7 @@ function node.get_attribute(n, id) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3450-L3481](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3450-L3481)
+---* Corresponding C source code: [lnodelib.c#L3450-L3481](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3450-L3481)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param id integer
@@ -3449,7 +3449,7 @@ function node.direct.get_attribute(d, id) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3408-L3443](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3408-L3443)
+---* Corresponding C source code: [lnodelib.c#L3408-L3443](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3408-L3443)
 ---
 ---@param n Node
 ---@param id integer
@@ -3468,7 +3468,7 @@ function node.find_attribute(n, id) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3503-L3538](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3503-L3538)
+---* Corresponding C source code: [lnodelib.c#L3503-L3538](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3503-L3538)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param id integer
@@ -3487,7 +3487,7 @@ function node.direct.find_attribute(d, id) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3563-L3578](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3563-L3578)
+---* Corresponding C source code: [lnodelib.c#L3563-L3578](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3563-L3578)
 ---
 ---@param n Node
 ---@param id integer
@@ -3504,7 +3504,7 @@ function node.set_attribute(n, id, value) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3483-L3501](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3483-L3501)
+---* Corresponding C source code: [lnodelib.c#L3483-L3501](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3483-L3501)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param id integer
@@ -3525,7 +3525,7 @@ function node.direct.set_attribute(d, id, value) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3580-L3596](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3580-L3596)
+---* Corresponding C source code: [lnodelib.c#L3580-L3596](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3580-L3596)
 ---
 ---@param n Node
 ---@param id integer
@@ -3548,7 +3548,7 @@ function node.unset_attribute(n, id, value) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3540-L3558](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3540-L3558)
+---* Corresponding C source code: [lnodelib.c#L3540-L3558](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3540-L3558)
 ---
 ---@param n Node
 ---@param id integer
@@ -3572,7 +3572,7 @@ function node.direct.unset_attribute(n, id, value) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3226-L3241](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3226-L3241)
+---* Corresponding C source code: [lnodelib.c#L3226-L3241](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3226-L3241)
 ---
 ---@param n Node
 ---
@@ -3594,7 +3594,7 @@ function node.slide(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3245-L3258](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3245-L3258)
+---* Corresponding C source code: [lnodelib.c#L3245-L3258](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3245-L3258)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3614,7 +3614,7 @@ function node.direct.slide(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8615-L8627](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8615-L8627)
+---* Corresponding C source code: [lnodelib.c#L8615-L8627](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8615-L8627)
 ---
 ---@param head Node
 ---
@@ -3632,7 +3632,7 @@ function node.check_discretionaries(head) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8550-L8562](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8550-L8562)
+---* Corresponding C source code: [lnodelib.c#L8550-L8562](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8550-L8562)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3650,7 +3650,7 @@ function node.direct.check_discretionaries(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8629-L8638](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8629-L8638)
+---* Corresponding C source code: [lnodelib.c#L8629-L8638](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8629-L8638)
 ---
 ---@param n Node
 ---
@@ -3668,7 +3668,7 @@ function node.check_discretionary(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8564-L8573](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8564-L8573)
+---* Corresponding C source code: [lnodelib.c#L8564-L8573](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8564-L8573)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3681,7 +3681,7 @@ function node.direct.check_discretionary(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8640-L8679](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8640-L8679)
+---* Corresponding C source code: [lnodelib.c#L8640-L8679](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8640-L8679)
 ---
 ---@param n Node
 ---
@@ -3697,7 +3697,7 @@ function node.flatten_discretionaries(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8575-L8613](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8575-L8613)
+---* Corresponding C source code: [lnodelib.c#L8575-L8613](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8575-L8613)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3717,7 +3717,7 @@ function node.direct.flatten_discretionaries(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L2922-L2932](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2922-L2932)
+---* Corresponding C source code: [lnodelib.c#L2922-L2932](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2922-L2932)
 ---
 ---@param fam integer # family identifier
 ---
@@ -3731,7 +3731,7 @@ function node.family_font(fam) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6552-L6565](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6552-L6565)
+---* Corresponding C source code: [lnodelib.c#L6552-L6565](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6552-L6565)
 ---
 ---@param n Node
 ---
@@ -3745,7 +3745,7 @@ function node.direct.todirect(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6570-L6581](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6570-L6581)
+---* Corresponding C source code: [lnodelib.c#L6570-L6581](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6570-L6581)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3759,7 +3759,7 @@ function node.direct.tonode(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1767-L1778](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1767-L1778)
+---* Corresponding C source code: [lnodelib.c#L1767-L1778](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1767-L1778)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param next integer
@@ -3772,7 +3772,7 @@ function node.direct.setnext(d, next) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1782-L1800](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1782-L1800)
+---* Corresponding C source code: [lnodelib.c#L1782-L1800](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1782-L1800)
 ---
 ---@param n Node
 ---
@@ -3786,7 +3786,7 @@ function node.getnext(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1756-L1765](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1756-L1765)
+---* Corresponding C source code: [lnodelib.c#L1756-L1765](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1756-L1765)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3800,7 +3800,7 @@ function node.direct.getnext(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1816-L1827](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1816-L1827)
+---* Corresponding C source code: [lnodelib.c#L1816-L1827](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1816-L1827)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param prev integer
@@ -3813,7 +3813,7 @@ function node.direct.setprev(d, prev) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1831-L1846](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1831-L1846)
+---* Corresponding C source code: [lnodelib.c#L1831-L1846](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1831-L1846)
 ---
 ---@param n Node
 ---
@@ -3827,7 +3827,7 @@ function node.getprev(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1805-L1814](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1805-L1814)
+---* Corresponding C source code: [lnodelib.c#L1805-L1814](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1805-L1814)
 ---
 ---@param n Node
 ---
@@ -3841,7 +3841,7 @@ function node.direct.getprev(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1864-L1880](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1864-L1880)
+---* Corresponding C source code: [lnodelib.c#L1864-L1880](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1864-L1880)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param prev integer
@@ -3855,7 +3855,7 @@ function node.direct.setboth(d, prev, next) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1884-L1902](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1884-L1902)
+---* Corresponding C source code: [lnodelib.c#L1884-L1902](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1884-L1902)
 ---
 ---@param n Node
 ---
@@ -3870,7 +3870,7 @@ function node.getboth(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1851-L1862](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1851-L1862)
+---* Corresponding C source code: [lnodelib.c#L1851-L1862](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1851-L1862)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3885,7 +3885,7 @@ function node.direct.getboth(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L487-L496](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L487-L496)
+---* Corresponding C source code: [lnodelib.c#L487-L496](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L487-L496)
 ---
 ---@param n Node
 ---
@@ -3899,7 +3899,7 @@ function node.getid(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L500-L517](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L500-L517)
+---* Corresponding C source code: [lnodelib.c#L500-L517](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L500-L517)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3913,7 +3913,7 @@ function node.direct.getid(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L533-L540](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L533-L540)
+---* Corresponding C source code: [lnodelib.c#L533-L540](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L533-L540)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param subtype integer
@@ -3926,7 +3926,7 @@ function node.direct.setsubtype(d, subtype) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L544-L558](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L544-L558)
+---* Corresponding C source code: [lnodelib.c#L544-L558](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L544-L558)
 ---
 ---@param n Node
 ---
@@ -3940,7 +3940,7 @@ function node.getsubtype(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L522-L531](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L522-L531)
+---* Corresponding C source code: [lnodelib.c#L522-L531](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L522-L531)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3954,7 +3954,7 @@ function node.direct.getsubtype(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L621-L632](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L621-L632)
+---* Corresponding C source code: [lnodelib.c#L621-L632](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L621-L632)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3968,7 +3968,7 @@ function node.direct.setfont(d, font) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L636-L654](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L636-L654)
+---* Corresponding C source code: [lnodelib.c#L636-L654](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L636-L654)
 ---
 ---@param n Node
 ---
@@ -3982,7 +3982,7 @@ function node.getfont(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L601-L619](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L601-L619)
+---* Corresponding C source code: [lnodelib.c#L601-L619](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L601-L619)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -3996,7 +3996,7 @@ function node.direct.getfont(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L702-L717](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L702-L717)
+---* Corresponding C source code: [lnodelib.c#L702-L717](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L702-L717)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param char integer
@@ -4009,7 +4009,7 @@ function node.direct.setchar(d, char) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L739-L758](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L739-L758)
+---* Corresponding C source code: [lnodelib.c#L739-L758](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L739-L758)
 ---
 ---@param n Node
 ---
@@ -4023,7 +4023,7 @@ function node.getchar(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L659-L678](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L659-L678)
+---* Corresponding C source code: [lnodelib.c#L659-L678](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L659-L678)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4037,7 +4037,7 @@ function node.direct.getchar(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1307-L1346](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1307-L1346)
+---* Corresponding C source code: [lnodelib.c#L1307-L1346](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1307-L1346)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param width number # Rounded to an integer
@@ -4052,7 +4052,7 @@ function node.direct.setwhd(d, width, height, depth) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1350-L1378](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1350-L1378)
+---* Corresponding C source code: [lnodelib.c#L1350-L1378](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1350-L1378)
 ---
 ---@param n Node
 ---@param get_ex boolean
@@ -4070,7 +4070,7 @@ function node.getwhd(n, get_ex) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1277-L1305](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1277-L1305)
+---* Corresponding C source code: [lnodelib.c#L1277-L1305](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1277-L1305)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param get_ex boolean
@@ -4087,7 +4087,7 @@ function node.direct.getwhd(d, get_ex) end
 ---Set the `pre`, `post`, `replace`, `subtype` and `penalty` on a `disc` node.
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1201-L1232](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1201-L1232)
+---* Corresponding C source code: [lnodelib.c#L1201-L1232](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1201-L1232)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param pre integer
@@ -4104,7 +4104,7 @@ function node.direct.setdisc(d, pre, post, replace, subtype, penalty) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1236-L1253](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1236-L1253)
+---* Corresponding C source code: [lnodelib.c#L1236-L1253](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1236-L1253)
 ---
 ---@param n Node
 ---@param get_tail? boolean
@@ -4124,7 +4124,7 @@ function node.getdisc(n, get_tail) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1182-L1199](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1182-L1199)
+---* Corresponding C source code: [lnodelib.c#L1182-L1199](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1182-L1199)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param get_tail? boolean
@@ -4144,7 +4144,7 @@ function node.direct.getdisc(d, get_tail) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1404-L1436](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1404-L1436)
+---* Corresponding C source code: [lnodelib.c#L1404-L1436](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1404-L1436)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param list integer
@@ -4157,7 +4157,7 @@ function node.direct.setlist(d, list) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1440-L1458](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1440-L1458)
+---* Corresponding C source code: [lnodelib.c#L1440-L1458](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1440-L1458)
 ---
 ---@param n Node
 ---
@@ -4171,7 +4171,7 @@ function node.getlist(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1382-L1402](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1382-L1402)
+---* Corresponding C source code: [lnodelib.c#L1382-L1402](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1382-L1402)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4185,7 +4185,7 @@ function node.direct.getlist(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1474-L1485](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1474-L1485)
+---* Corresponding C source code: [lnodelib.c#L1474-L1485](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1474-L1485)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param leader integer
@@ -4198,7 +4198,7 @@ function node.direct.setleader(d, leader) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1489-L1501](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1489-L1501)
+---* Corresponding C source code: [lnodelib.c#L1489-L1501](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1489-L1501)
 ---
 ---@param n Node
 ---
@@ -4212,7 +4212,7 @@ function node.getleader(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1463-L1472](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1463-L1472)
+---* Corresponding C source code: [lnodelib.c#L1463-L1472](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1463-L1472)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4226,7 +4226,7 @@ function node.direct.getleader(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L7348-L7364](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7348-L7364)
+---* Corresponding C source code: [lnodelib.c#L7348-L7364](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7348-L7364)
 ---
 ---@param n Node
 ---@param field string
@@ -4240,7 +4240,7 @@ function node.setfield(n, field, value) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L7660-L8188](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7660-L8188)
+---* Corresponding C source code: [lnodelib.c#L7660-L8188](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7660-L8188)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param field string
@@ -4256,7 +4256,7 @@ function node.direct.setfield(d, field, value) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L5189-L5207](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5189-L5207)
+---* Corresponding C source code: [lnodelib.c#L5189-L5207](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5189-L5207)
 ---
 ---@param n Node
 ---@param field string
@@ -4273,7 +4273,7 @@ function node.getfield(n, field) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L5402-L5891](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5402-L5891)
+---* Corresponding C source code: [lnodelib.c#L5402-L5891](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5402-L5891)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param field string
@@ -4294,7 +4294,7 @@ function node.direct.getfield(d, field) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8683-L8719](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8683-L8719)
+---* Corresponding C source code: [lnodelib.c#L8683-L8719](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8683-L8719)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param tag integer
@@ -4314,7 +4314,7 @@ function node.direct.set_synctex_fields(d, tag, line) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8721-L8759](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8721-L8759)
+---* Corresponding C source code: [lnodelib.c#L8721-L8759](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8721-L8759)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4332,7 +4332,7 @@ function node.direct.get_synctex_fields(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L828-L854](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L828-L854)
+---* Corresponding C source code: [lnodelib.c#L828-L854](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L828-L854)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param attr_list integer|true
@@ -4345,7 +4345,7 @@ function node.direct.setattributelist(d, attr_list) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L817-L826](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L817-L826)
+---* Corresponding C source code: [lnodelib.c#L817-L826](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L817-L826)
 ---
 ---@param n Node
 ---
@@ -4359,7 +4359,7 @@ function node.direct.getattributelist(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8224-L8236](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8224-L8236)
+---* Corresponding C source code: [lnodelib.c#L8224-L8236](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8224-L8236)
 ---
 ---@param box integer
 ---
@@ -4373,7 +4373,7 @@ function node.direct.getbox(box) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L774-L785](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L774-L785)
+---* Corresponding C source code: [lnodelib.c#L774-L785](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L774-L785)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param components integer
@@ -4386,7 +4386,7 @@ function node.direct.setcomponents(d, components) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L763-L772](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L763-L772)
+---* Corresponding C source code: [lnodelib.c#L763-L772](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L763-L772)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4400,7 +4400,7 @@ function node.direct.getcomponents(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1716-L1751](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1716-L1751)
+---* Corresponding C source code: [lnodelib.c#L1716-L1751](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1716-L1751)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4412,7 +4412,7 @@ function node.direct.setdata(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1678-L1714](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1678-L1714)
+---* Corresponding C source code: [lnodelib.c#L1678-L1714](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1678-L1714)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4426,7 +4426,7 @@ function node.direct.getdata(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1093-L1109](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1093-L1109)
+---* Corresponding C source code: [lnodelib.c#L1093-L1109](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1093-L1109)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param dir DirectionSpecifier
@@ -4439,7 +4439,7 @@ function node.direct.setdir(d, dir) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1047-L1067](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1047-L1067)
+---* Corresponding C source code: [lnodelib.c#L1047-L1067](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1047-L1067)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4453,7 +4453,7 @@ function node.direct.getdir(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1111-L1134](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1111-L1134)
+---* Corresponding C source code: [lnodelib.c#L1111-L1134](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1111-L1134)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param dir integer
@@ -4466,7 +4466,7 @@ function node.direct.setdirection(d, dir) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#LL1070-L1092](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#LL1070-L1092)
+---* Corresponding C source code: [lnodelib.c#LL1070-L1092](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#LL1070-L1092)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4478,7 +4478,7 @@ function node.direct.getdirection(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L580-L596](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L580-L596)
+---* Corresponding C source code: [lnodelib.c#L580-L596](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L580-L596)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4488,7 +4488,7 @@ function node.direct.setexpansion(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L563-L578](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L563-L578)
+---* Corresponding C source code: [lnodelib.c#L563-L578](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L563-L578)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4500,7 +4500,7 @@ function node.direct.getexpansion(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L719-L735](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L719-L735)
+---* Corresponding C source code: [lnodelib.c#L719-L735](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L719-L735)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param fam integer
@@ -4511,7 +4511,7 @@ function node.direct.setfam(d, fam) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L680-L700](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L680-L700)
+---* Corresponding C source code: [lnodelib.c#L680-L700](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L680-L700)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4523,7 +4523,7 @@ function node.direct.getfam(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3641-L3657](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3641-L3657)
+---* Corresponding C source code: [lnodelib.c#L3641-L3657](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3641-L3657)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param width number # Rounded to an integer
@@ -4536,7 +4536,7 @@ function node.direct.setwidth(d, width) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3607-L3639](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3607-L3639)
+---* Corresponding C source code: [lnodelib.c#L3607-L3639](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3607-L3639)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4550,7 +4550,7 @@ function node.direct.getwidth(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3681-L3697](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3681-L3697)
+---* Corresponding C source code: [lnodelib.c#L3681-L3697](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3681-L3697)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4562,7 +4562,7 @@ function node.direct.setheight(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3659-L3679](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3659-L3679)
+---* Corresponding C source code: [lnodelib.c#L3659-L3679](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3659-L3679)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4576,7 +4576,7 @@ function node.direct.getheight(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3721-L3737](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3721-L3737)
+---* Corresponding C source code: [lnodelib.c#L3721-L3737](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3721-L3737)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param depth number
@@ -4589,7 +4589,7 @@ function node.direct.setdepth(d, depth) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3699-L3719](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3699-L3719)
+---* Corresponding C source code: [lnodelib.c#L3699-L3719](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3699-L3719)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4603,7 +4603,7 @@ function node.direct.getdepth(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1019-L1042](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1019-L1042)
+---* Corresponding C source code: [lnodelib.c#L1019-L1042](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1019-L1042)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param kern integer
@@ -4616,7 +4616,7 @@ function node.direct.setkern(d, kern) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L995-L1017](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L995-L1017)
+---* Corresponding C source code: [lnodelib.c#L995-L1017](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L995-L1017)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@return integer|nil kern
@@ -4629,7 +4629,7 @@ function node.direct.getkern(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L801-L812](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L801-L812)
+---* Corresponding C source code: [lnodelib.c#L801-L812](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L801-L812)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param lang integer
@@ -4642,7 +4642,7 @@ function node.direct.setlang(d, lang) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L790-L799](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L790-L799)
+---* Corresponding C source code: [lnodelib.c#L790-L799](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L790-L799)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4656,7 +4656,7 @@ function node.direct.getlang(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L916-L930](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L916-L930)
+---* Corresponding C source code: [lnodelib.c#L916-L930](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L916-L930)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param nucleus integer
@@ -4669,7 +4669,7 @@ function node.direct.setnucleus(d, nucleus) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L902-L914](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L902-L914)
+---* Corresponding C source code: [lnodelib.c#L902-L914](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L902-L914)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4684,7 +4684,7 @@ function node.direct.getnucleus(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1156-L1177](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1156-L1177)
+---* Corresponding C source code: [lnodelib.c#L1156-L1177](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1156-L1177)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param a integer # `xoffset` or `left`
@@ -4698,7 +4698,7 @@ function node.direct.setoffsets(d, a, b) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1139-L1154](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1139-L1154)
+---* Corresponding C source code: [lnodelib.c#L1139-L1154](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1139-L1154)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4713,7 +4713,7 @@ function node.direct.getoffsets(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L876-L896](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L876-L896)
+---* Corresponding C source code: [lnodelib.c#L876-L896](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L876-L896)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4725,7 +4725,7 @@ function node.direct.setpenalty(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L858-L874](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L858-L874)
+---* Corresponding C source code: [lnodelib.c#L858-L874](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L858-L874)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4738,7 +4738,7 @@ function node.direct.getpenalty(d) end
 ---Set the `shift` (a displacement perpendicular to the character progression direction) field on `vlist` and `hlist` nodes.
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3756-L3770](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3756-L3770)
+---* Corresponding C source code: [lnodelib.c#L3756-L3770](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3756-L3770)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param shift integer
@@ -4751,7 +4751,7 @@ function node.direct.setshift(d, shift) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3742-L3754](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3742-L3754)
+---* Corresponding C source code: [lnodelib.c#L3742-L3754](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3742-L3754)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4765,7 +4765,7 @@ function node.direct.getshift(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L946-L960](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L946-L960)
+---* Corresponding C source code: [lnodelib.c#L946-L960](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L946-L960)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param sub integer
@@ -4778,7 +4778,7 @@ function node.direct.setsub(d, sub) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L932-L944](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L932-L944)
+---* Corresponding C source code: [lnodelib.c#L932-L944](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L932-L944)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4792,7 +4792,7 @@ function node.direct.getsub(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L976-L990](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L976-L990)
+---* Corresponding C source code: [lnodelib.c#L976-L990](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L976-L990)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param sup number
@@ -4805,7 +4805,7 @@ function node.direct.setsup(d, sup) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L962-L974](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L962-L974)
+---* Corresponding C source code: [lnodelib.c#L962-L974](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L962-L974)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4817,7 +4817,7 @@ function node.direct.getsup(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8307-L8322](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8307-L8322)
+---* Corresponding C source code: [lnodelib.c#L8307-L8322](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8307-L8322)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4829,7 +4829,7 @@ function node.direct.is_direct(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1912-L1957](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1912-L1957)
+---* Corresponding C source code: [lnodelib.c#L1912-L1957](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1912-L1957)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4839,7 +4839,7 @@ function node.direct.setlink(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L1959-L1972](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1959-L1972)
+---* Corresponding C source code: [lnodelib.c#L1959-L1972](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1959-L1972)
 ---
 ---@param l integer # The index number of the node in the memory table for direct access.
 ---@param r integer # The index number of the node in the memory table for direct access.
@@ -4852,8 +4852,8 @@ function node.direct.setsplit(l, r) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [lnodelib.c#L8397-L8410](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8397-L8410)
----* Corresponding C source code: [lnodelib.c#L8403-L8416](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8403-L8416)
+---* Source code of the `LuaTeX` manual: [lnodelib.c#L8397-L8410](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8397-L8410)
+---* Corresponding C source code: [lnodelib.c#L8403-L8416](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8403-L8416)
 ---
 ---@param n Node
 ---@param value any
@@ -4866,8 +4866,8 @@ function node.setproperty(n, value) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [lnodelib.c#L8397-L8410](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8397-L8410)
----* Corresponding C source code: [lnodelib.c#L8418-L8431](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8418-L8431)
+---* Source code of the `LuaTeX` manual: [lnodelib.c#L8397-L8410](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8397-L8410)
+---* Corresponding C source code: [lnodelib.c#L8418-L8431](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8418-L8431)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.---@param value any
 ---
@@ -4879,8 +4879,8 @@ function node.direct.setproperty(d, value) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L2520-L2523](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L2520-L2523)
----* Corresponding C source code: [lnodelib.c#L8379-L8389](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8379-L8389)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L2520-L2523](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L2520-L2523)
+---* Corresponding C source code: [lnodelib.c#L8379-L8389](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8379-L8389)
 ---
 ---@param node Node
 ---
@@ -4894,8 +4894,8 @@ function node.getproperty(node) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L2520-L2523](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L2520-L2523)
----* Corresponding C source code: [lnodelib.c#L8391-L8401](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8391-L8401)
+---* Source code of the `LuaTeX` manual: [luatex-nodes.tex#L2520-L2523](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L2520-L2523)
+---* Corresponding C source code: [lnodelib.c#L8391-L8401](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8391-L8401)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4909,7 +4909,7 @@ function node.direct.getproperty(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8351-L8360](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8351-L8360)
+---* Corresponding C source code: [lnodelib.c#L8351-L8360](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8351-L8360)
 ---
 ---@param enable boolean
 ---@param use_metatable? boolean
@@ -4922,7 +4922,7 @@ function node.set_properties_mode(enable, use_metatable) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8351-L8360](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8351-L8360)
+---* Corresponding C source code: [lnodelib.c#L8351-L8360](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8351-L8360)
 ---
 ---@param enable boolean
 ---@param use_metatable? boolean
@@ -4933,7 +4933,7 @@ function node.direct.set_properties_mode(enable, use_metatable) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8364-L8375](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8364-L8375)
+---* Corresponding C source code: [lnodelib.c#L8364-L8375](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8364-L8375)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.flush_properties_table() end
@@ -4941,7 +4941,7 @@ function node.flush_properties_table() end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8364-L8375](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8364-L8375)
+---* Corresponding C source code: [lnodelib.c#L8364-L8375](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8364-L8375)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.direct.flush_properties_table() end
@@ -4949,7 +4949,7 @@ function node.direct.flush_properties_table() end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8439-L8443](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8439-L8443)
+---* Corresponding C source code: [lnodelib.c#L8439-L8443](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8439-L8443)
 ---
 ---@return table
 ---
@@ -4959,7 +4959,7 @@ function node.get_properties_table() end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8433-L8437](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8433-L8437)
+---* Corresponding C source code: [lnodelib.c#L8433-L8437](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8433-L8437)
 ---
 ---@return table
 ---
@@ -4969,7 +4969,7 @@ function node.direct.get_properties_table() end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L366-L374](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L366-L374)
+---* Corresponding C source code: [lnodelib.c#L366-L374](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L366-L374)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.fix_node_lists() end
@@ -4977,7 +4977,7 @@ function node.fix_node_lists() end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6104-L6122](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6104-L6122)
+---* Corresponding C source code: [lnodelib.c#L6104-L6122](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6104-L6122)
 ---
 ---@param n Node
 ---@param m? Node
@@ -4988,7 +4988,7 @@ function node.hyphenating(n, m) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6124-L6142](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6124-L6142)
+---* Corresponding C source code: [lnodelib.c#L6124-L6142](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6124-L6142)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param e? integer
@@ -4999,7 +4999,7 @@ function node.direct.hyphenating(d, e) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L8842-L8868](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8842-L8868)
+---* Corresponding C source code: [lnodelib.c#L8842-L8868](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8842-L8868)
 ---
 ---@param fnt integer
 ---@param chr integer
@@ -5020,7 +5020,7 @@ function node.make_extensible(fnt, chr, size, overlap, horizontal, attlist) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3153-L3222](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3153-L3222)
+---* Corresponding C source code: [lnodelib.c#L3153-L3222](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3153-L3222)
 ---
 ---@param subtype string|integer
 ---
@@ -5032,7 +5032,7 @@ function node.subtypes(subtype) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L5913-L5918](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5913-L5918)
+---* Corresponding C source code: [lnodelib.c#L5913-L5918](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5913-L5918)
 ---
 ---@param n Node
 ---@return string # For example `<node    nil <    234 >    nil : glyph 0>`
@@ -5043,7 +5043,7 @@ function node.tostring(n) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L5922-L5931](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5922-L5931)
+---* Corresponding C source code: [lnodelib.c#L5922-L5931](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5922-L5931)
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return string # For example `<direct    nil <    234 >    nil : glyph 0>`
@@ -5054,7 +5054,7 @@ function node.direct.tostring(d) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6471-L6476](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6471-L6476)
+---* Corresponding C source code: [lnodelib.c#L6471-L6476](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6471-L6476)
 ---
 ---@return Node n
 ---
@@ -5064,7 +5064,7 @@ function node.usedlist() end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L6480-L6484](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6480-L6484)
+---* Corresponding C source code: [lnodelib.c#L6480-L6484](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6480-L6484)
 ---
 ---@return integer d
 ---
@@ -5087,7 +5087,7 @@ function node.direct.usedlist() end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3117-L3151](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3117-L3151)
+---* Corresponding C source code: [lnodelib.c#L3117-L3151](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3117-L3151)
 ---
 ---@param type 'dir'|'direction'|'glue'|'pdf_literal'|'pdf_action'|'pdf_window'|'color_stack'|'pagestate'
 ---

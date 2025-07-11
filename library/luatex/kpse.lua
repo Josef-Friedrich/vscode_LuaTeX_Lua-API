@@ -48,7 +48,7 @@ function kpse.set_program_name(name, progname) end
 ---
 ---The optional string allows explicit `progname` setting.
 ---
----* Corresponding C source code: [lkpselib.c#L908-L921](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lkpselib.c#L908-L921)
+---* Corresponding C source code: [lkpselib.c#L908-L921](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lkpselib.c#L908-L921)
 ---
 ---@param name string
 ---@param progname? string
@@ -64,7 +64,7 @@ function kpse.new(name, progname) end
 ---Because callbacks can load
 ---files themselves you might need these helpers (if you use recording at all).
 ---
----* Corresponding C source code: [lkpselib.c#L923-L930](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lkpselib.c#L923-L930)
+---* Corresponding C source code: [lkpselib.c#L923-L930](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lkpselib.c#L923-L930)
 ---
 ---@param name string
 ---
@@ -77,7 +77,7 @@ function kpse.record_input_file(name) end
 ---Because callbacks can load
 ---files themselves you might need these helpers (if you use recording at all).
 ---
----* Corresponding C source code: [lkpselib.c#L932-L939](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lkpselib.c#L932-L939)
+---* Corresponding C source code: [lkpselib.c#L932-L939](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lkpselib.c#L932-L939)
 ---
 ---@param name string
 ---
@@ -355,7 +355,7 @@ function kpse.show_path(file_type) end
 ---__References:__
 ---
 ---* [kpathsea manual](https://www.tug.org/texinfohtml/kpathsea.html#index-_002d_002dvar_002dvalue_003dvariable)
----* Corresponding C source code: [lkpselib.c#L395-L401](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lkpselib.c#L395-L401)
+---* Corresponding C source code: [lkpselib.c#L395-L401](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lkpselib.c#L395-L401)
 ---
 ---@param variable string
 ---
@@ -367,7 +367,7 @@ function kpse.var_value(variable) end
 ---
 ---Return the kpathsea version string.
 ---
----* Corresponding C source code: [lkpselib.c#L876-L880](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lkpselib.c#L876-L880)
+---* Corresponding C source code: [lkpselib.c#L876-L880](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lkpselib.c#L876-L880)
 ---
 ---@return string version # For example `kpathsea version 6.3.4`
 ---
@@ -382,7 +382,7 @@ function kpse.version() end
 ---end
 ---```
 ---
----* Corresponding C source code: [lkpselib.c#L943-L980](https://github.com/TeX-Live/luatex/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lkpselib.c#L943-L980)
+---* Corresponding C source code: [lkpselib.c#L943-L980](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lkpselib.c#L943-L980)
 ---
 ---@param name string
 ---
