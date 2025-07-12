@@ -14,6 +14,8 @@ _N = {}
 fontloader = {}
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L2257-L2284](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L2257-L2284)^
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -38,6 +40,8 @@ fontloader = {}
 ---Getting information through this function is (sometimes much) more efficient than
 ---loading the font properly, and is therefore handy when you want to create a
 ---dictionary of available fonts based on a directory contents.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L2257-L2284](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L2257-L2284)
 ---
@@ -71,6 +75,8 @@ function fontloader.info(filename) end
 ---myfont = load_font('/opt/tex/texmf/fonts/data/arial.ttf')
 ---```
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L198-L263](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L198-L263)
 ---
 ---@param filename string
@@ -83,6 +89,8 @@ function fontloader.info(filename) end
 function fontloader.open(filename, fontname) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L2244-L2255](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L2244-L2255)
 ---
 ---@param font userdata
@@ -93,6 +101,8 @@ function fontloader.open(filename, fontname) end
 function fontloader.to_table(font) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L265-L280](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L265-L280)
 ---
 ---@param font userdata
@@ -102,6 +112,8 @@ function fontloader.close(font) end
 
 ---
 ---Apply a feature file to a fontloader table.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L313-L334](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L313-L334)
 ---
@@ -116,6 +128,8 @@ function fontloader.apply_featurefile(font, filename) end
 ---
 ---Apply an AFM file to a fontloader table.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L336-L355](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L336-L355)
 ---
 ---@param font userdata
@@ -127,6 +141,8 @@ function fontloader.apply_featurefile(font, filename) end
 function fontloader.apply_afmfile(font, filename) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L2491-L2511](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L2491-L2511)
 ---
 ---@param font userdata
@@ -137,6 +153,8 @@ function fontloader.apply_afmfile(font, filename) end
 function fontloader.fields(font) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L2491-L2511](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L2491-L2511)
 ---
 ---@param font_glyph userdata
@@ -146,6 +164,8 @@ function fontloader.fields(font) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function fontloader.fields(font_glyph) end
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L1900-L2242](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1900-L2242)
 ---
@@ -364,6 +384,8 @@ function fontloader.fields(font_glyph) end
 ---@field truetype integer # signals a *TrueType* font
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L959-L1120](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L959-L1120)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -404,6 +426,8 @@ function fontloader.fields(font_glyph) end
 ---The top-level map is a list of encoding mappings. Each of those is a table
 ---itself.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L1346-L1404](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1346-L1404)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -417,6 +441,8 @@ function fontloader.fields(font_glyph) end
 ---@field enc FontloaderEnc #
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L1353-L1359](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1353-L1359)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -425,6 +451,8 @@ function fontloader.fields(font_glyph) end
 ---@field lastenc integer #
 ---@field infont integer #
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L1284-L1336](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1284-L1336)
 ---
@@ -458,11 +486,15 @@ function fontloader.fields(font_glyph) end
 ---This is the font's private *PostScript* dictionary, if any. Keys and values are
 ---both strings.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L2035-L2039](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L2035-L2039)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FontloaderPrivate string<string, string>
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L2053-L2058](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L2053-L2058)
 ---
@@ -475,6 +507,8 @@ function fontloader.fields(font_glyph) end
 
 ---
 ---The `pfminfo` table contains most of the OS/2 information.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L1200-L1281](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1200-L1281)
 ---
@@ -528,6 +562,8 @@ function fontloader.fields(font_glyph) end
 ---@field panose table #
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L1222-L1232](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1222-L1232)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -545,6 +581,8 @@ function fontloader.fields(font_glyph) end
 ---
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L1418-L1416](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1418-L1416)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -552,6 +590,8 @@ function fontloader.fields(font_glyph) end
 ---@field lang string # language for this entry
 ---@field names FontloaderNamesTrueType # The `names` keys are the actual *TrueType* name strings.
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L108-L115](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L108-L115)
 ---
@@ -582,6 +622,8 @@ function fontloader.fields(font_glyph) end
 ---@field wwssubfamily string
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L1448-L1452](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1448-L1452)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -590,6 +632,8 @@ function fontloader.fields(font_glyph) end
 ---@field lookup string #
 ---@field type `mark`|`mkmk`|`curs`|`mklg` # type is actually a lookup subtype, not a feature name. Officially, these strings should be gpos_mark2mark etc.
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L580-L643](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L580-L643)
 ---
@@ -604,6 +648,8 @@ function fontloader.fields(font_glyph) end
 ---The `gpos` table has one array entry for each lookup. (The `gpos_`
 ---prefix is somewhat redundant.)
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L74-L76](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L74-L76)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -613,6 +659,8 @@ function fontloader.fields(font_glyph) end
 ---
 ---The flags table has a true value for each of the lookup flags that is actually
 ---set:
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L587-L612](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L587-L612)
 ---
@@ -628,6 +676,8 @@ function fontloader.fields(font_glyph) end
 ---
 ---The features subtable items of gpos have
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L523-L531](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L523-L531)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -637,6 +687,8 @@ function fontloader.fields(font_glyph) end
 
 ---
 ---The scripts table within features has:
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L492-L515](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L492-L515)
 ---
@@ -648,6 +700,8 @@ function fontloader.fields(font_glyph) end
 
 ---
 ---The subtables table has:
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L541-L572](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L541-L572)
 ---
@@ -665,6 +719,8 @@ function fontloader.fields(font_glyph) end
 ---deep instead. Also the seconds start at `[2]` which is close to the fontforge
 ---internals so we keep that too.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L1469-L1518](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1469-L1518)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -678,6 +734,8 @@ function fontloader.fields(font_glyph) end
 ---This has identical layout to the `gpos` table, except for the
 ---type:
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L56-L58](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L56-L58)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -685,6 +743,8 @@ function fontloader.fields(font_glyph) end
 ---@field type `gsub_single`|`gsub_multiple`|`gsub_alternate`|`gsub_ligature`|`gsub_context`|`gsub_contextchain`|`gsub_reversecontextchain`
 ---
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L1454-L1461](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1454-L1461)
 ---
@@ -695,6 +755,8 @@ function fontloader.fields(font_glyph) end
 ---@field maxlen integer #
 ---@field data integer #
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L1841-L1898](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1841-L1898)
 ---
@@ -708,6 +770,8 @@ function fontloader.fields(font_glyph) end
 ---@field ndv string #
 ---@field axismaps table #
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L1820-L1839](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1820-L1839)
 ---
@@ -723,6 +787,8 @@ function fontloader.fields(font_glyph) end
 ---The keys in this table are mark class names, and the values are a
 ---space-separated string of glyph names in this class.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L2159-L2169](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L2159-L2169)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -731,6 +797,8 @@ function fontloader.fields(font_glyph) end
 ---
 ---The math table has the variables that are also discussed in the chapter aboout
 ---math
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L1706-L1767](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1706-L1767)
 ---
@@ -797,6 +865,8 @@ function fontloader.fields(font_glyph) end
 ---@field FractionDelimiterDisplayStyleSize integer
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L2183-L2229](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L2183-L2229)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -813,6 +883,8 @@ function fontloader.fields(font_glyph) end
 ---@field bad_sfnt_header any
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L1785-L1818](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1785-L1818)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -820,6 +892,8 @@ function fontloader.fields(font_glyph) end
 ---@field tags table # an array of script list tags
 ---@field scripts FontloaderScripts #
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L1785-L1818](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1785-L1818)
 ---
@@ -829,6 +903,8 @@ function fontloader.fields(font_glyph) end
 ---@field default_baseline number #
 ---@field lang FontloaderLang #
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L1769-L1777](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1769-L1777)
 ---
@@ -840,6 +916,8 @@ function fontloader.fields(font_glyph) end
 ---@field features table # The `features` points to an array of tables with the same layout except that in those nested tables, the tag represents a language.
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L692-L714](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L692-L714)
 ---
 ---An array of alternate *Unicode* values. Inside that array are hashes with:
@@ -850,6 +928,8 @@ function fontloader.fields(font_glyph) end
 ---@field variant number # the alternative is driven by this unicode selector
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L914-L930](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L914-L930)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -858,6 +938,8 @@ function fontloader.fields(font_glyph) end
 ---@field italic_correction number #
 ---@field parts FontloaderParts[] # The `parts` table is an array of smaller tables.
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L914-L930](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L914-L930)
 ---
@@ -870,6 +952,8 @@ function fontloader.fields(font_glyph) end
 ---@field advance number #
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L943-L957](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L943-L957)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -879,6 +963,8 @@ function fontloader.fields(font_glyph) end
 ---@field top_left FontloaderMathkernSubtable #
 ---@field bottom_left FontloaderMathkernSubtable #
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L932-L941](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L932-L941)
 ---
@@ -898,6 +984,8 @@ function fontloader.fields(font_glyph) end
 ---Substructure is identical to the per-glyph subtable.
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L2096-L2107](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L2096-L2107)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -909,6 +997,8 @@ function fontloader.fields(font_glyph) end
 ---Top-level `lookups` is quite different from the ones at character level.
 ---The keys in this hash are strings, the values the actual lookups, represented as
 ---dictionary tables.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L1628-L1661](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1628-L1661)
 ---
@@ -925,6 +1015,8 @@ function fontloader.fields(font_glyph) end
 ---
 ---Rule items have one common item and one specialized item:
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L1558-L1626](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1558-L1626)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -936,6 +1028,8 @@ function fontloader.fields(font_glyph) end
 ---@field reversecoverage FontloaderLockupReverseCoverage[] only if the parent's format is `reversecoverage`
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L1562-L1568](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1562-L1568)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -945,6 +1039,8 @@ function fontloader.fields(font_glyph) end
 ---@field fore string #
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [luafflib.c#L1570-L1580](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1570-L1580)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -952,6 +1048,8 @@ function fontloader.fields(font_glyph) end
 ---@field before number[]
 ---@field after number[]
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L1582-L1591](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1582-L1591)
 ---
@@ -961,6 +1059,8 @@ function fontloader.fields(font_glyph) end
 ---@field before string[]
 ---@field after string[]
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [luafflib.c#L1593-L1604](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1593-L1604)
 ---

@@ -2,6 +2,8 @@
 mplib = {}
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L330-L374](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L330-L374)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -16,11 +18,15 @@ mplib = {}
 ---@alias MpFindFileType `mp`|`tfm`|`map`|`pfb`|`enc` the kind of file
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L408-L442](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L408-L442)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias MpRunScriptFunc fun(name: string): string
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L444-L480](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L444-L480)
 ---
@@ -28,11 +34,15 @@ mplib = {}
 ---@alias MpMakeTextFunc fun(name: string, what: integer): string
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L381-L406C2](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L381-L406C2)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias MpScriptErrorFunc fun(name: string)
 
+---
+---__Reference:__
 ---
 ---* Source code of the `LuaTeX` manual: [luatex-graphics.tex#L387-L409](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-graphics.tex#L387-L409)
 ---* Corresponding C source code: [lmplib.c#L308-L322](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L308-L322)
@@ -60,6 +70,8 @@ local MpInstance = {}
 ---
 ---Create a new metapost instance.
 ---
+---__Reference:__
+---
 ---* Source code of the `LuaTeX` manual: [luatex-graphics.tex#L381-L385](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-graphics.tex#L381-L385)
 ---* Corresponding C source code: [lmplib.c#L532-L627](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L532-L627)
 ---
@@ -76,6 +88,8 @@ function mplib.new(args) end
 ---object classes.
 ---
 
+---
+---__Reference:__
 ---
 ---* Source code of the `LuaTeX` manual: [luatex-graphics.tex#L460-L470](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-graphics.tex#L460-L470)
 ---
@@ -95,6 +109,8 @@ function mplib.new(args) end
 ---are all allocated dynamically, so there is no chance of running out of space
 ---unless the available system memory is exhausted.
 ---
+---__Reference:__
+---
 ---* Source code of the `LuaTeX` manual: [luatex-graphics.tex#L470-L482](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-graphics.tex#L470-L482)
 ---* Corresponding C source code: [lmplib.c#L771-L792](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L771-L792)
 ---
@@ -113,6 +129,8 @@ function mplib.statistics(mp) end
 ---Note that in the new version of *MPlib*, this is informational only. The objects
 ---are all allocated dynamically, so there is no chance of running out of space
 ---unless the available system memory is exhausted.
+---
+---__Reference:__
 ---
 ---* Source code of the `LuaTeX` manual: [luatex-graphics.tex#L470-L482](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-graphics.tex#L470-L482)
 ---* Corresponding C source code: [lmplib.c#L771-L792](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L771-L792)
@@ -136,6 +154,8 @@ function MpInstance:statistics() end
 ---
 ---In contrast with the normal stand alone `mpost` command, there is
 ---`no` implied “input” at the start of the first chunk.
+---
+---__Reference:__
 ---
 ---* Source code of the `LuaTeX` manual: [luatex-graphics.tex#L488-L507](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-graphics.tex#L488-L507)
 ---* Corresponding C source code: [lmplib.c#L692-L711](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L692-L711)
@@ -163,6 +183,8 @@ function mplib.execute(mp, code) end
 ---In contrast with the normal stand alone `mpost` command, there is
 ---`no` implied “input” at the start of the first chunk.
 ---
+---__Reference:__
+---
 ---* Source code of the `LuaTeX` manual: [luatex-graphics.tex#L488-L507](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-graphics.tex#L488-L507)
 ---* Corresponding C source code: [lmplib.c#L692-L711](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L692-L711)
 ---
@@ -182,6 +204,8 @@ function MpInstance:execute(code) end
 ---an explicit `finish` is the only way to capture the final part of the
 ---output streams.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L713-L728](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L713-L728)
 ---
 ---@param mp MpInstance
@@ -200,6 +224,8 @@ function mplib.finish(mp) end
 ---an explicit `finish` is the only way to capture the final part of the
 ---output streams.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L713-L728](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L713-L728)
 ---
 ---@return MpResult
@@ -217,6 +243,8 @@ function MpInstance:finish() end
 ---
 ---The return value of `execute` and `finish` is a table with a
 ---few possible keys (only `status` is always guaranteed to be present).
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L649-L690](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L649-L690)
 ---
@@ -247,6 +275,8 @@ local MpFig = {}
 ---When the boundingbox represents a “negated rectangle”, i.e. when the
 ---first set of coordinates is larger than the second set, the picture is empty.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L1375-L1388](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1375-L1388)
 ---
 ---@return number[] # minx miny maxx maxy
@@ -256,6 +286,8 @@ function MpFig.boundingbox() end
 ---Return a string that is the ps output of the `fig`.
 ---
 ---this function accepts two optional integer arguments for specifying the values of `prologues` (first argument) and `procset` (second argument)
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L1262-L1276](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1262-L1276)
 ---@param prologues? integer
@@ -269,6 +301,8 @@ function MpFig.postscript(prologues, procset) end
 ---
 ---This function accepts an optional integer argument for specifying the value of `prologues`.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L1278-L1291](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1278-L1291)
 ---
 ---@param prologues? integer
@@ -276,6 +310,8 @@ function MpFig.postscript(prologues, procset) end
 ---@return string|nil
 function MpFig.svg(prologues) end
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L1293-L1306](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1293-L1306)
 ---
@@ -290,12 +326,16 @@ function MpFig.png(options) end
 ---Note: you can call `fig:objects()` only once for any one `fig`
 ---object!
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L1213-L1233](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1213-L1233)
 ---@return table
 function MpFig.objects() end
 
 ---
 ---Return a deep copy of the array of graphic objects in this `fig`.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L1235-L1253](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1235-L1253)
 ---
@@ -305,6 +345,8 @@ function MpFig.copy_objects() end
 ---
 ---The filename this `fig`'s *PostScript* output would have written to in stand alone mode
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L1308-L1318](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1308-L1318)
 ---
 ---@return string|nil
@@ -312,6 +354,8 @@ function MpFig.filename() end
 
 ---
 ---Return the `fontcharwd` value.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L1320-L1329](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1320-L1329)
 ---
@@ -321,6 +365,8 @@ function MpFig.width() end
 ---
 ---Return the `fontcharht` value.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L1331-L1340](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1331-L1340)
 ---
 ---@return number|nil
@@ -328,6 +374,8 @@ function MpFig.height() end
 
 ---
 ---Return the `fontchardp` value.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L1342-L1351](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1342-L1351)
 ---
@@ -337,6 +385,8 @@ function MpFig.depth() end
 ---
 ---Return the `fontcharit` value.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L1353-L1362](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1353-L1362)
 ---
 ---@return number|nil
@@ -344,6 +394,8 @@ function MpFig.italcorr() end
 
 ---
 ---Return the (rounded) `charcode` value.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L1364-L1373](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1364-L1373)
 ---
@@ -356,6 +408,8 @@ function MpFig.charcode() end
 ---All graphical objects have a field `type` that gives the object type as a
 ---string value;
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [psout.w#L5308-L5310](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/psout.w#L5308-L5310)
 ---
 ---@class MpGraphicObject
@@ -364,6 +418,8 @@ function MpFig.charcode() end
 ---
 ---Get the list of
 ---accessible values for a particular object.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L1548-L1591](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1548-L1591)
 ---
@@ -374,6 +430,8 @@ function MpFig.charcode() end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function mplib.fields(obj) end
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [psout.w#L5335-L5346](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/psout.w#L5335-L5346)
 ---
@@ -402,6 +460,8 @@ function mplib.fields(obj) end
 ---@field postscript string # the postscript text
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [psout.w#L5312-L5333](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/psout.w#L5312-L5333)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -418,12 +478,16 @@ function mplib.fields(obj) end
 ---@field postscript string # the postscript text
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [psout.w#L5372-L5375](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/psout.w#L5372-L5375)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MpSpecial
 ---@field prescript string # special text
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [psout.w#L5362-L5370](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/psout.w#L5362-L5370)
 ---
@@ -511,6 +575,8 @@ function mplib.fields(obj) end
 ---
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L1474-L1539](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1474-L1539)
 ---
 ---@param obj MpGraphicObject
@@ -526,6 +592,8 @@ function mplib.pen_info(obj) end
 ---This function finds the size of a glyph in a defined font. The `fontname`
 ---is the same name as the argument to `infont`; the `char` is a glyph
 ---id in the range 0 to 255; the returned `width` is in AFM units.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L748-L751](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L748-L751)
 ---
@@ -545,6 +613,8 @@ function mplib.char_width(mp, fontname, char) end
 ---is the same name as the argument to `infont`; the `char` is a glyph
 ---id in the range 0 to 255; the returned `width` is in AFM units.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L748-L751](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L748-L751)
 ---
 ---@param fontname string
@@ -561,6 +631,8 @@ function MpInstance:char_width(fontname, char) end
 ---This function finds the size of a glyph in a defined font. The `fontname`
 ---is the same name as the argument to `infont`; the `char` is a glyph
 ---id in the range 0 to 255; the returned `height` is in AFM units.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L758-L761](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L758-L761)
 ---
@@ -580,6 +652,8 @@ function mplib.char_height(mp, fontname, char) end
 ---is the same name as the argument to `infont`; the `char` is a glyph
 ---id in the range 0 to 255; the returned `height` is in AFM units.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L758-L761](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L758-L761)
 ---
 ---@param fontname string
@@ -596,6 +670,8 @@ function MpInstance:char_height(fontname, char) end
 ---This function finds the size of a glyph in a defined font. The `fontname`
 ---is the same name as the argument to `infont`; the `char` is a glyph
 ---id in the range 0 to 255; the returned `depth` is in AFM units.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L753-L756](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L753-L756)
 ---
@@ -615,6 +691,8 @@ function mplib.char_depth(mp, fontname, char) end
 ---is the same name as the argument to `infont`; the `char` is a glyph
 ---id in the range 0 to 255; the returned `depth` is in AFM units.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L753-L756](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L753-L756)
 ---
 ---@param fontname string
@@ -626,6 +704,8 @@ function mplib.char_depth(mp, fontname, char) end
 function MpInstance:char_depth(fontname, char) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L497-L510](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L497-L510)
 ---
 ---@param mp MpInstance
@@ -636,6 +716,8 @@ function MpInstance:char_depth(fontname, char) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function mplib.get_boolean(mp, name) end
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L497-L510](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L497-L510)
 ---
@@ -651,6 +733,8 @@ function MpInstance:get_boolean(name) end
 ---function mplib.get_number() end
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L482-L495](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L482-L495)
 ---
 ---@param mp MpInstance
@@ -662,6 +746,8 @@ function MpInstance:get_boolean(name) end
 function mplib.get_numeric(mp, name) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L482-L495](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L482-L495)
 ---
 ---@param name string
@@ -671,6 +757,8 @@ function mplib.get_numeric(mp, name) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function MpInstance:get_numeric(name) end
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L512-L528](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L512-L528)
 ---
@@ -683,6 +771,8 @@ function MpInstance:get_numeric(name) end
 function mplib.get_string(mp, name) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L512-L528](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L512-L528)
 ---
 ---@param name string
@@ -692,6 +782,8 @@ function mplib.get_string(mp, name) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function MpInstance:get_string(name) end
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L1649-L1693](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1649-L1693)
 ---
@@ -704,6 +796,8 @@ function MpInstance:get_string(name) end
 function mplib.get_path(mp, name) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L1649-L1693](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L1649-L1693)
 ---
 ---@param name string
@@ -714,6 +808,8 @@ function mplib.get_path(mp, name) end
 function MpInstance:get_path(name) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lmplib.c#L763-L769](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L763-L769)
 ---
 ---@return string version # for example `2.02`
@@ -721,6 +817,8 @@ function MpInstance:get_path(name) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function mplib.version() end
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L978-L1195](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L978-L1195)
 ---
@@ -731,6 +829,8 @@ function mplib.version() end
 ---@param cyclic boolean
 function mplib.solve_path(mp, coordinates, cyclic) end
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lmplib.c#L978-L1195](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/mplibdir/lmplib.c#L978-L1195)
 ---

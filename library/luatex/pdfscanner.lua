@@ -71,6 +71,8 @@ function pdfscanner.scan(pdf, operatortable, info) end
 local Scanner = {}
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfscannerlib.c#L1063-L1069](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfscannerlib.c#L1063-L1069)
 ---
 ---@return any
@@ -81,6 +83,8 @@ function Scanner:pop() end
 ---
 ---Return only the value of a real or integer
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfscannerlib.c#L1013-L1021](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfscannerlib.c#L1013-L1021)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfscanner.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -88,6 +92,8 @@ function Scanner:popnumber() end
 
 ---
 ---Return only the value of a name
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfscannerlib.c#L1039-L1045](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfscannerlib.c#L1039-L1045)
 ---
@@ -97,6 +103,8 @@ function Scanner:popname() end
 ---
 ---Return only the value of a string
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfscannerlib.c#L1031-L1037](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfscannerlib.c#L1031-L1037)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfscanner.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -104,6 +112,8 @@ function Scanner:popstring() end
 
 ---
 ---Return only the value of a array
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfscannerlib.c#L1047-L1053](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfscannerlib.c#L1047-L1053)
 ---
@@ -113,6 +123,8 @@ function Scanner:poparray() end
 ---
 ---Return only the value of a dict
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfscannerlib.c#L1055-L1061](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfscannerlib.c#L1055-L1061)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfscanner.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -121,6 +133,8 @@ function Scanner:popdictionary() end
 ---
 ---Return only the value of a boolean
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfscannerlib.c#L1023-L1029](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfscannerlib.c#L1023-L1029)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfscanner.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -128,6 +142,8 @@ function Scanner:popboolean() end
 
 ---
 ---Abort further processing of this scan() call
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfscannerlib.c#L830-L836](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfscannerlib.c#L830-L836)
 ---

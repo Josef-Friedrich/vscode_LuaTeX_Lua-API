@@ -17,6 +17,8 @@ texio = {}
 ---
 ---Write all given strings to a target.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [ltexiolib.c#L119-L126](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexiolib.c#L119-L126)
 ---
 ---@param target WriteTarget
@@ -33,6 +35,8 @@ function texio.write(target, ...) end
 ---effect, it writes only to the log, otherwise it writes to the log and the
 ---terminal.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [ltexiolib.c#L119-L126](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexiolib.c#L119-L126)
 ---
 ---@param ... string
@@ -45,6 +49,8 @@ function texio.write(...) end
 ---
 ---It makes sure that the given
 ---strings will appear at the beginning of a new line.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [ltexiolib.c#L128-L135](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexiolib.c#L128-L135)
 ---
@@ -63,6 +69,8 @@ function texio.write_nl(target, ...) end
 ---be one of the targets above, the `target` must be specified explicitly to
 ---prevent *Lua* from interpreting the first string as the target.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [ltexiolib.c#L128-L135](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexiolib.c#L128-L135)
 ---
 ---@param ... string
@@ -72,6 +80,8 @@ function texio.write_nl(...) end
 
 ---
 ---Disable `^^` escaping of control characters.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [ltexiolib.c#L148-L156](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexiolib.c#L148-L156)
 ---
@@ -88,6 +98,8 @@ function texio.setescape(escape_controls) end
 ---*Lua* will just collect prints and at the end bump an input level and flush these
 ---prints. This function can help you stay at the current level but you need to know
 ---what you're doing (or more precise: what *TeX* is doing with input).
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [ltexiolib.c#L158-L171](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexiolib.c#L158-L171)
 ---

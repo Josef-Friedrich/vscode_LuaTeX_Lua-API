@@ -4,6 +4,8 @@
 pdfe = {}
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L1521-L1537](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1521-L1537)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -40,6 +42,8 @@ pdfe = {}
 ---
 ---@return PdfeDocument doc # Pdfe document.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L834-L851](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L834-L851)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -52,6 +56,8 @@ function pdfe.open(filename) end
 ---@param size integer # Size of contents in bytes.
 ---
 ---@return PdfeDocument
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L853-L917](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L853-L917)
 ---
@@ -69,6 +75,8 @@ function pdfe.new(contents, size) end
 -- -  0  <doc> is not encrypted
 -- -  1  <doc> successfully unencrypted with `pdfe.unencrypt()`
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L1031-L1038](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1031-L1038)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -78,6 +86,8 @@ function pdfe.getstatus(doc) end
 ---Close a pdfe document.
 ---
 ---@param doc PdfeDocument # Pdfe document.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L945-L948](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L945-L948)
 ---
@@ -92,6 +102,8 @@ function pdfe.close(doc) end
 ---@param userpassword string|nil # User password.
 ---@param ownerpassword string|nil # Owner password.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L963-L991](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L963-L991)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -103,6 +115,8 @@ function pdfe.unencrypt(doc, userpassword, ownerpassword) end
 ---@param doc PdfeDocument # Pdfe document.
 ---
 ---@return integer size # Size of pdf document is bytes.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L1008-L1015](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1008-L1015)
 ---
@@ -117,6 +131,8 @@ function pdfe.getsize(doc) end
 ---@return integer major # major version number
 ---@return integer minor # minor version number
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L1017-L1029](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1017-L1029)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -129,6 +145,8 @@ function pdfe.getversion(doc) end
 ---
 ---@return integer nobj # Number of objects.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L1040-L1047](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1040-L1047)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -140,6 +158,8 @@ function pdfe.getnofobjects(doc) end
 ---@param document PdfeDocument # Pdfe document.
 ---
 ---@return integer npages # Number of pages.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L1049-L1056](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1049-L1056)
 ---
@@ -154,6 +174,8 @@ function pdfe.getnofpages(document) end
 ---@return integer used # Used memory including waste.
 ---@return integer waste # Waste (E.g. optional keys of pdf objects that are not used.)
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L1058-L1069](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1058-L1069)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -165,6 +187,8 @@ function pdfe.getmemoryusage(doc) end
 ---@param doc PdfeDocument # Pdfe document.
 ---
 ---@return PdfeDictionary catalog # Catalog of the pdf.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L465-L471](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L465-L471)
 ---
@@ -178,6 +202,8 @@ function pdfe.getcatalog(doc) end
 ---
 ---@return PdfeDictionary trailor # Trailer of the pdf.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L473-L479](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L473-L479)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -189,6 +215,8 @@ function pdfe.gettrailer(doc) end
 ---@param doc PdfeDocument # Pdfe document
 ---
 ---@return PdfeDictionary info # Info of the pdf.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L481-L487](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L481-L487)
 ---
@@ -203,6 +231,8 @@ function pdfe.getinfo(doc) end
 ---
 ---@return PdfeDictionary page # Page object.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L1091-L1099](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1091-L1099)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -215,6 +245,8 @@ function pdfe.getpage(doc, page) end
 ---
 ---@return table< PdfeDictionary > table # Lua table.
 ---Each item of the returned table is a PdfeDictionary of one page of the pdf.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L1114-L1122](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1114-L1122)
 ---
@@ -229,6 +261,8 @@ function pdfe.getpages(doc) end
 ---
 ---@return number[] bbox # [llx lly urx ury]
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L1136-L1161](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1136-L1161)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -241,6 +275,8 @@ function pdfe.getbox(page, bbox_name) end
 ---@param key_or_index integer # Key or index.
 ---
 ---@return string string # If the pdf string is hex encoded then the returned string is hex encoded too.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L1342-L1369](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1342-L1369)
 ---
@@ -257,6 +293,8 @@ function pdfe.getstring(dict_or_array, key_or_index) end
 ---@return string string
 ---@return boolean was_encoded # `True`, if string was hex encoded. Return value `was_encoded` is only available if `decode` is `false`.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L1342-L1369](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1342-L1369)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -269,6 +307,8 @@ function pdfe.getstring(dict_or_array, key_or_index, decode) end
 ---@param key_or_index string|integer # Key or index.
 ---
 ---@return integer value # Integer.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L1371-L1383](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1371-L1383)
 ---
@@ -283,6 +323,8 @@ function pdfe.getinteger(dict_or_array, key_or_index) end
 ---
 ---@return number value
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L1385-L1397](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1385-L1397)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -296,6 +338,8 @@ function pdfe.getnumber(dict_or_array, key_or_index) end
 ---
 ---@return boolean value
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L1399-L1411](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1399-L1411)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -308,6 +352,8 @@ function pdfe.getboolean(dict_or_array, key_or_index) end
 ---@param key_or_index string|integer # Key or index.
 ---
 ---@return string value # Name.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L1413-L1425](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1413-L1425)
 ---
@@ -332,6 +378,8 @@ function pdfe.getname(dict_or_array, key_or_index) end
 --  ------------------------------------
 --  Note: Returns `nil` for all other objects like integer, string, etc.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L224-L235](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L224-L235)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -344,6 +392,8 @@ function pdfe.type(pdfe_obj) end
 ---@param key_or_index string|integer # Key or index.
 ---
 ---@return PdfeDictionary dict # Pdfe dictionary.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L1427-L1437](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1427-L1437)
 ---
@@ -358,6 +408,8 @@ function pdfe.getdictionary(dict_or_array, key_or_index) end
 ---
 ---@return PdfeArray array # Pdfe array.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L1439-L1449](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1439-L1449)
 function pdfe.getarray(dict_or_array, key_or_index) end
 
@@ -371,6 +423,8 @@ function pdfe.getarray(dict_or_array, key_or_index) end
 ---
 ---@return PdfeStream stream # Pdfe stream.
 ---@return PdfeDictionary dict # Pdfe dictionary of the stream.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L1451-L1461](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1451-L1461)
 ---
@@ -405,6 +459,8 @@ function pdfe.getstream(dict_or_array, key_or_index) end
 -- -----------------------------------------------------------
 -- (1) `true` for hexadecimal string, `false` for normal string
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L544-L570](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L544-L570)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -418,6 +474,8 @@ function pdfe.getfromstream(stream, key) end
 ---
 ---@return boolean okay # `True`, if reading the stream was successful.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L764-L778](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L764-L778)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -427,6 +485,8 @@ function pdfe.openstream(stream, decode) end
 ---Close a stream.
 ---
 ---@param stream PdfeStream # Pdfe stream object
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L780-L791](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L780-L791)
 ---
@@ -441,6 +501,8 @@ function pdfe.closestream(stream) end
 ---@return string contents # Contents of stream.
 ---@return integer size# Length of stream.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L793-L812](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L793-L812)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -453,6 +515,8 @@ function pdfe.readfromstream(stream) end
 ---@param decode boolean # `True`, if stream should be decompressed.
 ---@return string contents # Contents of stream.
 ---@return integer size # Length of stream.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L728-L750](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L728-L750)
 ---
@@ -470,6 +534,8 @@ function pdfe.readwholestream(stream, decode) end
 -- * `page` - pdfe dictionary of a page
 -- * `size` - number of keys of the `page` dictionary
 -- * `objnum` - pdf object number of the page object
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L686-L716](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L686-L716)
 ---
@@ -499,6 +565,8 @@ function pdfe.pagestotable(doc) end
 --  10   reference     PdfeReference      Number of reference
 -- -----------------------------------------------------------
 -- (1) `true`, for hexadecimal string, `false` for normal string
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L517-L542](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L517-L542)
 ---
@@ -531,6 +599,8 @@ function pdfe.getfromdictionary(dict, key) end
 -- -----------------------------------------------------------
 -- (1) `true` for hexadecimal string, `false` for normal string
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L501-L515](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L501-L515)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -544,6 +614,8 @@ function pdfe.getfromarray(array, index) end
 ---@return table<string, table<integer, any, any> > table # Lua table
 -- This function returns a lua table. Its keys are the keys of the pdfe dictionary and its values are what `pdfe.getfromdictionary(dict, key)` returns.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfelib.c#L651-L674](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L651-L674)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -556,6 +628,8 @@ function pdfe.dictionarytotable(dict) end
 ---
 ---@return table<integer, table<integer, any, any> > table # Lua table
 -- This function returns a lua table. Its indices are the indices of the pdfe array and its values are what `pdfe.getfromarray(array, index)` returns.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L628-L649](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L628-L649)
 ---
@@ -586,6 +660,8 @@ function pdfe.arraytotable(array) end
 --  10   reference     PdfeReference      Number of reference
 -- -----------------------------------------------------------
 -- (1) `true` for hexadecimal string, `false` for normal string
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [lpdfelib.c#L1174-L1188](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfelib.c#L1174-L1188)
 ---

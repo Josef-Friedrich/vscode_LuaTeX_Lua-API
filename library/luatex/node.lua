@@ -1198,6 +1198,8 @@ function node.direct.uses_font(d, font) end
 ---@field objnum integer # the *PDF* object number; for structure references the *PDF* object number of the linked structure element
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [texnodes.c#L1090-L1093](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1090-L1093)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -1208,6 +1210,8 @@ function node.direct.uses_font(d, font) end
 ---|3 'user'
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [texnodes.c#L1095-L1097](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1095-L1097)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -1216,6 +1220,8 @@ function node.direct.uses_font(d, font) end
 ---|1 'new'
 ---|2 'nonew'
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L1104-L1111](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1104-L1111)
 ---
@@ -1230,7 +1236,9 @@ function node.direct.uses_font(d, font) end
 ---@field data string # the name of the destination
 
 ---
-------* Corresponding C source code: [texnodes.c#L1185-L1192](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1185-L1192)
+---__Reference:__
+---
+---* Corresponding C source code: [texnodes.c#L1185-L1192](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1185-L1192)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfThreadWhatsitNode
@@ -1242,6 +1250,8 @@ function node.direct.uses_font(d, font) end
 ---@field tread_id integer # the thread id  string  the thread name
 ---@field thread_attr integer # extra thread information
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L1176-L1183](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1176-L1183)
 ---
@@ -1255,6 +1265,8 @@ function node.direct.uses_font(d, font) end
 ---@field tread_id integer # the thread id  string  the thread name
 ---@field thread_attr integer # extra thread information
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L1145-L1146](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1145-L1146)
 ---
@@ -1302,6 +1314,8 @@ function node.direct.uses_font(d, font) end
 ---@field attr Node # A list of attributes.
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [texnodes.c#L941-L952](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L941-L952)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -1331,11 +1345,15 @@ function node.direct.uses_font(d, font) end
 ---@class PseudoLineNode: Node
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [texnodes.c#L826-L834](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L826-L834)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PageInsertNode: Node
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L922-L927](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L922-L927)
 ---
@@ -1348,11 +1366,15 @@ function node.direct.uses_font(d, font) end
 ---@field broken_ins integer
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [texnodes.c#L474](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L474)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class ExprStackNode: Node
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L475](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L475)
 ---
@@ -1360,11 +1382,15 @@ function node.direct.uses_font(d, font) end
 ---@class NestedListNode: Node
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [texnodes.c#L476](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L476)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class SpanNode: Node
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L729-L731](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L729-L731)
 ---
@@ -1374,11 +1400,15 @@ function node.direct.uses_font(d, font) end
 ---@field value unknown
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [texnodes.c#L733](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L733)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class AttributeListNode: Node
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L480](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L480)
 ---
@@ -1386,11 +1416,15 @@ function node.direct.uses_font(d, font) end
 ---@class TempNode: Node
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [texnodes.c#L481](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L481)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class AlignStackNode: Node
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L482](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L482)
 ---
@@ -1398,11 +1432,15 @@ function node.direct.uses_font(d, font) end
 ---@class MovementStackNode: Node
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [texnodes.c#L483](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L483)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class IfStackNode: Node
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L484](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L484)
 ---
@@ -1410,11 +1448,15 @@ function node.direct.uses_font(d, font) end
 ---@class UnhyphenatedNode: Node
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [texnodes.c#L485](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L485)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class HyphenatedNode: Node
 
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L486](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L486)
 ---
@@ -1424,6 +1466,8 @@ function node.direct.uses_font(d, font) end
 ---
 ---Used in the line breaking algorithm.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [texnodes.c#L487](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L487)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -1431,6 +1475,8 @@ function node.direct.uses_font(d, font) end
 
 ---
 ---`\parshape`
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L488](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L488)
 ---

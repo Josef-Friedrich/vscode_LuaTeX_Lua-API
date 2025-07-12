@@ -13,6 +13,8 @@ tex = {}
 ---When you set a glue quantity you can either pass a `glue_spec` or upto five numbers.
 ---It is possible to use `global` as the first argument to `tex.set`; this makes the assignment global instead of local.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1714-L1813](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1714-L1813)
 ---
 ---@param global 'global'
@@ -35,6 +37,8 @@ function tex.set(global, parameter, ...) end
 ---If
 ---you pass `true` to `get` you get 5 values returned for a glue and
 ---when you pass `false` you only get the width returned.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [ltexlib.c#L2120-L2200](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2120-L2200)
 ---@param parameter string
@@ -3692,18 +3696,21 @@ function tex.sp(s) end
 ---__Reference:__
 ---
 ---* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1438-L1457](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1438-L1457)
+---* Corresponding C source code: [ltexlib.c#L654-692](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L654-692)
 ---
----@param s string # An error message like `\errmessage`.
+---@param message string # An error message like `\errmessage`.
 ---@param help? table # The array part of the `help` table has to contain strings, one for each line of error help.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.error(s, help) end
+function tex.error(message, help) end
 
 ---
 ---Show the current
 ---(expansion) context in case of an error.
 ---
----* Corresponding C source code: [/ltexlib.c#L3210-L3215](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3210-L3215)
+----__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L3210-L3215](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3210-L3215)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.show_context() end
@@ -3721,7 +3728,7 @@ function tex.show_context() end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [L1459-L1470](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1459-L1470)
+---* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1459-L1470](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1459-L1470)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.run() end
@@ -3895,6 +3902,8 @@ function tex.definefont(global, csname, fontid) end
 ---because if you do not, you will end up with a *TeX*82-lookalike that can run *Lua*
 ---code but not do much else. The defined csnames are (of course) saved in the
 ---format and will be available at runtime.
+---
+---*
 ---
 ---* Corresponding C source code: [ltexlib.c#L2752-L2809](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2752-L2809)
 ---

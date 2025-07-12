@@ -10,26 +10,36 @@ os = {}
 function os.resultof(command) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding Lua source code: [lualibs-os.lua#L246-L251](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L246-L251)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function os.launch(str) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding Lua source code: [lualibs-os.lua#L404](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L404)
 ---
 os.platform = ""
 
+---
+---__Reference:__
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L210-L214](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L210-L214)
 ---
 os.libsuffix = ""
 
 ---
+---__Reference:__
+---
 ---* Corresponding Lua source code: [lualibs-os.lua#L210-L214](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L210-L214)
 ---
 os.binsuffix = ""
 
+---
+---__Reference:__
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L262-L264](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L262-L264)
 ---
@@ -37,11 +47,15 @@ os.binsuffix = ""
 function os.runtime() end
 
 ---
+---__Reference:__
+---
 ---* Corresponding Lua source code: [lualibs-os.lua#L453-L469](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L453-L469)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function os.timezone(difference) end
 
+---
+---__Reference:__
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L423-L431](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L423-L431)
 ---
@@ -49,11 +63,15 @@ function os.timezone(difference) end
 function os.uuid() end
 
 ---
+---__Reference:__
+---
 ---* Corresponding Lua source code: [lualibs-os.lua#L236-L238](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L236-L238)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function os.pipeto(command) end
 
+---
+---__Reference:__
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L478-L492](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L478-L492)
 ---
@@ -61,17 +79,23 @@ function os.pipeto(command) end
 function os.fulltime(t, default) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding Lua source code: [lualibs-os.lua#L500-L514](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L500-L514)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function os.localtime(t, default) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding Lua source code: [lualibs-os.lua#L516-L523](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L516-L523)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function os.converttime(t, default) end
 
+---
+---__Reference:__
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L527-L529](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L527-L529)
 ---
@@ -82,6 +106,8 @@ function os.today() end
 
 ---
 ---Return the UTC time without timezone, for example `2021-10-22 08:22:54`.
+---
+---__Reference:__
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L533-L535](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L533-L535)
 ---
@@ -98,6 +124,8 @@ function os.now() end
 ---print(os.which("gs.exe"))
 ---print(os.which("ps2pdf"))
 ---```
+---
+---__Reference:__
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L543-L564](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L543-L564)
 ---
@@ -120,6 +148,8 @@ function os.which(filename) end
 ---print(os.where("ps2pdf"))
 ---```
 ---
+---__Reference:__
+---
 ---* Corresponding Lua source code: [lualibs-os.lua#L543-L564](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L543-L564)
 ---
 ---@see os.which
@@ -131,6 +161,8 @@ function os.which(filename) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function os.where(filename) end
 
+---
+---__Reference:__
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L595-L599](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L595-L599)
 ---
@@ -144,6 +176,8 @@ function os.isleapyear(year) end
 ---
 ---Calculate the number of days.
 ---
+---__Reference:__
+---
 ---* Corresponding Lua source code: [lualibs-os.lua#L619-L633](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L619-L633)
 ---
 ---@param year integer
@@ -156,11 +190,15 @@ function os.isleapyear(year) end
 function os.nofdays(year, month, day) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding Lua source code: [lualibs-os.lua#L637-L639](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L637-L639)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function os.weekday(day, month, year) end
 
+---
+---__Reference:__
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L641-L658](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L641-L658)
 ---
@@ -171,6 +209,8 @@ function os.validdate(year, month, day) end
 ---Return a string or a table containing date and time, formatted according to the given string format.
 ---
 ---If the parameter `format` is missing the format string `%Y-%m-%d %H:%M` is used.
+---
+---__Reference:__
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L660-L666](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L660-L666)
 ---
@@ -183,6 +223,8 @@ function os.validdate(year, month, day) end
 function os.date(format, time) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding Lua source code: [lualibs-os.lua#L675-L677](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L675-L677)
 ---
 ---@see os.exit
@@ -192,6 +234,8 @@ function os.date(format, time) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function os.setexitcode(code) end
 
+---
+---__Reference:__
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L679-L687](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L679-L687)
 ---

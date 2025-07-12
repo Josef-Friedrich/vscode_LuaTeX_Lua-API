@@ -24,6 +24,8 @@ lang = {}
 ---These functions can also be used as if they were object methods, using the colon
 ---syntax.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [llanglib.c#L27-L48](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L27-L48)
 ---
 ---@param id? integer # Without an argument, the next available internal id number will be assigned to this object. With an argument, an object will be created that links to the internal language with that id number.
@@ -35,6 +37,8 @@ function lang.new(id) end
 
 ---
 ---Returns the current internal `language` id number.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [llanglib.c#L50-L56](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L50-L56)
 ---
@@ -50,6 +54,8 @@ function lang.id(language) end
 ---
 ---Hyphenate a string directly.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [llanglib.c#L86-L104](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L86-L104)
 ---
 ---@param language Language
@@ -62,6 +68,8 @@ function lang.hyphenation(language, n) end
 ---Get hyphenation exceptions.
 ---
 ---Hyphenate a string directly.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [llanglib.c#L86-L104](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L86-L104)
 ---
@@ -87,6 +95,8 @@ function lang.clear_hyphenation(language) end
 ---
 ---Clear the exception dictionary (string) for this language.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [llanglib.c#L223-L241](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L223-L241)
 ---
 ---@param language Language
@@ -98,6 +108,8 @@ function lang.clean(language, o) end
 
 ---
 ---Clear the exception dictionary (string) for this language.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [llanglib.c#L223-L241](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L223-L241)
 ---
@@ -111,6 +123,8 @@ function lang.clean(o) end
 ---
 ---Add additional patterns for this language object.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [llanglib.c#L58-L76](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L58-L76)
 ---
 ---@param language Language
@@ -122,6 +136,8 @@ function lang.patterns(language, patterns) end
 ---
 ---Return the current
 ---set.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [llanglib.c#L58-L76](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L58-L76)
 ---
@@ -137,6 +153,8 @@ function lang.patterns(language) end
 ---
 ---Clear the pattern dictionary for a language.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [llanglib.c#L78-L84](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L78-L84)
 ---
 ---@param language Language
@@ -148,6 +166,8 @@ function lang.clear_patterns(language) end
 ---Set the value of the *TeX* parameter
 ---`\hyphenationmin`.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [llanglib.c#L199-L213](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L199-L213)
 ---
 ---@param language Language
@@ -157,6 +177,8 @@ function lang.hyphenationmin(language, min) end
 ---
 ---Get the value of the *TeX* parameter
 ---`\hyphenationmin`.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [llanglib.c#L199-L213](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L199-L213)
 ---
@@ -173,6 +195,8 @@ function lang.hyphenationmin(language) end
 ---The
 ---intial values are decimal 45 (hyphen) and decimal 0 (indicating emptiness).
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [llanglib.c#L106-L120](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L106-L120)
 ---
 ---@param language Language
@@ -186,6 +210,8 @@ function lang.prehyphenchar(language, char) end
 ---
 ---The
 ---intial values are decimal 45 (hyphen) and decimal 0 (indicating emptiness).
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [llanglib.c#L106-L120](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L106-L120)
 ---
@@ -202,6 +228,8 @@ function lang.prehyphenchar(language) end
 ---The
 ---intial values are decimal 45 (hyphen) and decimal 0 (indicating emptiness).
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [llanglib.c#L122-L136](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L122-L136)
 ---
 ---@param language Language
@@ -215,6 +243,8 @@ function lang.posthyphenchar(language, char) end
 ---
 ---The
 ---intial values are decimal 45 (hyphen) and decimal 0 (indicating emptiness).
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [llanglib.c#L122-L136](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L122-L136)
 ---
@@ -233,6 +263,8 @@ function lang.posthyphenchar(language) end
 ---character is initially
 ---decimal `0` (indicating emptiness).
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [llanglib.c#L138-L152](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L138-L152)
 ---
 ---@param language Language
@@ -248,6 +280,8 @@ function lang.preexhyphenchar(language, char) end
 ---The hyphen
 ---character is initially
 ---decimal `0` (indicating emptiness).
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [llanglib.c#L138-L152](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L138-L152)
 ---
@@ -266,6 +300,8 @@ function lang.preexhyphenchar(language) end
 ---character is initially
 ---decimal `0` (indicating emptiness).
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [llanglib.c#L183-L197](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L183-L197)
 ---
 ---@param language Language
@@ -281,6 +317,8 @@ function lang.postexhyphenchar(language, char) end
 ---The hyphen
 ---character is initially
 ---decimal `0` (indicating emptiness).
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [llanglib.c#L183-L197](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L183-L197)
 ---
@@ -305,6 +343,8 @@ function lang.postexhyphenchar(language) end
 ---nodes with the node subtype having the value `1`. Glyph modes with
 ---different subtypes are not processed.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [llanglib.c#L243-L261](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L243-L261)
 ---
 ---@param head Node
@@ -321,6 +361,8 @@ function lang.hyphenate(head, tail) end
 ---When you set a hjcode the current sets get initialized unless the set was already
 ---initialized due to `\savinghyphcodes` being larger than zero.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [llanglib.c#L154-L169](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L154-L169)
 ---
 ---@param language Language
@@ -332,6 +374,8 @@ function lang.sethjcode(language, char, used_char) end
 
 ---
 ---Query hj codes.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [llanglib.c#L171-L181](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/llanglib.c#L171-L181)
 ---
