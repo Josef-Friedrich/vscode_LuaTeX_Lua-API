@@ -5,11 +5,15 @@
 ---
 ---https://github.com/contextgarden/context/blob/main/tex/context/base/mkiv/l-table.lua
 
+_N.sorted = "page "
+
 ---
 ---@param tab table
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function table.sorted(tab) end
+
+_N.keys_sortedkeys_sortedhashkeys_sortedhash = "page "
 
 ---
 ---__Example:__
@@ -108,6 +112,8 @@ function table.sortedhash(tab, cmp) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function table.sortedpairs(tab, cmp) end
 
+_N.serialize_print_tohandle_tofile = ""
+
 ---
 ---Convert a table into a verbose representation.
 ---
@@ -154,6 +160,8 @@ function table.tofile(filename, root, name, specification) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function table.tohandle(handle, root, name, specification) end
 
+_N.identical_are_equal = ""
+
 ---
 ---Operate on a hash.
 ---
@@ -175,6 +183,8 @@ function table.identical(a, b) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function table.are_equal(a, b, n, m) end
+
+_N.tohash_fromhash_swapped_swaphash_reversed_reverse_mirrored = ""
 
 ---
 ---Convert a list into a hash so
@@ -236,6 +246,8 @@ function table.reversed(tab) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function table.mirrored(tab) end
 
+_N.append_prepend = ""
+
 ---
 ---The first table gets
 ---appended by the second. The first table is returned as well.
@@ -263,6 +275,8 @@ function table.append(tab, list) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function table.prepend(tab, list) end
+
+_N.merge_merged_imerge_imerged = ""
 
 ---
 ---Merge multiple hashes
@@ -324,6 +338,8 @@ function table.merged(...) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function table.imerged(...) end
 
+_N.copy_fastcopy = ""
+
 ---
 ---Make a real and deep copy.
 ---
@@ -356,6 +372,8 @@ function table.copy(tab, tables) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function table.fastcopy(tab, metatabletoo) end
 
+_N.flattened = ""
+
 ---
 ---* Corresponding Lua source code: [lualibs-table.lua#L1015-L1044](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-table.lua#L1015-L1044)
 ---
@@ -364,11 +382,15 @@ function table.fastcopy(tab, metatabletoo) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function table.flattened(tab, f, depth) end
 
+_N.loweredkeys = ""
+
 ---
 ---@param tab table
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function table.loweredkeys(tab) end
+
+_N.contains = ""
 
 ---
 ---* Corresponding Lua source code: [lualibs-table.lua#L1178-L1187](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-table.lua#L1178-L1187)
@@ -378,9 +400,13 @@ function table.loweredkeys(tab) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function table.contains(tab, v) end
 
+_N.unique = ""
+
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function table.unique(old) end
+
+_N.count = ""
 
 ---
 ---* Corresponding Lua source code: [lualibs-table.lua#L1189-L1195](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-table.lua#L1189-L1195)
@@ -389,6 +415,8 @@ function table.unique(old) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function table.count(tab) end
+
+_N.sequenced = ""
 
 ---
 ---* Corresponding Lua source code: [lualibs-table.lua#L1255-L1304](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-table.lua#L1255-L1304)

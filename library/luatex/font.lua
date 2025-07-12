@@ -7,6 +7,10 @@
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/font.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 font = {}
 
+_N._6_1_font_tables = "page 87"
+
+_N._class_Font = 87
+
 ---
 ---All *TeX* fonts are represented to *Lua* code as tables, and internally as
 ---*C code* structures. All keys in the table below are saved in the internal font
@@ -54,6 +58,8 @@ font = {}
 ---@field mode integer # The backend will inject *PDF* operators that relate to the drawing mode with 0 being a fill, 1 being an outline, 2 both draw and fill and 3 no painting at all.
 ---
 
+_N._class_VfFont = 87
+
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/font.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class VfFont
@@ -63,6 +69,8 @@ font = {}
 ---@field fonts table # locally used fonts
 ---@field header string # header comments, if any
 ---@field type string # basic type of this font
+
+_N._class_TfmFont = 87
 
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/font.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -77,6 +85,8 @@ font = {}
 ---@field parameters FontParameters # default: 7 parameters, all zero
 ---@field size integer # the required scaling (by default the same as designsize)
 ---@field tounicode integer # When this is set to 1 *LuaTeX* assumes per-glyph tounicode entries are present in the font.
+
+_N._alias_FontDirection = 89
 
 ---
 ---The `direction` is a number
@@ -108,6 +118,8 @@ font = {}
 ---|14 # BB
 ---|15 # BR
 
+_N._alias_FontParameterKey = 89
+
 ---
 ---The `parameters` is a hash with mixed key types. There are seven possible
 ---string keys, as well as a number of integer indices (these start from 8 up). The
@@ -126,9 +138,13 @@ font = {}
 ---|`quad` # 6
 ---|`extra_space` # 7
 
+_N._alias_FontParameters = 89
+
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/font.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FontParameters table<FontParameterKey|integer, any>
+
+_N._alias_FontCharacter = 90
 
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/font.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -155,6 +171,8 @@ font = {}
 ---@field used boolean # Already typeset (default: false)
 ---@field mathkern table # The math cut-in specifications
 
+_N._class_FontCharacterExtensible = 91
+
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/font.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class FontCharacterExtensible
@@ -162,6 +180,8 @@ font = {}
 ---@field mid integer # The middle character index.
 ---@field bot integer # The bottom character index.
 ---@field rep integer # The repeatable character index.
+
+_N._class_FontCharacterComponent = 91
 
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/font.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -172,17 +192,25 @@ font = {}
 ---@field end integer # The maximum overlap at the ending side (in scaled points).
 ---@field advance integer # The total advance width of this item. It can be zero or missing, then the natural size of the glyph for character `component` is used.
 
+_N._class_FontCharacterLigature = 92
+
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/font.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class FontCharacterLigature
 ---@field type integer # the type of this ligature command, default 0
 ---@field char integer # the character index of the resultant ligature
 
+_N._6_2_real_fonts = "page 92"
+
+_N._alias_FontType = 92
+
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/font.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FontType
 ---|`real` # this is a base font
 ---|`virtual` # this is a virtual font
+
+_N._alias_FontFormat = 92
 
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/font.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -192,12 +220,20 @@ font = {}
 ---|`truetype` # this is a *TrueType* or *TrueType*-based *OpenType* font
 ---|`opentype` # this is a *PostScript*-based *OpenType* font
 
+_N._alias_FontEmbedding = 92
+
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/font.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FontEmbedding
 ---|`no` # don't embed the font at all
 ---|`subset` # include and atttempt to subset the font
 ---|`full` # include this font in its entirety
+
+_N._6_3_virtual_fonts = "page 94"
+
+_N._6_3_1_the_structure = "page 94"
+
+_N._alias_FontCharacterCommands = 95
 
 ---
 ---|  command  | arguments | type             | description |

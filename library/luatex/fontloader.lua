@@ -13,6 +13,10 @@ _N = {}
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 fontloader = {}
 
+_N._12_the_fontloader = "page 237"
+
+_N._12_1_getting_quick_information_on_a_font = "page 237"
+
 ---
 ---__Reference:__
 ---
@@ -51,6 +55,8 @@ fontloader = {}
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function fontloader.info(filename) end
+
+_N._12_2_loading_an_opentype_or_truetype_file = "page 237"
 
 ---
 ---Parse a font file and return a table representing its contents. The optional argument is the name of the desired font in case of font collection files. The optional return value contains any parser error strings.
@@ -110,6 +116,8 @@ function fontloader.to_table(font) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function fontloader.close(font) end
 
+_N._12_3_applying_a_feature_file = "page 241"
+
 ---
 ---Apply a feature file to a fontloader table.
 ---
@@ -125,6 +133,8 @@ function fontloader.close(font) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function fontloader.apply_featurefile(font, filename) end
 
+_N._12_4_applying_an_afm_file = "page 241"
+
 ---
 ---Apply an AFM file to a fontloader table.
 ---
@@ -139,6 +149,8 @@ function fontloader.apply_featurefile(font, filename) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function fontloader.apply_afmfile(font, filename) end
+
+_N._12_5_fontloader_font_tables = "page 241"
 
 ---
 ---__Reference:__
@@ -163,6 +175,10 @@ function fontloader.fields(font) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function fontloader.fields(font_glyph) end
+
+_N._12_6_table_types = "page 240"
+
+_N._main_table = "FontloaderField"
 
 ---
 ---__Reference:__
@@ -383,6 +399,10 @@ function fontloader.fields(font_glyph) end
 ---https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luafontloader/src/luafflib.c#L1931-L1939
 ---@field truetype integer # signals a *TrueType* font
 
+_N._12_6_2_glyphs = "page 244"
+
+_N._glyphs = "Glyph"
+
 ---
 ---__Reference:__
 ---
@@ -421,6 +441,8 @@ function fontloader.fields(font_glyph) end
 ---@field char string # for example `afii10065`.
 ---@field lookup string # for example `pp_l_0_s`.
 ---@field off integer # for example `7`.
+
+_N._12_6_3_map = "page 247"
 
 ---
 ---The top-level map is a list of encoding mappings. Each of those is a table
@@ -482,6 +504,8 @@ function fontloader.fields(font_glyph) end
 ---@field iconv_name string #
 ---@field iso_2022_escape string #
 
+_N._12_6_4_private = "page 248"
+
 ---
 ---This is the font's private *PostScript* dictionary, if any. Keys and values are
 ---both strings.
@@ -492,6 +516,8 @@ function fontloader.fields(font_glyph) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FontloaderPrivate string<string, string>
+
+_N._12_6_5_cidinfo = "page 248"
 
 ---
 ---__Reference:__
@@ -504,6 +530,8 @@ function fontloader.fields(font_glyph) end
 ---@field ordering string #
 ---@field supplement integer #
 ---@field version number #
+
+_N._12_6_6_pfminfo = "page 248"
 
 ---
 ---The `pfminfo` table contains most of the OS/2 information.
@@ -580,6 +608,8 @@ function fontloader.fields(font_glyph) end
 ---@field xheight string # idem
 ---
 
+_N._12_6_7_names = "page 249"
+
 ---
 ---__Reference:__
 ---
@@ -621,6 +651,8 @@ function fontloader.fields(font_glyph) end
 ---@field wwsfamily string
 ---@field wwssubfamily string
 
+_N._12_6_8_anchor_classes = "page 250"
+
 ---
 ---__Reference:__
 ---
@@ -631,6 +663,8 @@ function fontloader.fields(font_glyph) end
 ---@field name string # a descriptive id of this anchor class
 ---@field lookup string #
 ---@field type `mark`|`mkmk`|`curs`|`mklg` # type is actually a lookup subtype, not a feature name. Officially, these strings should be gpos_mark2mark etc.
+
+_N._12_6_9_gpos = "page 250"
 
 ---
 ---__Reference:__
@@ -730,6 +764,8 @@ function fontloader.fields(font_glyph) end
 ---@field lookup string # or an array of associated lookup(s)
 ---@field offsets integer[]
 
+_N._12_6_10_gsub = "page 251"
+
 ---
 ---This has identical layout to the `gpos` table, except for the
 ---type:
@@ -743,6 +779,8 @@ function fontloader.fields(font_glyph) end
 ---@field type `gsub_single`|`gsub_multiple`|`gsub_alternate`|`gsub_ligature`|`gsub_context`|`gsub_contextchain`|`gsub_reversecontextchain`
 ---
 
+_N._12_6_11_ttf_tables_and_ttf_tab_saved = "page 251"
+
 ---
 ---__Reference:__
 ---
@@ -754,6 +792,8 @@ function fontloader.fields(font_glyph) end
 ---@field len integer #
 ---@field maxlen integer #
 ---@field data integer #
+
+_N._12_6_12_mm = "page 251"
 
 ---
 ---__Reference:__
@@ -783,6 +823,8 @@ function fontloader.fields(font_glyph) end
 ---@field def integer #
 ---@field max integer #
 
+_N._12_6_13_mark_classes = "page 252"
+
 ---
 ---The keys in this table are mark class names, and the values are a
 ---space-separated string of glyph names in this class.
@@ -793,6 +835,8 @@ function fontloader.fields(font_glyph) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fontloader.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FontloaderMarkClasses string<string, string>
+
+_N._12_6_14_math = "page 252"
 
 ---
 ---The math table has the variables that are also discussed in the chapter aboout
@@ -864,6 +908,8 @@ function fontloader.fields(font_glyph) end
 ---@field FractionDelimiterSize integer
 ---@field FractionDelimiterDisplayStyleSize integer
 
+_N._12_6_15_validation_state = "page 253"
+
 ---
 ---__Reference:__
 ---
@@ -881,6 +927,8 @@ function fontloader.fields(font_glyph) end
 ---@field bad_ot_table table
 ---@field bad_os2_version any
 ---@field bad_sfnt_header any
+
+_N._12_6_16_horiz_base_and_vert_base = "page 253"
 
 ---
 ---__Reference:__
@@ -915,6 +963,8 @@ function fontloader.fields(font_glyph) end
 ---@field descent number #
 ---@field features table # The `features` points to an array of tables with the same layout except that in those nested tables, the tag represents a language.
 
+_N._12_6_17_altuni = "page 253"
+
 ---
 ---__Reference:__
 ---
@@ -926,6 +976,8 @@ function fontloader.fields(font_glyph) end
 ---@class FontloaderAltuni
 ---@field unicode number # this glyph is also used for this unicode
 ---@field variant number # the alternative is driven by this unicode selector
+
+_N._12_6_18_vert_variants_and_horiz_variants = "page 253"
 
 ---
 ---__Reference:__
@@ -951,6 +1003,8 @@ function fontloader.fields(font_glyph) end
 ---@field end number #
 ---@field advance number #
 
+_N._12_6_19_mathkern = "page 254"
+
 ---
 ---__Reference:__
 ---
@@ -973,15 +1027,21 @@ function fontloader.fields(font_glyph) end
 ---@field height number #
 ---@field kern number #
 
+_N._12_6_20_kerns = "page 254"
+
 ---
 ---# `kerns`
 ---
 ---Substructure is identical to the per-glyph subtable.
 
+_N._12_6_21_vkerns = "page 254"
+
 ---
 ---# `vkerns`
 ---
 ---Substructure is identical to the per-glyph subtable.
+
+_N._12_6_22_texdata = "page 254"
 
 ---
 ---__Reference:__
@@ -992,6 +1052,8 @@ function fontloader.fields(font_glyph) end
 ---@class FontloaderTexdata
 ---@field type `unset`|`text`|`math`|`mathext`
 ---@field params table # 22 font numeric parameters
+
+_N._12_6_23_lookups = "page 254"
 
 --
 ---Top-level `lookups` is quite different from the ones at character level.

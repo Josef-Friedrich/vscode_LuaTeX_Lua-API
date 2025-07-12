@@ -1,4 +1,4 @@
-_N._13_1_The_luaharfbuzz_library = "page 255"
+
 
 ---
 ---Changes to upstream: global luaharfbuzz table

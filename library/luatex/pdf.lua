@@ -7,6 +7,9 @@
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 pdf = {}
 
+_N._14_1_the_pdf_library = "page 281"
+_N._14_1_1_mapfile_mapline = "page 281"
+
 ---
 ---Modify the map-file.
 ---
@@ -36,6 +39,8 @@ function pdf.mapfile(map_file) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.mapline(map_line) end
+
+_N._14_1_2_set_get_catalog_info_names_trailer = "page 281"
 
 ---
 ---Insert string <catalog> into the `/Catalog` dictionary.
@@ -166,6 +171,8 @@ function pdf.settrailer(trailer) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.gettrailer() end
 
+_N._14_1_3_set_get_pageattributes_pageresources_pagesattributes = "page 281"
+
 ---
 ---Insert string <attributes> into the current `/Page` dictionary.
 ---
@@ -266,6 +273,8 @@ function pdf.setpagesattributes(attributes) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getpagesattributes() end
 
+_N._14_1_4_set_get_xformattributes_xformresources = "page 281"
+
 ---
 ---This function complements the corresponding *PDF* backend token lists dealing
 ---with reuseable boxes and images. The variables have no interaction with the
@@ -317,6 +326,8 @@ function pdf.setxformresources() end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getxformresources() end
+
+_N._14_1_5_set_get_major_minor_version = "page 281"
 
 ---
 ---Set major version number of the PDF file format.
@@ -373,6 +384,8 @@ function pdf.setminorversion(n) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getminorversion() end
 
+_N._14_1_6_getcreationdate = "page 282"
+
 ---
 ---Return the `/CreationDate` string of the `/Info` dictionary.
 ---
@@ -380,6 +393,8 @@ function pdf.getminorversion() end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getcreationdate() end
+
+_N._14_1_7_set_get_inclusionerrorlevel_ignoreunknownimages = "page 282"
 
 ---
 ---Set error level for inserting *PDF* files.
@@ -421,6 +436,8 @@ function pdf.setignoreunknownimages(ignore) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getignoreunknownimages() end
+
+_N._14_1_8_set_get_suppressoptionalinfo_trailerid_omitcidset_omitinfodict = "page 282"
 
 ---
 ---Set bit field suppressing certain informational keys in the *PDF* file.
@@ -511,6 +528,8 @@ function pdf.setomitcharset(n) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getomitcharset() end
 
+_N._14_1_9_set_get_obj_compresslevel_recompress = "page 282"
+
 ---
 ---Set compression level of streams.
 ---
@@ -560,6 +579,8 @@ function pdf.setrecompress(switch) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getrecompress() end
 
+_N._14_1_10_set_get_gentounicode = "page 282"
+
 ---
 ---Add or remove `/ToUnicode` entry in a font dictionary.
 ---
@@ -580,6 +601,8 @@ function pdf.setgentounicode(n) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getgentounicode() end
 
+_N._14_1_11_set_get_decimaldigits = "page 282"
+
 ---
 ---Set number of decimal digits used for writing numbers (floats) in the *PDF* file.
 ---
@@ -598,6 +621,8 @@ function pdf.setdecimaldigits(ndigits) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getdecimaldigits() end
 
+_N._14_1_12_set_get_pkresolution = "page 283"
+
 ---
 ---Set resolution of PK fonts.
 ---@param resolution integer
@@ -614,6 +639,8 @@ function pdf.setpkresolution(resolution, fixed_dpi) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getpkresolution() end
+
+_N._14_1_13_getlast_obj_link_annot_and_getretval = "page 283"
 
 ---
 ---Return object number of latest created objects.
@@ -646,6 +673,8 @@ function pdf.getlastannot() end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getretval() end
+
+_N._14_1_14_getmaxobjnum_getobjtype_getfontname_getfontobjnum_getfontsize_getxformname = "page 283"
 
 ---
 ---Return the object number of the latest created pdf object.
@@ -704,6 +733,8 @@ function pdf.getfontsize(id) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getxformname() end
 
+_N._14_1_15_set_get_origin = "page 283"
+
 ---
 ---Set horizontal and vertical offset from the top left corner of the page.
 ---
@@ -723,6 +754,8 @@ function pdf.setorigin(h, v) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getorigin() end
+
+_N._14_1_16_set_get_imageresolution = "page 283"
 
 ---
 ---Set default resolution of a bitmap image.
@@ -746,6 +779,8 @@ function pdf.setimageresolution(dpi) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getimageresolution() end
+
+_N._14_1_17_set_get_link_dest_thread_xform_margin = "page 283"
 
 ---
 ---Set margin size of hyperlinks.
@@ -816,6 +851,8 @@ function pdf.setxformmargin() end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getxformmargin() end
 
+_N._14_1_18_get_pos_hpos_vpos = "page 283"
+
 ---
 ---Return coordinates of the current position. The origin of the coordinate system is at the lower left corner of the page.
 ---
@@ -846,6 +883,8 @@ function pdf.gethpos() end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getvpos() end
 
+_N._14_1_19_has_get_matrix = "page 283"
+
 ---
 ---Returns `true` is a CTM is currently used.
 ---
@@ -874,6 +913,8 @@ function pdf.hasmatrix() end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getmatrix() end
 
+_N._14_1_20_print = "page 284"
+
 ---
 ---Write a string into the contents stream of the current page. If LuaTeX is currently inside a text block (**BT**...**ET**), close the text block first.
 ---
@@ -899,6 +940,8 @@ function pdf.print(str) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.print(type, str) end
+
+_N._14_1_21_immediateobj = "page 283"
 
 ---
 ---Create an object and write it immediately to the pdf file.
@@ -972,6 +1015,8 @@ function pdf.immediateobj(stream, streamcontents, streamdict) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.immediateobj(streamfile, filename, streamdict) end
+
+_N._14_1_22_obj = "page 285"
 
 ---
 ---Create an object.
@@ -1076,6 +1121,8 @@ function pdf.obj(streamfile, filename, streamdict) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.obj(keyvals) end
 
+_N._14_1_23_refobj = "page 286"
+
 ---
 ---Write referenced object to pdf file.
 ---
@@ -1083,6 +1130,8 @@ function pdf.obj(keyvals) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.refobj(objnum) end
+
+_N._14_1_24_reserveobj = "page 286"
 
 ---
 ---Create an empty object.
@@ -1110,6 +1159,8 @@ function pdf.reserveobj() end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.reserveobj(annot) end
 
+_N._14_1_25_getpageref = "page 286"
+
 ---
 ---Return object number of page <pagenum>.
 ---
@@ -1122,6 +1173,8 @@ function pdf.reserveobj(annot) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getpageref(pagenum) end
 
+_N._14_1_26_registerannot = "page 286"
+
 ---
 ---Add an `/Annot` object to the `/Annots` dictionary.
 ---
@@ -1129,6 +1182,8 @@ function pdf.getpageref(pagenum) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.registerannot(objnum) end
+
+_N._14_1_27_newcolorstack = "page 286"
 
 ---
 ---Allocate a new color stack and returns it's id. The arguments
@@ -1150,6 +1205,8 @@ function pdf.registerannot(objnum) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.newcolorstack(s, literal_mode, page_start) end
+
+_N._14_1_28_setfontattributes = "page 286"
 
 ---
 ---Force some additional code into the font resource.

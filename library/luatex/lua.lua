@@ -4,6 +4,8 @@
 lua = {}
 
 _N = {}
+_N._10_1_the_lua_library = "page 187"
+_N._10_1_1_version_information = "page 187"
 
 ---
 ---Version information: This library contains one read-only item:
@@ -22,6 +24,8 @@ _N = {}
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/lua.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 lua.version = ""
+
+_N._10_1_2_bytecode_registers = "page 187"
 
 ---
 ---Use the `bytecode` table to store *Lua* code chunks. The accepted values for
@@ -91,6 +95,8 @@ function lua.getbytecode(n) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/lua.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function lua.getcodepage() end
+
+_N._10_1_3_chunk_name_registers = "page 187"
 
 ---
 ---There is an array of 65536 (0-65535) potential chunk names for use with the
@@ -163,6 +169,8 @@ function lua.getluaname(index) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/lua.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function lua.newtable(index, hash) end
 
+_N._10_1_4_introspection = "page 188"
+
 ---
 ---Return a number indicating
 ---how much nesting is going on.
@@ -196,6 +204,8 @@ function lua.getstacktop() end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/lua.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function lua.getcalllevel() end
+
+_N._2_4_4_luafunction_luafunctioncall_and_luadef = "page 25"
 
 ---
 ---The `\directlua` commands involves tokenization of its argument (after

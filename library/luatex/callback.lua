@@ -1,4 +1,5 @@
-_N._9_lua_callbacks = "page 169"
+
+_N._9_1_registering_callbacks = "page 169"
 
 ---
 ---@meta
@@ -179,6 +180,11 @@ function callback.list() end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function callback.find(callback_name) end
 
+_N._9_2_file_discovery_callbacks = "page 169"
+
+_N._9_2_1_find_read_file = "page 170"
+_N._9_2_1_find_write_file = "page 170"
+
 ---
 ---Find a file for `input` (0) or `openin` (higher integers).
 ---
@@ -216,6 +222,8 @@ function callback.find(callback_name) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FindWriteFileCallback fun(id_number: integer, asked_name: string): actual_name: string|nil
 
+_N._9_2_2_find_font_file = "page 170"
+
 ---
 ---Find a font metrics file.
 ---
@@ -226,11 +234,15 @@ function callback.find(callback_name) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FindFontFileCallback fun(asked_name: string): actual_name: string|nil
 
+_N._9_2_3_find_output_file = "page 170"
+
 ---
 ---The `asked_name` is the *PDF* or *DVI* file for writing.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FindOutputFileCallback fun(asked_name: string): actual_name: string|nil
+
+_N._9_2_4_find_format_file = "page 170"
 
 ---
 ---Find the format file.
@@ -241,6 +253,8 @@ function callback.find(callback_name) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FindFormatFileCallback fun(asked_name: string): actual_name: string|nil
 
+_N._9_2_5_find_vf_file = "page 171"
+
 ---
 ---Find a VF (virtual font) file.
 ---
@@ -250,11 +264,15 @@ function callback.find(callback_name) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FindVfFileCallback fun(asked_name: string): actual_name: string|nil
 
+_N._9_2_6_find_map_file = "page 171"
+
 ---
 ---Like `find_font_file`, but for map files.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FindMapFileCallback fun(asked_name: string): actual_name: string|nil
+
+_N._9_2_7_find_enc_file = "page 171"
 
 ---
 ---Find a font encoding file.
@@ -263,6 +281,8 @@ function callback.find(callback_name) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FindEncFileCallback fun(asked_name: string): actual_name: string|nil
+
+_N._9_2_8_find_pk_file = "page 171"
 
 ---
 ---Find a PK font bitmap file.
@@ -281,6 +301,8 @@ function callback.find(callback_name) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FindPkFileCallback fun(asked_name: string, dpi: integer): actual_name: string|nil
 
+_N._9_2_9_find_data_file = "page 171"
+
 ---
 ---Find an input data file for PDF attachment.
 ---
@@ -289,6 +311,8 @@ function callback.find(callback_name) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FindDataFileCallback fun(asked_name: string): actual_name: string|nil
 
+_N._9_2_0_find_opentype_file = "page 171"
+
 ---
 ---Find an OpenType font file.
 ---
@@ -296,6 +320,8 @@ function callback.find(callback_name) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FindOpentypeFileCallback fun(asked_name: string): actual_name: string|nil
+
+_N._9_2_1_find_truetype_file = "page 171"
 
 ---
 ---Find a TrueType font file.
@@ -310,6 +336,8 @@ function callback.find(callback_name) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FindTruetypeFileCallback fun(asked_name: string): actual_name: string|nil
 
+_N._9_2_1_find_type1_file = "page 171"
+
 ---
 ---Find an Type1 (PostScript) font file.
 ---
@@ -323,6 +351,8 @@ function callback.find(callback_name) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FindType1FileCallback fun(asked_name: string): actual_name: string|nil
 
+_N._9_2_2_find_image_file = "page 172"
+
 ---
 ---Find an image file for inclusion.
 ---
@@ -332,6 +362,10 @@ function callback.find(callback_name) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FindImageFileCallback fun(asked_name: string): actual_name: string|nil
+
+_N._9_3 = "page 172"
+
+_N._9_3_1_open_read_file = "page 172"
 
 ---
 ---*LuaTeX* never looks at the rest of the table, so you can use it to store your
@@ -445,6 +479,10 @@ function OpenReadFileEnv.close(env) end
 ---*OpenType* font files
 ---@alias ReadOpentypeFileCallback ReadFileCallback
 
+_N._9_4 = nil
+
+_N._9_4_1_process_input_buffer = nil
+
 ---
 ---Modify the encoding of the input buffer.
 ---
@@ -457,6 +495,8 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ProcessInputBufferCallback fun(buffer: string): string|nil
+
+_N._9_4_2_process_output_buffer = nil
 
 ---
 ---Modify the encoding of the output buffer.
@@ -472,6 +512,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ProcessOutputBufferCallback fun(buffer: string): adjusted_buffer: string|nil
 
+_N._9_4_3_process_jobname = nil
+
 ---
 ---This callback allows you to change the jobname given by `jobname` in *TeX*
 ---and `tex.jobname` in Lua. It does not affect the internal job name or the
@@ -486,6 +528,10 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ProcessJobnameCallback fun(jobname: string): string|nil
+
+_N._9_5 = nil
+
+_N._9_5_1_contribute_filter = nil
 
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -505,6 +551,8 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ContributeFilterCallback fun(extrainfo: ContributeFilterExtrainfo)
+
+_N._9_5_2_buildpage_filter = nil
 
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -535,6 +583,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias BuildpageFilterCallback fun(extrainfo: ContributeFilterExtrainfo)
 
+_N._9_5_3_build_page_insert = nil
+
 ---
 ---This callback is called when the pagebuilder adds an insert. There is not much
 ---control over this mechanism but this callback permits some last minute
@@ -553,6 +603,8 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias BuildPageInsertCallback fun(n: integer, i: integer): integer
+
+_N._9_5_4_pre_linebreak_filter = nil
 
 ---
 ---The string called `groupcode` identifies the nodelist's context within
@@ -612,6 +664,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PreLinebreakFilterCallback fun(head: Node, groupcode: PreLinebreakFilterGroupCode): NodeCallbackReturn
 
+_N._9_5_5_linebreak_filter = nil
+
 ---
 ---Override the linebreaking algorithm. The boolean is `true` if this is a pre-display break.
 ---
@@ -645,6 +699,8 @@ function OpenReadFileEnv.close(env) end
 ---| 'equation_number'
 ---| 'post_linebreak'
 
+_N._9_5_5_append_to_vlist_filter = nil
+
 ---
 ---This callback is called whenever *LuaTeX* adds a box to a vertical list.
 ---
@@ -655,6 +711,8 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias AppendToVlistFilterCallback fun(box: Node, locationcode: AppendToVlistFilterLocationcode, prevdepth: integer, mirrored: boolean): list: Node, prevdepth: integer
+
+_N._9_5_7_post_linebreak_filter = nil
 
 ---
 ---Alter a node list afer linebreaking has taken place. The string argument gives some context.
@@ -668,6 +726,8 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PostLinebreakFilterCallback fun(head: Node, groupcode: string): NodeCallbackReturn
+
+_N._9_5_8_hpack_filter = nil
 
 ---
 ---Alter a node list before horizontal packing takes place. The first string gives some context,
@@ -691,6 +751,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias HpackFilterCallback fun(head: Node, groupcode: string, size: integer, packtype: 'additional'|'exactly', direction?: DirectionSpecifier, attributelist?: Node): NodeCallbackReturn
 
+_N._9_5_9_vpack_filter = nil
+
 ---
 ---Alter a node list before vertical packing takes place. The second number is the desired max depth.
 ---
@@ -708,6 +770,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias VpackFilterCallback fun(head: Node, groupcode: string, size: integer, packtype: 'additional'|'exactly', maxdepth: integer, direction?: DirectionSpecifier, attributelist?: Node): NodeCallbackReturn
 
+_N._9_5_10_hpack_quality = nil
+
 ---
 ---This callback can be used to intercept the overfull messages that can result from
 ---packing a horizontal list (as happens in the par builder).
@@ -724,6 +788,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias HpackQualityCallback fun(incident: 'overfull'|'underfull'|'loose'|'tight', detail: integer, head: Node, first: integer, last: integer): Node
 
+_N._9_5_11_vpack_quality = nil
+
 ---
 ---This callback can be used to intercept the overfull messages that can result from
 ---packing a vertical list (as happens in the page builder).
@@ -737,6 +803,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias VpackQualityCallback fun(incident: 'overfull'|'underfull'|'loose'|'tight', detail: integer, head: Node, first: integer, last: integer)
 
+_N._9_5_12_process_rule = nil
+
 ---
 ---This is an experimental callback. It can be used with rules of subtype 4
 ---(user). The callback gets three arguments: the node, the width and the
@@ -747,6 +815,8 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ProcessRuleCallback fun(node: Node, width: integer, height: integer)
+
+_N._9_5_13_pre_output_filter = nil
 
 ---
 ---Alter a node list before boxing to `outputbox` takes place.
@@ -760,6 +830,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PreOutputFilterCallback fun(head: Node, groupcode: string, size: integer, packtype: 'additional'|'exactly', maxdepth: integer, direction?: DirectionSpecifier): NodeCallbackReturn
 
+_N._9_5_14_hyphenate = nil
+
 ---
 ---Apply hyphenation to a node list.
 ---
@@ -770,6 +842,8 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias HyphenateCallback fun(head: Node, tail: Node): false|nil
+
+_N._9_5_15_ligaturing = "page 179"
 
 ---
 ---Apply ligaturing to a node list.
@@ -799,6 +873,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias LigaturingCallback fun(head: Node, tail: Node): false|nil
 
+_N._9_5_16_kerning = nil
+
 ---
 ---Apply kerning to a node list.
 ---
@@ -816,6 +892,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias KerningCallback fun(head: Node, tail: Node): false|nil
 
+_N._9_5_17_insert_local_par = nil
+
 ---
 ---Each paragraph starts with a local par node that keeps track of for instance
 ---the direction. You can hook a callback into the creator:
@@ -827,6 +905,8 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias InsertLocalParCallback fun(local_par: Node, location: string)
+
+_N._9_5_18_mlist_to_hlist = nil
 
 ---
 ---Convert a math node list into a horizontal node list.
@@ -846,6 +926,10 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias MlistToHlistCallback fun(head: Node, display_type: string, need_penalties: boolean): newhead: Node
 
+_N._9_6_information_reporting = "page 180"
+
+_N._9_6_1_pre_dump = "page 180"
+
 ---
 ---Run actions just before format dumping takes place.
 ---
@@ -856,6 +940,8 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PreDumpCallback fun()
+
+_N._9_6_2_start_run = "page 181"
 
 ---
 ---Run actions at the start of the typesetting run.
@@ -870,6 +956,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias StartRunCallback fun()
 
+_N._9_6_3_stop_run = "page 181"
+
 ---
 ---Run actions just before the end of the typesetting run.
 ---
@@ -883,6 +971,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias StopRunCallback fun()
 
+_N._9_6_4_start_page_number = "page 181"
+
 ---
 ---Run actions at the start of typeset page number message reporting.
 ---
@@ -895,6 +985,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias StartPageNumberCallback fun()
 
+_N._9_6_5_stop_page_number = "page 181"
+
 ---
 ---Run actions at the end of typeset page number message reporting.
 ---
@@ -904,6 +996,8 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias StopPageNumberCallback fun()
+
+_N._9_6_6_show_error_hook = "page 181"
 
 ---
 ---Run action at error reporting time.
@@ -918,6 +1012,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ShowErrorHookCallback fun()
 
+_N._9_6_7_show_error_message = "page 182"
+
 ---
 ---This callback replaces the code that prints the error message. The usual
 ---interaction after the message is not affected.
@@ -927,6 +1023,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ShowErrorMessageCallback fun()
 
+_N._9_6_8_show_lua_error_hook = "page 182"
+
 ---
 ---This callback replaces the code that prints the extra *Lua* error message.
 ---
@@ -934,6 +1032,8 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ShowLuaErrorHookCallback fun()
+
+_N._9_6_9_start_file = "page 182"
 
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -953,6 +1053,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias StartFileCallback fun(category: StartFileCallbackCategory, filename: string)
 
+_N._9_6_10_stop_file = "page 182"
+
 ---
 ---This callback replaces the code that prints *LuaTeX*'s when a file is closed like
 ---the `)` for regular files.
@@ -961,6 +1063,8 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias StopFileCallback fun(category: integer)
+
+_N._9_6_11_call_edit = "page 182"
 
 ---
 ---This callback replaces the call to an external editor when “E” is pressed
@@ -972,6 +1076,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias CallEditCallback fun(filename: string, linenumber: integer)
 
+_N._9_6_12_finish_synctex = "page 183"
+
 ---
 ---This callback can be used to wrap up alternative synctex methods. It kicks in
 ---after the normal synctex finalizer (that happens to remove the synctex files
@@ -982,6 +1088,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FinishSynctexCallback fun()
 
+_N._9_6_13_wrapup_run = "page 183"
+
 ---
 ---This callback is called after the *PDF* and log files are closed. Use it at your own
 ---risk.
@@ -990,6 +1098,10 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias WrapupRunCallback fun()
+
+_N._9_7_pdf_related = "page 183"
+
+_N._9_7_1_finish_pdffile = "page 183"
 
 ---
 ---Run actions just before the PDF closing takes place.
@@ -1005,6 +1117,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FinishPdffileCallback fun()
 
+_N._9_7_2_finish_pdfpage = "page 183"
+
 ---
 ---```
 ---function(shippingout)
@@ -1018,6 +1132,8 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias FinishPdfpageCallback fun(shippingout: string)
+
+_N._9_7_3_page_order_index = "page 183"
 
 ---
 ---This is one that experts can use to juggle the page tree, a data structure
@@ -1045,6 +1161,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias PageOrderIndexCallback fun(pagenumber: integer): pagenumber: string
 
+_N._9_7_4_process_pdf_image_content = "page 184"
+
 ---
 ---When a page from a *PDF* file is embedded its page stream as well as related
 ---objects are copied to the target file. However, it can be that the page stream
@@ -1068,6 +1186,10 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ProcessPdfImageContentCallback fun(s: string): string
+
+_N._9_8_font_related = "page 184"
+
+_N._9_8_1_define_font = "page 184"
 
 ---
 ---Define a font from within lua code.
@@ -1100,6 +1222,8 @@ function OpenReadFileEnv.close(env) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias DefineFontCallback fun(name: string, size: number, id: number): Font|integer
 
+_N._9_8_2_glyph_not_found = "page 184"
+
 ---
 ---The `glyph_not_found` callback, when set, kicks in when the backend cannot
 ---insert a glyph. When no callback is defined a message is written to the log.
@@ -1108,6 +1232,8 @@ function OpenReadFileEnv.close(env) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias GlyphNotFoundCallback fun(id: number, char: number)
+
+_N._9_8_2_glyph_info = "page 184"
 
 ---
 ---The `glyph_info` callback can be set to report a useful representation of a

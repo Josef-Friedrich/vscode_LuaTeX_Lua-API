@@ -3,6 +3,9 @@
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/img.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 img = {}
 
+_N._11_1_the_img_library = "page 225"
+_N._11_1_1_new = "page 225"
+
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/img.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class Image
@@ -105,6 +108,8 @@ img = {}
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/img.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function img.new(image_spec) end
 
+_N._11_1_2_fields = "page 226"
+
 ---
 ---__Reference:__
 ---
@@ -164,6 +169,8 @@ function img.keys() end
 ---@field nolength? boolean # don't add length key nor compress for streams
 ---@field nosize? boolean # don't add size fields for streams
 
+_N._11_1_3_scan = "page 227"
+
 ---
 ---When you say `img.scan(a)` for a new image, the file is scanned, and
 ---variables such as `xsize`, `ysize`, image `type`, number of
@@ -196,6 +203,8 @@ function img.keys() end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/img.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function img.scan(image) end
 
+_N._11_1_4_copy = "page 230"
+
 ---
 ---If you say `a = b`, then both variables point to the same `<image>`
 ---object. if you want to write out an image with different sizes, you can do
@@ -215,6 +224,8 @@ function img.scan(image) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/img.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function img.copy(image) end
+
+_N._11_1_5_write_immediatewrite_immediatewriteobject = "page 228"
 
 ---
 ---Allocate a *PDF* object number and generate a rule node of
@@ -293,6 +304,8 @@ function img.immediatewrite(image) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/img.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function img.immediatewriteobject(image, objnum) end
 
+_N._11_1_6_node = "page 229"
+
 ---
 ---Allocate a *PDF* object number and return a whatsit node of
 ---subtype `pdf_refximage`, filled with the image parameters `width`,
@@ -322,6 +335,8 @@ function img.immediatewriteobject(image, objnum) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/img.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function img.node(image) end
 
+_N._11_1_7_types = "page 229"
+
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/img.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias ImgType `pdf` | `png` | `jpg` | `jp2` | `jbig2`
@@ -343,6 +358,8 @@ function img.node(image) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/img.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function img.types() end
+
+_N._11_1_8_boxes = "page 229"
 
 ---
 ---__Reference:__
