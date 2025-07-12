@@ -1,5 +1,3 @@
-
-
 ---
 ---Changes to upstream: global zlib table
 

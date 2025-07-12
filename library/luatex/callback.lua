@@ -1,5 +1,3 @@
-
-
 ---
 ---@meta
 ---A helper table to better navigate through the documentation using the

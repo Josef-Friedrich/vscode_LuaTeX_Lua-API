@@ -1,5 +1,3 @@
-
-
 ---
 ---https://github.com/TeX-Live/luatex/tree/master/source/texk/web2c/luatexdir/luasocket/src/socket.lua
 ---Changes to upstream: global socket table

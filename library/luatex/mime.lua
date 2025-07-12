@@ -1,5 +1,3 @@
-
-
 ---
 ---https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/trunk/source/texk/web2c/luatexdir/luasocket/src/mime.lua
 ---Changes to upstream: global mime table

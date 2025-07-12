@@ -1,5 +1,3 @@
-
-
 ---
 ---https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/trunk/source/texk/web2c/luatexdir/luasocket/src/mbox.lua
 ---Changes to upstream: global mbox table
