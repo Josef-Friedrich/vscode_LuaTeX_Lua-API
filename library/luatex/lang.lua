@@ -16,8 +16,6 @@ lang = {}
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/lang.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class Language
 
-_N._5_8_1_new_and_id = "page 83"
-
 ---
 ---Create a new language object, with an optional fixed id number.
 ---
@@ -51,8 +49,6 @@ function lang.new(id) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/lang.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function lang.id(language) end
 
-_N._5_8_2_hyphenation = "page 84"
-
 ---
 ---Set hyphenation exceptions.
 ---
@@ -83,8 +79,6 @@ function lang.hyphenation(language, n) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/lang.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function lang.hyphenation(language) end
-
-_N._5_8_3_clear_hyphenation_and_clean = "page 84"
 
 ---
 ---Clear the set of hyphenation exceptions.
@@ -125,8 +119,6 @@ function lang.clean(language, o) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/lang.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function lang.clean(o) end
-
-_N._5_8_4_patterns_and_clear_patterns = "page 84"
 
 ---
 ---Add additional patterns for this language object.
@@ -170,8 +162,6 @@ function lang.patterns(language) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/lang.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function lang.clear_patterns(language) end
 
-_N._5_8_5_hyphenationmin = "page 84"
-
 ---
 ---Set the value of the *TeX* parameter
 ---`\hyphenationmin`.
@@ -198,8 +188,6 @@ function lang.hyphenationmin(language, min) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/lang.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function lang.hyphenationmin(language) end
-
-_N._5_8_6_pre_post_ex_hyphenchar = "page 84"
 
 ---
 ---Set the “pre-break” hyphen characters for implicit hyphenation in this language.
@@ -341,8 +329,6 @@ function lang.postexhyphenchar(language, char) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/lang.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function lang.postexhyphenchar(language) end
 
-_N._5_8_7_hyphenate = "page 85"
-
 ---
 ---Hyphenate a node list.
 ---
@@ -368,8 +354,6 @@ _N._5_8_7_hyphenate = "page 85"
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/lang.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function lang.hyphenate(head, tail) end
-
-_N._5_8_8_set_get_hjcode = "page 85"
 
 ---
 ---Set hj codes.

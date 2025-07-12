@@ -7,8 +7,6 @@ number = {}
 ---https://github.com/latex3/lualibs/blob/main/lualibs-util-dim.lua
 ---https://github.com/latex3/lualibs/blob/main/lualibs-util-str.lua
 
-_N.bit = ""
-
 ---
 ---__Reference:__
 ---
@@ -16,8 +14,6 @@ _N.bit = ""
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/number.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function number.tobitstring(b, m, w) end
-
-_N.valid = ""
 
 ---
 ---* Corresponding Lua source code: [ualibs-number.lua#L101-L103](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-number.lua#L101-L103)

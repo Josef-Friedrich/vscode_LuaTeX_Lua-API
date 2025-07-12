@@ -1,10 +1,6 @@
 ---@meta
 mplib = {}
 
-_N._11_2_mplib_library = "page 200"
-
-_N._11_2_1_new = "page 230"
-
 ---
 ---__Reference:__
 ---
@@ -86,8 +82,6 @@ local MpInstance = {}
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function mplib.new(args) end
 
-_N._11_2_2_statistics = "page 233"
-
 ---
 ---There are
 ---four fields, giving the maximum number of used items in each of four allocated
@@ -146,8 +140,6 @@ function mplib.statistics(mp) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function MpInstance:statistics() end
 
-_N._11_2_3_execute = "page 233"
-
 ---
 ---Execute metapost code in the instance.
 ---
@@ -203,8 +195,6 @@ function mplib.execute(mp, code) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function MpInstance:execute(code) end
 
-_N._11_2_4_finish = "page 233"
-
 ---
 ---Finish a metapost instance.
 ---
@@ -242,8 +232,6 @@ function mplib.finish(mp) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function MpInstance:finish() end
-
-_N._11_2_5_result_table = "page 233"
 
 ---
 ---@alias MpResultStatus
@@ -416,8 +404,6 @@ function MpFig.charcode() end
 
 ---
 
-_N._11_2_5_1_fill = "page 234"
-
 ---
 ---All graphical objects have a field `type` that gives the object type as a
 ---string value;
@@ -460,8 +446,6 @@ function mplib.fields(obj) end
 ---@field prescript string # the prescript text
 ---@field postscript string # the postscript text
 
-_N._11_2_5_2_outline = "page 234"
-
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MpOutline
@@ -474,8 +458,6 @@ _N._11_2_5_2_outline = "page 234"
 ---@field dash table # representation of a dash list
 ---@field prescript string # the prescript text
 ---@field postscript string # the postscript text
-
-_N._11_2_5_3_text = "page 234"
 
 ---
 ---__Reference:__
@@ -495,8 +477,6 @@ _N._11_2_5_3_text = "page 234"
 ---@field prescript string # the prescript text
 ---@field postscript string # the postscript text
 
-_N._11_2_5_4_special = "page 236"
-
 ---
 ---__Reference:__
 ---
@@ -506,8 +486,6 @@ _N._11_2_5_4_special = "page 236"
 ---@class MpSpecial
 ---@field prescript string # special text
 
-_N._11_2_5_5_start_bounds_start_clip = "page 236"
-
 ---
 ---__Reference:__
 ---
@@ -516,11 +494,6 @@ _N._11_2_5_5_start_bounds_start_clip = "page 236"
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MpStartBoundsClip
 ---@field path table # the list of knots
-
-_N._11_2_5_6_stop_bounds_stop_clip = "page 236"
-
-_N._11_2_6_subsidiary_table_formats = "page 236"
-_N._11_2_6_1_paths_pens = "page 236"
 
 ---
 ---Paths and pens (that are really just a special type of paths as far as mplib is
@@ -547,8 +520,6 @@ _N._11_2_6_1_paths_pens = "page 236"
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias MpPathPen MpKnot[]
 
-_N._11_2_6_2_Colors = "page 236"
-
 ---
 ---A color is an integer array with 0, 1, 3 or 4 values:
 ---
@@ -565,8 +536,6 @@ _N._11_2_6_2_Colors = "page 236"
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias MpColor integer[]
 
-_N._11_2_6_3_Transforms = "page 237"
-
 ---
 ---Each transform is a six-item array.
 ---
@@ -580,8 +549,6 @@ _N._11_2_6_3_Transforms = "page 237"
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias MPTransform number[]
 
-_N._11_2_6_4_Dashes = "page 237"
-
 ---
 ---Each `dash` is two-item hash, using the same model as *PostScript* for the
 ---representation of the dashlist. `dashes` is an array of “on” and
@@ -591,8 +558,6 @@ _N._11_2_6_4_Dashes = "page 237"
 ---@class MpDash
 ---@field dashes table # an array of on-off numbers
 ---@field offset integer # the starting offset value
-
-_N._11_2_7_Pens_and_pen_info = "page 237"
 
 ---
 ---There is helper function (`pen_info(obj)`) that returns a table containing
@@ -620,9 +585,6 @@ _N._11_2_7_Pens_and_pen_info = "page 237"
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function mplib.pen_info(obj) end
-
-_N._11_2_8_Character_size_information = "page 238"
-_N._11_2_8_1_char_width = "page 238"
 
 ---
 ---Report a character's width.
@@ -663,8 +625,6 @@ function mplib.char_width(mp, fontname, char) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function MpInstance:char_width(fontname, char) end
 
-_N._11_2_8_2_char_height = "page 238"
-
 ---
 ---Report a character's height.
 ---
@@ -704,8 +664,6 @@ function mplib.char_height(mp, fontname, char) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function MpInstance:char_height(fontname, char) end
 
-_N._11_2_8_3_char_depth = "page 238"
-
 ---
 ---Report a character's depth.
 ---
@@ -744,8 +702,6 @@ function mplib.char_depth(mp, fontname, char) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/mplib.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function MpInstance:char_depth(fontname, char) end
-
-_N._11_2_8_4_get_boolean_numeric_string_path = "page 238"
 
 ---
 ---__Reference:__

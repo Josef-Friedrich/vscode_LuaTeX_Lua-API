@@ -7,8 +7,6 @@ _N = {}
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex = {}
 
-_N._10_3_2_internal_parameter_values_set_get = "page 190"
-
 ---
 ---Set the given TeX parameter.
 ---
@@ -48,8 +46,6 @@ function tex.set(global, parameter, ...) end
 ---
 ---@return any ...
 function tex.get(parameter, opts) end
-
-_N._10_3_2_1_integer_parameters_read_write = "page 190"
 
 ---
 ---`\adjdemerits`: Penalty for adjacent visually incompatible lines. Plain TEX default: 10 000.
@@ -794,8 +790,6 @@ tex.widowpenalty = 0
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.year = 0
 
-_N._10_3_2_1_integer_parameters_read_only = "page 191"
-
 ---
 ---`\deadcycles`: Counter that keeps track of how many times the output routine has been called without a `\shipout` taking place.
 ---
@@ -878,8 +872,6 @@ tex.prevgraf = 0
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.spacefactor = 0
-
-_N._10_3_2_2_dimension_parameters_read_write = "page 191"
 
 ---
 ---`\boxmaxdepth`: Maximum allowed depth of boxes. Plain TEX default: \maxdimen.
@@ -1203,8 +1195,6 @@ tex.prevgraf = 0
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.spacefactor = 0
 
-_N._10_3_2_2_dimension_parameters_read_only = "page 191"
-
 ---
 ---`\pagedepth` Depth of the current page.
 ---
@@ -1309,8 +1299,6 @@ tex.pagestretch = 0
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.pagetotal = 0
 
-_N._10_3_2_3_direction_parameters = "page 192"
-
 ---
 ---@type string A read-only direction parameter that returns a *Lua* string.
 ---
@@ -1340,8 +1328,6 @@ tex.pardir = ""
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.textdir = ""
-
-_N._10_3_2_4_glue_parameters = "page 193"
 
 ---
 ---`\abovedisplayshortskip` Glue abovea display if the line preceding the display was short. Plain TEX defaults: 0pt plus 3pt
@@ -1523,8 +1509,6 @@ tex.topskip = nil
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.xspaceskip = nil
 
-_N._10_3_2_5_muglue_parameters = "page 193"
-
 ---
 ---`\medmuskip` Medium amount of mu glue.
 ---
@@ -1560,8 +1544,6 @@ tex.thickmuskip = ""
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.thinmuskip = ""
-
-_N._10_3_2_6_tokenlist_parameters = "page 193"
 
 ---
 ---A `tokenlist` parameters that accepts and returns a *Lua* string.
@@ -1683,8 +1665,6 @@ tex.everyvbox = ""
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.output = ""
 
-_N._10_3_3_convert_commands = "page 193"
-
 ---
 ---@type string # for example `2.2`.
 ---
@@ -1720,8 +1700,6 @@ tex.luatexbanner = ""
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.luatexrevision = ""
-
-_N._10_3_4_last_item_commands = "page 194"
 
 ---
 ---All “last item” commands are read-only and return a number.
@@ -1834,8 +1812,6 @@ tex.currentiftype = 0
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.currentifbranch = 0
-
-_N._10_3_5_accessing_registers_set_get_and_is = "page 194"
 
 ---
 ---The attribute registers accept and return Lua numbers.
@@ -2307,8 +2283,6 @@ function tex.scantoks(global, register, catcodetable, toks) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.getmark(position, class) end
-
-_N._10_3_6_character_code_registers_get_set_code_s_ = "page 196"
 
 ---
 ---*TeX*'s character code table `lccode` (lower case code) can be accessed and written to using
@@ -2895,8 +2869,6 @@ function tex.getdelcodes(char_code) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.getdelcode(char_code) end
 
-_N._10_3_7_box_registers_get_set_box = "page 197"
-
 ---
 ---__Reference:__
 ---
@@ -2961,8 +2933,6 @@ function tex.getbox(register) end
 ---@return boolean
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.isbox(register) end
-
-_N._10_3_8_reusing_boxes_use_save_boxresource_and_getboxresourcedimensions = "page 198"
 
 ---
 ---Register a box for reuse (this is modelled after so
@@ -3032,8 +3002,6 @@ function tex.useboxresource(n, width, height, depth) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.getboxresourcedimensions(n) end
 
-_N._10_3_9_triggerbuildpage = "page 198"
-
 ---
 ---Call the internal
 ---function that build a page, given that there is something to build.
@@ -3046,8 +3014,6 @@ _N._10_3_9_triggerbuildpage = "page 198"
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.triggerbuildpage() end
-
-_N._10_3_10_splitbox = "page 198"
 
 ---
 ---Split a box.
@@ -3064,8 +3030,6 @@ _N._10_3_10_splitbox = "page 198"
 ---@return Node|nil vlist
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.splitbox(n, height, mode) end
-
-_N._10_3_11_accessing_math_parameters_get_set_math = "page 198"
 
 ---
 ---Set the internal math parameters.
@@ -3240,8 +3204,6 @@ function tex.getmath(math_param_name, math_style_name) end
 ---|'innerpunctspacing'
 ---|'innerinnerspacing'
 
-_N._10_3_12_special_list_heads_get_set_list = "page 200"
-
 ---
 ---The virtual table `tex.lists` contains the set of internal registers that
 ---keep track of building page lists.
@@ -3317,8 +3279,6 @@ function tex.setlist() end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.getlist() end
 
-_N._10_3_13_semantic_nest_levels_getnest_and_ptr = "page 200"
-
 ---
 ---The virtual table `nest` contains the currently active semantic nesting
 ---state. It has two main parts: a zero-based array of userdata for the semantic
@@ -3392,10 +3352,6 @@ function tex.setnest() end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.getmodevalues() end
-
-_N._10_3_14_print = "page 201"
-
-_N._10_3_14_1_print = "page 201"
 
 ---
 ---The `tex` table also contains the three print functions that are the major
@@ -3599,10 +3555,6 @@ function tex.write(...) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.write(t) end
 
-_N._10_3_15 = "page 203"
-
-_N._10_3_15_1 = "page 203"
-
 ---
 ---Rounds *Lua* number `o`, and returns a number that is in the range of a
 ---valid *TeX* register value. If the number starts out of range, it generates a
@@ -3614,8 +3566,6 @@ _N._10_3_15_1 = "page 203"
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.round(o) end
-
-_N._10_3_15_2 = "page 203"
 
 ---
 ---Multiplies the *Lua* numbers `o` and `delta`, and returns a rounded
@@ -3645,8 +3595,6 @@ function tex.scale(o, delta) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.scale(o, delta) end
 
-_N._15_3 = "page 204"
-
 ---
 ---@param n integer
 ---
@@ -3662,8 +3610,6 @@ function tex.number(n) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.romannumeral(n) end
-
-_N._10_3_15_4 = "page 204"
 
 ---
 ---returns the `csname` string that matches a
@@ -3687,8 +3633,6 @@ function tex.fontidentifier(font_id) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.fontname(font_id) end
-
-_N._10_3_15_5_sp = "page 204"
 
 ---
 ---Converts the number `o` that represents an explicit
@@ -3739,11 +3683,7 @@ function tex.sp(o) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.sp(s) end
 
-_N._10_3_15_6 = "page 204"
-
 -- Removed?
-
-_N._10_3_15_7_error_show_context = "page 204"
 
 ---
 ---Create an error like the combination of `\errhelp` and
@@ -3775,8 +3715,6 @@ function tex.error(message, help) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.show_context() end
 
-_N._10_3_15_8_run_finish = "page 205"
-
 ---
 ---Start the interpretation.
 ---
@@ -3804,8 +3742,6 @@ function tex.run() end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.finish() end
-
-_N._10_3_15_9_runtoks = "page 205"
 
 ---
 ---Because of the fact that *TeX* is in a complex dance of expanding, dealing with
@@ -3868,8 +3804,6 @@ function tex.runtoks(func) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.quittoks() end
 
-_N._10_3_15_10_forcehmode = "page 205"
-
 ---
 ---An example of a (possible error triggering) complication is that *TeX* expects to
 ---be in some state, say horizontal mode, and you have to make sure it is when you
@@ -3882,8 +3816,6 @@ _N._10_3_15_10_forcehmode = "page 205"
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.forcehmode(indented) end
-
-_N._10_3_15_11_hashtokens = "page 205"
 
 ---
 ---Return a list of names.
@@ -3903,8 +3835,6 @@ _N._10_3_15_11_hashtokens = "page 205"
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.hashtokens() end
-
-_N._10_3_15_12_definefont = "page 206"
 
 ---
 ---Associates `csname` with the internal font number `fontid`. The
@@ -3928,10 +3858,6 @@ function tex.definefont(csname, fontid) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.definefont(global, csname, fontid) end
-
-_N._10_3_16_primitives = "page 206"
-
-_N._10_3_16_1_enableprimitives = "page 206"
 
 ---
 ---This function accepts a prefix string and an array of primitive names. For each
@@ -3987,8 +3913,6 @@ _N._10_3_16_1_enableprimitives = "page 206"
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.enableprimitives(prefix, primitive_names) end
 
-_N._10_3_16_2_extraprimitives = "page 205"
-
 ---
 ---@alias TexEngine
 ---|'etex'
@@ -4020,8 +3944,6 @@ _N._10_3_16_2_extraprimitives = "page 205"
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.extraprimitives(...) end
 
-_N._10_3_16_3_primitives = "page 210"
-
 ---
 ---Return a list of all primitives that *LuaTeX* knows about.
 ---
@@ -4031,10 +3953,6 @@ _N._10_3_16_3_primitives = "page 210"
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.primitives() end
-
-_N._10_3_17_core_functionality_interfaces = "page 210"
-
-_N._10_3_17_1_badness = "page 210"
 
 ---
 ---Calculate the badness.
@@ -4053,8 +3971,6 @@ _N._10_3_17_1_badness = "page 210"
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.badness(total, sum) end
 
-_N._10_3_17_2_resetparagraph = "page 210"
-
 ---
 ---Reset the parameters that *TeX* normally resets when a new paragraph
 ---is seen.
@@ -4063,8 +3979,6 @@ _N._10_3_17_2_resetparagraph = "page 210"
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.resetparagraph() end
-
-_N._10_3_17_3_linebreak = "page 210"
 
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -4163,8 +4077,6 @@ function tex.getpagestate() end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.getlocallevel() end
 
-_N._10_3_18_randomizers = "page 212"
-
 -- { "uniform_rand",tex_unif_rand },
 -- { "normal_rand", tex_norm_rand },
 -- { "lua_math_randomseed", tex_init_rand }, /* syntactic sugar  */
@@ -4259,8 +4171,6 @@ function tex.uniform_rand() end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.uniformdeviate(n) end
-
-_N._10_3_19_synctex = "page 212"
 
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)

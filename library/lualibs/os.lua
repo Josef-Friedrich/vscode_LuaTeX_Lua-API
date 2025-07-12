@@ -5,7 +5,6 @@
 
 os = {}
 
-_N.resultof_launch = ""
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function os.resultof(command) end
@@ -17,8 +16,6 @@ function os.resultof(command) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function os.launch(str) end
-
-_N.type_name_platform_libsuffix_binsuffix = ""
 
 ---
 ---__Reference:__
@@ -41,8 +38,6 @@ os.libsuffix = ""
 ---
 os.binsuffix = ""
 
-_N.runtime = ""
-
 ---
 ---__Reference:__
 ---
@@ -58,8 +53,6 @@ function os.runtime() end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function os.timezone(difference) end
-
-_N.runtime = ""
 
 ---
 ---__Reference:__

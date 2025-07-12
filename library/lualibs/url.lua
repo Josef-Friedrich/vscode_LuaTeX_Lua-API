@@ -5,8 +5,6 @@
 ---This is a specialized library. You can split an url into its components. An URL is constructed like this:
 url = {}
 
-_N.split_hashed_construct = ""
-
 ---
 ---Example `foo://example.com:2010/alpha/beta?gamma=delta#epsilon`
 ---@class Url
@@ -95,8 +93,6 @@ function url.split(str) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function url.construct(hash) end
-
-_N.hasscheme_addscheme_filename_query = ""
 
 ---
 ---__Example:__

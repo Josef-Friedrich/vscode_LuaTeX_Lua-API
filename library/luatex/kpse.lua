@@ -9,9 +9,6 @@
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/kpse.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 kpse = {}
 
-_N._10_7_the_kpse_library = "page 221"
-_N._10_7_1_set_program_name_and_new = "page 221"
-
 ---
 ---The way the library looks up variables is driven by the `texmf.cmf` file
 ---where the currently set program name acts as filter. You can check what file is
@@ -69,8 +66,6 @@ function kpse.set_program_name(name, progname) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/kpse.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function kpse.new(name, progname) end
 
-_N._10_7_2_record_input_file_and_record_output_file = "page 222"
-
 ---
 ---Register used files.
 ---
@@ -100,8 +95,6 @@ function kpse.record_input_file(name) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/kpse.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function kpse.record_output_file(name) end
-
-_N._10_7_3_find_file = "page 222"
 
 ---
 ---__Reference:__
@@ -278,8 +271,6 @@ function kpse.find_file(filename, ftype, dpi) end
 ---@field mktextfm boolean # disable/enable mktextfm generation for this lookup
 ---@field subdir string|table # only output matches whose directory part ends with the given string(s)
 
-_N._10_7_4_lookup = "page 223"
-
 ---
 ---Find a file (extended interface).
 ---
@@ -301,8 +292,6 @@ _N._10_7_4_lookup = "page 223"
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/kpse.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function kpse.lookup(filename, options) end
 
-_N._10_7_5_init_prog = "page 223"
-
 ---
 ---Initialize a PK generation program. The optional string is the metafont mode fallback name.
 ---
@@ -320,8 +309,6 @@ _N._10_7_5_init_prog = "page 223"
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/kpse.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function kpse.init_prog(prefix, base_dpi, mfmode, fallback) end
 
-_N._10_7_6_readable_file = "page 223"
-
 ---
 ---Returns true if a file exists and is readable.
 ---
@@ -337,8 +324,6 @@ _N._10_7_6_readable_file = "page 223"
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/kpse.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function kpse.readable_file(name) end
-
-_N._10_7_7_expand_path = "page 224"
 
 ---
 ---Expand a path.
@@ -358,8 +343,6 @@ _N._10_7_7_expand_path = "page 224"
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/kpse.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function kpse.expand_path(s) end
 
-_N._10_7_8_expand_var = "page 224"
-
 ---
 ---Expand a variable.
 ---
@@ -378,8 +361,6 @@ _N._10_7_8_expand_var = "page 224"
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/kpse.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function kpse.expand_var(s) end
 
-_N._10_7_9_expand_braces = "page 224"
-
 ---
 ---Expand the braces in a variable.
 ---
@@ -396,8 +377,6 @@ _N._10_7_9_expand_braces = "page 224"
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/kpse.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function kpse.expand_braces(s) end
-
-_N._10_7_10_show_path = "page 224"
 
 ---
 ---List the search path for a specific file type.
@@ -418,8 +397,6 @@ _N._10_7_10_show_path = "page 224"
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/kpse.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function kpse.show_path(file_type) end
 
-_N._10_7_11_var_value = "page 224"
-
 ---
 ---Return the value of a variable.
 ---
@@ -438,8 +415,6 @@ _N._10_7_11_var_value = "page 224"
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/kpse.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function kpse.var_value(variable) end
-
-_N._10_7_12_version = "page 224"
 
 ---
 ---Return the kpathsea version string.
