@@ -3,8 +3,6 @@
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/lua.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 lua = {}
 
-_N = {}
-
 ---
 ---Version information: This library contains one read-only item:
 ---

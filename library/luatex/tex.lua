@@ -1,7 +1,4 @@
 ---@meta
----A helper table to better navigate through the documentation using the
----outline: https://github.com/Josef-Friedrich/LuaTeX_Lua-API#navigation-table-_n
-_N = {}
 
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -2285,49 +2282,86 @@ function tex.scantoks(global, register, catcodetable, toks) end
 function tex.getmark(position, class) end
 
 ---
----*TeX*'s character code table `lccode` (lower case code) can be accessed and written to using
+---The *TeX*'s character code table `lccode` (lower case code) can be accessed and written to using
 ---a virtual subtable of the `tex` table.
+---
+---```lua
+---for i = 0, 1024 do
+--- -- Exclude C0 and C1 control codes
+---  if i > 31 and not (i >= 127 and i <= 159) then
+---    print(i, utf8.char(i), tex.lccode[i], utf8.char(tex.lccode[i]))
+---  end
+---end
+---```
+---
+---Output:
+---
+---```
+---...
+---65	A	97	a
+---66	B	98	b
+---67	C	99	c
+---...
+---90	Z	122	z
+---...
+---97	a	97	a
+---98	b	98	b
+---99	c	99	c
+---...
+---122	z	122	z
+---...
+---```
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [ltexlib.c#L3708](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3708)
+---* Corresponding plain TeX control sequence: [\lccode](https://www.tug.org/utilities/plain/cseq.html#lccode-rp)
 ---
----@type table
+---@type table<integer, integer>
 tex.lccode = {}
 
 ---
 ---Set the `lccode` (lower case code) and additionally
 ---the associated sibling for a character code at the same time.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1369-L1397](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1369-L1397)
+---* Corresponding plain TeX control sequence: [\lccode](https://www.tug.org/utilities/plain/cseq.html#lccode-rp)
 ---
 ---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
----@param char_code integer
----@param lc integer
----@param uc? integer
+---@param char_code integer # A Unicode code point for which a lowercase variant of the character is to be set, for example `65` stands for an uppercase `A` and `97` for a lowercase `a`.
+---@param lower_case integer # The Unicode code point for the lowercase variant of the character.
+---@param upper_case? integer # The Unicode code point for the uppercase variant of the character.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.setlccode(global, char_code, lc, uc) end
+function tex.setlccode(global, char_code, lower_case, upper_case) end
 
 ---
 ---Set the `lccode` (lower case code) and additionally
 ---the associated sibling for a character code at the same time.
 ---
----* Corresponding C source code: [ltexlib.c#L1369-L1397](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1369-L1397)
+---__Reference:__
 ---
----@param char_code integer
----@param lc integer
----@param uc? integer
+---* Corresponding C source code: [ltexlib.c#L1369-L1397](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1369-L1397)
+---* Corresponding plain TeX control sequence: [\lccode](https://www.tug.org/utilities/plain/cseq.html#lccode-rp)
+---
+---@param char_code integer # A Unicode code point for which a lowercase variant of the character is to be set, for example `65` stands for an uppercase `A` and `97` for a lowercase `a`.
+---@param lower_case integer # The Unicode code point for the lowercase variant of the character.
+---@param upper_case? integer # The Unicode code point for the uppercase variant of the character.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.setlccode(char_code, lc, uc) end
+function tex.setlccode(char_code, lower_case, upper_case) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1404-L1410](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1404-L1410)
+---* Corresponding plain TeX control sequence: [\lccode](https://www.tug.org/utilities/plain/cseq.html#lccode-rp)
 ---
----@param char_code integer
+---@param char_code integer # A Unicode code point for which a lowercase variant of the character should be returned, for example `65` stands for an uppercase `A` and `97` for a lowercase `a`.
 ---
----@return integer lc
+---@return integer lower_case # The Unicode code point for the lowercase variant of the character.
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.getlccode(char_code) end
 
@@ -2335,87 +2369,203 @@ function tex.getlccode(char_code) end
 ---*TeX*'s character code table `uccode` (upper case code) can be accessed and written to using
 ---a virtual subtable of the `tex` table.
 ---
+---```lua
+---for i = 0, 1024 do
+--- -- Exclude C0 and C1 control codes
+---  if i > 31 and not (i >= 127 and i <= 159) then
+---    print(i, utf8.char(i), tex.uccode[i], utf8.char(tex.uccode[i]))
+---  end
+---end
+---```
+---
+---Output:
+---
+---```
+---...
+---65	A	65	A
+---66	B	66	B
+---67	C	67	C
+---...
+---90	Z	90	Z
+---...
+---97	a	65	A
+---98	b	66	B
+---99	c	67	C
+---...
+---122	z	90	Z
+---...
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [ltexlib.c#L3709](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3709)
+---* Corresponding plain TeX control sequence: [\uccode](https://www.tug.org/utilities/plain/cseq.html#uccode-rp)
 ---
----@type table
+---@type table<integer, integer>
 tex.uccode = {}
 
 ---
 ---The function call interface for `uccode` (upper case code) additionally
 ---allows you to set the associated sibling at the same time.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1369-L1397](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1369-L1397)
+---* Corresponding plain TeX control sequence: [\uccode](https://www.tug.org/utilities/plain/cseq.html#uccode-rp)
 ---
 ---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
----@param char_code integer
----@param uc integer
----@param lc? integer
+---@param char_code integer # A Unicode code point for which a uppercase variant of the character is to be set, for example `65` stands for an uppercase `A` and `97` for a lowercase `a`.
+---@param upper_case integer # The Unicode code point for the uppercase variant of the character.
+---@param lower_case? integer # The Unicode code point for the lowercase variant of the character.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.setuccode(global, char_code, uc, lc) end
+function tex.setuccode(global, char_code, upper_case, lower_case) end
 
 ---
 ---The function call interface for `uccode` (upper case code) additionally
 ---allows you to set the associated sibling at the same time.
 ---
----* Corresponding C source code: [ltexlib.c#L1369-L1397](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1369-L1397)
+---__Reference:__
 ---
----@param char_code integer
----@param uc integer
----@param lc? integer
+---* Corresponding C source code: [ltexlib.c#L1369-L1397](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1369-L1397)
+---* Corresponding plain TeX control sequence: [\uccode](https://www.tug.org/utilities/plain/cseq.html#uccode-rp)
+---
+---@param char_code integer # A Unicode code point for which a uppercase variant of the character is to be set, for example `65` stands for an uppercase `A` and `97` for a lowercase `a`.
+---@param upper_case integer # The Unicode code point for the uppercase variant of the character.
+---@param lower_case? integer # The Unicode code point for the lowercase variant of the character.
+---
+---@see tex.getuccode
+---@see tex.setlccode
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.setuccode(char_code, uc, lc) end
+function tex.setuccode(char_code, upper_case, lower_case) end
 
 ---
+---Corresponding plain TeX control sequence: [\uccode](https://www.tug.org/utilities/plain/cseq.html#uccode-rp)
+---
+---__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1417-L1423](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1417-L1423)
+---* Corresponding plain TeX control sequence: [\uccode](https://www.tug.org/utilities/plain/cseq.html#uccode-rp)
 ---
----@param char_code integer
+---@param char_code integer # A Unicode code point for which a uppercase variant of the character should be returned, for example `65` stands for an uppercase `A` and `97` for a lowercase `a`.
 ---
----@return integer uc
+---@return integer upper_case # The Unicode code point for the uppercase variant of the character.
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.getuccode(char_code) end
 
 ---
----*TeX*'s character code table `sfcode` (space factor code) can be accessed and written to using
----a virtual subtable of the `tex` table.
+---Each character in a font has a space factor code that is an integer
+---between `0` and `32767`. The code is used to adjust the space factor
+---in a horizontal list. The uppercase letters `A-Z` have space factor
+---code `999`. Most other characters have code `1000` [Donald E. Knuth, The TeXbook, page 76]. However,
+---Plain TeX makes `)', `'', and `]' have space factor code `0`.
+---Also, the `\frenchspacing` and `\nonfrenchspacing` modes in Plain
+---TeX work by changing the `\sfcode` for: `.`, `?`, `!`, `:`, `;`,
+---and `,` [Donald E. Knuth, The TeXbook, 351].
+---
+---*TeX*'s character code table `sfcode` (space factor code) can be
+---accessed and written to using a virtual subtable of the `tex` table.
+---
+---```lua
+---for i = 0, 1024 do
+---  -- Exclude C0 and C1 control codes
+---  if i > 31 and not (i >= 127 and i <= 159) then
+---    print(i, utf8.char(i), tex.sfcode[i])
+---  end
+---end
+---```
+---
+---Output:
+---
+---```
+---32	 	1000
+---33	!	3000
+---34	"	1000
+---35	#	1000
+---36	$	1000
+---37	%	1000
+---38	&	1000
+---39	'	0
+---40	(	1000
+---41	)	0
+---42	*	1000
+---43	+	1000
+---44	,	1250
+---45	-	1000
+---46	.	3000
+---47	/	1000
+---48	0	1000
+---49	1	1000
+---50	2	1000
+---51	3	1000
+---52	4	1000
+---53	5	1000
+---54	6	1000
+---55	7	1000
+---56	8	1000
+---57	9	1000
+---58	:	2000
+---59	;	1500
+---60	<	1000
+---61	=	1000
+---62	>	1000
+---63	?	3000
+---64	@	1000
+---65	A	999
+---...
+---```
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [ltexlib.c#L3707](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3707)
+---* Corresponding plain TeX control sequence: [\sfcode](https://www.tug.org/utilities/plain/cseq.html#sfcode-rp)
 ---
----@type table
+---@type table<integer, integer>
 tex.sfcode = {}
 
 ---
+---Set the space factor code for a character globally.
+---
+---__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1425-L1428](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1425-L1428)
+---* Corresponding plain TeX control sequence: [\sfcode](https://www.tug.org/utilities/plain/cseq.html#sfcode-rp)
 ---
 ---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
----@param char_code integer
----@param sf integer
+---@param char_code integer # A Unicode code point, for example `65` stands for an uppercase `A` and `97` for a lowercase `a`.
+---@param space_factor integer # The code (between `0` and `32767`) to adjust the space factor in a horizontal list. The uppercase letters `A-Z` have space factor code `999`. Most other characters have code `1000`.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.setsfcode(global, char_code, sf) end
+function tex.setsfcode(global, char_code, space_factor) end
 
+---
+---Set the space factor code for a character.
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [ltexlib.c#L1425-L1428](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1425-L1428)
+---* Corresponding plain TeX control sequence: [\sfcode](https://www.tug.org/utilities/plain/cseq.html#sfcode-rp)
 ---
----@param char_code integer
----@param sf integer
+---@param char_code integer # A Unicode code point, for example `65` stands for an uppercase `A` and `97` for a lowercase `a`.
+---@param space_factor integer # The code (between `0` and `32767`) to adjust the space factor in a horizontal list. The uppercase letters `A-Z` have space factor code `999`. Most other characters have code `1000`.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.setsfcode(char_code, sf) end
+function tex.setsfcode(char_code, space_factor) end
 
 ---
+---Get the space factor code of a character.
+---
+---__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1430-L1436](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1430-L1436)
+---* Corresponding plain TeX control sequence: [\sfcode](https://www.tug.org/utilities/plain/cseq.html#sfcode-rp)
 ---
----@param n integer
+---@param char_code integer # A Unicode code point, for example `65` stands for an uppercase `A` and `97` for a lowercase `a`.
 ---
----@return integer s
+---@return integer space_factor # The code (between `0` and `32767`) to adjust the space factor in a horizontal list. The uppercase letters `A-Z` have space factor code `999`. Most other characters have code `1000`.
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.getsfcode(n) end
+function tex.getsfcode(char_code) end
 
 ---
 ---A virtual subtable of the `tex` table called `catcode` (category code) can be used to access and write to TeX's character code table.
@@ -2548,7 +2698,7 @@ function tex.getsfcode(n) end
 ---
 ---* Corresponding C source code: [ltexlib.c#L3710](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3710)
 ---
----@type table
+---@type table<integer, integer>
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.catcode = {}
 
@@ -2700,19 +2850,247 @@ function tex.setcatcode(global, cat_table, char_code, cat_code) end
 function tex.getcatcode(cat_table, char_code) end
 
 ---
----*TeX*'s character code table `mathcode` can be accessed and written to using
+---The *TeX*'s character code table `mathcode` can be accessed and written to using
 ---a virtual subtable of the `tex` table.
+---
+---```lua
+---for i = 1, 128 do
+---  local mathcode = tex.mathcode[i]
+---  print(i, utf8.char(i), mathcode[1], mathcode[2], mathcode[3])
+---end
+---```
+---
+---__Output:__
+---
+---```
+---1		3	2	35
+---2		0	1	11
+---3		0	1	12
+---4		2	2	94
+---5		0	2	58
+---6		3	2	50
+---7		0	1	25
+---8		0	1	21
+---9		0	1	13
+---10		0	1	14
+---11		3	2	34
+---12		2	2	6
+---1		2	2	8
+---14		0	2	49
+---15		0	1	64
+---16		3	2	26
+---17		3	2	27
+---18		2	2	92
+---19		2	2	91
+---20		0	2	56
+---21		0	2	57
+---22		2	2	10
+---23		3	2	36
+---24		3	2	32
+---25		3	2	33
+---26	�	8	0	0
+---27			2	5
+---28		3	2	20
+---29		3	2	21
+---30		3	2	17
+---31		2	2	95
+---32	 	8	0	0
+---33	!	5	0	33
+---34	"	0	0	34
+---35	#	0	0	35
+---36	$	0	0	36
+---37	%	0	0	37
+---38	&	0	0	38
+---39	'	8	0	0
+---40	(	4	0	40
+---41	)	5	0	41
+---42	*	2	2	3
+---43	+	2	0	43
+---44	,	6	1	59
+---45	-	2	2	0
+---46	.	0	1	58
+---47	/	0	1	61
+---48	0	7	0	48
+---49	1	7	0	49
+---50	2	7	0	50
+---51	3	7	0	51
+---52	4	7	0	52
+---53	5	7	0	53
+---54	6	7	0	54
+---55	7	7	0	55
+---56	8	7	0	56
+---57	9	7	0	57
+---58	:	3	0	58
+---59	;	6	0	59
+---60	<	3	1	60
+---61	=	3	0	61
+---62	>	3	1	62
+---63	?	5	0	63
+---64	@	0	0	64
+---65	A	7	1	65
+---66	B	7	1	66
+---67	C	7	1	67
+---68	D	7	1	68
+---69	E	7	1	69
+---70	F	7	1	70
+---71	G	7	1	71
+---72	H	7	1	72
+---73	I	7	1	73
+---74	J	7	1	74
+---75	K	7	1	75
+---76	L	7	1	76
+---77	M	7	1	77
+---78	N	7	1	78
+---79	O	7	1	79
+---80	P	7	1	80
+---81	Q	7	1	81
+---82	R	7	1	82
+---83	S	7	1	83
+---84	T	7	1	84
+---85	U	7	1	85
+---86	V	7	1	86
+---87	W	7	1	87
+---88	X	7	1	88
+---89	Y	7	1	89
+---90	Z	7	1	90
+---91	[	4	0	91
+---92	\	0	2	110
+---93	]	5	0	93
+---94	^	0	0	94
+---95	_	8	0	0
+---96	`	0	0	96
+---97	a	7	1	97
+---98	b	7	1	98
+---99	c	7	1	99
+---100	d	7	1	100
+---101	e	7	1	101
+---102	f	7	1	102
+---103	g	7	1	103
+---104	h	7	1	104
+---105	i	7	1	105
+---106	j	7	1	106
+---107	k	7	1	107
+---108	l	7	1	108
+---109	m	7	1	109
+---110	n	7	1	110
+---111	o	7	1	111
+---112	p	7	1	112
+---113	q	7	1	113
+---114	r	7	1	114
+---115	s	7	1	115
+---116	t	7	1	116
+---117	u	7	1	117
+---118	v	7	1	118
+---119	w	7	1	119
+---120	x	7	1	120
+---121	y	7	1	121
+---122	z	7	1	122
+---123	{	4	2	102
+---124	|	0	2	106
+---125	}	5	2	103
+---126	~	0	0	126
+---127		1	2	115
+---128		0	0	128
+---```
+---
+---In math mode, the math atoms require more structure. Each symbol
+---originates from a different font and receives different spacing
+---based on its class (operator, binary infix, relation, etc.).
+---Following the typical style of the 1970s, these properties are
+---compactly packed into bit fields within a single integer called a
+---mathcode. The mathcode is usually expressed in hexadecimal so
+---that the fields can easily be pulled apart. The mathcode of `+` in
+---plain TeX is set as:
+---
+---```tex
+---\mathcode`\+="202B
+---```
+---
+---This means it is class 2 (binary infix) and fam0 (the Roman font).
+---The character hex is `2B`, which is the decimal `43`, the character
+---code for `+` in the Roman font encoding.
+---
+---The `mathcode` section in the
+---[plain.tex](https://mirrors.ctan.org/macros/plain/base/plain.tex)
+---format file:
+---
+---```tex
+---\mathcode`\^^?="1273 % \smallint
+---% INITEX sets up \mathcode x=x, for x=0..255, except that
+---% \mathcode x=x+"7100, for x = `A to `Z and `a to `z;
+---% \mathcode x=x+"7000, for x = `0 to `9.
+---% The following changes define internal codes as recommended
+---% in Appendix C of The TeXbook:
+---\mathcode`\^^@="2201 % \cdot
+---\mathcode`\^^A="3223 % \downarrow
+---\mathcode`\^^B="010B % \alpha
+---\mathcode`\^^C="010C % \beta
+---\mathcode`\^^D="225E % \land
+---\mathcode`\^^E="023A % \lnot
+---\mathcode`\^^F="3232 % \in
+---\mathcode`\^^G="0119 % \pi
+---\mathcode`\^^H="0115 % \lambda
+---\mathcode`\^^I="010D % \gamma
+---\mathcode`\^^J="010E % \delta
+---\mathcode`\^^K="3222 % \uparrow
+---\mathcode`\^^L="2206 % \pm
+---\mathcode`\^^M="2208 % \oplus
+---\mathcode`\^^N="0231 % \infty
+---\mathcode`\^^O="0140 % \partial
+---\mathcode`\^^P="321A % \subset
+---\mathcode`\^^Q="321B % \supset
+---\mathcode`\^^R="225C % \cap
+---\mathcode`\^^S="225B % \cup
+---\mathcode`\^^T="0238 % \forall
+---\mathcode`\^^U="0239 % \exists
+---\mathcode`\^^V="220A % \otimes
+---\mathcode`\^^W="3224 % \leftrightarrow
+---\mathcode`\^^X="3220 % \leftarrow
+---\mathcode`\^^Y="3221 % \rightarrow
+---\mathcode`\^^Z="8000 % \ne
+---\mathcode`\^^[="2205 % \diamond
+---\mathcode`\^^\="3214 % \le
+---\mathcode`\^^]="3215 % \ge
+---\mathcode`\^^^="3211 % \equiv
+---\mathcode`\^^_="225F % \lor
+---\mathcode`\ ="8000 % \space
+---\mathcode`\!="5021
+---\mathcode`\'="8000 % ^\prime
+---\mathcode`\(="4028
+---\mathcode`\)="5029
+---\mathcode`\*="2203 % \ast
+---\mathcode`\+="202B
+---\mathcode`\,="613B
+---\mathcode`\-="2200
+---\mathcode`\.="013A
+---\mathcode`\/="013D
+---\mathcode`\:="303A
+---\mathcode`\;="603B
+---\mathcode`\<="313C
+---\mathcode`\=="303D
+---\mathcode`\>="313E
+---\mathcode`\?="503F
+---\mathcode`\[="405B
+---\mathcode`\\="026E % \backslash
+---\mathcode`\]="505D
+---\mathcode`\_="8000 % \_
+---\mathcode`\{="4266
+---\mathcode`\|="026A
+---\mathcode`\}="5267
+---```
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [ltexlib.c#L3711](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3711)
+---* Corresponding plain TeX control sequence: [\mathcode](https://www.tug.org/utilities/plain/cseq.html#mathcode-rp)
+---* [tex.stackexchange.com](https://tex.stackexchange.com/a/109440)
 ---
----@type table
+---@type table<integer, MathCode>
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.mathcode = {}
 
 ---
----The table for `mathcode` is an array of 3 numbers, like this:
+---The table for `mathcode` is an array of 3 integers, like this:
 ---
 ---```lua
 ---{
@@ -2725,77 +3103,617 @@ tex.mathcode = {}
 ---@alias MathCode integer[]
 
 ---
----* Corresponding C source code: [ltexlib.c#L1524-L1561](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1524-L1561)
+---__class__:
+---
+---| Class | Meaning          | Example |
+---|-------|------------------|---------|
+---| 0     | Ordinary         | `/`     |
+---| 1     | Large operator   | `\sum`  |
+---| 2     | Binary operation | `+`     |
+---| 3     | Relation         | `=`     |
+---| 4     | Opening          | `(`     |
+---| 5     | Closing          | `)`     |
+---| 6     | Punctuation      | `,`     |
+---| 7     | Variable family  | `x`     |
+---
+---__family__:
+---
+---```tex
+---% Family 0 (Roman)
+---\font\tenrm=mdbchr7t at10pt
+---\font\sevenrm=mdbchr7t at7pt
+---\font\fiverm=mdbchr7t at5pt
+---\textfont0=\tenrm
+---\scriptfont0=\sevenrm
+---27
+---\scriptscriptfont0=\fiverm
+---\def\rm{\fam=0 \tenrm}
+---%
+---% Family 1 (Math italic)
+---\font\teni=mdbchri7m at10pt
+---\font\seveni=mdbchri7m at7pt
+---\font\fivei=mdbchri7m at5pt
+---\textfont1=\teni
+---\scriptfont1=\seveni
+---\scriptscriptfont1=\fivei
+---\def\mit{\fam=1}
+---%
+---% Family 2 (Math symbols)
+---\font\tensy=md-chr7y at10pt
+---\font\sevensy=md-chr7y at7pt
+---\font\fivesy=md-chr7y at5pt
+---\textfont2=\tensy
+---\scriptfont2=\
+---% Family 3 (Math extension)
+---\font\tenex=mdbchr7v at10pt
+---\font\sevenex=mdbchr7v at7pt
+---\font\fiveex=mdbchr7v at5pt
+---\textfont3=\tenex
+---\scriptfont3=\sevenex
+---\scriptscriptfont3=\fiveex
+---%
+---% Family 4 (Italic text)
+---\font\tenit=mdbchri7t at10pt
+---\font\sevenit=mdbchri7t at7pt
+---\font\fiveit=mdbchri7t at5pt
+---\textfont\itfam=\tenit
+---\scriptfont\itfam=\sevenit
+---\scriptscriptfont\itfam=\fiveit
+---\def\it{\fam=\itfam \tenit}
+---%
+---% Family 5 (Slanted text)
+---\font\tensl=mdbchro7t at10pt
+---\font\sevensl=mdbchro7t at7pt
+---\font\fivesl=mdbchro7t at5pt
+---\textfont\slfam=\tensl
+---\scriptfont\slfam=\sevensl
+---\scriptscriptfont\slfam=\fivesl
+---\def\sl{\fam=\slfam \tensl}
+---%
+---% Family 6 (Bold text)
+---\font\tenbf=mdbchb7t at10pt
+---\font\sevenbf=mdbchb7t at7pt
+---\font\fivebf=mdbchb7t at5pt
+---\textfont\bffam=\tenbf
+---\scriptfont\bffam=\sevenbf
+---\scriptscriptfont\bffam=\fivebf
+---\def\bf{\fam=\bffam \tenbf}
+---%
+---% Family 7 (Typewriter)
+---\font\tentt=cmtt10---%
+---\rm
+---% Sets normal roman font
+---\font\seventt=cmtt10 at7pt
+---\font\fivett=cmtt10 at5pt
+---\textfont\ttfam=\tentt
+---\scriptfont\ttfam=\seventt
+---\scriptscriptfont\ttfam=\fivett
+---\def\tt{\fam=\ttfam \tentt}
+---```sevensy
+---\scriptscriptfont2=\fivesy
+---\def\cal{\fam=2}
+---%
+---% Family 3 (Math extension)
+---\font\tenex=mdbchr7v at10pt
+---\font\sevenex=mdbchr7v at7pt
+---\font\fiveex=mdbchr7v at5pt
+---\textfont3=\tenex
+---\scriptfont3=\sevenex
+---\scriptscriptfont3=\fiveex
+---%
+---% Family 4 (Italic text)
+---\font\tenit=mdbchri7t at10pt
+---\font\sevenit=mdbchri7t at7pt
+---\font\fiveit=mdbchri7t at5pt
+---\textfont\itfam=\tenit
+---\scriptfont\itfam=\sevenit
+---\scriptscriptfont\itfam=\fiveit
+---\def\it{\fam=\itfam \tenit}
+---%
+---% Family 5 (Slanted text)
+---\font\tensl=mdbchro7t at10pt
+---\font\sevensl=mdbchro7t at7pt
+---\font\fivesl=mdbchro7t at5pt
+---\textfont\slfam=\tensl
+---\scriptfont\slfam=\sevensl
+---\scriptscriptfont\slfam=\fivesl
+---\def\sl{\fam=\slfam \tensl}
+---%
+---% Family 6 (Bold text)
+---\font\tenbf=mdbchb7t at10pt
+---\font\sevenbf=mdbchb7t at7pt
+---\font\fivebf=mdbchb7t at5pt
+---\textfont\bffam=\tenbf
+---\scriptfont\bffam=\sevenbf
+---\scriptscriptfont\bffam=\fivebf
+---\def\bf{\fam=\bffam \tenbf}
+---%
+---% Family 7 (Typewriter)
+---\font\tentt=cmtt10---%
+---\rm
+---% Sets normal roman font
+---\font\seventt=cmtt10 at7pt
+---\font\fivett=cmtt10 at5pt
+---\textfont\ttfam=\tentt
+---\scriptfont\ttfam=\seventt
+---\scriptscriptfont\ttfam=\fivett
+---\def\tt{\fam=\ttfam \tentt}
+---```
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L1524-1561](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1524-1561)
+---* Corresponding plain TeX control sequence: [\mathcode](https://www.tug.org/utilities/plain/cseq.html#mathcode-rp)
+---* Donald E. Knuth: The TeXbook, Page 154
+---* TUGboat, Volume 31 (2010), No. 1, Mathematical typefaces in TEX documents, Amit Raj Dhawan
 ---
 ---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
----@param char_code integer
----@param class integer
----@param family integer
----@param character integer
+---@param char_code integer  # The ASCII or UNICODE charcater code point.
+---@param class integer # The class to which a math character belongs (`0`: Ordinary, `1`: Large operator, `2`: Binary operation, `3`: Relation, `4`: Opening, `5`: Closing, `6`: Punctuation, `7`: Variable family).
+---@param family integer # TeX uses fonts from one or more of the sixteen font families to typeset mathematical characters. Each font family consists of three fonts — textfont, scriptfont, and scriptscriptfont. (`0`: Roman, `1`: Math italic, `2`: Math symbol, `3`: Math extension, `4`: Italic text, `5`: Slanted text, `6`: Bold text, `7`: Typewriter)
+---@param character integer # The character position
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.setmathcode(global, char_code, class, family, character) end
 
 ---
----* Corresponding C source code: [ltexlib.c#L1524-L1561](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1524-L1561)
+---__class__:
 ---
----@param char_code integer
----@param class integer
----@param family integer
----@param character integer
+---| Class | Meaning          | Example |
+---|-------|------------------|---------|
+---| 0     | Ordinary         | `/`     |
+---| 1     | Large operator   | `\sum`  |
+---| 2     | Binary operation | `+`     |
+---| 3     | Relation         | `=`     |
+---| 4     | Opening          | `(`     |
+---| 5     | Closing          | `)`     |
+---| 6     | Punctuation      | `,`     |
+---| 7     | Variable family  | `x`     |
+---
+---__family__:
+---
+---```tex
+---% Family 0 (Roman)
+---\font\tenrm=mdbchr7t at10pt
+---\font\sevenrm=mdbchr7t at7pt
+---\font\fiverm=mdbchr7t at5pt
+---\textfont0=\tenrm
+---\scriptfont0=\sevenrm
+---27
+---\scriptscriptfont0=\fiverm
+---\def\rm{\fam=0 \tenrm}
+---%
+---% Family 1 (Math italic)
+---\font\teni=mdbchri7m at10pt
+---\font\seveni=mdbchri7m at7pt
+---\font\fivei=mdbchri7m at5pt
+---\textfont1=\teni
+---\scriptfont1=\seveni
+---\scriptscriptfont1=\fivei
+---\def\mit{\fam=1}
+---%
+---% Family 2 (Math symbols)
+---\font\tensy=md-chr7y at10pt
+---\font\sevensy=md-chr7y at7pt
+---\font\fivesy=md-chr7y at5pt
+---\textfont2=\tensy
+---\scriptfont2=\
+---% Family 3 (Math extension)
+---\font\tenex=mdbchr7v at10pt
+---\font\sevenex=mdbchr7v at7pt
+---\font\fiveex=mdbchr7v at5pt
+---\textfont3=\tenex
+---\scriptfont3=\sevenex
+---\scriptscriptfont3=\fiveex
+---%
+---% Family 4 (Italic text)
+---\font\tenit=mdbchri7t at10pt
+---\font\sevenit=mdbchri7t at7pt
+---\font\fiveit=mdbchri7t at5pt
+---\textfont\itfam=\tenit
+---\scriptfont\itfam=\sevenit
+---\scriptscriptfont\itfam=\fiveit
+---\def\it{\fam=\itfam \tenit}
+---%
+---% Family 5 (Slanted text)
+---\font\tensl=mdbchro7t at10pt
+---\font\sevensl=mdbchro7t at7pt
+---\font\fivesl=mdbchro7t at5pt
+---\textfont\slfam=\tensl
+---\scriptfont\slfam=\sevensl
+---\scriptscriptfont\slfam=\fivesl
+---\def\sl{\fam=\slfam \tensl}
+---%
+---% Family 6 (Bold text)
+---\font\tenbf=mdbchb7t at10pt
+---\font\sevenbf=mdbchb7t at7pt
+---\font\fivebf=mdbchb7t at5pt
+---\textfont\bffam=\tenbf
+---\scriptfont\bffam=\sevenbf
+---\scriptscriptfont\bffam=\fivebf
+---\def\bf{\fam=\bffam \tenbf}
+---%
+---% Family 7 (Typewriter)
+---\font\tentt=cmtt10---%
+---\rm
+---% Sets normal roman font
+---\font\seventt=cmtt10 at7pt
+---\font\fivett=cmtt10 at5pt
+---\textfont\ttfam=\tentt
+---\scriptfont\ttfam=\seventt
+---\scriptscriptfont\ttfam=\fivett
+---\def\tt{\fam=\ttfam \tentt}
+---```sevensy
+---\scriptscriptfont2=\fivesy
+---\def\cal{\fam=2}
+---%
+---% Family 3 (Math extension)
+---\font\tenex=mdbchr7v at10pt
+---\font\sevenex=mdbchr7v at7pt
+---\font\fiveex=mdbchr7v at5pt
+---\textfont3=\tenex
+---\scriptfont3=\sevenex
+---\scriptscriptfont3=\fiveex
+---%
+---% Family 4 (Italic text)
+---\font\tenit=mdbchri7t at10pt
+---\font\sevenit=mdbchri7t at7pt
+---\font\fiveit=mdbchri7t at5pt
+---\textfont\itfam=\tenit
+---\scriptfont\itfam=\sevenit
+---\scriptscriptfont\itfam=\fiveit
+---\def\it{\fam=\itfam \tenit}
+---%
+---% Family 5 (Slanted text)
+---\font\tensl=mdbchro7t at10pt
+---\font\sevensl=mdbchro7t at7pt
+---\font\fivesl=mdbchro7t at5pt
+---\textfont\slfam=\tensl
+---\scriptfont\slfam=\sevensl
+---\scriptscriptfont\slfam=\fivesl
+---\def\sl{\fam=\slfam \tensl}
+---%
+---% Family 6 (Bold text)
+---\font\tenbf=mdbchb7t at10pt
+---\font\sevenbf=mdbchb7t at7pt
+---\font\fivebf=mdbchb7t at5pt
+---\textfont\bffam=\tenbf
+---\scriptfont\bffam=\sevenbf
+---\scriptscriptfont\bffam=\fivebf
+---\def\bf{\fam=\bffam \tenbf}
+---%
+---% Family 7 (Typewriter)
+---\font\tentt=cmtt10---%
+---\rm
+---% Sets normal roman font
+---\font\seventt=cmtt10 at7pt
+---\font\fivett=cmtt10 at5pt
+---\textfont\ttfam=\tentt
+---\scriptfont\ttfam=\seventt
+---\scriptscriptfont\ttfam=\fivett
+---\def\tt{\fam=\ttfam \tentt}
+---```
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L1524-L1561](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1524-L1561)
+---* Corresponding plain TeX control sequence: [\mathcode](https://www.tug.org/utilities/plain/cseq.html#mathcode-rp)
+---* Donald E. Knuth: The TeXbook, Page 154
+---* TUGboat, Volume 31 (2010), No. 1, Mathematical typefaces in TEX documents, Amit Raj Dhawan
+---
+---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
+---@param char_code integer # The ASCII or UNICODE charcater code point.
+---@param class integer # The class to which a math character belongs (`0`: Ordinary, `1`: Large operator, `2`: Binary operation, `3`: Relation, `4`: Opening, `5`: Closing, `6`: Punctuation, `7`: Variable family).
+---@param family integer # TeX uses fonts from one or more of the sixteen font families to typeset mathematical characters. Each font family consists of three fonts — textfont, scriptfont, and scriptscriptfont. (`0`: Roman, `1`: Math italic, `2`: Math symbol, `3`: Math extension, `4`: Italic text, `5`: Slanted text, `6`: Bold text, `7`: Typewriter)
+---@param character integer # The character position
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.setmathcode(global, char_code, class, family, character) end
 
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1524-L1561](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1524-L1561)
+---* Corresponding plain TeX control sequence: [\mathcode](https://www.tug.org/utilities/plain/cseq.html#mathcode-rp)
 ---
 ---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
----@param char_code integer
----@param math_code MathCode
+---@param char_code integer # The ASCII or UNICODE charcater code point.
+---@param math_code MathCode # A table with three integers (class, family, character).
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.setmathcode(global, char_code, math_code) end
 
 ---
----* Corresponding C source code: [ltexlib.c#L1524-L1561](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1524-L1561)
+---__Reference:__
 ---
----@param char_code integer
----@param math_code MathCode
+---* Corresponding C source code: [ltexlib.c#L1524-L1561](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1524-L1561)
+---* Corresponding plain TeX control sequence: [\mathcode](https://www.tug.org/utilities/plain/cseq.html#mathcode-rp)
+---
+---@param char_code integer  # The ASCII or UNICODE charcater code point.
+---@param math_code MathCode # A table with three integers (class, family, character).
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.setmathcode(char_code, math_code) end
 
 ---
+---Retrieve the math code of a character as a table with three integers (class, family, character).
+---
+---__Examples from The TeXBook, page 154__:
+---
+---`\mathcode‘<="313C`
+---
+---* ASCII `<`: 60 (decimal) 3C (hexadecimal)
+---* class: 3
+---* family: 1
+---* character: 60
+---
+---```lua
+---local mathcode = tex.getmathcode(60)
+---print(mathcode[1], mathcode[2], mathcode[3]) -- 3 1 60
+---```
+---
+---`\mathcode‘*="2203`
+---
+---* ASCII `*`: 42 (decimal) 2A (hexadecimal)
+---* class: 2
+---* family: 2
+---* character: 3
+---
+---```lua
+---local mathcode = tex.getmathcode(42)
+---print(mathcode[1], mathcode[2], mathcode[3]) -- 2 2 3
+---```
+---
+---__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1563-L1577](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1563-L1577)
+---* Corresponding plain TeX control sequence: [\mathcode](https://www.tug.org/utilities/plain/cseq.html#mathcode-rp)
 ---
 ---@param char_code integer
 ---
----@return MathCode math_code
+---@return MathCode math_code # A table with three integers (class, family, character).
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.getmathcode(char_code) end
 
 ---
+---Retrieve the math code of a character as three integers (class, family, character).
+---
+---__Examples from The TeXBook, page 154__:
+---
+---`\mathcode‘<="313C`
+---
+---* ASCII `<`: 60 (decimal) 3C (hexadecimal)
+---* class: 3
+---* family: 1
+---* character: 60
+---
+---```lua
+---print(tex.getmathcodes(60)) -- 3 1 60
+---```
+---
+---`\mathcode‘*="2203`
+---
+---* ASCII `*`: 42 (decimal) 2A (hexadecimal)
+---* class: 2
+---* family: 2
+---* character: 3
+---
+---```lua
+---print(tex.getmathcodes(42)) -- 2 2 3
+---```
+---
+---__class__:
+---
+---| Class | Meaning          | Example |
+---|-------|------------------|---------|
+---| 0     | Ordinary         | `/`     |
+---| 1     | Large operator   | `\sum`  |
+---| 2     | Binary operation | `+`     |
+---| 3     | Relation         | `=`     |
+---| 4     | Opening          | `(`     |
+---| 5     | Closing          | `)`     |
+---| 6     | Punctuation      | `,`     |
+---| 7     | Variable family  | `x`     |
+---
+---__family__:
+---
+---```tex
+---% Family 0 (Roman)
+---\font\tenrm=mdbchr7t at10pt
+---\font\sevenrm=mdbchr7t at7pt
+---\font\fiverm=mdbchr7t at5pt
+---\textfont0=\tenrm
+---\scriptfont0=\sevenrm
+---27
+---\scriptscriptfont0=\fiverm
+---\def\rm{\fam=0 \tenrm}
+---%
+---% Family 1 (Math italic)
+---\font\teni=mdbchri7m at10pt
+---\font\seveni=mdbchri7m at7pt
+---\font\fivei=mdbchri7m at5pt
+---\textfont1=\teni
+---\scriptfont1=\seveni
+---\scriptscriptfont1=\fivei
+---\def\mit{\fam=1}
+---%
+---% Family 2 (Math symbols)
+---\font\tensy=md-chr7y at10pt
+---\font\sevensy=md-chr7y at7pt
+---\font\fivesy=md-chr7y at5pt
+---\textfont2=\tensy
+---\scriptfont2=\
+---% Family 3 (Math extension)
+---\font\tenex=mdbchr7v at10pt
+---\font\sevenex=mdbchr7v at7pt
+---\font\fiveex=mdbchr7v at5pt
+---\textfont3=\tenex
+---\scriptfont3=\sevenex
+---\scriptscriptfont3=\fiveex
+---%
+---% Family 4 (Italic text)
+---\font\tenit=mdbchri7t at10pt
+---\font\sevenit=mdbchri7t at7pt
+---\font\fiveit=mdbchri7t at5pt
+---\textfont\itfam=\tenit
+---\scriptfont\itfam=\sevenit
+---\scriptscriptfont\itfam=\fiveit
+---\def\it{\fam=\itfam \tenit}
+---%
+---% Family 5 (Slanted text)
+---\font\tensl=mdbchro7t at10pt
+---\font\sevensl=mdbchro7t at7pt
+---\font\fivesl=mdbchro7t at5pt
+---\textfont\slfam=\tensl
+---\scriptfont\slfam=\sevensl
+---\scriptscriptfont\slfam=\fivesl
+---\def\sl{\fam=\slfam \tensl}
+---%
+---% Family 6 (Bold text)
+---\font\tenbf=mdbchb7t at10pt
+---\font\sevenbf=mdbchb7t at7pt
+---\font\fivebf=mdbchb7t at5pt
+---\textfont\bffam=\tenbf
+---\scriptfont\bffam=\sevenbf
+---\scriptscriptfont\bffam=\fivebf
+---\def\bf{\fam=\bffam \tenbf}
+---%
+---% Family 7 (Typewriter)
+---\font\tentt=cmtt10---%
+---\rm
+---% Sets normal roman font
+---\font\seventt=cmtt10 at7pt
+---\font\fivett=cmtt10 at5pt
+---\textfont\ttfam=\tentt
+---\scriptfont\ttfam=\seventt
+---\scriptscriptfont\ttfam=\fivett
+---\def\tt{\fam=\ttfam \tentt}
+---```sevensy
+---\scriptscriptfont2=\fivesy
+---\def\cal{\fam=2}
+---%
+---% Family 3 (Math extension)
+---\font\tenex=mdbchr7v at10pt
+---\font\sevenex=mdbchr7v at7pt
+---\font\fiveex=mdbchr7v at5pt
+---\textfont3=\tenex
+---\scriptfont3=\sevenex
+---\scriptscriptfont3=\fiveex
+---%
+---% Family 4 (Italic text)
+---\font\tenit=mdbchri7t at10pt
+---\font\sevenit=mdbchri7t at7pt
+---\font\fiveit=mdbchri7t at5pt
+---\textfont\itfam=\tenit
+---\scriptfont\itfam=\sevenit
+---\scriptscriptfont\itfam=\fiveit
+---\def\it{\fam=\itfam \tenit}
+---%
+---% Family 5 (Slanted text)
+---\font\tensl=mdbchro7t at10pt
+---\font\sevensl=mdbchro7t at7pt
+---\font\fivesl=mdbchro7t at5pt
+---\textfont\slfam=\tensl
+---\scriptfont\slfam=\sevensl
+---\scriptscriptfont\slfam=\fivesl
+---\def\sl{\fam=\slfam \tensl}
+---%
+---% Family 6 (Bold text)
+---\font\tenbf=mdbchb7t at10pt
+---\font\sevenbf=mdbchb7t at7pt
+---\font\fivebf=mdbchb7t at5pt
+---\textfont\bffam=\tenbf
+---\scriptfont\bffam=\sevenbf
+---\scriptscriptfont\bffam=\fivebf
+---\def\bf{\fam=\bffam \tenbf}
+---%
+---% Family 7 (Typewriter)
+---\font\tentt=cmtt10---%
+---\rm
+---% Sets normal roman font
+---\font\seventt=cmtt10 at7pt
+---\font\fivett=cmtt10 at5pt
+---\textfont\ttfam=\tentt
+---\scriptfont\ttfam=\seventt
+---\scriptscriptfont\ttfam=\fivett
+---\def\tt{\fam=\ttfam \tentt}
+---```
+---
+---__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1579-L1589](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1579-L1589)
+---* Corresponding plain TeX control sequence: [\mathcode](https://www.tug.org/utilities/plain/cseq.html#mathcode-rp)
+---* Donald E. Knuth: The TeXbook, Page 154
+---* TUGboat, Volume 31 (2010), No. 1, Mathematical typefaces in TEX documents, Amit Raj Dhawan
 ---
 ---@param char_code integer
 ---
----@return integer class
----@return integer family
----@return integer character
+---@return integer class # The class to which a math character belongs (`0`: Ordinary, `1`: Large operator, `2`: Binary operation, `3`: Relation, `4`: Opening, `5`: Closing, `6`: Punctuation, `7`: Variable family).
+---@return integer family # TeX uses fonts from one or more of the sixteen font families to typeset mathematical characters. Each font family consists of three fonts — textfont, scriptfont, and scriptscriptfont. (`0`: Roman, `1`: Math italic, `2`: Math symbol, `3`: Math extension, `4`: Italic text, `5`: Slanted text, `6`: Bold text, `7`: Typewriter)
+---@return integer character # The character position
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.getmathcodes(char_code) end
 
 ---
----*TeX*'s character code tables `delcode` (delimiter code) can be accessed and written to using
+---The *TeX*'s character code tables `delcode` (delimiter code) can be accessed and written to using
 ---a virtual subtable of the `tex` table.
+---
+
+---
+---```lua
+---for i=1,128 do
+---  local delcode = tex.delcode[i]
+---  print(i, utf8.char(i), delcode[1], delcode[2], delcode[3], delcode[4])
+---end
+---```
+---
+---Output:
+---
+---```
+---1		-1	0	0	0
+---...
+---40	(	0	40	3	0
+---41	)	0	41	3	1
+---...
+---47	/	0	47	3	14
+---...
+---60	<	2	104	3	10
+---61	=	-1	0	0	0
+---62	>	2	105	3	11
+---...
+---91	[	0	91	3	2
+---92	\	2	110	3	15
+---93	]	0	93	3	3
+---...
+---124	|	2	106	3	12
+---...
+---```
+---
+---The `delcode` section in the
+---[plain.tex](https://mirrors.ctan.org/macros/plain/base/plain.tex)
+---format file:
+---
+---```tex
+---% Finally, INITEX sets all \delcode values to -1, except \delcode`.=0
+---\delcode`\(="028300
+---\delcode`\)="029301
+---\delcode`\[="05B302
+---\delcode`\]="05D303
+---\delcode`\<="26830A
+---\delcode`\>="26930B
+---\delcode`\/="02F30E
+---\delcode`\|="26A30C
+---\delcode`\\="26E30F
+---% N.B. { and } should NOT get delcodes; otherwise parameter grouping fails!
+---```
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [ltexlib.c#L3712](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3712)
+---* Corresponding plain TeX control sequence: [\delcode](https://www.tug.org/utilities/plain/cseq.html#delcode-rp)
 ---
----@type table
+---@type table<integer, DelCode>
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 tex.delcode = {}
 
 ---
----And the table for `delcode` (delimiter code) is an array with 4 numbers, like this:
+---The table for `delcode` (delimiter code) is an array with 4 numbers, like this:
 ---
 ---```lua
 ---{
@@ -2805,11 +3723,15 @@ tex.delcode = {}
 ---    -- large_character
 ---}
 ---```
+---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias DelCode integer[]
 
 ---
+----__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1640-L1681](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1640-L1681)
+---* Corresponding plain TeX control sequence: [\delcode](https://www.tug.org/utilities/plain/cseq.html#delcode-rp)
 ---
 ---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
 ---@param char_code integer
@@ -2821,7 +3743,10 @@ tex.delcode = {}
 function tex.setdelcode(global, char_code, small_family, small_character, large_family, large_character) end
 
 ---
+----__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1640-L1681](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1640-L1681)
+---* Corresponding plain TeX control sequence: [\delcode](https://www.tug.org/utilities/plain/cseq.html#delcode-rp)
 ---
 ---@param char_code integer
 ---@param small_family integer
@@ -2833,6 +3758,7 @@ function tex.setdelcode(char_code, small_family, small_character, large_family, 
 
 ---
 ---* Corresponding C source code: [ltexlib.c#L1640-L1681](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1640-L1681)
+---* Corresponding plain TeX control sequence: [\delcode](https://www.tug.org/utilities/plain/cseq.html#delcode-rp)
 ---
 ---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
 ---@param char_code integer
@@ -2841,7 +3767,10 @@ function tex.setdelcode(char_code, small_family, small_character, large_family, 
 function tex.setdelcode(global, char_code, del_code) end
 
 ---
+----__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1640-L1681](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1640-L1681)
+---* Corresponding plain TeX control sequence: [\delcode](https://www.tug.org/utilities/plain/cseq.html#delcode-rp)
 ---
 ---@param char_code integer
 ---@param del_code DelCode
@@ -2850,6 +3779,7 @@ function tex.setdelcode(char_code, del_code) end
 
 ---
 ---* Corresponding C source code: [ltexlib.c#L1701-L1712](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1701-L1712)
+---* Corresponding plain TeX control sequence: [\delcode](https://www.tug.org/utilities/plain/cseq.html#delcode-rp)
 ---
 ---@param char_code integer
 ---
@@ -2861,7 +3791,10 @@ function tex.setdelcode(char_code, del_code) end
 function tex.getdelcodes(char_code) end
 
 ---
+----__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1683-L1699](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1683-L1699)
+---* Corresponding plain TeX control sequence: [\delcode](https://www.tug.org/utilities/plain/cseq.html#delcode-rp)
 ---
 ---@param char_code integer
 ---
@@ -2873,17 +3806,18 @@ function tex.getdelcode(char_code) end
 ---__Reference:__
 ---
 ---* Corresponding C source code: [ltexlib.c#L3706](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3706)
+---* Corresponding plain TeX control sequence: [\box](https://www.tug.org/utilities/plain/cseq.html#box-rp)
 ---
+---@type table<integer, Node>
 tex.box = {}
 
 ---
 ---Set a box, coming for instance from `hbox`, `vbox` or `vtop`.
 ---
----It is possible to
----define values globally by using the string `global` as the first function
----argument.
+---__Reference:__
 ---
 ---* Corresponding C source code: [ltexlib.c#L1352-L1362](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1352-L1362)
+---* Corresponding plain TeX control sequence: [\setbox](https://www.tug.org/utilities/plain/cseq.html#setbox-rp)
 ---
 ---@param global 'global' # It is possible to define values globally by using the string `global` as the first function argument.
 ---@param register integer # A box register number (0 to 65535).
@@ -2894,11 +3828,10 @@ function tex.setbox(global, register, head) end
 ---
 ---Set a box, coming for instance from `hbox`, `vbox` or `vtop`.
 ---
----It is possible to
----define values globally by using the string `global` as the first function
----argument.
+---__Reference:__
 ---
 ---* Corresponding C source code: [ltexlib.c#L1352-L1362](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1352-L1362)
+---* Corresponding plain TeX control sequence: [\setbox](https://www.tug.org/utilities/plain/cseq.html#setbox-rp)
 ---
 ---@param register integer # A box register number (0 to 65535).
 ---@param head Node # A `hlist` or `vlist` node.
@@ -2908,7 +3841,10 @@ function tex.setbox(register, head) end
 ---
 ---Query an actual box, coming for instance from `hbox`, `vbox` or `vtop`.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [ltexlib.c#L1272-L1280](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1272-L1280)
+---* Corresponding plain TeX control sequence: [\box](https://www.tug.org/utilities/plain/cseq.html#box-rp)
 ---
 ---@param register integer|string # A box register number (0 to 65535) or a cs name (for example `\newbox\MyBox`: `MyBox`)
 ---
@@ -2925,6 +3861,8 @@ function tex.getbox(register) end
 ---print(tex.isbox(65535)) -- true
 ---print(tex.isbox(65536)) -- false
 ---```
+---
+---__Reference:__
 ---
 ---* Corresponding C source code: [ltexlib.c#L1310-L1315](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1310-L1315)
 ---
