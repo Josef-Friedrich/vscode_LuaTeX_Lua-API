@@ -23,7 +23,7 @@ tex = {}
 ---| 'displaywidowpenalty' # Extra penalty for breaking a page before the last line above a display formula. The default value in Plain TeX is `50`.
 ---| 'doublehyphendemerits' # Penalty for consecutive lines ending with a hyphen. Default: `10000`.
 ---| 'endlinechar' # The character code of the end-of-line character appended to input lines. IniTEX default: `13`.
----| 'errorcontextlines' # (TEX3 only) Number of additional context lines shown in error messages.
+---| 'errorcontextlines' # (TeX3 only) Number of additional context lines shown in error messages.
 ---| 'escapechar' # Number of the character that is to be used for the escape character when control sequences are being converted into character tokens. IniTEX default: `92` (`\`).
 ---| 'exhyphenpenalty' # Penalty for breaking a horizontal line at a discretionary item in the special case where the prebreak text is empty. Default: `50`.
 ---| 'fam' # The number of the current font family.
@@ -32,12 +32,12 @@ tex = {}
 ---| 'globaldefs' # Parameter for overriding \global prefixes. IniTEX default: `0`.
 ---| 'hangafter' # If positive, this denotes the number of lines before indenting starts; if negative, the absolute value of this is the number of indented lines starting with the first line of the paragraph. Default: `1`.
 ---| 'hbadness' # Amount of tolerance before TEX reports an underfull or overfull horizontal box.
----| 'holdinginserts' # (TEX3 only) If this is positive, insertions are not placed in their boxes at output time.
+---| 'holdinginserts' # (TeX3 only) If this is positive, insertions are not placed in their boxes at output time.
 ---| 'hyphenpenalty' # Penalty associated with break at a discretionary item in the general case. Default: `50`.
 ---| 'interlinepenalty' # Penalty for breaking a page between lines of a paragraph. Default: `0`
 ---| 'language' # Choose a set of hyphenation patterns and exceptions.
 ---| 'lastlinefit' # A readable and writable integer parameter that accepts and returns Lua numbers.
----| 'lefthyphenmin' # (TEX3 only) Minimal number of characters before a hyphenation. Default: `2`.
+---| 'lefthyphenmin' # (TeX3 only) Minimal number of characters before a hyphenation. Default: `2`.
 ---| 'linepenalty' # Penalty value associated with each line break. Default: `10`.
 ---| 'localbrokenpenalty' # Local broken penalty (from `\localbrokenpenalty`)
 ---| 'localinterlinepenalty' # Local interline penalty (from `\localinterlinepenalty`)
@@ -53,7 +53,7 @@ tex = {}
 ---| 'predisplaypenalty' # Penalty placed in the vertical list above a display. Default: `10000`.
 ---| 'pretolerance' # Tolerance value for a paragraph without hyphenation. Default: `100`.
 ---| 'relpenalty' # Penalty for breaking after a binary relation not enclosed in a subformula. Default: `500`
----| 'righthyphenmin' # (TEX3 only) Minimum number of characters after a hyphenation. Default: `3`.
+---| 'righthyphenmin' # (TeX3 only) Minimum number of characters after a hyphenation. Default: `3`.
 ---| 'savinghyphcodes' # When a `\patterns` command is executed and \savinghyphcodes has a positive value, the current `\lccode` values are saved as hyphenation codes for the current language.
 ---| 'savingvdiscards' # When ε-TEX’s parameter `\savingvdiscards` has been assigned a positive value, these ‘discarded items’ are saved in two lists and can be recovered by the commands `\pagediscards` and `\splitdiscards` that act like ‘unvboxing’ hypothetical box registers containing a vbox with the discarded items.
 ---| 'showboxbreadth' # Number of successive elements on each level that are shown when boxes are displayed.
@@ -109,7 +109,7 @@ tex = {}
 ---| 'delimitershortfall' # Size of the part of a delimited formula that is allowed to go uncovered by a delimiter. Default: `5pt`.
 ---| 'displayindent' # Distance by which the box, in which the display is centred, is indented owing to hanging indentation.
 ---| 'displaywidth' # Width of the box in which the display is centred.
----| 'emergencystretch' # (TEX3 only) Assumed extra stretchability in lines of a paragraph.
+---| 'emergencystretch' # (TeX3 only) Assumed extra stretchability in lines of a paragraph.
 ---| 'hangindent' # If positive, this indicates indentation from the left margin; if negative, this is the negative of the indentation from the right margin.
 ---| 'hfuzz' # Excess size that TeX tolerates before it considers a horizontal box overfull.
 ---| 'hoffset' # Distance by which the page is shifted right with respect to the reference point.
@@ -289,7 +289,8 @@ function tex.set(parameter, ...) end
 function tex.get(parameter, opts) end
 
 ---
----`\adjdemerits`: Penalty for adjacent visually incompatible lines. Default: `10000`.
+---`\adjdemerits`: Penalty for adjacent visually incompatible lines.
+---Default: `10000`.
 ---
 ---__Reference:__
 ---
@@ -301,7 +302,8 @@ function tex.get(parameter, opts) end
 tex.adjdemerits = 0
 
 ---
----`\binoppenalty`: Penalty for breaking after a binary operator not enclosed in a subformula. Default: `700`
+---`\binoppenalty`: Penalty for breaking after a binary operator not
+---enclosed in a subformula. Default: `700`
 ---
 ---__Reference:__
 ---
@@ -313,7 +315,8 @@ tex.adjdemerits = 0
 tex.binoppenalty = 0
 
 ---
----`\brokenpenalty`: Additional penalty for breaking a page after a hyphenated line. Default: `100`
+---`\brokenpenalty`: Additional penalty for breaking a page after a
+---hyphenated line. Default: `100`.
 ---
 ---__Reference:__
 ---
@@ -334,7 +337,12 @@ tex.brokenpenalty = 0
 tex.catcodetable = 0
 
 ---
----`\clubpenalty`: Extra penalty for breaking a page after the first line of a paragraph. In Plain TeX this is `150`. This amount, and the following penalties, are added to the `\interlinepenalty`, and a penalty of the resulting size is inserted after the `\hbox` containing the first line of a paragraph instead of the `\interlinepenalty`.
+---`\clubpenalty`: Extra penalty for breaking a page after the first
+---line of a paragraph. In Plain TeX this is `150`. This amount, and the
+---following penalties, are added to the `\interlinepenalty`, and a
+---penalty of the resulting size is inserted after the `\hbox`
+---containing the first line of a paragraph instead of the
+---`\interlinepenalty`.
 ---
 ---__Reference:__
 ---
@@ -358,7 +366,8 @@ tex.clubpenalty = 0
 tex.day = 0
 
 ---
----`\defaulthyphenchar`: Value of `\hyphenchar` when a font is loaded. Default: `‘\-`.
+---`\defaulthyphenchar`: Value of `\hyphenchar` when a font is loaded.
+---Default: `‘\-`.
 ---
 ---__Reference:__
 ---
@@ -382,7 +391,8 @@ tex.defaulthyphenchar = 0
 tex.defaultskewchar = 0
 
 ---
----`\delimiterfactor`: `1000` times the fraction of a delimited formula that should be covered by a delimiter. Default: `901`
+---`\delimiterfactor`: `1000` times the fraction of a delimited formula
+---that should be covered by a delimiter. Default: `901`.
 ---
 ---__Reference:__
 ---
@@ -394,7 +404,9 @@ tex.defaultskewchar = 0
 tex.delimiterfactor = 0
 
 ---
----`\displaywidowpenalty`: Extra penalty for breaking a page before the last line above a display formula. The default value in Plain TeX is `50`.
+---`\displaywidowpenalty`: Extra penalty for breaking a page before the
+---last line above a display formula. The default value in Plain TeX
+---is `50`.
 ---
 ---__Reference:__
 ---
@@ -406,7 +418,8 @@ tex.delimiterfactor = 0
 tex.displaywidowpenalty = 0
 
 ---
----`\doublehyphendemerits`: Penalty for consecutive lines ending with a hyphen. Default: `10000`.
+---`\doublehyphendemerits`: Penalty for consecutive lines ending with a
+---hyphen. Default: `10000`.
 ---
 ---__Reference:__
 ---
@@ -418,7 +431,8 @@ tex.displaywidowpenalty = 0
 tex.doublehyphendemerits = 0
 
 ---
----`\endlinechar`: The character code of the end-of-line character appended to input lines. IniTEX default: `13`.
+---`\endlinechar`: The character code of the end-of-line character
+---appended to input lines. IniTEX default: `13`.
 ---
 ---@type integer # A readable and writable integer parameter that accepts and returns Lua numbers.
 ---
@@ -426,7 +440,8 @@ tex.doublehyphendemerits = 0
 tex.endlinechar = 0
 
 ---
----`\errorcontextlines`: (TEX3 only) Number of additional context lines shown in error messages.
+---`\errorcontextlines`: (TeX3 only) Number of additional context lines
+---shown in error messages.
 ---
 ---__Reference:__
 ---
@@ -438,7 +453,9 @@ tex.endlinechar = 0
 tex.errorcontextlines = 0
 
 ---
----`\escapechar`: Number of the character that is to be used for the escape character when control sequences are being converted into character tokens. IniTEX default: `92` (`\`).
+---`\escapechar`: Number of the character that is to be used for the
+---escape character when control sequences are being converted into
+---character tokens. IniTEX default: `92` (`\`).
 ---
 ---__Reference:__
 ---
@@ -450,7 +467,9 @@ tex.errorcontextlines = 0
 tex.escapechar = 0
 
 ---
----`\exhyphenpenalty`: Penalty for breaking a horizontal line at a discretionary item in the special case where the prebreak text is empty. Default: `50`.
+---`\exhyphenpenalty`: Penalty for breaking a horizontal line at a
+---discretionary item in the special case where the prebreak text is
+---empty. Default: `50`.
 ---
 ---__Reference:__
 ---
@@ -474,7 +493,8 @@ tex.exhyphenpenalty = 0
 tex.fam = 0
 
 ---
----`\finalhyphendemerits`: Penalty added when the penultimate line of a paragraph ends with a hyphen. Default: `5000`.
+---`\finalhyphendemerits`: Penalty added when the penultimate line of a
+---paragraph ends with a hyphen. Default: `5000`.
 ---
 ---__Reference:__
 ---
@@ -498,9 +518,17 @@ tex.finalhyphendemerits = 0
 tex.floatingpenalty = 0
 
 ---
----`\globaldefs`: Parameter for overriding \global prefixes. IniTEX default: `0`.
+---`\globaldefs`: Parameter for overriding \global prefixes.
+---IniTEX default: `0`.
 ---
----`\globaldefs` is a TeX internal parameter. Normally set to 0. If set equal to a positive number, all following definitions and assignments are treated as if preceded by `\global`. If set equal to a negative number, none of the following definitions or assignments are global, meaning that an explicit `\global` is ignored. This remains in effect until `\globaldefs` is explicitly set to 0 again, or the group containing the `\globaldefs` reassignment ends (assuming it was not made global as well).
+---`\globaldefs` is a TeX internal parameter. Normally set to `0`. If
+---set equal to a positive number, all following definitions and
+---assignments are treated as if preceded by `\global`. If set equal to
+---a negative number, none of the following definitions or assignments
+---are global, meaning that an explicit `\global` is ignored. This
+---remains in effect until `\globaldefs` is explicitly set to `0`
+---again, or the group containing the `\globaldefs` reassignment ends
+---(assuming it was not made global as well).
 ---
 ---__Reference:__
 ---
@@ -513,10 +541,10 @@ tex.floatingpenalty = 0
 tex.globaldefs = 0
 
 ---
----`\hangafter`: If positive, this denotes the number of lines before indenting starts; if negative, the absolute value of this is the number of indented lines starting with the first line of the paragraph. Default: `1`.
----
----A readable and writable integer parameter that accepts and returns
----Lua numbers.
+---`\hangafter`: If positive, this denotes the number of lines before
+---indenting starts; if negative, the absolute value of this is the
+---number of indented lines starting with the first line of the
+---paragraph. Default: `1`.
 ---
 ---__Reference:__
 ---
@@ -528,7 +556,8 @@ tex.globaldefs = 0
 tex.hangafter = 0
 
 ---
----`\hbadness`: Amount of tolerance before TEX reports an underfull or overfull horizontal box.
+---`\hbadness`: Amount of tolerance before TEX reports an underfull or
+---overfull horizontal box.
 ---
 ---__Reference:__
 ---
@@ -540,7 +569,8 @@ tex.hangafter = 0
 tex.hbadness = 0
 
 ---
----`\holdinginserts` (TEX3 only) If this is positive, insertions are not placed in their boxes at output time.
+---`\holdinginserts` (TeX3 only) If this is positive, insertions are
+---not placed in their boxes at output time.
 ---
 ---__Reference:__
 ---
@@ -552,7 +582,8 @@ tex.hbadness = 0
 tex.holdinginserts = 0
 
 ---
----`\hyphenpenalty`: Penalty associated with break at a discretionary item in the general case. Default: `50`.
+---`\hyphenpenalty`: Penalty associated with break at a discretionary
+---item in the general case. Default: `50`.
 ---
 ---__Reference:__
 ---
@@ -564,7 +595,8 @@ tex.holdinginserts = 0
 tex.hyphenpenalty = 0
 
 ---
----`\interlinepenalty`: Penalty for breaking a page between lines of a paragraph. Default: `0`
+---`\interlinepenalty`: Penalty for breaking a page between lines of a
+---paragraph. Default: `0`.
 ---
 ---__Reference:__
 ---
@@ -594,7 +626,8 @@ tex.language = 0
 tex.lastlinefit = 0
 
 ---
----`\lefthyphenmin` (TEX3 only) Minimal number of characters before a hyphenation. Default: `2`.
+---`\lefthyphenmin` (TeX3 only) Minimal number of characters before a
+---hyphenation. Default: `2`.
 ---
 ---__Reference:__
 ---
@@ -606,7 +639,8 @@ tex.lastlinefit = 0
 tex.lefthyphenmin = 0
 
 ---
----`\linepenalty`: Penalty value associated with each line break. Default: `10`.
+---`\linepenalty`: Penalty value associated with each line break.
+---Default: `10`.
 ---
 ---__Reference:__
 ---
@@ -634,7 +668,8 @@ tex.localbrokenpenalty = 0
 tex.localinterlinepenalty = 0
 
 ---
----`\looseness`: Number of lines by which this paragraph has to be made longer than it would be ideally.
+---`\looseness`: Number of lines by which this paragraph has to be made
+---longer than it would be ideally.
 ---
 ---__Reference:__
 ---
@@ -658,7 +693,9 @@ tex.looseness = 0
 tex.mag = 0
 
 ---
----`\maxdeadcycles`: The maximum number of times that the output routine is allowed to be called without a `\shipout` occurring. IniTEX default: `25`.
+---`\maxdeadcycles`: The maximum number of times that the output
+---routine is allowed to be called without a `\shipout` occurring.
+---IniTEX default: `25`.
 ---
 ---__Reference:__
 ---
@@ -682,7 +719,8 @@ tex.maxdeadcycles = 0
 tex.month = 0
 
 ---
----`\newlinechar`: Number of the character that triggers a new line in `\write` statements.
+---`\newlinechar`: Number of the character that triggers a new line
+---in `\write` statements.
 ---
 ---__Reference:__
 ---
@@ -694,7 +732,8 @@ tex.month = 0
 tex.newlinechar = 0
 
 ---
----`\outputpenalty`: Value of the penalty at the current page break, or `10000` if the break was not at a penalty.
+---`\outputpenalty`: Value of the penalty at the current page break,
+---or `10000` if the break was not at a penalty.
 ---
 ---__Reference:__
 ---
@@ -706,7 +745,8 @@ tex.newlinechar = 0
 tex.outputpenalty = 0
 
 ---
----`\pausing`: Specify that TEX should pause after each line that is read from a file.
+---`\pausing`: Specify that TEX should pause after each line that is
+---read from a file.
 ---
 ---__Reference:__
 ---
@@ -718,7 +758,8 @@ tex.outputpenalty = 0
 tex.pausing = 0
 
 ---
----`\postdisplaypenalty`: Penalty placed in the vertical list below a display. Default: `0`
+---`\postdisplaypenalty`: Penalty placed in the vertical list below a
+---display. Default: `0`
 ---
 ---__Reference:__
 ---
@@ -730,7 +771,10 @@ tex.pausing = 0
 tex.postdisplaypenalty = 0
 
 ---
----`\predisplaydirection`: An internal read/write integer, to indicate the direction of the last partial paragraph before a display; it is used to control the placement of elements such as equation numbers, and can be explictly set to affect this placement.
+---`\predisplaydirection`: An internal read/write integer, to indicate
+---the direction of the last partial paragraph before a display; it is
+---used to control the placement of elements such as equation numbers,
+---and can be explictly set to affect this placement.
 ---
 ---__Reference:__
 ---
@@ -743,7 +787,8 @@ tex.postdisplaypenalty = 0
 tex.predisplaydirection = 0
 
 ---
----`\predisplaypenalty`: Penalty placed in the vertical list above a display. Default: `10000`.
+---`\predisplaypenalty`: Penalty placed in the vertical list above a
+---display. Default: `10000`.
 ---
 ---__Reference:__
 ---
@@ -755,7 +800,8 @@ tex.predisplaydirection = 0
 tex.predisplaypenalty = 0
 
 ---
----`\pretolerance`: Tolerance value for a paragraph without hyphenation. Default: `100`.
+---`\pretolerance`: Tolerance value for a paragraph without
+---hyphenation. Default: `100`.
 ---
 ---__Reference:__
 ---
@@ -767,7 +813,8 @@ tex.predisplaypenalty = 0
 tex.pretolerance = 0
 
 ---
----`\relpenalty`: Penalty for breaking after a binary relation not enclosed in a subformula. Default: `500`
+---`\relpenalty`: Penalty for breaking after a binary relation not
+---enclosed in a subformula. Default: `500`
 ---
 ---__Reference:__
 ---
@@ -779,7 +826,8 @@ tex.pretolerance = 0
 tex.relpenalty = 0
 
 ---
----`\righthyphenmin`: (TEX3 only) Minimum number of characters after a hyphenation. Default: `3`.
+---`\righthyphenmin`: (TeX3 only) Minimum number of characters after a
+---hyphenation. Default: `3`.
 ---
 ---__Reference:__
 ---
@@ -791,7 +839,9 @@ tex.relpenalty = 0
 tex.righthyphenmin = 0
 
 ---
----When a `\patterns` command is executed and \savinghyphcodes has a positive value, the current `\lccode` values are saved as hyphenation codes for the current language.
+---When a `\patterns` command is executed and \savinghyphcodes has a
+---positive value, the current `\lccode` values are saved as
+---hyphenation codes for the current language.
 ---
 ---__Reference:__
 ---
@@ -803,7 +853,11 @@ tex.righthyphenmin = 0
 tex.savinghyphcodes = 0
 
 ---
----When ε-TEX’s parameter `\savingvdiscards` has been assigned a positive value, these ‘discarded items’ are saved in two lists and can be recovered by the commands `\pagediscards` and `\splitdiscards` that act like ‘unvboxing’ hypothetical box registers containing a vbox with the discarded items.
+---When ε-TEX’s parameter `\savingvdiscards` has been assigned a
+---positive value, these ‘discarded items’ are saved in two lists and
+---can be recovered by the commands `\pagediscards` and `\splitdiscards`
+---that act like ‘unvboxing’ hypothetical box registers containing a
+---vbox with the discarded items.
 ---
 ---__Reference:__
 ---
@@ -815,7 +869,8 @@ tex.savinghyphcodes = 0
 tex.savingvdiscards = 0
 
 ---
----`\showboxbreadth`: Number of successive elements on each level that are shown when boxes are displayed.
+---`\showboxbreadth`: Number of successive elements on each level that
+---are shown when boxes are displayed.
 ---
 ---__Reference:__
 ---
@@ -827,7 +882,8 @@ tex.savingvdiscards = 0
 tex.showboxbreadth = 0
 
 ---
----`\showboxdepth`: The number of levels of box dump that are shown when boxes are displayed.
+---`\showboxdepth`: The number of levels of box dump that are shown when
+---boxes are displayed.
 ---
 ---__Reference:__
 ---
@@ -839,7 +895,8 @@ tex.showboxbreadth = 0
 tex.showboxdepth = 0
 
 ---
----`\time`: Number of minutes after midnight that the current job started.
+---`\time`: Number of minutes after midnight that the current job
+---started.
 ---
 ---__Reference:__
 ---
@@ -851,7 +908,8 @@ tex.showboxdepth = 0
 tex.time = 0
 
 ---
----`\tolerance`: Tolerance value for lines in a paragraph with hyphenation. Default: `200`.
+---`\tolerance`: Tolerance value for lines in a paragraph with
+---hyphenation. Default: `200`.
 ---
 ---__Reference:__
 ---
@@ -875,7 +933,9 @@ tex.tolerance = 0
 tex.tracingassigns = 0
 
 ---
----`\tracingcommands`: If this is `1` TEX displays primitive commands executed; if this is `2` or more the outcome of conditionals is also recorded.
+---`\tracingcommands`: If this is `1` TEX displays primitive commands
+---executed; if this is `2` or more the outcome of conditionals is also
+---recorded.
 ---
 ---__Reference:__
 ---
@@ -887,7 +947,9 @@ tex.tracingassigns = 0
 tex.tracingcommands = 0
 
 ---
----When `\tracinggroups` has a value of `1` or more, the start and end of each save group is traced, together with the starting line and grouping level.
+---When `\tracinggroups` has a value of `1` or more, the start and end
+---of each save group is traced, together with the starting line and
+---grouping level.
 ---
 ---__Reference:__
 ---
@@ -899,7 +961,9 @@ tex.tracingcommands = 0
 tex.tracinggroups = 0
 
 ---
----When `\tracingifs` has a value of `1` or more, all conditionals (including `\unless`, `\or`, `\else`, and `\fi`) are traced, together with the starting line and nesting level.
+---When `\tracingifs` has a value of `1` or more, all conditionals
+---(including `\unless`, `\or`, `\else`, and `\fi`) are traced,
+---together with the starting line and nesting level.
 ---
 ---__Reference:__
 ---
@@ -911,7 +975,9 @@ tex.tracinggroups = 0
 tex.tracingifs = 0
 
 ---
----`\tracinglostchars`: If this parameter is positive, TeX gives diagnostic messages whenever a character is accessed that is not present in a font. Plain default: `1`.
+---`\tracinglostchars`: If this parameter is positive, TeX gives
+---diagnostic messages whenever a character is accessed that is not
+---present in a font. Plain default: `1`.
 ---
 ---__Reference:__
 ---
@@ -923,7 +989,10 @@ tex.tracingifs = 0
 tex.tracinglostchars = 0
 
 ---
----`\tracingmacros`: If this is `1`, the log file shows expansion of macros that are performed and the actual values of the arguments; if this is `2` or more token parameters such as `\output` and `\everypar` are also traced.
+---`\tracingmacros`: If this is `1`, the log file shows expansion of
+---macros that are performed and the actual values of the arguments;
+---if this is `2` or more token parameters such as `\output` and
+---`\everypar` are also traced.
 ---
 ---__Reference:__
 ---
@@ -935,7 +1004,9 @@ tex.tracinglostchars = 0
 tex.tracingmacros = 0
 
 ---
----When `\tracingnesting` has a value of `1` or more, these anomalies are shown; when `\tracingnesting` has a value of `2` or more, the current context (traceback) is shown as well.
+---When `\tracingnesting` has a value of `1` or more, these anomalies
+---are shown; when `\tracingnesting` has a value of `2` or more, the
+---current context (traceback) is shown as well.
 ---
 ---__Reference:__
 ---
@@ -946,7 +1017,8 @@ tex.tracingmacros = 0
 tex.tracingnesting = 0
 
 ---
----`\tracingonline`: If this parameter is positive, TeX will write trace information to the terminal in addition to the log file.
+---`\tracingonline`: If this parameter is positive, TeX will write
+---trace information to the terminal in addition to the log file.
 ---
 ---__Reference:__
 ---
@@ -958,7 +1030,8 @@ tex.tracingnesting = 0
 tex.tracingonline = 0
 
 ---
----`\tracingoutput`: If this is positive, the log file shows a dump of boxes that are shipped to the dvi file.
+---`\tracingoutput`: If this is positive, the log file shows a dump of
+---boxes that are shipped to the dvi file.
 ---
 ---__Reference:__
 ---
@@ -970,7 +1043,8 @@ tex.tracingonline = 0
 tex.tracingoutput = 0
 
 ---
----`\tracingpages`: If this parameter is positive, TeX generates a trace of the page breaking algorithm.
+---`\tracingpages`: If this parameter is positive, TeX generates a
+---trace of the page breaking algorithm.
 ---
 ---__Reference:__
 ---
@@ -982,7 +1056,8 @@ tex.tracingoutput = 0
 tex.tracingpages = 0
 
 ---
----`\tracingparagraphs`: If this parameter is positive, TeX generates a trace of the line breaking algorithm.
+---`\tracingparagraphs`: If this parameter is positive, TeX
+---generates a trace of the line breaking algorithm.
 ---
 ---__Reference:__
 ---
@@ -994,7 +1069,8 @@ tex.tracingpages = 0
 tex.tracingparagraphs = 0
 
 ---
----`\tracingrestores`: If this parameter is positive, TEX will report all values that are restored when a group ends.
+---`\tracingrestores`: If this parameter is positive, TeX will report
+---all values that are restored when a group ends.
 ---
 ---__Reference:__
 ---
@@ -1006,7 +1082,9 @@ tex.tracingparagraphs = 0
 tex.tracingrestores = 0
 
 ---
----When `\tracingscantokens` has a value of `1` or more, the opening and closing of pseudo-files (generated by `\scantokens`) is recorded as for any other file, with ‘␣’ as filename.
+---When `\tracingscantokens` has a value of `1` or more, the opening
+---and closing of pseudo-files (generated by `\scantokens`) is recorded
+---as for any other file, with ‘␣’ as filename.
 ---
 ---__Reference:__
 ---
@@ -1018,7 +1096,9 @@ tex.tracingrestores = 0
 tex.tracingscantokens = 0
 
 ---
----`\tracingstats`: If this parameter is `1`, TeX reports at the end of the job the usage of various internal arrays; if it is `2`, the memory demands are given whenever a page is shipped out.
+---`\tracingstats`: If this parameter is `1`, TeX reports at the end
+---of the job the usage of various internal arrays; if it is `2`, the
+---memory demands are given whenever a page is shipped out.
 ---
 ---__Reference:__
 ---
@@ -1030,7 +1110,8 @@ tex.tracingscantokens = 0
 tex.tracingstats = 0
 
 ---
----`\uchyph`: Positive to allow hyphenation of words starting with a capital letter. Default: `1`.
+---`\uchyph`: Positive to allow hyphenation of words starting with a
+---capital letter. Default: `1`.
 ---
 ---__Reference:__
 ---
@@ -1042,7 +1123,8 @@ tex.tracingstats = 0
 tex.uchyph = 0
 
 ---
----`\vbadness`: Amount of tolerance before TEX reports an underfull or overfull vertical box.
+---`\vbadness`: Amount of tolerance before TeX reports an underfull or
+---overfull vertical box.
 ---
 ---__Reference:__
 ---
@@ -1054,7 +1136,8 @@ tex.uchyph = 0
 tex.vbadness = 0
 
 ---
----`\widowpenalty`: Additional penalty for breaking a page before the last line of a paragraph. Default: `150`
+---`\widowpenalty`: Additional penalty for breaking a page before the
+---last line of a paragraph. Default: `150`
 ---
 ---__Reference:__
 ---
@@ -1078,7 +1161,8 @@ tex.widowpenalty = 0
 tex.year = 0
 
 ---
----`\deadcycles`: Counter that keeps track of how many times the output routine has been called without a `\shipout` taking place.
+---`\deadcycles`: Counter that keeps track of how many times the output
+---routine has been called without a `\shipout` taking place.
 ---
 ---__Reference:__
 ---
@@ -1090,7 +1174,8 @@ tex.year = 0
 tex.deadcycles = 0
 
 ---
----`\insertpenalties`: Total of penalties for split insertions. Inside the output routine, the number of held-over insertions.
+---`\insertpenalties`: Total of penalties for split insertions.
+---Inside the output routine, the number of held-over insertions.
 ---
 ---__Reference:__
 ---
@@ -1114,7 +1199,12 @@ tex.insertpenalties = 0
 tex.parshape = 0
 
 ---
----An extension to `\interlinepenalty` that allows different penalties to be added after each line. It takes a space separated list of numbers as value. If `n` is positive interlinepenalties `n i_1 ... i_n` specifies the penalty to be used after each of the lines in a paragraph, with the last value being repeated as often as needed if the paragraph has more then `n` lines.
+---An extension to `\interlinepenalty` that allows different penalties
+---to be added after each line. It takes a space separated list of
+---numbers as value. If `n` is positive interlinepenalties
+---`n i_1 ... i_n` specifies the penalty to be used after each of the
+---lines in a paragraph, with the last value being repeated as often as
+---needed if the paragraph has more then `n` lines.
 ---
 ---__Reference:__
 ---
@@ -1127,7 +1217,12 @@ tex.parshape = 0
 tex.interlinepenalties = 0
 
 ---
----An extension to `\clubpenalty` that allows different penalties to be added after each line. It takes a space separated list of numbers as value. If `n` is positive clubpenalties `n i_1 ... i_n` specifies the penalty to be used after each of the lines in a paragraph, with the last value being repeated as often as needed if the paragraph has more then `n` lines.
+---An extension to `\clubpenalty` that allows different penalties to be
+---added after each line. It takes a space separated list of numbers as
+---value. If `n` is positive clubpenalties `n i_1 ... i_n` specifies the
+---penalty to be used after each of the lines in a paragraph, with the
+---last value being repeated as often as needed if the paragraph has
+---more then `n` lines.
 ---
 ---__Reference:__
 ---
@@ -1140,7 +1235,13 @@ tex.interlinepenalties = 0
 tex.clubpenalties = 0
 
 ---
----An extension to `\widowpenalty` that allows different penalties to be added after each line. It takes a space separated list of numbers as value. If `n` is positive widowpenalties `n i_1 ... i_n` specifies the penalty to be used after each of the lines in a paragraph, with the last value being repeated as often as needed if the paragraph has more then `n` lines. Lines are counted backwards from the last line in this case.
+---An extension to `\widowpenalty` that allows different penalties to be
+---added after each line. It takes a space separated list of numbers as
+---value. If `n` is positive widowpenalties `n i_1 ... i_n` specifies
+---the penalty to be used after each of the lines in a paragraph, with
+---the last value being repeated as often as needed if the paragraph
+---has more then `n` lines. Lines are counted backwards from the last
+---line in this case.
 ---
 ---__Reference:__
 ---
@@ -1153,7 +1254,13 @@ tex.clubpenalties = 0
 tex.widowpenalties = 0
 
 ---
----An extension to `\widowpenalty` that allows different penalties to be added after each line. It takes a space separated list of numbers as value. If `n` is positive displaywidowpenalties `n i_1 ... i_n` specifies the penalty to be used after each of the lines in a paragraph, with the last value being repeated as often as needed if the paragraph has more then `n` lines. Lines counted backwards from each display math within a paragraph.
+---An extension to `\widowpenalty` that allows different penalties to be
+---added after each line. It takes a space separated list of numbers as
+---value. If `n` is positive displaywidowpenalties `n i_1 ... i_n`
+---specifies the penalty to be used after each of the lines in a
+---paragraph, with the last value being repeated as often as needed if
+---the paragraph has more then `n` lines. Lines counted backwards from
+---each display math within a paragraph.
 ---
 ---__Reference:__
 ---
@@ -1166,7 +1273,8 @@ tex.widowpenalties = 0
 tex.displaywidowpenalties = 0
 
 ---
----`\prevgraf`: The number of lines in the paragraph last added to the vertical list.
+---`\prevgraf`: The number of lines in the paragraph last added to the
+---vertical list.
 ---
 ---__Reference:__
 ---
@@ -1178,7 +1286,8 @@ tex.displaywidowpenalties = 0
 tex.prevgraf = 0
 
 ---
----`\spacefactor`: `1000` times the ratio by which the stretch (shrink) component of the interword glue should be multiplied (divided).
+---`\spacefactor`: `1000` times the ratio by which the stretch (shrink)
+---component of the interword glue should be multiplied (divided).
 ---
 ---__Reference:__
 ---
@@ -1202,7 +1311,8 @@ tex.spacefactor = 0
 tex.boxmaxdepth = 0
 
 ---
----`\delimitershortfall`: Size of the part of a delimited formula that is allowed to go uncovered by a delimiter. Default: `5pt`.
+---`\delimitershortfall`: Size of the part of a delimited formula that
+---is allowed to go uncovered by a delimiter. Default: `5pt`.
 ---
 ---__Reference:__
 ---
@@ -1214,7 +1324,8 @@ tex.boxmaxdepth = 0
 tex.delimitershortfall = 0
 
 ---
----`\displayindent`: Distance by which the box, in which the display is centred, is indented owing to hanging indentation.
+---`\displayindent`: Distance by which the box, in which the display is
+---centred, is indented owing to hanging indentation.
 ---
 ---__Reference:__
 ---
@@ -1238,7 +1349,8 @@ tex.displayindent = 0
 tex.displaywidth = 0
 
 ---
----`\emergencystretch` (TEX3 only) Assumed extra stretchability in lines of a paragraph.
+---`\emergencystretch` (TeX3 only) Assumed extra stretchability in
+---lines of a paragraph.
 ---
 ---__Reference:__
 ---
@@ -1250,7 +1362,9 @@ tex.displaywidth = 0
 tex.emergencystretch = 0
 
 ---
----`\hangindent`: If positive, this indicates indentation from the left margin; if negative, this is the negative of the indentation from the right margin.
+---`\hangindent`: If positive, this indicates indentation from the
+---left margin; if negative, this is the negative of the indentation
+---from the right margin.
 ---
 ---__Reference:__
 ---
@@ -1262,7 +1376,8 @@ tex.emergencystretch = 0
 tex.hangindent = 0
 
 ---
----`\hfuzz`: Excess size that TeX tolerates before it considers a horizontal box overfull.
+---`\hfuzz`: Excess size that TeX tolerates before it considers a
+---horizontal box overfull.
 ---
 ---__Reference:__
 ---
@@ -1274,7 +1389,8 @@ tex.hangindent = 0
 tex.hfuzz = 0
 
 ---
----`\hoffset`:  Distance by which the page is shifted right with respect to the reference point.
+---`\hoffset`:  Distance by which the page is shifted right with respect
+---to the reference point.
 ---
 ---__Reference:__
 ---
@@ -1286,7 +1402,8 @@ tex.hfuzz = 0
 tex.hoffset = 0
 
 ---
----`\hsize`: Line width used for typesetting a paragraph. Default: `6.5in`.
+---`\hsize`: Line width used for typesetting a paragraph.
+---Default: `6.5in`.
 ---
 ---__Reference:__
 ---
@@ -1298,7 +1415,8 @@ tex.hoffset = 0
 tex.hsize = 0
 
 ---
----`\lineskiplimit`: Distance to be maintained between the bottom and top of neighbouring boxes on a vertical list. Default: `0pt`.
+---`\lineskiplimit`: Distance to be maintained between the bottom and
+---top of neighbouring boxes on a vertical list. Default: `0pt`.
 ---
 ---__Reference:__
 ---
@@ -1310,7 +1428,8 @@ tex.hsize = 0
 tex.lineskiplimit = 0
 
 ---
----`\mathsurround`: Kern amount placed before and after in-line formulas.
+---`\mathsurround`: Kern amount placed before and after in-line
+---formulas.
 ---
 ---__Reference:__
 ---
@@ -1334,7 +1453,8 @@ tex.mathsurround = 0
 tex.maxdepth = 0
 
 ---
----`\nulldelimiterspace`: Width taken for empty delimiters. Default: `1.2pt`.
+---`\nulldelimiterspace`: Width taken for empty delimiters.
+---Default: `1.2pt`.
 ---
 ---__Reference:__
 ---
@@ -1346,7 +1466,8 @@ tex.maxdepth = 0
 tex.nulldelimiterspace = 0
 
 ---
----`\overfullrule`: Width of the rule that is printed to indicate overfull horizontal boxes.
+---`\overfullrule`: Width of the rule that is printed to indicate
+---overfull horizontal boxes.
 ---
 ---__Reference:__
 ---
@@ -1370,7 +1491,8 @@ tex.overfullrule = 0
 tex.pagebottomoffset = 0
 
 ---
----`\pageheight`: The page height of the PDF output (the screen, the paper, etc.).
+---`\pageheight`: The page height of the PDF output (the screen, the
+---paper, etc.).
 ---
 ---__Reference:__
 ---
@@ -1418,7 +1540,8 @@ tex.pagerightoffset = 0
 tex.pagetopoffset = 0
 
 ---
----`\pagewidth`: The page width of the PDF output (the screen, the paper, etc.).
+---`\pagewidth`: The page width of the PDF output (the screen,
+---the paper, etc.).
 ---
 ---__Reference:__
 ---
@@ -1430,7 +1553,8 @@ tex.pagetopoffset = 0
 tex.pagewidth = 0
 
 ---
----`\parindent`: Width of the indentation box added in front of a paragraph. Default: `20pt`.
+---`\parindent`: Width of the indentation box added in front of a
+---paragraph. Default: `20pt`.
 ---
 ---__Reference:__
 ---
@@ -1454,7 +1578,8 @@ tex.parindent = 0
 tex.predisplaysize = 0
 
 ---
----`\scriptspace`: Extra space after subscripts and superscripts. Default: `0.5pt`.
+---`\scriptspace`: Extra space after subscripts and superscripts.
+---Default: `0.5pt`.
 ---
 ---__Reference:__
 ---
@@ -1466,7 +1591,8 @@ tex.predisplaysize = 0
 tex.scriptspace = 0
 
 ---
----`\splitmaxdepth`: Maximum depth of a box split off by a `\vsplit` operation. Default: `\maxdimen`.
+---`\splitmaxdepth`: Maximum depth of a box split off by a `\vsplit`
+---operation. Default: `\maxdimen`.
 ---
 ---__Reference:__
 ---
@@ -1478,7 +1604,8 @@ tex.scriptspace = 0
 tex.splitmaxdepth = 0
 
 ---
----`\vfuzz`: Excess size that TeX tolerates before it considers a vertical box overfull.
+---`\vfuzz`: Excess size that TeX tolerates before it considers a
+---vertical box overfull.
 ---
 ---__Reference:__
 ---
@@ -1490,7 +1617,8 @@ tex.splitmaxdepth = 0
 tex.vfuzz = 0
 
 ---
----`\voffset`: Distance by which the page is shifted right/down with respect to the reference point.
+---`\voffset`: Distance by which the page is shifted right/down with
+---respect to the reference point.
 ---
 ---__Reference:__
 ---
@@ -1514,7 +1642,8 @@ tex.voffset = 0
 tex.vsize = 0
 
 ---
----`\prevdepth`: Depth of the last box added to a vertical list as it is perceived by TeX.
+---`\prevdepth`: Depth of the last box added to a vertical list as
+---it is perceived by TeX.
 ---
 ---__Reference:__
 ---
@@ -1526,7 +1655,8 @@ tex.vsize = 0
 tex.prevdepth = 0
 
 ---
----`\prevgraf`: The number of lines in the paragraph last added to the vertical list.
+---`\prevgraf`: The number of lines in the paragraph last added to the
+---vertical list.
 ---
 ---__Reference:__
 ---
@@ -1538,7 +1668,8 @@ tex.prevdepth = 0
 tex.prevgraf = 0
 
 ---
----`\spacefactor`: `1000` times the ratio by which the stretch (shrink) component of the interword glue should be multiplied (divided).
+---`\spacefactor`: `1000` times the ratio by which the stretch (shrink)
+---component of the interword glue should be multiplied (divided).
 ---
 ---__Reference:__
 ---
@@ -1563,7 +1694,8 @@ tex.spacefactor = 0
 tex.pagedepth = 0
 
 ---
----`\pagefilllstretch`: Accumulated third-order stretch of the current page.
+---`\pagefilllstretch`: Accumulated third-order stretch of the current
+---page.
 ---
 ---__Reference:__
 ---
@@ -1576,7 +1708,8 @@ tex.pagedepth = 0
 tex.pagefilllstretch = 0
 
 ---
----`\pagefillstretch`: Accumulated second-order stretch of the current page.
+---`\pagefillstretch`: Accumulated second-order stretch of the current
+---page.
 ---
 ---__Reference:__
 ---
@@ -1589,7 +1722,8 @@ tex.pagefilllstretch = 0
 tex.pagefillstretch = 0
 
 ---
----`\pagefilstretch`: Accumulated first-order stretch of the current page.
+---`\pagefilstretch`: Accumulated first-order stretch of the current
+---page.
 ---
 ---__Reference:__
 ---
@@ -1602,7 +1736,8 @@ tex.pagefillstretch = 0
 tex.pagefilstretch = 0
 
 ---
----`\pagegoal`: Goal height of the page box. This starts at `\vsize`, and is diminished by heights of insertion items.
+---`\pagegoal`: Goal height of the page box. This starts at `\vsize`,
+---and is diminished by heights of insertion items.
 ---
 ---__Reference:__
 ---
@@ -1654,7 +1789,8 @@ tex.pagestretch = 0
 tex.pagetotal = 0
 
 ---
----The direction for vboxes, including the main body of text. Default: `TLT`.
+---The direction for vboxes, including the main body of text.
+---Default: `TLT`.
 ---
 ---__Reference:__
 ---
@@ -1714,7 +1850,8 @@ tex.pardir = "TLT"
 tex.textdir = "TLT"
 
 ---
----`\abovedisplayshortskip`: Glue above a display if the line preceding the display was short. Default: `0pt plus 3pt`.
+---`\abovedisplayshortskip`: Glue above a display if the line preceding
+---the display was short. Default: `0pt plus 3pt`.
 ---
 ---__Reference:__
 ---
@@ -1726,7 +1863,8 @@ tex.textdir = "TLT"
 tex.abovedisplayshortskip = nil
 
 ---
----`\abovedisplayskip`: Glue above a display. Default: `12pt plus 3pt minus 9pt`.
+---`\abovedisplayskip`: Glue above a display.
+---Default: `12pt plus 3pt minus 9pt`.
 ---
 ---__Reference:__
 ---
@@ -1738,7 +1876,8 @@ tex.abovedisplayshortskip = nil
 tex.abovedisplayskip = nil
 
 ---
----`\baselineskip`: The ‘ideal’ baseline distance between neighbouring boxes on a vertical list. Default: `12pt`.
+---`\baselineskip`: The ‘ideal’ baseline distance between neighbouring
+---boxes on a vertical list. Default: `12pt`.
 ---
 ---__Reference:__
 ---
@@ -1750,7 +1889,9 @@ tex.abovedisplayskip = nil
 tex.baselineskip = nil
 
 ---
----`\belowdisplayshortskip`: Glue above/below a display if the line preceding the display was short. Default: `0pt plus 3pt` and `7pt plus 3pt minus 4pt` respectively.
+---`\belowdisplayshortskip`: Glue above/below a display if the line
+---preceding the display was short. Default: `0pt plus 3pt` and
+---`7pt plus 3pt minus 4pt` respectively.
 ---
 ---__Reference:__
 ---
@@ -1762,7 +1903,8 @@ tex.baselineskip = nil
 tex.belowdisplayshortskip = nil
 
 ---
----`\belowdisplayskip`: Glue below a display. Default: `12pt plus 3pt minus 9pt`.
+---`\belowdisplayskip`: Glue below a display.
+---Default: `12pt plus 3pt minus 9pt`.
 ---
 ---__Reference:__
 ---
@@ -1774,7 +1916,8 @@ tex.belowdisplayshortskip = nil
 tex.belowdisplayskip = nil
 
 ---
----`\leftskip`: Glue that is placed to the left of all lines of a paragraph.
+---`\leftskip`: Glue that is placed to the left of all lines of a
+---paragraph.
 ---
 ---__Reference:__
 ---
@@ -1786,7 +1929,8 @@ tex.belowdisplayskip = nil
 tex.leftskip = nil
 
 ---
----`\lineskip`: Glue added if the distance between bottom and top of neighbouring boxes is less than `\lineskiplimit`. Default: `1pt`.
+---`\lineskip`: Glue added if the distance between bottom and top of
+---neighbouring boxes is less than `\lineskiplimit`. Default: `1pt`.
 ---
 ---__Reference:__
 ---
@@ -1798,7 +1942,8 @@ tex.leftskip = nil
 tex.lineskip = nil
 
 ---
----`\parfillskip`: Glue that is placed between the last element of the paragraph and the line end. Default: `0pt plus 1fil`.
+---`\parfillskip`: Glue that is placed between the last element of the
+---paragraph and the line end. Default: `0pt plus 1fil`.
 ---
 ---__Reference:__
 ---
@@ -1810,7 +1955,8 @@ tex.lineskip = nil
 tex.parfillskip = nil
 
 ---
----`\parskip`: Amount of glue added to the surrounding vertical list when a paragraph starts. Default: `0pt plus 1pt`.
+---`\parskip`: Amount of glue added to the surrounding vertical list
+---when a paragraph starts. Default: `0pt plus 1pt`.
 ---
 ---__Reference:__
 ---
@@ -1822,7 +1968,8 @@ tex.parfillskip = nil
 tex.parskip = nil
 
 ---
----`\rightskip`: Glue that is placed to the right of all lines of a paragraph.
+---`\rightskip`: Glue that is placed to the right of all lines of a
+---paragraph.
 ---
 ---__Reference:__
 ---
@@ -1846,7 +1993,9 @@ tex.rightskip = nil
 tex.spaceskip = nil
 
 ---
----`\splittopskip`: Minimum distance between the top of what remains after a `\vsplit` operation, and the first item in that box. Default: `10pt`.
+---`\splittopskip`: Minimum distance between the top of what remains
+---after a `\vsplit` operation, and the first item in that box.
+---Default: `10pt`.
 ---
 ---__Reference:__
 ---
@@ -1858,7 +2007,8 @@ tex.spaceskip = nil
 tex.splittopskip = nil
 
 ---
----`\tabskip`: Amount of glue in between columns (rows) of an `\halign` (`\valign`).
+---`\tabskip`: Amount of glue in between columns (rows) of an
+---`\halign` (`\valign`).
 ---
 ---__Reference:__
 ---
@@ -1870,7 +2020,8 @@ tex.splittopskip = nil
 tex.tabskip = nil
 
 ---
----`\topskip`: Minimum distance between the top of the page box and the baseline of the first box on the page. Default: `10pt`.
+---`\topskip`: Minimum distance between the top of the page box and the
+---baseline of the first box on the page. Default: `10pt`.
 ---
 ---__Reference:__
 ---
@@ -1930,7 +2081,8 @@ tex.thickmuskip = ""
 tex.thinmuskip = ""
 
 ---
----`\errhelp`: Tokens that will be displayed if the user asks further help after an `\errmessage`.
+---`\errhelp`: Tokens that will be displayed if the user asks further
+---help after an `\errmessage`.
 ---
 ---A `tokenlist` parameters that accepts and returns a *Lua* string.
 ---
@@ -1948,7 +2100,8 @@ tex.thinmuskip = ""
 tex.errhelp = ""
 
 ---
----`\everycr`: Token list inserted after every `\cr` or non-redundant `\crcr`.
+---`\everycr`: Token list inserted after every `\cr` or
+---non-redundant `\crcr`.
 ---
 ---A `tokenlist` parameters that accepts and returns a *Lua* string.
 ---
@@ -1985,7 +2138,8 @@ tex.everycr = ""
 tex.everydisplay = ""
 
 ---
----`\everyeof`: The content of this token list is injected when a file ends.
+---`\everyeof`: The content of this token list is injected when a
+---file ends.
 ---
 ---A `tokenlist` parameters that accepts and returns a *Lua* string.
 ---
@@ -2021,7 +2175,8 @@ tex.everyeof = ""
 tex.everyhbox = ""
 
 ---
----`\everyjob`: Token list that is inserted at the start of each new job.
+---`\everyjob`: Token list that is inserted at the start of each new
+---job.
 ---
 ---A `tokenlist` parameters that accepts and returns a *Lua* string.
 ---
