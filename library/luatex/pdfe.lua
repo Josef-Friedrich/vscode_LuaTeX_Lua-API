@@ -1,3 +1,19 @@
+---
+---Copyright (C) 2022-2025 by Josef Friedrich <josef@friedrich.rocks>
+------------------------------------------------------------------------
+---
+---This program is free software: you can redistribute it and/or modify it
+---under the terms of the GNU General Public License as published by the
+---Free Software Foundation, either version 2 of the License, or (at your
+---option) any later version.
+---
+---This program is distributed in the hope that it will be useful, but
+---WITHOUT ANY WARRANTY; without even the implied warranty of
+---MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+---Public License for more details.
+---
+---You should have received a copy of the GNU General Public License along
+---with this program. If not, see <https://www.gnu.org/licenses/>.
 ---@meta
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdfe.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
@@ -363,20 +379,19 @@ function pdfe.getname(dict_or_array, key_or_index) end
 ---
 ---Return a string representing the pdfe type of <pdfe_obj>.
 ---
+---| returned string | type of `<pdfe_obj>` |
+---| --------------- | -------------------- |
+---| pdfe            | PdfeDocument         |
+---| pdfe.dictionary | PdfeDictionary       |
+---| pdfe.array      | PdfeArray            |
+---| pdfe.stream     | PdfeStream           |
+---| pdfe.reference  | PdfeReference        |
+---
 ---@param pdfe_obj PdfeDocument|PdfeDictionary|PdfeArray|PdfeStream|PdfeReference
 ---
 ---@return string|nil pdfe_type # Type of pdfe object.
---
---  ------------------------------------
---  returned string   type of <pdfe_obj>
---  ---------------   ------------------
---  pdfe              PdfeDocument
---  pdfe.dictionary   PdfeDictionary
---  pdfe.array        PdfeArray
---  pdfe.stream       PdfeStream
---  pdfe.reference    PdfeReference
---  ------------------------------------
---  Note: Returns `nil` for all other objects like integer, string, etc.
+---
+---  Note: Returns `nil` for all other objects like integer, string, etc.
 ---
 ---__Reference:__
 ---
@@ -436,28 +451,28 @@ function pdfe.getstream(dict_or_array, key_or_index) end
 ---
 ---Like `pdfe.getfromdictionary()` except that this functions works on a 'dictionary of a stream'.
 ---
+---| Type | PDF type     | Lua type         | Details             |
+---| ---- | ------------ | ---------------- | ------------------- |
+---| 0    | `none`       | `nil`            |                     |
+---| 1    | `null`       | `nil`            |                     |
+---| 2    | `boolean`    | `boolean`        |                     |
+---| 3    | `integer`    | `integer`        |                     |
+---| 4    | `number`     | `number`         |                     |
+---| 5    | `name`       | `string`         |                     |
+---| 6    | `string`     | `string`         | Is_hex? (1)         |
+---| 7    | `array`      | `PdfeArray`      | Size of array       |
+---| 8    | `dictionary` | `PdfeDictionary` | Size of dictionary  |
+---| 9    | `stream`     | `PdfeStream`     | PdfeDictionary      |
+---| 10   | `reference`  | `PdfeReference`  | Number of reference |
+---
+---(1) `true`, for hexadecimal string, `false` for normal string
+---
 ---@param stream PdfeStream
 ---@param key integer
 ---
 ---@return integer type # Integer representing the type of a value. (See table below.)
 ---@return any value # The value itself.
 ---@return any details # Details about this value. (See table below.)
--- -----------------------------------------------------------
--- Type  PDF type      Lua type           Details
--- ----  ------------  -----------------  --------------------
---   0   none          nil
---   1   null          nil
---   2   boolean       boolean
---   3   integer       integer
---   4   number        number
---   5   name          string
---   6   string        string             Is_hex? (1)
---   7   array         PdfeArray          Size of array
---   8   dictionary    PdfeDictionary     Size of dictionary
---   9   stream        PdfeStream         PdfeDictionary
---  10   reference     PdfeReference      Number of reference
--- -----------------------------------------------------------
--- (1) `true` for hexadecimal string, `false` for normal string
 ---
 ---__Reference:__
 ---
@@ -511,8 +526,10 @@ function pdfe.readfromstream(stream) end
 ---
 ---Read stream object as a whole.
 ---Opening and closing the stream with `pdfe.openstream()` and `pdfe.closestream()` is not necessary.
+---
 ---@param stream PdfeStream # Pdfe stream object.
 ---@param decode boolean # `True`, if stream should be decompressed.
+---
 ---@return string contents # Contents of stream.
 ---@return integer size # Length of stream.
 ---
@@ -544,27 +561,29 @@ function pdfe.pagestotable(doc) end
 
 ---
 ---Return a value of a pdf dictionary, including low level details about this value.
+---
+---| Type | PDF type     | Lua type         | Details             |
+---| ---- | ------------ | ---------------- | ------------------- |
+---| 0    | `none`       | `nil`            |                     |
+---| 1    | `null`       | `nil`            |                     |
+---| 2    | `boolean`    | `boolean`        |                     |
+---| 3    | `integer`    | `integer`        |                     |
+---| 4    | `number`     | `number`         |                     |
+---| 5    | `name`       | `string`         |                     |
+---| 6    | `string`     | `string`         | Is_hex? (1)         |
+---| 7    | `array`      | `PdfeArray`      | Size of array       |
+---| 8    | `dictionary` | `PdfeDictionary` | Size of dictionary  |
+---| 9    | `stream`     | `PdfeStream`     | PdfeDictionary      |
+---| 10   | `reference`  | `PdfeReference`  | Number of reference |
+---
+---(1) `true`, for hexadecimal string, `false` for normal string
+---
 ---@param dict PdfeDictionary
 ---@param key string
+---
 ---@return integer type # Integer representing the type of a value. (See table below.)
 ---@return any value # The value itself.
 ---@return any details # Details about this value. (See table below.)
--- -----------------------------------------------------------
--- Type  PDF type      Lua type           Details
--- ----  ------------  -----------------  --------------------
---   0   none          nil
---   1   null          nil
---   2   boolean       boolean
---   3   integer       integer
---   4   number        number
---   5   name          string
---   6   string        string             Is_hex? (1)
---   7   array         PdfeArray          Size of array
---   8   dictionary    PdfeDictionary     Size of dictionary
---   9   stream        PdfeStream         PdfeDictionary
---  10   reference     PdfeReference      Number of reference
--- -----------------------------------------------------------
--- (1) `true`, for hexadecimal string, `false` for normal string
 ---
 ---__Reference:__
 ---
@@ -576,28 +595,28 @@ function pdfe.getfromdictionary(dict, key) end
 ---
 ---Return a value of a pdf dictionary, including low level details about this value.
 ---
+---| Type | PDF type     | Lua type         | Details             |
+---| ---- | ------------ | ---------------- | ------------------- |
+---| 0    | `none`       | `nil`            |                     |
+---| 1    | `null`       | `nil`            |                     |
+---| 2    | `boolean`    | `boolean`        |                     |
+---| 3    | `integer`    | `integer`        |                     |
+---| 4    | `number`     | `number`         |                     |
+---| 5    | `name`       | `string`         |                     |
+---| 6    | `string`     | `string`         | Is_hex? (1)         |
+---| 7    | `array`      | `PdfeArray`      | Size of array       |
+---| 8    | `dictionary` | `PdfeDictionary` | Size of dictionary  |
+---| 9    | `stream`     | `PdfeStream`     | PdfeDictionary      |
+---| 10   | `reference`  | `PdfeReference`  | Number of reference |
+---
+---(1) `true`, for hexadecimal string, `false` for normal string
+---
 ---@param array PdfeArray
 ---@param index integer
 ---
 ---@return integer type # Integer representing the type of a value. (See table below.)
 ---@return any value # The value itself.
 ---@return any details # Details about this value. (See table below.)
--- -----------------------------------------------------------
--- Type  PDF type      Lua type           Details
--- ----  ------------  -----------------  --------------------
---   0   none          nil
---   1   null          nil
---   2   boolean       boolean
---   3   integer       integer
---   4   number        number
---   5   name          string
---   6   string        string             Is_hex? (1)
---   7   array         PdfeArray          Size of array
---   8   dictionary    PdfeDictionary     Size of dictionary
---   9   stream        PdfeStream         PdfeDictionary
---  10   reference     PdfeReference      Number of reference
--- -----------------------------------------------------------
--- (1) `true` for hexadecimal string, `false` for normal string
 ---
 ---__Reference:__
 ---
@@ -639,27 +658,27 @@ function pdfe.arraytotable(array) end
 ---
 ---Return the value of a reference, including low level details about this value.
 ---
+---| Type | PDF type     | Lua type         | Details             |
+---| ---- | ------------ | ---------------- | ------------------- |
+---| 0    | `none`       | `nil`            |                     |
+---| 1    | `null`       | `nil`            |                     |
+---| 2    | `boolean`    | `boolean`        |                     |
+---| 3    | `integer`    | `integer`        |                     |
+---| 4    | `number`     | `number`         |                     |
+---| 5    | `name`       | `string`         |                     |
+---| 6    | `string`     | `string`         | Is_hex? (1)         |
+---| 7    | `array`      | `PdfeArray`      | Size of array       |
+---| 8    | `dictionary` | `PdfeDictionary` | Size of dictionary  |
+---| 9    | `stream`     | `PdfeStream`     | PdfeDictionary      |
+---| 10   | `reference`  | `PdfeReference`  | Number of reference |
+---
+---(1) `true`, for hexadecimal string, `false` for normal string
+---
 ---@param ref PdfeReference
 ---
 ---@return integer type # Type of value. (See table below.)
 ---@return any value # The value itself.
 ---@return any details # Details about this value. (See table below.)
--- -----------------------------------------------------------
--- Type  PDF type      Lua type           Details
--- ----  ------------  -----------------  --------------------
---   0   none          nil
---   1   null          nil
---   2   boolean       boolean
---   3   integer       integer
---   4   number        number
---   5   name          string
---   6   string        string             Is_hex? (1)
---   7   array         PdfeArray          Size of array
---   8   dictionary    PdfeDictionary     Size of dictionary
---   9   stream        PdfeStream         PdfeDictionary
---  10   reference     PdfeReference      Number of reference
--- -----------------------------------------------------------
--- (1) `true` for hexadecimal string, `false` for normal string
 ---
 ---__Reference:__
 ---

@@ -1,4 +1,19 @@
 ---
+---Copyright (C) 2022-2025 by Josef Friedrich <josef@friedrich.rocks>
+------------------------------------------------------------------------
+---
+---This program is free software: you can redistribute it and/or modify it
+---under the terms of the GNU General Public License as published by the
+---Free Software Foundation, either version 2 of the License, or (at your
+---option) any later version.
+---
+---This program is distributed in the hope that it will be useful, but
+---WITHOUT ANY WARRANTY; without even the implied warranty of
+---MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+---Public License for more details.
+---
+---You should have received a copy of the GNU General Public License along
+---with this program. If not, see <https://www.gnu.org/licenses/>.
 ---@meta
 ---
 ---# Extra `os` library functions
@@ -297,7 +312,7 @@ function os.times() end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-lua.tex#L531-L538](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-lua.tex#L531-L538)
+---* Source file of the `LuaTeX` manual: [luatex-lua.tex#L531-L538](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-lua.tex#L531-L538)
 ---* Corresponding C source code: [loslibext.c#L971-L997](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/loslibext.c#L971-L997)
 ---
 ---@param template? string # for example `luatex.XXXXXX`

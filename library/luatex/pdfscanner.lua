@@ -1,3 +1,19 @@
+---
+---Copyright (C) 2022-2025 by Josef Friedrich <josef@friedrich.rocks>
+------------------------------------------------------------------------
+---
+---This program is free software: you can redistribute it and/or modify it
+---under the terms of the GNU General Public License as published by the
+---Free Software Foundation, either version 2 of the License, or (at your
+---option) any later version.
+---
+---This program is distributed in the hope that it will be useful, but
+---WITHOUT ANY WARRANTY; without even the implied warranty of
+---MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+---Public License for more details.
+---
+---You should have received a copy of the GNU General Public License along
+---with this program. If not, see <https://www.gnu.org/licenses/>.
 ---@meta
 
 ---
@@ -8,7 +24,7 @@
 pdfscanner = {}
 
 ---
----The first argument should be a *Lua* string or a stream or array onject coming
+---The first argument should be a *Lua* string or a stream or array object coming
 ---from the `pdfe` library. The second argument, `operatortable`, should
 ---be a *Lua* table where the keys are *PDF* operator name strings and the values
 ---are *Lua* functions (defined by you) that are used to process those operators.
@@ -55,6 +71,9 @@ pdfscanner = {}
 ---
 ---Analyze("foo.pdf")
 ---```
+---
+---__Reference:__
+---
 ---* Corresponding C source code: [lpdfscannerlib.c#L680-L828](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lpdfscannerlib.c#L680-L828)
 ---
 ---@param pdf string|PdfeStream|PdfeArray

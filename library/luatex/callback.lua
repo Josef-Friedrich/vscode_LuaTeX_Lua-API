@@ -1,7 +1,7 @@
 ---
 ---Current version
 ---
----2025/07/13 v0.1.0
+---2025/07/24 v0.2.0
 ---
 ---Copyright (C) 2022-2025 by Josef Friedrich <josef@friedrich.rocks>
 ------------------------------------------------------------------------
@@ -18,6 +18,7 @@
 ---
 ---You should have received a copy of the GNU General Public License along
 ---with this program. If not, see <https://www.gnu.org/licenses/>.
+---
 ---@meta
 
 ---
@@ -34,7 +35,7 @@
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L17-L26](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L17-L26)
+---* Source file of the `LuaTeX` manual: [luatex-callbacks.tex#L17-L26](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L17-L26)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/callback.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 callback = {}
@@ -154,7 +155,7 @@ callback = {}
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L28-L54](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L28-L54)
+---* Source file of the `LuaTeX` manual: [luatex-callbacks.tex#L28-L54](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L28-L54)
 ---* Corresponding C source code: [lcallbacklib.c#L517-L557](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lcallbacklib.c#L517-L557)
 ---
 ---@param callback_name CallbackName
@@ -174,7 +175,7 @@ function callback.register(callback_name, func) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L56-L62](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L56-L62)
+---* Source file of the `LuaTeX` manual: [luatex-callbacks.tex#L56-L62](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L56-L62)
 ---* Corresponding C source code: [lcallbacklib.c#L584-L599](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lcallbacklib.c#L584-L599)
 ---
 ---@return table<string, boolean> info
@@ -187,7 +188,7 @@ function callback.list() end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-callbacks.tex#L64-L68](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L64-L68)
+---* Source file of the `LuaTeX` manual: [luatex-callbacks.tex#L64-L68](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-callbacks.tex#L64-L68)
 ---* Corresponding C source code: [lcallbacklib.c#L559-L582](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lcallbacklib.c#L559-L582)
 ---
 ---@param callback_name CallbackName

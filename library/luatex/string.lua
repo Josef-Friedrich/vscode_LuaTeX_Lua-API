@@ -1,4 +1,19 @@
 ---
+---Copyright (C) 2022-2025 by Josef Friedrich <josef@friedrich.rocks>
+------------------------------------------------------------------------
+---
+---This program is free software: you can redistribute it and/or modify it
+---under the terms of the GNU General Public License as published by the
+---Free Software Foundation, either version 2 of the License, or (at your
+---option) any later version.
+---
+---This program is distributed in the hope that it will be useful, but
+---WITHOUT ANY WARRANTY; without even the implied warranty of
+---MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+---Public License for more details.
+---
+---You should have received a copy of the GNU General Public License along
+---with this program. If not, see <https://www.gnu.org/licenses/>.
 ---@meta
 ---
 ---The `string` library has a few extra functions.
@@ -7,161 +22,337 @@
 string = {}
 
 ---
----Break a string into pieces. The optional argument is a character possibly followed by a plus sign (default `{ +}`)
+---Break a string into pieces.
 ---
----The function `string.explode` function takes upto two arguments: `string.explode(s[,m])` and returns an array containing the string argument `s` split into sub-strings based on the value of the string argument `m`.
+---This functions splits a stringa into sub-strings based
+---on the value of the string argument `separator`.
 ---The second argument is a string that is either empty (this splits the string into
 ---characters), a single character (this splits on each occurrence of that
 ---character, possibly introducing empty strings), or a single character followed by
 ---the plus sign `+` (this special version does not create empty sub-strings).
----The default value for `m` is “` +`” (multiple spaces). Note:
----`m` is not hidden by surrounding braces as it would be if this function was
+---The default value for `separator` is ` +` (multiple spaces). Note:
+---`separator` is not hidden by surrounding braces as it would be if this function was
 ---written in *TeX* macros.
+---
+---__Example:__
+---
+---```lua
+---for _, word in ipairs(string.explode("one  two three")) do
+---  print(word)
+---end
+----- one
+----- two
+----- three
+---
+---for _, word in ipairs(string.explode("one,,two,three", ',')) do
+---  print(word)
+---end
+---
+----- one
+-----
+----- two
+----- three
+---
+---for _, word in ipairs(string.explode("one,,two,three", ',+')) do
+---  print(word)
+---end
+----- one
+----- two
+----- three
+---```
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lstrlibext.c#L247-L309](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lstrlibext.c#L247-L309)
+---* Corresponding C source code: [lstrlibext.c#L247-309](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/source/texk/web2c/luatexdir/lua/lstrlibext.c#L247-309)
+---* https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-lua.tex#L399-409
 ---
----@param s string
----@param m string
+---@param text string # A text that is to be divided into several substrings.
+---@param separator? string # A separator that is used to split the string (default ` +`).
 ---
----@return table
+---@return string[]
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.explode(s, m) end
+function string.explode(text, separator) end
 
 ---
----This function is relative fast and don’t do much checking. It can be
----used as a building block for other helpers.
+---Return the Unicode codepoints of the characters in the given string.
+---
+---__Example:__
+---
+---```lua
+---local a = string.utfvalue("abc")
+---print(a) -- 97
+---
+---local a, b, c = string.utfvalue("abc")
+---print(a, b, c) -- 97 98 99
+---
+---print(string.utfvalue("abc")) -- 97 98 99
+---```
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lstrlibext.c#L421-L461](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lstrlibext.c#L421-L461)
+---* Source file of the `LuaTeX` manual: [luatex-lua.tex#L418](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-lua.tex#L418)
 ---
----@param s string
+---@see string.utfvalues
 ---
----@return integer # returns the codepoints of the characters in the given string
+---@param text string # The input string.
+---
+---@return integer, integer ...  # The Unicode codepoints of the characters in the given string.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.utfvalue(s) end
+function string.utfvalue(text) end
 
 ---
----This function is relative fast and don’t do much checking. It can be
----used as a building block for other helpers.
+---Provide an iterator function that iterates over each character of the
+---string by returning an integer value in the Unicode range.
+---
+---__Example:__
+---
+---```lua
+---for code_point in string.utfvalues("abc") do
+---  print(code_point)
+---end
+----- 97
+----- 98
+----- 99
+---```
+---__Reference:__
+---
+---* Corresponding C source code: [lstrlibext.c#L183-L189](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lstrlibext.c#L183-L189)
+---* Source file of the `LuaTeX` manual: [luatex-lua.tex#L418](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-lua.tex#L418)
+---
+---@see string.utfvalue
+---
+---@param text string # The input string.
+---
+---@return fun(): integer code_point   # an integer value in the *Unicode* range
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.utfvalues(text) end
+
+---
+---Convert multiple unicode code points into a string.
+---
+---__Example:__
+---
+---```
+---print(string.utfcharacter(97, 98, 99)) -- abc
+---```
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lstrlibext.c#L402-L412](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lstrlibext.c#L402-L412)
+---* Source file of the `LuaTeX` manual: [luatex-lua.tex#L421](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-lua.tex#L421)
 ---
----@param c integer
----@param ... integer
+---@param code_point integer # A Unicode code point
+---@param ... integer # For each character a integer argument
 ---
----@return string # a string with the characters of the given code points
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.utfcharacter(c, ...) end
-
----
----This function is relative fast and don’t do much checking. It can be
----used as a building block for other helpers.
----
----__Reference:__
----
----* Corresponding C source code: [lstrlibext.c#L465-L488](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lstrlibext.c#L465-L488)
----
----@param s string
----
----@return integer # returns the length of the given string
+---@return string # A string with the characters of the given code points.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.utflength(s) end
+function string.utfcharacter(code_point, ...) end
 
 ---
----Iterator that returns a value representing a single UTF-8 token.
+---Provide an iterator function that iterates over each character of the
+---string by returning a string with a single UTF-8 token in it.
 ---
----__Reference:__
+---__Example:__
 ---
----* Corresponding C source code: [lstrlibext.c#L183-L189](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lstrlibext.c#L183-L189)
----
----@param s string
----
----@return function # an integer value in the *Unicode* range
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.utfvalues(s) end
-
----
----Iterator that returns a string representing a single UTF-8 token.
+---```lua
+---for character in string.utfcharacters("\u{61}\u{62}\u{63}") do
+---  print(character)
+---end
+----- a
+----- b
+----- c
+---```
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lstrlibext.c#L128-L134](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lstrlibext.c#L128-L134)
+---* Source file of the `LuaTeX` manual: [luatex-lua.tex#L469-470](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-lua.tex#L469-470)
 ---
----@param s string
+---@param text string # The input string.
 ---
----@return function # a string with a single *UTF-8* token in it
+---@return fun(): string character # a string with a single *UTF-8* token in it
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.utfcharacters(s) end
+function string.utfcharacters(text) end
 
 ---
----Iterator that returns a string representing a single 8-byte token.
+---Return the length of the given string.
+---
+---__Example:__
+---
+---```lua
+---print(string.len("äöü"))
+---print(string.utflength("äöü"))
+---```
+---
+---__Reference:__
+---
+---* Corresponding C source code: [lstrlibext.c#L465-L488](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lstrlibext.c#L465-L488)
+---* Source file of the `LuaTeX` manual: [luatex-lua.tex#L473](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-lua.tex#L473)
+---
+---@param text string # The input string.
+---
+---@return integer # The length of the given string
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.utflength(text) end
+
+---
+---Provide an iterator function that iterates over each character of the
+---string by returning a string containing __one byte__.
+---
+---__Example:__
+---
+---```lua
+---for character in string.characters('abc') do
+---  print(character)
+---end
+----- a
+----- b
+----- c
+---
+---for character in string.characters('äöü') do
+---  print(character)
+---end
+----- �
+----- �
+----- �
+----- �
+----- �
+----- �
+---```
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lstrlibext.c#L239-L245](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lstrlibext.c#L239-L245)
+---* Source file of the `LuaTeX` manual: [luatex-lua.tex#L424](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-lua.tex#L424)
 ---
----@param s string
+---@see string.bytes
 ---
----@return function # a string containing one byte
+---@param text string # The input string.
+---
+---@return fun(): string # A string containing __one byte__.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.characters(s) end
+function string.characters(text) end
 
 ---
----Iterator that returns two strings representing two single UTF-8 tokens.
+---Provide an iterator function that iterates over each character of the
+---string by returning two strings.
 ---
----The `string.characterpairs()` iterator
----is useful especially in the conversion of *UTF-8*16 encoded data into *UTF-8*.
+---Each of these returned strings contains __one byte__ or an __empty__
+---second string if the input string length was odd.
+---
+---__Example:__
+---
+---```lua
+---for c1, c2 in string.characterpairs('äöü') do
+---  print(c1, c2)
+---  print(c1 .. c2)
+---end
+----- �	�
+----- ä
+----- �	�
+----- ö
+----- �	�
+----- ü
+---
+---for c1, c2 in string.characterpairs('a') do
+---  print("'" .. c1 .. "'", "'" .. c2 .. "'")
+---end
+----- 'a'	''
+---```
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lstrlibext.c#L216-L222](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lstrlibext.c#L216-L222)
+---* Source file of the `LuaTeX` manual: [luatex-lua.tex#L427-428](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-lua.tex#L427-428)
 ---
----@param s string
+---@see string.bytepairs
 ---
----@return function # two strings each containing one byte or an empty second string if the string length was odd
+---@param text string # The input string.
+---
+---@return fun(): string, string # Two strings of __one byte__ each, or an __empty__ second string if the string length was odd.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.characterpairs(s) end
+function string.characterpairs(text) end
 
 ---
----Iterator that returns a value representing a single 8-byte token.
+---Provide an iterator function that iterates over each character of the
+---string by returning a single byte value.
+---
+---__Example:__
+---
+---```lua
+---for byte in string.bytes('abc') do
+---  print(byte)
+---end
+----- 97
+----- 98
+----- 99
+---
+---for byte in string.bytes('äöü') do
+---  print(byte)
+---end
+----- 195
+----- 164
+----- 195
+----- 182
+----- 195
+----- 188
+---```
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lstrlibext.c#L85-L91](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lstrlibext.c#L85-L91)
+---* Source file of the `LuaTeX` manual: [luatex-lua.tex#L431](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-lua.tex#L431)
 ---
----@param s string
+---@see string.characters
 ---
----@return function # a single byte value
+---@param text string # The input string.
+---
+---@return fun(): integer # A single byte value.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.bytes(s) end
+function string.bytes(text) end
 
 ---
----Iterator that returns two values representing two single 8-byte tokens.
+---Provide an iterator function that iterates over each character of the
+---string by returning two byte values or `nil`.
 ---
----The `string.bytepairs()` iterator
----is useful especially in the conversion of *UTF-8*16 encoded data into *UTF-8*.
+---If the input string has an odd length, `nil` is returned.
+---
+---__Example:__
+---
+---```lua
+---for b1, b2 in string.bytepairs('abc') do
+---  print(b1, b2)
+---end
+----- 97	98
+----- 99	nil
+---
+---for b1, b2 in string.bytepairs('äöü') do
+---  print(b1, b2)
+---end
+----- 195	164
+----- 195	182
+----- 195	188
+---```
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lstrlibext.c#L62-L68](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lstrlibext.c#L62-L68)
+---* Source file of the `LuaTeX` manual: [luatex-lua.tex#L434-435](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-lua.tex#L434-435)
 ---
----@param s string
+---@see string.characterpairs
 ---
----@return function # two byte values or nil instead of a number as its second return value if the string length was odd
+---@param text string # The input string.
+---
+---@return fun(): integer, integer|nil # Two byte values or `nil` as the second return value if the input string length was odd.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.bytepairs(s) end
+function string.bytepairs(text) end

@@ -1,3 +1,19 @@
+---
+---Copyright (C) 2022-2025 by Josef Friedrich <josef@friedrich.rocks>
+------------------------------------------------------------------------
+---
+---This program is free software: you can redistribute it and/or modify it
+---under the terms of the GNU General Public License as published by the
+---Free Software Foundation, either version 2 of the License, or (at your
+---option) any later version.
+---
+---This program is distributed in the hope that it will be useful, but
+---WITHOUT ANY WARRANTY; without even the implied warranty of
+---MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+---Public License for more details.
+---
+---You should have received a copy of the GNU General Public License along
+---with this program. If not, see <https://www.gnu.org/licenses/>.
 ---@meta
 
 ---
@@ -9,17 +25,17 @@ tex = {}
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L284-350](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L284-350)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L284-350](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L284-350)
 ---@alias ReadWriteIntegerParameter
 ---| 'adjdemerits' # Penalty for adjacent visually incompatible lines. Default: `10000`.
----| 'binoppenalty' # Penalty for breaking after a binary operator not enclosed in a subformula. Default: `700`
+---| 'binoppenalty' # Penalty for breaking after a binary operator not enclosed in a subformula. Default: `700`.
 ---| 'brokenpenalty' # Additional penalty for breaking a page after a hyphenated line. Default: `100`
 ---| 'catcodetable' # Catcode tables are a new feature that allows you to switch to a predefined catcode regime in a single statement.
 ---| 'clubpenalty' # Extra penalty for breaking a page after the first line of a paragraph. In Plain TeX this is `150`. This amount, and the following penalties, are added to the `\interlinepenalty`, and a penalty of the resulting size is inserted after the `\hbox` containing the first line of a paragraph instead of the `\interlinepenalty`.
 ---| 'day' # The day of the current job.
 ---| 'defaulthyphenchar' # Value of `\hyphenchar` when a font is loaded. Default: `‘\-`.
 ---| 'defaultskewchar' # Value of `\skewchar` when a font is loaded.
----| 'delimiterfactor' # `1000` times the fraction of a delimited formula that should be covered by a delimiter. Default: `901`
+---| 'delimiterfactor' # `1000` times the fraction of a delimited formula that should be covered by a delimiter. Default: `901`.
 ---| 'displaywidowpenalty' # Extra penalty for breaking a page before the last line above a display formula. The default value in Plain TeX is `50`.
 ---| 'doublehyphendemerits' # Penalty for consecutive lines ending with a hyphen. Default: `10000`.
 ---| 'endlinechar' # The character code of the end-of-line character appended to input lines. IniTEX default: `13`.
@@ -39,8 +55,8 @@ tex = {}
 ---| 'lastlinefit' # A readable and writable integer parameter that accepts and returns Lua numbers.
 ---| 'lefthyphenmin' # (TeX3 only) Minimal number of characters before a hyphenation. Default: `2`.
 ---| 'linepenalty' # Penalty value associated with each line break. Default: `10`.
----| 'localbrokenpenalty' # Local broken penalty (from `\localbrokenpenalty`)
----| 'localinterlinepenalty' # Local interline penalty (from `\localinterlinepenalty`)
+---| 'localbrokenpenalty' # Local broken penalty (from `\localbrokenpenalty`).
+---| 'localinterlinepenalty' # Local interline penalty (from `\localinterlinepenalty`).
 ---| 'looseness' # Number of lines by which this paragraph has to be made longer than it would be ideally.
 ---| 'mag' # `1000` times the magnification of the document.
 ---| 'maxdeadcycles' # The maximum number of times that the output routine is allowed to be called without a `\shipout` occurring. IniTEX default: `25`.
@@ -48,11 +64,11 @@ tex = {}
 ---| 'newlinechar' # Number of the character that triggers a new line in `\write` statements.
 ---| 'outputpenalty' # Value of the penalty at the current page break, or `10000` if the break was not at a penalty.
 ---| 'pausing' # Specify that TEX should pause after each line that is read from a file.
----| 'postdisplaypenalty' # Penalty placed in the vertical list below a display. Default: `0`
+---| 'postdisplaypenalty' # Penalty placed in the vertical list below a display. Default: `0`.
 ---| 'predisplaydirection' # An internal read/write integer, to indicate the direction of the last partial paragraph before a display; it is used to control the placement of elements such as equation numbers, and can be explictly set to affect this placement.
 ---| 'predisplaypenalty' # Penalty placed in the vertical list above a display. Default: `10000`.
 ---| 'pretolerance' # Tolerance value for a paragraph without hyphenation. Default: `100`.
----| 'relpenalty' # Penalty for breaking after a binary relation not enclosed in a subformula. Default: `500`
+---| 'relpenalty' # Penalty for breaking after a binary relation not enclosed in a subformula. Default: `500`.
 ---| 'righthyphenmin' # (TeX3 only) Minimum number of characters after a hyphenation. Default: `3`.
 ---| 'savinghyphcodes' # When a `\patterns` command is executed and \savinghyphcodes has a positive value, the current `\lccode` values are saved as hyphenation codes for the current language.
 ---| 'savingvdiscards' # When ε-TEX’s parameter `\savingvdiscards` has been assigned a positive value, these ‘discarded items’ are saved in two lists and can be recovered by the commands `\pagediscards` and `\splitdiscards` that act like ‘unvboxing’ hypothetical box registers containing a vbox with the discarded items.
@@ -76,7 +92,7 @@ tex = {}
 ---| 'tracingstats' # If this parameter is `1`, TeX reports at the end of the job the usage of various internal arrays; if it is `2`, the memory demands are given whenever a page is shipped out.
 ---| 'uchyph' # Positive to allow hyphenation of words starting with a capital letter. Default: `1`.
 ---| 'vbadness' # Amount of tolerance before TEX reports an underfull or overfull vertical box.
----| 'widowpenalty' # Additional penalty for breaking a page before the last line of a paragraph. Default: `150`
+---| 'widowpenalty' # Additional penalty for breaking a page before the last line of a paragraph. Default: `150`.
 ---| 'year' # The year of the current job.
 
 ---
@@ -84,7 +100,7 @@ tex = {}
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L358-366](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L358-366)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L358-366](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L358-366)
 ---@alias ReadOnlyIntegerParameter
 ---| 'deadcycles' # Counter that keeps track of how many times the output routine has been called without a `\shipout` taking place.
 ---| 'insertpenalties' # Total of penalties for split insertions. Inside the output routine, the number of held-over insertions.
@@ -103,7 +119,7 @@ tex = {}
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L378-407](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L378-407)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L378-407](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L378-407)
 ---@alias ReadWriteDimensionParameter
 ---| 'boxmaxdepth' # Maximum allowed depth of boxes. Default: `\maxdimen`.
 ---| 'delimitershortfall' # Size of the part of a delimited formula that is allowed to go uncovered by a delimiter. Default: `5pt`.
@@ -143,7 +159,7 @@ tex = {}
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L415-422](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L415-422)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L415-422](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L415-422)
 ---@alias ReadOnlyDimensionParameter
 ---| 'pagedepth' # Depth of the current page.
 ---| 'pagefilllstretch' # Accumulated third-order stretch of the current page.
@@ -159,7 +175,7 @@ tex = {}
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L465-469](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L465-469)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L465-469](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L465-469)
 ---@alias DirectionParameter
 ---| 'bodydir' # The direction for vboxes, including the main body of text. Default: `TLT`.
 ---| 'mathdir' # The direction for mathematics. Default: `TLT`.
@@ -173,7 +189,7 @@ tex = {}
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L479-493](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L479-493)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L479-493](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L479-493)
 ---@alias GlueParameter
 ---| 'abovedisplayshortskip' # Glue above a display if the line preceding the display was short. Default: `0pt plus 3pt`.
 ---| 'abovedisplayskip' # Glue above a display. Default: `12pt plus 3pt minus 9pt`.
@@ -192,11 +208,11 @@ tex = {}
 ---| 'xspaceskip' # Interword glue if non-zero and `\spacefactor` ≥ 2000.
 
 ---
----All muglue parameters are to be used read-only and return a Lua string.
+---All muglue (math units) parameters are to be used read-only and return a Lua string.
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L503-505](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L503-505)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L503-505](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L503-505)
 ---@alias MuglueParameter
 ---| 'medmuskip' # Medium amount of mu (math units) glue.
 ---| 'thickmuskip' # Large amount of mu (math units) glue.
@@ -212,7 +228,7 @@ tex = {}
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L520-529](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L520-529)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L520-529](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L520-529)
 ---@alias TokenlistParameter
 ---| 'errhelp' # Tokens that will be displayed if the user asks further help after an `\errmessage`.
 ---| 'everycr' # Token list inserted after every `\cr` or non-redundant `\crcr`.
@@ -237,16 +253,14 @@ tex = {}
 ---| TokenlistParameter
 
 ---
----Set the given TeX parameter.
----
----When you set a glue quantity you can either pass a `glue_spec` or upto five numbers.
+---Set the given TeX parameter globally.
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [ltexlib.c#L1714-1813](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/80a00d7131ae569d4a49f374e988226fe20de0d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1714-1813)
 ---
 ---@param global 'global' # It is possible to use `global` as the first argument to `tex.set`; this makes the assignment global instead of local.
----@param parameter InternalParameter
+---@param parameter InternalParameter # The name of the TeX parameter.
 ---@param ... any
 function tex.set(global, parameter, ...) end
 
@@ -259,12 +273,82 @@ function tex.set(global, parameter, ...) end
 ---
 ---* Corresponding C source code: [ltexlib.c#L1714-1813](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/80a00d7131ae569d4a49f374e988226fe20de0d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1714-1813)
 ---
----@param parameter InternalParameter
+---@param parameter InternalParameter # The name of the TeX parameter.
 ---@param ... any
 function tex.set(parameter, ...) end
 
 ---
+---Set the given glue parameter globally by specifying the `width`, `stretch`,
+---`stretch_order`, `shrink` and `shrink_order` of the glue.
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L1714-1813](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/80a00d7131ae569d4a49f374e988226fe20de0d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1714-1813)
+---
+---@param global 'global' # It is possible to use `global` as the first argument to `tex.set`; this makes the assignment global instead of local.
+---@param parameter GlueParameter # The name of the glue parameter.
+---@param width integer # The horizontal or vertical displacement.
+---@param stretch? integer # An extra (positive) displacement or stretch amount.
+---@param stretch_order? integer # Factor applied to stretch amount.
+---@param shrink? integer # An extra (negative) displacement or shrink amount.
+---@param shrink_order? integer # Factor applied to shrink amount.
+function tex.set(global, parameter, width, stretch, stretch_order, shrink, shrink_order) end
+
+---
+---Set the given glue parameter by specifying the `width`, `stretch`,
+---`stretch_order`, `shrink` and `shrink_order` of the glue.
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L1714-1813](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/80a00d7131ae569d4a49f374e988226fe20de0d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1714-1813)
+---
+---@param parameter GlueParameter # The name of the glue parameter.
+---@param width integer # The horizontal or vertical displacement.
+---@param stretch? integer # An extra (positive) displacement or stretch amount.
+---@param stretch_order? integer # Factor applied to stretch amount.
+---@param shrink? integer # An extra (negative) displacement or shrink amount.
+---@param shrink_order? integer # Factor applied to shrink amount.
+function tex.set(parameter, width, stretch, stretch_order, shrink, shrink_order) end
+
+---
+---Set the given glue parameter globally using a `glue_spec` node.
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L1714-1813](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/80a00d7131ae569d4a49f374e988226fe20de0d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1714-1813)
+---
+---@param global 'global' # It is possible to use `global` as the first argument to `tex.set`; this makes the assignment global instead of local.
+---@param parameter GlueParameter # The name of the glue parameter.
+---@param glue_spec GlueSpecNode # A glue spec node.
+function tex.set(global, parameter, glue_spec) end
+
+---
+---Set the given glue parameter using a `glue_spec` node.
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L1714-1813](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/80a00d7131ae569d4a49f374e988226fe20de0d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1714-1813)
+---
+---@param parameter GlueParameter # The name of the glue parameter.
+---@param glue_spec GlueSpecNode # A glue spec node.
+function tex.set(parameter, glue_spec) end
+
+---
 ---Query the given TeX parameter.
+---
+---The exact return values differ depending on the actual parameter.
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L2120-L2200](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2120-L2200)
+---@param parameter InternalParameter
+---@param opts? boolean
+---
+---@return any ...
+function tex.get(parameter, opts) end
+
+---
+---Query the given glue parameter.
 ---
 ---The exact return values differ depending on the actual parameter.
 ---
@@ -282,11 +366,66 @@ function tex.set(parameter, ...) end
 ---__Reference:__
 ---
 ---* Corresponding C source code: [ltexlib.c#L2120-L2200](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2120-L2200)
----@param parameter InternalParameter
----@param opts? boolean
+
 ---
----@return any ...
-function tex.get(parameter, opts) end
+---@param parameter GlueParameter
+---
+---@return GlueSpecNode
+function tex.get(parameter) end
+
+---
+---Query the given glue parameter.
+---
+---The exact return values differ depending on the actual parameter.
+---
+---Glue is kind of special:
+---The return value
+---is a `glue_spec` node but when you pass `false` as last argument to
+---`tex.get` you get the width of the glue and when you pass `true` you
+---get all five values. Otherwise you get a node which is a copy of the internal
+---value so you are responsible for its freeing at the *Lua* end.
+---
+---If
+---you pass `true` to `get` you get 5 values returned for a glue and
+---when you pass `false` you only get the width returned.
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L2120-L2200](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2120-L2200)
+---@param parameter GlueParameter
+---@param all true
+---
+---@return integer width  # The horizontal or vertical displacement.
+---@return integer stretch  # An extra (positive) displacement or stretch amount.
+---@return integer stretch_order  # Factor applied to stretch amount.
+---@return integer shrink  # An extra (negative) displacement or shrink amount.
+---@return integer shrink_order  # Factor applied to shrink amount.
+function tex.get(parameter, all) end
+
+---
+---Query the given glue parameter.
+---
+---The exact return values differ depending on the actual parameter.
+---
+---Glue is kind of special:
+---The return value
+---is a `glue_spec` node but when you pass `false` as last argument to
+---`tex.get` you get the width of the glue and when you pass `true` you
+---get all five values. Otherwise you get a node which is a copy of the internal
+---value so you are responsible for its freeing at the *Lua* end.
+---
+---If
+---you pass `true` to `get` you get 5 values returned for a glue and
+---when you pass `false` you only get the width returned.
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L2120-L2200](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2120-L2200)
+---@param parameter GlueParameter
+---@param all false
+---
+---@return integer width  # The horizontal or vertical displacement.
+function tex.get(parameter, all) end
 
 ---
 ---`\adjdemerits`: Penalty for adjacent visually incompatible lines.
@@ -1674,6 +1813,7 @@ tex.prevgraf = 0
 ---__Reference:__
 ---
 ---* [TeX by Topic, page 185](http://mirrors.ctan.org/info/texbytopic/TeXbyTopic.pdf)
+---* [The TexBook: page 76. Also: 76, 271, 285, 363, 433.](https://ctan.org/tex-archive/systems/knuth/dist/tex/texbook.tex)
 ---
 ---@type integer # A readable and writable dimension parameter that accepts a Lua number (signifying scaled points) or a string (with included dimension). The result is always a number in scaled points.
 ---
@@ -4895,51 +5035,43 @@ function tex.setnest() end
 function tex.getmodevalues() end
 
 ---
----The `tex` table also contains the three print functions that are the major
----interface from *Lua* scripting to *TeX*. The arguments to these three functions
----are all stored in an in|-|memory virtual file that is fed to the *TeX* scanner as
----the result of the expansion of `directlua`.
----
----The total amount of returnable text from a `directlua` command is only
----limited by available system RAM. However, each separate printed string has to
----fit completely in *TeX*'s input buffer. The result of using these functions from
----inside callbacks is undefined at the moment.
----
----```
----tex.print(<string> s, ...)
----tex.print(<number> n, <string> s, ...)
----tex.print(<table> t)
----tex.print(<number> n, <table> t)
----```
----
----The very last string of the very last `tex.print` command in a `directlua` will not have the `endlinechar` appended, all others do.
----
----see `LuaTeX` manual: 10.3.14.1 `print`
----
----__Reference:__
----
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1172-L1196](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1172-L1196)
----
----@param ... string # Each string argument is treated by *TeX* as a separate input line.
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.print(...) end
+---@alias PrintableInput string|number|integer
 
 ---
----The optional parameter can be used to print the strings using the catcode regime
----defined by `catcodetable` `n`.
+---__Reference:__
 ---
----see `LuaTeX` manual: 10.3.14.1 `print`
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L1222-L1224](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1222-L1224)
+---* Corresponding C source code: [ltexlib.c#L161-164](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L161-164)
+---
+---@param input_line PrintableInput # Each string argument is treated by *TeX* as a separate input line.
+---@param ... PrintableInput # The very last string of the very last `tex.print` command in a `directlua` will not have the `endlinechar` appended, all others do.
+---
+---@see tex.sprint
+---@see tex.tprint
+---@see tex.cprint
+---@see tex.write
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.print(input_line, ...) end
+
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1176-L1182](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1176-L1182)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L1222-L1224](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1222-L1224)
+---* Corresponding C source code: [ltexlib.c#L161-164](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L161-164)
 ---
----@param n integer If `n` is `-1`, the currently active catcode regime is used. If `n` is `-2`, the resulting catcodes are the result of `\the` `\toks`: all category codes are 12 (other) except for the space character, that has category code 10 (space). Otherwise, if `n` is not a valid catcode table, then it is ignored, and the currently active catcode regime is used instead.
----@param ... string
+---@param catcodetable_no integer The parameter can be used to print the strings using the catcode regime defined by `\catcodetable` `catcodetable_no`. If `catcodetable_no` is `-1`, the currently active catcode regime is used. If `catcodetable_no` is `-2`, the resulting catcodes are the result of `\the` `\toks`: all category codes are `12` (`other`) except for the space character, that has category code `10` (`space`). Otherwise, if `catcodetable_no` is not a valid catcode table, then it is ignored, and the currently active catcode regime is used instead.
+---@param input_line PrintableInput # Each string argument is treated by *TeX* as a separate input line.
+---@param ... PrintableInput # The very last string of the very last `tex.print` command in a `directlua` will not have the `endlinechar` appended, all others do.
+---
+---@see tex.print
+---@see tex.sprint
+---@see tex.tprint
+---@see tex.cprint
+---@see tex.write
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.print(n, ...) end
+function tex.print(catcodetable_no, input_line, ...) end
 
 ---
 ---If there is a
@@ -4950,39 +5082,57 @@ function tex.print(n, ...) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1222-L1224](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1222-L1224)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L1222-L1224](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1222-L1224)
+---* Corresponding C source code: [ltexlib.c#L161-164](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L161-164)
 ---
----@param t table
+---@param input_lines PrintableInput[] # Each string (or number) element of the input table is treated by *TeX* as a separate input line.
+---
+---@see tex.sprint
+---@see tex.tprint
+---@see tex.cprint
+---@see tex.write
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.print(t) end
+function tex.print(input_lines) end
 
 ---
 ---see `LuaTeX` manual: 10.3.14.1 `print`
 ---
----@param n integer # Print the strings using the catcode regime defined by `catcodetable` `n`.
----@param t table
+---__Reference:__
+---
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L1222-L1224](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1222-L1224)
+---* Corresponding C source code: [ltexlib.c#L161-164](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L161-164)
+---
+---@param catcodetable_no integer The parameter can be used to print the strings using the catcode regime defined by `\catcodetable` `catcodetable_no`. If `catcodetable_no` is `-1`, the currently active catcode regime is used. If `catcodetable_no` is `-2`, the resulting catcodes are the result of `\the` `\toks`: all category codes are `12` (`other`) except for the space character, that has category code `10` (`space`). Otherwise, if `catcodetable_no` is not a valid catcode table, then it is ignored, and the currently active catcode regime is used instead.
+---@param input_lines PrintableInput[] # Each string element of the input table is treated by *TeX* as a separate input line.
+---
+---@see tex.sprint
+---@see tex.tprint
+---@see tex.cprint
+---@see tex.write
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.print(n, t) end
+function tex.print(catcodetable_no, input_lines) end
 
+---
+---combines all of its arguments (or the elements of array argument) into a single input line for TeX. So any leading spaces will be treated as if they were typed, etc. (`s(ingle-input-line)print`).
 ---
 ---Each string argument is treated by *TeX* as a special kind of input line that
 ---makes it suitable for use as a partial line input mechanism:
 ---
----* *TeX* does not switch to the “new line” state, so that leading spaces
----    are not ignored.
----
+---* *TeX* does not switch to the “new line” state, so that leading
+---  spaces are not ignored.
 ---* No `endlinechar` is inserted.
----
----* Trailing spaces are not removed. Note that this does not prevent *TeX* itself
----    from eating spaces as result of interpreting the line. For example, in
+---* Trailing spaces are not removed. Note that this does not prevent
+---  *TeX* itself from eating spaces as result of interpreting the line.
+---  For example, in
 ---
 ---```tex
 ---before\directlua{tex.sprint("\\relax")tex.sprint(" inbetween")}after
 ---```
 ---
----    the space before `in between` will be gobbled as a result of the “normal” scanning of `relax`.
+---the space before `in between` will be gobbled as a result of the
+---“normal” scanning of `\relax`.
 ---
 ---If there is a table argument instead of a list of strings, this has to be a
 ---consecutive array of strings to print (the first non-string value will stop the
@@ -4997,17 +5147,16 @@ function tex.print(n, t) end
 ---important to realize the following:
 ---
 ---* When you inject a token, you need to pass a valid token userdata object. This
----    object will be collected by *Lua* when it no longer is referenced. When it gets
----    printed to *TeX* the token itself gets copied so there is no interference with the
----    *Lua* garbage collection. You manage the object yourself. Because tokens are
----    actually just numbers, there is no real extra overhead at the *TeX* end.
----
+---  object will be collected by *Lua* when it no longer is referenced. When it gets
+---  printed to *TeX* the token itself gets copied so there is no interference with the
+---  *Lua* garbage collection. You manage the object yourself. Because tokens are
+---  actually just numbers, there is no real extra overhead at the *TeX* end.
 ---* When you inject a node, you need to pass a valid node userdata object. The
----    node related to the object will not be collected by *Lua* when it no longer
----    is referenced. It lives on at the *TeX* end in its own memory space. When it
----    gets printed to *TeX* the node reference is used assuming that node stays
----    around. There is no *Lua* garbage collection involved. Again, you manage the
----    object yourself. The node itself is freed when *TeX* is done with it.
+---  node related to the object will not be collected by *Lua* when it no longer
+---  is referenced. It lives on at the *TeX* end in its own memory space. When it
+---  gets printed to *TeX* the node reference is used assuming that node stays
+---  around. There is no *Lua* garbage collection involved. Again, you manage the
+---  object yourself. The node itself is freed when *TeX* is done with it.
 ---
 ---If you consider the last remark you might realize that we have a problem when a
 ---printed mix of strings, tokens and nodes is reused. Inside *TeX* the sequence
@@ -5021,85 +5170,210 @@ function tex.print(n, t) end
 ---controlled by setting `luacopyinputnodes` to a non-zero value. This is one
 ---of these fuzzy areas you have to live with if you really mess with these low
 ---level issues.
----@param ... string
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L168-171](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L168-171)
+---
+---@param input PrintableInput
+---@param ... PrintableInput
+---
+---@see tex.print
+---@see tex.tprint
+---@see tex.cprint
+---@see tex.write
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.sprint(...) end
+function tex.sprint(input, ...) end
 
 ---
----@param n integer
----@param ... string
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L168-171](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L168-171)
+---
+---@param catcodetable_no integer The parameter can be used to print the strings using the catcode regime defined by `\catcodetable` `catcodetable_no`. If `catcodetable_no` is `-1`, the currently active catcode regime is used. If `catcodetable_no` is `-2`, the resulting catcodes are the result of `\the` `\toks`: all category codes are `12` (`other`) except for the space character, that has category code `10` (`space`). Otherwise, if `catcodetable_no` is not a valid catcode table, then it is ignored, and the currently active catcode regime is used instead.
+---@param input PrintableInput
+---@param ... PrintableInput
+---
+---@see tex.print
+---@see tex.tprint
+---@see tex.cprint
+---@see tex.write
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.sprint(n, ...) end
+function tex.sprint(catcodetable_no, input, ...) end
 
 ---
----@param t table
+---(`s(ingle-input-line)print`).
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L168-171](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L168-171)
+---
+---@param input PrintableInput[] # Each string element of the input table is treated by *TeX* as a separate input argument.
+---
+---@see tex.print
+---@see tex.tprint
+---@see tex.cprint
+---@see tex.write
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.sprint(t) end
+function tex.sprint(input) end
 
 ---
----@param n integer # Print the strings using the catcode regime defined by `catcodetable` `n`.
----@param t table
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L168-171](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L168-171)
+---
+---@param catcodetable_no integer The parameter can be used to print the strings using the catcode regime defined by `\catcodetable` `catcodetable_no`. If `catcodetable_no` is `-1`, the currently active catcode regime is used. If `catcodetable_no` is `-2`, the resulting catcodes are the result of `\the` `\toks`: all category codes are `12` (`other`) except for the space character, that has category code `10` (`space`). Otherwise, if `catcodetable_no` is not a valid catcode table, then it is ignored, and the currently active catcode regime is used instead.---@param t table
+---@param input PrintableInput[] # Each string element of the input table is treated by *TeX* as a separate input argument.
+---
+---@see tex.print
+---@see tex.tprint
+---@see tex.cprint
+---@see tex.write
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.sprint(n, t) end
+function tex.sprint(catcodetable_no, input) end
 
 ---
----This function is basically a shortcut for repeated calls to `tex.sprint(<number> n, <string> s, ...)`, once for each of the supplied argument
----tables.
+---Print tables of strings to the input stream (`t(able)print`).
 ---
----@param ... table
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.tprint(...) end
-
----
----This function takes a number indicating the to be used catcode, plus either a
----table of strings or an argument list of strings that will be pushed into the
----input stream.
+---This function is basically a shortcut for repeated calls to
+---`tex.sprint(catcodetable_no,  input, ...)`, once for each of the
+---supplied argument tables.
 ---
 ---```tex
----tex.cprint( 1," 1: `&{\\foo}") tex.print("\\par") -- a lot of \bgroup s
----tex.cprint( 2," 2: `&{\\foo}") tex.print("\\par") -- matching \egroup s
----tex.cprint( 9," 9: `&{\\foo}") tex.print("\\par") -- all get ignored
----tex.cprint(10,"10: `&{\\foo}") tex.print("\\par") -- all become spaces
----tex.cprint(11,"11: `&{\\foo}") tex.print("\\par") -- letters
----tex.cprint(12,"12: `&{\\foo}") tex.print("\\par") -- other characters
----tex.cprint(14,"12: $&{\\foo}") tex.print("\\par") -- comment triggers
+---\begingroup
+---\catcode`\_=12
+---\savecatcodetable 2
+---\endgroup
+---\tt\directlua{tex.tprint({ 2, '_' })}
 ---```
----@param n integer
----@param ... string|table
+---
+---```lua
+---tex.tprint({ 1, 1, 2, 3 }) -- output: 123
+---```
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L207-242](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L207-242)
+---
+---@param input PrintableInput[] # Each string element of the input table is treated by *TeX* as a separate input argument.
+---@param ... PrintableInput[]
+---
+---@see tex.print
+---@see tex.sprint
+---@see tex.cprint
+---@see tex.write
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.cprint(n, ...) end
+function tex.tprint(input, ...) end
 
+---
+---Print to the input stream and specify a catcode (`c(atcode)print`).
+---
+---```lua
+---tex.cprint( 1, " 1: `&{\\foo}") tex.print("\\par") -- a lot of \bgroup s
+---tex.cprint( 2, " 2: `&{\\foo}") tex.print("\\par") -- matching \egroup s
+---tex.cprint( 9, " 9: `&{\\foo}") tex.print("\\par") -- all get ignored
+---tex.cprint(10, "10: `&{\\foo}") tex.print("\\par") -- all become spaces
+---tex.cprint(11, "11: `&{\\foo}") tex.print("\\par") -- letters
+---tex.cprint(12, "12: `&{\\foo}") tex.print("\\par") -- other characters
+---tex.cprint(14, "12: $&{\\foo}") tex.print("\\par") -- comment triggers
+---```
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L175-203](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L175-203)
+---
+---@param catcode integer # The category code (`0` stands for the escape character, normally `\`, `1` stands for begin grouping, normally `{` and so on).
+---@param input PrintableInput
+---@param ... PrintableInput
+---
+---@see tex.print
+---@see tex.sprint
+---@see tex.tprint
+---@see tex.write
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.cprint(catcode, input, ...) end
+
+---
+---Print to the input stream and specify a catcode (`c(atcode)print`).
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L175-203](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L175-203)
+---
+---@param catcode integer # The category code (`0` stands for the escape character, normally `\`, `1` stands for begin grouping, normally `{` and so on).
+---@param input PrintableInput[] # Each string element of the input table is treated by *TeX* as a separate input argument.
+---
+---@see tex.print
+---@see tex.sprint
+---@see tex.tprint
+---@see tex.write
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function tex.cprint(catcode, input) end
+
+---
+---Print to the input stream using category code `12` (`other`) except
+---for the space character, that has category code `10` (`space`).
 ---
 ---Each string argument is treated by *TeX* as a special kind of input line that
 ---makes it suitable for use as a quick way to dump information:
 ---
----* All catcodes on that line are either “space” (for ' ') or “character” (for all others).
+---* All catcodes on that line are either “space” (for ` `) or “character” (for all others).
 ---* There is no `endlinechar` appended.
 ---
----If there is a table argument instead of a list of strings, this has to be a
----consecutive array of strings to print (the first non-string value will stop the
----printing process).
----@param ... string
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L175-203](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L154-157)
+---
+---@param input PrintableInput
+---@param ... PrintableInput
+---
+---@see tex.print
+---@see tex.sprint
+---@see tex.tprint
+---@see tex.cprint
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.write(...) end
+function tex.write(input, ...) end
 
 ---
----@param t table
+---Print to the input stream using category code `12` (`other`) except
+---for the space character, that has category code `10` (`space`).
+---
+---Each string argument is treated by *TeX* as a special kind of input line that
+---makes it suitable for use as a quick way to dump information:
+---
+---* All catcodes on that line are either “space” (for ` `) or “character” (for all others).
+---* There is no `endlinechar` appended.
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L175-203](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L154-157)
+---
+---@param input PrintableInput[] # Each string element of the input table is treated by *TeX* as a separate input argument.
+---
+---@see tex.print
+---@see tex.sprint
+---@see tex.tprint
+---@see tex.cprint
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.write(t) end
+function tex.write(input) end
 
 ---
 ---Rounds *Lua* number `o`, and returns a number that is in the range of a
 ---valid *TeX* register value. If the number starts out of range, it generates a
 ---“number too big” error as well.
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L2474-2482](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2474-2482)
 ---
 ---@param o number
 ---
@@ -5119,6 +5393,10 @@ function tex.round(o) end
 ---architecture and operating system, so use with care! An interface to *LuaTeX*'s
 ---internal, 100% portable scale function will be added at a later date.
 ---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L2484-2513](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2484-2513)
+---
 ---@param o number
 ---@param delta number
 ---
@@ -5137,6 +5415,13 @@ function tex.scale(o, delta) end
 function tex.scale(o, delta) end
 
 ---
+---Companion to the primitive `\number`.
+---
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L2484-2513](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2484-2513)
+---* https://www.tug.org/utilities/plain/cseq.html#number-rp
+---
 ---@param n integer
 ---
 ---@return integer
@@ -5145,9 +5430,15 @@ function tex.scale(o, delta) end
 function tex.number(n) end
 
 ---
----@param n integer
+---Companion to the primitive `\romannumeral`.
 ---
----@return string
+---__Reference:__
+---
+---* Corresponding C source code: [ltexlib.c#L2061-2064](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2061-2064)
+---
+---@param n integer # for example `2025`
+---
+---@return string # for example `mmxxv`
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.romannumeral(n) end
@@ -5156,7 +5447,10 @@ function tex.romannumeral(n) end
 ---returns the `csname` string that matches a
 ---font id number (if there is one).
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [L2047-L2050](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2047-L2050)
+---
 ---@param font_id integer
 ---
 ---@return string # for example `\tenrm`.
@@ -5167,7 +5461,10 @@ function tex.fontidentifier(font_id) end
 ---
 ---The first one returns the name only, the second one reports the size too.
 ---
+---__Reference:__
+---
 ---* Corresponding C source code: [L2042-L2045](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L2042-L2045)
+---
 ---@param font_id integer
 ---
 ---@return string # for example `cmr10`.
@@ -5183,7 +5480,7 @@ function tex.fontname(font_id) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1395-L1396](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1395-L1396)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L1395-L1396](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1395-L1396)
 ---
 ---@param o integer
 ---
@@ -5215,7 +5512,7 @@ function tex.sp(o) end
 ---__Reference__:
 ---
 ---* `LuaTeX` manual: 10.3.15.5 `sp` page 204
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1386-L1413](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1386-L1413)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L1386-L1413](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1386-L1413)
 ---
 ---@param s string # A string to convert into scaled points.
 ---
@@ -5236,7 +5533,7 @@ function tex.sp(s) end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1438-L1457](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1438-L1457)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L1438-L1457](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1438-L1457)
 ---* Corresponding C source code: [ltexlib.c#L654-692](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L654-692)
 ---
 ---@param message string # An error message like `\errmessage`.
@@ -5269,7 +5566,7 @@ function tex.show_context() end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1459-L1470](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1459-L1470)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L1459-L1470](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1459-L1470)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.run() end
@@ -5279,7 +5576,7 @@ function tex.run() end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1464](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1464)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L1464](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1464)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.finish() end
@@ -5320,7 +5617,7 @@ function tex.finish() end
 ---
 ---__Reference:__
 ---
----* Source code of the `LuaTeX` manual: [luatex-tex.tex#L1472-L1508](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1472-L1508)
+---* Source file of the `LuaTeX` manual: [luatex-tex.tex#L1472-L1508](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-tex.tex#L1472-L1508)
 ---* Corresponding C source code: [ltexlib.c#L3464-L3536](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3464-L3536)
 ---
 ---@param token_register integer
