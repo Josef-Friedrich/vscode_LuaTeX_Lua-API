@@ -59,6 +59,8 @@ function os.timezone(difference) end
 ---
 ---* Corresponding Lua source code: [lualibs-os.lua#L423-L431](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-os.lua#L423-L431)
 ---
+---@return string uuid
+---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/os.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function os.uuid() end
 

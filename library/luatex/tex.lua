@@ -292,7 +292,16 @@ function tex.set(parameter, ...) end
 ---@param stretch_order? integer # Factor applied to stretch amount.
 ---@param shrink? integer # An extra (negative) displacement or shrink amount.
 ---@param shrink_order? integer # Factor applied to shrink amount.
-function tex.set(global, parameter, width, stretch, stretch_order, shrink, shrink_order) end
+function tex.set(
+  global,
+  parameter,
+  width,
+  stretch,
+  stretch_order,
+  shrink,
+  shrink_order
+)
+end
 
 ---
 ---Set the given glue parameter by specifying the `width`, `stretch`,
@@ -308,7 +317,15 @@ function tex.set(global, parameter, width, stretch, stretch_order, shrink, shrin
 ---@param stretch_order? integer # Factor applied to stretch amount.
 ---@param shrink? integer # An extra (negative) displacement or shrink amount.
 ---@param shrink_order? integer # Factor applied to shrink amount.
-function tex.set(parameter, width, stretch, stretch_order, shrink, shrink_order) end
+function tex.set(
+  parameter,
+  width,
+  stretch,
+  stretch_order,
+  shrink,
+  shrink_order
+)
+end
 
 ---
 ---Set the given glue parameter globally using a `glue_spec` node.
@@ -2734,7 +2751,16 @@ tex.glue = {}
 ---@param shrink_order? integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.setglue(global, register, width, stretch, shrink, stretch_order, shrink_order) end
+function tex.setglue(
+  global,
+  register,
+  width,
+  stretch,
+  shrink,
+  stretch_order,
+  shrink_order
+)
+end
 
 ---
 ---* Corresponding C source code: [ltexlib.c#L884-L903](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L884-L903)
@@ -2747,7 +2773,15 @@ function tex.setglue(global, register, width, stretch, shrink, stretch_order, sh
 ---@param shrink_order? integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.setglue(register, width, stretch, shrink, stretch_order, shrink_order) end
+function tex.setglue(
+  register,
+  width,
+  stretch,
+  shrink,
+  stretch_order,
+  shrink_order
+)
+end
 
 ---
 ---* Corresponding C source code: [ltexlib.c#L905-L949](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L905-L949)
@@ -2800,7 +2834,16 @@ tex.muglue = {}
 ---@param shrink_order? integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.setmuglue(global, register, width, stretch, shrink, stretch_order, shrink_order) end
+function tex.setmuglue(
+  global,
+  register,
+  width,
+  stretch,
+  shrink,
+  stretch_order,
+  shrink_order
+)
+end
 
 ---
 ---* Corresponding C source code: [ltexlib.c#L979-L998](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L979-L998)
@@ -2813,7 +2856,15 @@ function tex.setmuglue(global, register, width, stretch, shrink, stretch_order, 
 ---@param shrink_order? integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.setmuglue(register, width, stretch, shrink, stretch_order, shrink_order) end
+function tex.setmuglue(
+  register,
+  width,
+  stretch,
+  shrink,
+  stretch_order,
+  shrink_order
+)
+end
 
 ---
 ---* Corresponding C source code: [ltexlib.c#L1000-L1044](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1000-L1044)
@@ -4483,7 +4534,15 @@ tex.delcode = {}
 ---@param large_family integer
 ---@param large_character integer
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.setdelcode(global, char_code, small_family, small_character, large_family, large_character) end
+function tex.setdelcode(
+  global,
+  char_code,
+  small_family,
+  small_character,
+  large_family,
+  large_character
+)
+end
 
 ---
 ----__Reference:__
@@ -4497,7 +4556,14 @@ function tex.setdelcode(global, char_code, small_family, small_character, large_
 ---@param large_family integer
 ---@param large_character integer
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.setdelcode(char_code, small_family, small_character, large_family, large_character) end
+function tex.setdelcode(
+  char_code,
+  small_family,
+  small_character,
+  large_family,
+  large_character
+)
+end
 
 ---
 ---* Corresponding C source code: [ltexlib.c#L1640-L1681](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L1640-L1681)
@@ -4615,6 +4681,8 @@ function tex.getbox(register) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.isbox(register) end
 
+  "page 198"
+
 ---
 ---Register a box for reuse (this is modelled after so
 ---called xforms in *PDF*). You can (re)use the box with `useboxresource` or
@@ -4634,7 +4702,15 @@ function tex.isbox(register) end
 ---@return integer index
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function tex.saveboxresource(n, attributes, resources, immediate, type, margin) end
+function tex.saveboxresource(
+  n,
+  attributes,
+  resources,
+  immediate,
+  type,
+  margin
+)
+end
 
 ---
 ---* Corresponding Lua source code: [ltexlib.c#L3346-L3355](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/ltexlib.c#L3346-L3355)
