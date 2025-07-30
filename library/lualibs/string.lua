@@ -3,6 +3,8 @@
 ---https://github.com/latex3/lualibs/blob/main/lualibs-lpeg.lua
 
 ---
+
+---
 ---Surround `text` with double quotes.
 ---
 ---__Example:__
@@ -280,62 +282,6 @@ function string.longtostring(str) end
 function string.is_empty(str) end
 
 ---
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-util-str.lua#L426-L438](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-str.lua#L426-L438)
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.autodouble(s, sep) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-util-str.lua#L440-L452](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-str.lua#L440-L452)
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.autosingle(s, sep) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-util-str.lua#L467-L475](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-str.lua#L467-L475)
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.tracedchar(b) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-util-str.lua#L648-L650](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-str.lua#L648-L650)
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.escapedquotes(s) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-util-str.lua#L659-L661](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-str.lua#L659-L661)
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.unescapedquotes(s) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-util-str.lua#L1471-L1473](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-str.lua#L1471-L1473)
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.optionalquoted(str) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-util-str.lua#L1477-L1479](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-str.lua#L1477-L1479)
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.replacenewlines(str) end
-
----
 ---Escape all occurences of the characters `-`, `.`, `+`, `*`, `%`, `(`, `)`, `[`, and `]` using percent signs (`%`).
 ---
 ---__Example:__
@@ -426,6 +372,270 @@ function string.booleanstring(text) end
 ---
 ---__Reference:__
 ---
+---* Corresponding Lua source code: [](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-boolean.lua#L60-L69
+---
+---@param text string
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.is_boolean(text, default, strict) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-boolean.lua#L18-L40](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-boolean.lua#L18-L40)
+---
+---@param text string
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.toboolean(text, tolerant) end
+
+---
+---Return a list of substrings of `string` delimited by `separator`.
+---
+---Consecutive separators result in the empty string; its counterpart `string.checkedsplit` does not match these sequences, returning `nil` instead.
+---
+---__Example:__
+---
+---```lua
+---local theory =
+---  [[All brontosauruses are thin at one end, much much thicker in the middle, and then thin again at the far end.]]
+---
+---local theorems = string.split(theory, lpeg.P(", ") * lpeg.P("and ") ^ -1)
+---
+---for n, element in ipairs(theorems) do
+---  io.write(string.format("Theorem %u: %s\n", n, element))
+---end
+---```
+---
+---__Reference:__
+---
+---* https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L396-L407
+---* ConTeXt wiki: [ConTeXt and Lua programming/Extensions to the Lua IO library/String manipulation](https://wiki.contextgarden.net/ConTeXt_and_Lua_programming/Extensions_to_the_Lua_IO_library/String_manipulation)
+---
+---@see string.checkedsplit
+---@see lpeg.split
+---@see lpeg.checkedsplit
+---
+---@param string string
+---@param separator string
+---
+---@return string[]
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.split(string, separator) end
+
+---
+---Return a list of substrings of `text` delimited by `separator`.
+---
+---Consecutive separators result in `nil`.
+---
+---__Example:__
+---
+---```lua
+---local theory =
+---  [[All brontosauruses are thin at one end, much much thicker in the middle, and then thin again at the far end.]]
+---
+---local theorems = string.checkedsplit(theory, lpeg.P(", ") * lpeg.P("and ") ^ -1)
+---
+---for n, element in ipairs(theorems) do
+---  io.write(string.format("Theorem %u: %s\n", n, element))
+---end
+---```
+---
+---__Reference:__
+---
+---* https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L439-L448
+---* ConTeXt wiki: [ConTeXt and Lua programming/Extensions to the Lua IO library/String manipulation](https://wiki.contextgarden.net/ConTeXt_and_Lua_programming/Extensions_to_the_Lua_IO_library/String_manipulation)
+---
+---@see lpeg.split
+---@see lpeg.checkedsplit
+---@see string.split
+---
+---@param text string
+---@param separator string
+---
+---@return string[]
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.checkedsplit(text, separator) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-lpeg.lua#L420-L422](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L420-L422)
+---
+---@param text string
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.splitlines(text) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-lpeg.lua#L373-L378](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L373-L378)
+---
+---@param text string
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.splitup(text, separator) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-lpeg.lua#L1171-L1177](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L1171-L1177)
+---
+---@param text string
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.tobytes(text) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-lpeg.lua#L1163-L1169](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L1163-L1169)
+---
+---@param text string
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.todec(text) end
+
+---
+---__Example:__
+---
+---```lua
+---assert(string.tohex('\xff') == 'ff')
+---assert(string.tohex(string.tobytes('ff')) == 'ff')
+---assert(string.tohex('\x00') == '00')
+---assert(string.tohex('\xAD\xFE\x03\x45') == 'adfe0345')
+---```
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-lpeg.lua#L1155-L1161](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L1155-L1161)
+---
+---@param text string
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.tohex(text) end
+
+---
+---__Example:__
+---
+---```lua
+---assert(string.toHEX('\xff') == 'FF')
+---assert(string.toHEX(string.tobytes('ff')) == 'FF')
+---assert(string.toHEX('\x00') == '00')
+---assert(string.toHEX('\xAD\xFE\x03\x45') == 'ADFE0345')
+---```
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-lpeg.lua#L1147-L1153](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L1147-L1153)
+---
+---@param text string
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.toHEX(text) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-unicode.lua#L270-L272](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-unicode.lua#L270-L272)
+---
+---@param text string
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.toutf(text) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-unicode.lua#L1325-L1341](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-unicode.lua#L1325-L1341)
+---
+---@param text string
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.utfpadd(text, n) end
+
+---
+---__Example:__
+---
+---```lua
+---assert(string.todimen(1) == 1)
+---assert(string.todimen("1sp") == 1)
+---assert(string.todimen("1pt") == 65536)
+---```
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-dim.lua#L361-L382](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-util-dim.lua#L361-L382)
+---
+---@param text string|number
+---
+---@return integer scaled_points
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.todimen(text) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L426-L438](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-str.lua#L426-L438)
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.autodouble(s, sep) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L440-L452](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-str.lua#L440-L452)
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.autosingle(s, sep) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L467-L475](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-str.lua#L467-L475)
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.tracedchar(b) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L648-L650](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-str.lua#L648-L650)
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.escapedquotes(s) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L659-L661](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-str.lua#L659-L661)
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.unescapedquotes(s) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L1471-L1473](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-str.lua#L1471-L1473)
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.optionalquoted(str) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L1477-L1479](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-str.lua#L1477-L1479)
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.replacenewlines(str) end
+
+---
+---__Reference:__
+---
 ---* Corresponding Lua source code: [lualibs-lpeg.lua#L1198-L1200](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L1198-L1200)
 ---
 ---@param text string
@@ -488,190 +698,12 @@ function string.formatter(text, ...) end
 ---
 ---__Reference:__
 ---
----* Corresponding Lua source code: [](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-boolean.lua#L60-L69
----
----@param text string
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.is_boolean(text, default, strict) end
-
----
----Return a list of substrings of `string` delimited by `separator`.
----
----Consecutive separators result in the empty string; its counterpart `string.checkedsplit` does not match these sequences, returning `nil` instead.
----
----__Example:__
----
----```lua
----local theory =
----  [[All brontosauruses are thin at one end, much much thicker in the middle, and then thin again at the far end.]]
----
----local theorems = string.split(theory, lpeg.P(", ") * lpeg.P("and ") ^ -1)
----
----for n, element in ipairs(theorems) do
----  io.write(string.format("Theorem %u: %s\n", n, element))
----end
----```
----
----__Reference:__
----
----* ConTeXt wiki: [ConTeXt and Lua programming/Extensions to the Lua IO library/String manipulation](https://wiki.contextgarden.net/ConTeXt_and_Lua_programming/Extensions_to_the_Lua_IO_library/String_manipulation)
----
----@see string.checkedsplit
----@see lpeg.split
----@see lpeg.checkedsplit
----
----@param string string
----@param separator string
----
----@return string[]
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.split(string, separator) end
-
----
----Return a list of substrings of `text` delimited by `separator`.
----
----Consecutive separators result in `nil`.
----
----__Example:__
----
----```lua
----local theory =
----  [[All brontosauruses are thin at one end, much much thicker in the middle, and then thin again at the far end.]]
----
----local theorems = string.checkedsplit(theory, lpeg.P(", ") * lpeg.P("and ") ^ -1)
----
----for n, element in ipairs(theorems) do
----  io.write(string.format("Theorem %u: %s\n", n, element))
----end
----```
----
----__Reference:__
----
----* ConTeXt wiki: [ConTeXt and Lua programming/Extensions to the Lua IO library/String manipulation](https://wiki.contextgarden.net/ConTeXt_and_Lua_programming/Extensions_to_the_Lua_IO_library/String_manipulation)
----
----@see lpeg.split
----@see lpeg.checkedsplit
----@see string.split
----
----@param text string
----@param separator string
----
----@return string[]
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.checkedsplit(text, separator) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-lpeg.lua#L420-L422](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L420-L422)
----
----@param text string
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.splitlines(text) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-lpeg.lua#L373-L378](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L373-L378)
----
----@param text string
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.splitup(text, separator) end
-
----
----__Reference:__
----
 ---* Corresponding Lua source code: [lualibs-util-str.lua#L676](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-util-str.lua#L676)
 ---
 ---@param text string
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function string.texnewlines(text) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-boolean.lua#L18-L40](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-boolean.lua#L18-L40)
----
----@param text string
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.toboolean(text, tolerant) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-lpeg.lua#L1171-L1177](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L1171-L1177)
----
----@param text string
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.tobytes(text) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-lpeg.lua#L1163-L1169](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L1163-L1169)
----
----@param text string
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.todec(text) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-util-dim.lua#L361-L382](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-util-dim.lua#L361-L382)
----
----@param text string
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.todimen(text) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-lpeg.lua#L1155-L1161](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L1155-L1161)
----
----@param text string
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.tohex(text) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-lpeg.lua#L1147-L1153](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L1147-L1153)
----
----@param text string
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.toHEX(text) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-unicode.lua#L270-L272](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-unicode.lua#L270-L272)
----
----@param text string
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.toutf(text) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-unicode.lua#L1325-L1341](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-unicode.lua#L1325-L1341)
----
----@param text string
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.utfpadd(text, n) end
 
 ---
 ---__Reference:__
@@ -684,11 +716,22 @@ function string.utfpadd(text, n) end
 function string.utfpadding(text, n) end
 
 ---
+---__Example:__
+---
+---```lua
+---local fn = string.wordsplitter('two')
+---local result = fn('one two three')
+---assert(result[1] == 'one')
+---assert(result[2] == 'three')
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding Lua source code: [lualibs-util-str.lua#L1554-L1556](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-util-str.lua#L1554-L1556)
 ---
 ---@param text string
+---
+---@return fun(text: string): string[]
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function string.wordsplitter(text) end

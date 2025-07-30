@@ -710,36 +710,380 @@ function utilities.storage.sparse(t) end
 utilities.strings = {}
 
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function utilities.strings.collapse(str) end
+---https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-util-str.lua#L294-L304
+---@alias StriplinePattern
+---|`prune`
+---|`prune and collapse`
+---|`prune and no empty`
+---|`prune and to space`
+---|`retain`
+---|`retain and collapse`
+---|`retain and no empty`
+---|`collapse all`
+---|`collapse`
 
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function utilities.strings.collapsecrlf(str) end
+---https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-util-str.lua#L294-L304
+---@type table<StriplinePattern, Pattern>
+utilities.strings.striplinepatterns = {}
 
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L144-L146](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-util-str.lua#L144-L146)
+---
+---@param text string
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function utilities.strings.collapsecrlf(text) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L152-L175](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-util-str.lua#L152-L175)
+---
+---@param text string
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function utilities.strings.newrepeater(text, offset) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L207-L210](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-util-str.lua#L207-L210)
+---
+---@param text string
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function utilities.strings.tabtospace(text, tab) end
+
+---
+---__Example:__
+---
+---```lua
+---local str = table.concat({
+---  "  ",
+---  "    aap",
+---  "  noot mies",
+---  "  ",
+---  "    ",
+---  " zus    wim jet",
+---  "zus    wim jet",
+---  "       zus    wim jet",
+---  "    ",
+---}, "\n")
+---
+---for k, v in table.sortedhash(utilities.strings.striplinepatterns) do
+---  print(
+---    "\n__`" .. k .. "`:__\n\n",
+---    "\n```\n" .. utilities.strings.striplines(str, k) .. "\n```"
+---  )
+---end
+---```
+---
+---__`collapse`:__
+---
+---```
+---
+--- aap
+--- noot mies
+---
+--- zus wim jet
+---zus wim jet
+--- zus wim jet
+---
+---```
+---
+---__`collapse all`:__
+---
+---```
+--- aap noot mies zus wim jet zus wim jet zus wim jet
+---```
+---
+---__`prune`:__
+---
+---```
+---aap
+---noot mies
+---
+---zus    wim jet
+---zus    wim jet
+---zus    wim jet
+---```
+---
+---__`prune and collapse`:__
+---
+---```
+---aap
+---noot mies
+---
+---zus    wim jet
+---zus    wim jet
+---zus    wim jet
+---```
+---
+---__`prune and no empty`:__
+---
+---```
+---aap
+---noot mies
+---zus    wim jet
+---zus    wim jet
+---zus    wim jet
+---```
+---
+---__`prune and to space`:__
+---
+---```
+---aap noot mies zus wim jet zus wim jet zus wim jet
+---```
+---
+---__`retain`:__
+---
+---```
+---
+---aap
+---noot mies
+---
+---zus    wim jet
+---zus    wim jet
+---zus    wim jet
+---
+---```
+---
+---__`retain and collapse`:__
+---
+---```
+---
+---aap
+---noot mies
+---
+---zus    wim jet
+---zus    wim jet
+---zus    wim jet
+---
+---```
+---
+---__`retain and no empty`:__
+---
+---```
+---
+---aap
+---noot mies
+---zus    wim jet
+---zus    wim jet
+---zus    wim jet
+---
+---```
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L310-L312](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-util-str.lua#L310-L312)
+---
+---@see utilities.strings.striplong
+---
+---@param text string
+---@param how StriplinePattern
+---
+---@return string text
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function utilities.strings.striplines(text, how) end
+
+---
+---Alias of `utilities.strings.striplines`
+---
+---__Example:__
+---
+---```lua
+---local str = table.concat({
+---  "  ",
+---  "    aap",
+---  "  noot mies",
+---  "  ",
+---  "    ",
+---  " zus    wim jet",
+---  "zus    wim jet",
+---  "       zus    wim jet",
+---  "    ",
+---}, "\n")
+---
+---for k, v in table.sortedhash(utilities.strings.striplinepatterns) do
+---  print(
+---    "\n__`" .. k .. "`:__\n\n",
+---    "\n```\n" .. utilities.strings.striplines(str, k) .. "\n```"
+---  )
+---end
+---```
+---
+---__`collapse`:__
+---
+---```
+---
+--- aap
+--- noot mies
+---
+--- zus wim jet
+---zus wim jet
+--- zus wim jet
+---
+---```
+---
+---__`collapse all`:__
+---
+---```
+--- aap noot mies zus wim jet zus wim jet zus wim jet
+---```
+---
+---__`prune`:__
+---
+---```
+---aap
+---noot mies
+---
+---zus    wim jet
+---zus    wim jet
+---zus    wim jet
+---```
+---
+---__`prune and collapse`:__
+---
+---```
+---aap
+---noot mies
+---
+---zus    wim jet
+---zus    wim jet
+---zus    wim jet
+---```
+---
+---__`prune and no empty`:__
+---
+---```
+---aap
+---noot mies
+---zus    wim jet
+---zus    wim jet
+---zus    wim jet
+---```
+---
+---__`prune and to space`:__
+---
+---```
+---aap noot mies zus wim jet zus wim jet zus wim jet
+---```
+---
+---__`retain`:__
+---
+---```
+---
+---aap
+---noot mies
+---
+---zus    wim jet
+---zus    wim jet
+---zus    wim jet
+---
+---```
+---
+---__`retain and collapse`:__
+---
+---```
+---
+---aap
+---noot mies
+---
+---zus    wim jet
+---zus    wim jet
+---zus    wim jet
+---
+---```
+---
+---__`retain and no empty`:__
+---
+---```
+---
+---aap
+---noot mies
+---zus    wim jet
+---zus    wim jet
+---zus    wim jet
+---
+---```
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L323](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-util-str.lua#L323)
+---
+---@see utilities.strings.striplines
+---@deprecated use `utilities.strings.striplines`
+---
+---@param text string
+---@param how StriplinePattern
+---
+---@return string text
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function utilities.strings.striplong(text, how) end
+
+---
+---__Example:__
+---
+---```lua
+---assert(
+---  utilities.strings.collapse(" line1\n\nline2\nline3") == "line1 line2 line3"
+---)
+---assert(
+---  utilities.strings.collapse("\nline1\n\nline2\nline3") == "line1 line2 line3"
+---)
+---assert(
+---  utilities.strings.collapse("\rline1\n\nline2\nline3") == "line1 line2 line3"
+---)
+---assert(
+---  utilities.strings.collapse("\tline1\n\nline2\nline3") == "line1 line2 line3"
+---)
+---assert(
+---  utilities.strings.collapse("line1\n\nline2\nline3") == "line1\n\nline2\nline3"
+---)
+---```
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L314-L316](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-util-str.lua#L314-L316)
+---
+---@param text string
+---
+---@return string text
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function utilities.strings.collapse(text) end
+
+---
+---__Example:__
+---
+---```lua
+---assert(utilities.strings.nice("colon:::colon") == "colon colon")
+---assert(utilities.strings.nice("minus---minus") == "minus minus")
+---assert(utilities.strings.nice("plus+++plus") == "plus plus")
+---assert(
+---  utilities.strings.nice("underscore___underscore") == "underscore underscore"
+---)
+----- assert(utilities.strings.nice("percent%%%percent") == "percent percent") ?
+---```
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L354-L357](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-util-str.lua#L354-L357)
+---
+---@param text string
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function utilities.strings.nice(text) end
+
+---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-util-str.lua#L1488-L1502](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-util-str.lua#L1488-L1502)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function utilities.strings.newcollector() end
-
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function utilities.strings.newrepeater(str, offset) end
-
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function utilities.strings.nice(str) end
-
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function utilities.strings.striplines(str, how) end
-
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function utilities.strings.striplong(str, how) end
-
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/utilities.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function utilities.strings.tabtospace(str, tab) end
 
 -- https://github.com/latex3/lualibs/blob/main/lualibs-util-tpl.lua
 utilities.templates = {}
