@@ -372,22 +372,47 @@ function string.booleanstring(text) end
 ---
 ---__Reference:__
 ---
----* Corresponding Lua source code: [](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-boolean.lua#L60-L69
+---* Context Lua Documents, July 8, 2023: [page 84](https://www.pragma-ade.nl/general/manuals/cld-mkiv.pdf)
+---* Corresponding Lua source code: [lualibs-boolean.lua#L18-L40](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-boolean.lua#L18-L40)
 ---
 ---@param text string
+---@param tolerant boolean # If `true`, the strings `true`, `yes`, `on`, `1`, `t` and the number `1` all turn into `true`. Otherwise only `true` is honoured.
 ---
+---@return boolean
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.is_boolean(text, default, strict) end
+function toboolean(text, tolerant) end
 
 ---
 ---__Reference:__
 ---
+---* Context Lua Documents, July 8, 2023: [page 84](https://www.pragma-ade.nl/general/manuals/cld-mkiv.pdf)
 ---* Corresponding Lua source code: [lualibs-boolean.lua#L18-L40](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-boolean.lua#L18-L40)
 ---
 ---@param text string
+---@param tolerant boolean # If `true`, the strings `true`, `yes`, `on`, `1`, `t` and the number `1` all turn into `true`. Otherwise only `true` is honoured.
 ---
+---@return boolean
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function string.toboolean(text, tolerant) end
+
+---
+---Interpret the strings `true`, `yes`, `on` and `t` as
+---`true` and `false`, `no`, `off` and `f` as `false`. Otherwise `nil` is returned, unless a default value is given,
+---in which case that is returned.
+---
+---__Reference:__
+---
+---* Context Lua Documents, July 8, 2023: [page 84](https://www.pragma-ade.nl/general/manuals/cld-mkiv.pdf)
+---* Corresponding Lua source code: [lualibs-boolean.lua#L60-L69](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-boolean.lua#L60-L69)
+---
+---@param text string
+---@param default any
+---@param strict boolean
+---
+---@return boolean
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.is_boolean(text, default, strict) end
 
 ---
 ---Return a list of substrings of `string` delimited by `separator`.
@@ -425,6 +450,16 @@ function string.toboolean(text, tolerant) end
 function string.split(string, separator) end
 
 ---
+---__Reference:__
+---
+---* Corresponding Lua source code: [lualibs-lpeg.lua#L420-L422](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L420-L422)
+---
+---@param text string
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+function string.splitlines(text) end
+
+---
 ---Return a list of substrings of `text` delimited by `separator`.
 ---
 ---Consecutive separators result in `nil`.
@@ -458,16 +493,6 @@ function string.split(string, separator) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function string.checkedsplit(text, separator) end
-
----
----__Reference:__
----
----* Corresponding Lua source code: [lualibs-lpeg.lua#L420-L422](https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-lpeg.lua#L420-L422)
----
----@param text string
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/string.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function string.splitlines(text) end
 
 ---
 ---__Reference:__
