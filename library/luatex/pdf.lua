@@ -438,8 +438,6 @@ function pdf.setignoreunknownimages(ignore) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/pdf.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function pdf.getignoreunknownimages() end
 
-  "page 282"
-
 ---
 ---Set bit field suppressing certain informational keys in the *PDF* file.
 ---

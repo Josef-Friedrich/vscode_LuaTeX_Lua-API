@@ -4681,8 +4681,6 @@ function tex.getbox(register) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/tex.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function tex.isbox(register) end
 
-  "page 198"
-
 ---
 ---Register a box for reuse (this is modelled after so
 ---called xforms in *PDF*). You can (re)use the box with `useboxresource` or
