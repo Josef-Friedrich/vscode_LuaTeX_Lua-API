@@ -54,6 +54,7 @@ sio = {}
 ---__Example:__
 ---
 ---```lua
+---assert(sio.readcardinal1("test", 0) == nil)
 ----- t: decimal=116 hexadecimal=74 binary=01110100
 ---assert(sio.readcardinal1("test", 1) == 116)
 ----- e: decimal=101 hexadecimal=65 binary=01100101
@@ -62,6 +63,7 @@ sio = {}
 ---assert(sio.readcardinal1("test", 3) == 115)
 ----- t: decimal=116 hexadecimal=74 binary=01110100
 ---assert(sio.readcardinal1("test", 4) == 116)
+---assert(sio.readcardinal1("test", 5) == nil)
 ---```
 ---
 ---__Reference:__
@@ -71,9 +73,9 @@ sio = {}
 ---@see fio.readcardinal1
 ---
 ---@param text string # A string to read from.
----@param position integer # The position. `1` reads from the first byte.
+---@param position integer # The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
----@return integer # a 1 byte unsigned integer
+---@return integer|nil # a 1 byte unsigned integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readcardinal1(text, position) end
@@ -82,10 +84,12 @@ function sio.readcardinal1(text, position) end
 ---__Example:__
 ---
 ---```lua
+---assert(sio.readcardinal2("test", 0) == 116)
 ----- t.e: decimal=29797 hexadecimal=74.65 binary=01110100.01100101
 ---assert(sio.readcardinal2("test", 1) == 29797)
 ----- s.t: decimal=29556 hexadecimal=73.74 binary=01110011.01110100
 ---assert(sio.readcardinal2("test", 3) == 29556)
+---assert(sio.readcardinal2("test", 4) == nil)
 ---```
 ---
 ---__Reference:__
@@ -95,9 +99,9 @@ function sio.readcardinal1(text, position) end
 ---@see fio.readcardinal2
 ---
 ---@param text string # A string to read from.
----@param position integer # The position. `1` reads from the first byte.
+---@param position integer # The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
----@return integer # a 2 byte unsigned integer
+---@return integer|nil # a 2 byte unsigned integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readcardinal2(text, position) end
@@ -106,10 +110,12 @@ function sio.readcardinal2(text, position) end
 ---__Example:__
 ---
 ---```lua
+---assert(sio.readcardinal3("test", 0) == 29797)
 ----- l.u.a: decimal=7107937 hexadecimal=6C.75.61 binary=01101100.01110101.01100001
 ---assert(sio.readcardinal3("luatex", 1) == 7107937)
 ----- t.e.x: decimal=7628152 hexadecimal=74.65.78 binary=01110100.01100101.01111000
 ---assert(sio.readcardinal3("luatex", 4) == 7628152)
+---assert(sio.readcardinal3("test", 5) == nil)
 ---```
 ---
 ---__Reference:__
@@ -119,9 +125,9 @@ function sio.readcardinal2(text, position) end
 ---@see fio.readcardinal3
 ---
 ---@param text string # A string to read from.
----@param position integer # The position. `1` reads from the first byte.
+---@param position integer # The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
----@return integer # a 3 byte unsigned integer
+---@return integer|nil # a 3 byte unsigned integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readcardinal3(text, position) end
@@ -130,11 +136,13 @@ function sio.readcardinal3(text, position) end
 ---__Example:__
 ---
 ---```lua
+---assert(sio.readcardinal4("test", 0) == 7628147)
 ----- t.e.s.t:
 ----- decimal=1952805748
 ----- hexadecimal=74.65.73.74
 ----- binary=01110100.01100101.01110011.01110100
 ---assert(sio.readcardinal4("test", 1) == 1952805748)
+---assert(sio.readcardinal4("test", 2) == nil)
 ---```
 ---
 ---__Reference:__
@@ -144,9 +152,9 @@ function sio.readcardinal3(text, position) end
 ---@see fio.readcardinal4
 ---
 ---@param text string # A string to read from.
----@param position integer # The position. `1` reads from the first byte.
+---@param position integer # The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
----@return integer # a 4 byte unsigned integer
+---@return integer|nil # a 4 byte unsigned integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readcardinal4(text, position) end
@@ -155,13 +163,14 @@ function sio.readcardinal4(text, position) end
 ---@see fio.readcardinaltable
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---@param n integer
 ---@param b integer
 ---
 ---@return table<integer, integer>
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readcardinaltable(text, n, b) end
+function sio.readcardinaltable(text, position, n, b) end
 
 ---
 ---__Reference:__
@@ -173,11 +182,12 @@ function sio.readcardinaltable(text, n, b) end
 ---@see fio.readcardinal1le
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
 ---@return integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readcardinal1le(text) end
+function sio.readcardinal1le(text, position) end
 
 ---
 ---__Reference:__
@@ -189,11 +199,12 @@ function sio.readcardinal1le(text) end
 ---@see fio.readcardinal3le
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
 ---@return integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readcardinal3le(text) end
+function sio.readcardinal3le(text, position) end
 
 ---
 ---__Reference:__
@@ -205,11 +216,12 @@ function sio.readcardinal3le(text) end
 ---@see fio.readcardinal3le
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
 ---@return integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readcardinal3le(text) end
+function sio.readcardinal3le(text, position) end
 
 ---
 ---__Reference:__
@@ -221,11 +233,12 @@ function sio.readcardinal3le(text) end
 ---@see fio.readcardinal4le
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
 ---@return integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readcardinal4le(text) end
+function sio.readcardinal4le(text, position) end
 
 ---
 ---__Reference:__
@@ -235,11 +248,12 @@ function sio.readcardinal4le(text) end
 ---@see fio.readinteger1
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
 ---@return integer # a 1 byte signed integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readinteger1(text) end
+function sio.readinteger1(text, position) end
 
 ---
 ---__Reference:__
@@ -249,44 +263,75 @@ function sio.readinteger1(text) end
 ---@see fio.readinteger2
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
 ---@return integer # a 2 byte signed integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readinteger2(text) end
+function sio.readinteger2(text, position) end
 
+---
+---__Reference:__
+---
+---* Corresponding C source code: [liolibext.c#L545-561](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/liolibext.c#L545-561)
 ---
 ---@see fio.readinteger3
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
 ---@return integer # a 3 byte signed integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readinteger3(text) end
+function sio.readinteger3(text, position) end
 
+---
+---__Reference:__
+---
+---* Corresponding C source code: [liolibext.c#L609-626](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/liolibext.c#L609-626)
 ---
 ---@see fio.readinteger4
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
 ---@return integer # a 4 byte signed integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readinteger4(text) end
+function sio.readinteger4(text, position) end
 
+---
+---__Reference:__
+---
+---* Corresponding C source code: [liolibext.c#L717-798](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/liolibext.c#L717-798)
 ---
 ---@see fio.readintegertable
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---@param n integer
 ---@param b integer
 ---
 ---@return table<integer, integer>
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readintegertable(text, n, b) end
+function sio.readintegertable(text, position, n, b) end
 
+---
+---__Example:__
+---
+---```lua
+---assert(sio.readinteger1le("test", 0) == nil)
+----- t: decimal=116 hexadecimal=74 binary=01110100
+---assert(sio.readinteger1le("test", 1) == 116)
+----- e: decimal=101 hexadecimal=65 binary=01100101
+---assert(sio.readinteger1le("test", 2) == 101)
+----- s: decimal=115 hexadecimal=73 binary=01110011
+---assert(sio.readinteger1le("test", 3) == 115)
+----- t: decimal=116 hexadecimal=74 binary=01110100
+---assert(sio.readinteger1le("test", 4) == 116)
+---assert(sio.readinteger1le("test", 5) == nil)
+---```
 ---
 ---__Reference:__
 ---
@@ -296,12 +341,23 @@ function sio.readintegertable(text, n, b) end
 ---@see fio.readinteger1le
 ---
 ---@param text string
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
 ---@return integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readinteger1le(text) end
+function sio.readinteger1le(text, position) end
 
+---
+---__Example:__
+---
+---```lua
+---assert(sio.readinteger2le("test", 0) == 29696)
+---assert(sio.readinteger2le("test", 1) == 25972)
+---assert(sio.readinteger2le("test", 2) == 29541)
+---assert(sio.readinteger2le("test", 3) == 29811)
+---assert(sio.readinteger2le("test", 4) == nil)
+---```
 ---
 ---__Reference:__
 ---
@@ -312,122 +368,216 @@ function sio.readinteger1le(text) end
 ---@see fio.readinteger2le
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
 ---@return integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readinteger2le(text) end
+function sio.readinteger2le(text, position) end
 
+---
+---__Example:__
+---
+---```lua
+---assert(sio.readinteger3le("test", 0) == 6648832)
+---assert(sio.readinteger3le("test", 1) == 7562612)
+---assert(sio.readinteger3le("test", 2) == 7631717)
+---assert(sio.readinteger3le("test", 3) == nil)
+---```
+---
+---__Reference:__
+---
+---* Corresponding C source code: [liolibext.c#L562-578](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/liolibext.c#L562-578)
 ---
 ---little endian variant
 ---
 ---@see fio.readinteger3le
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
 ---@return integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readinteger3le(text) end
+function sio.readinteger3le(text, position) end
 
+---
+---__Example:__
+---
+---```lua
+---assert(sio.readinteger4le("test", 0) == 1936028672)
+---assert(sio.readinteger4le("test", 1) == 1953719668)
+---assert(sio.readinteger4le("test", 2) == nil)
+---```
+---
+---__Reference:__
+---
+---* Corresponding C source code: [liolibext.c#L627-644](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/liolibext.c#L627-644)
 ---
 ---little endian variant
 ---
 ---@see fio.readinteger4le
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
 ---@return integer
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readinteger4le(text) end
+function sio.readinteger4le(text, position) end
 
+---
+---Read a 2 byte float (used in font files).
+---
+---__Example:__
+---
+---```lua
+---local function compare_numbers(a, b, epsilon)
+---  epsilon = epsilon or 1e-6
+---  return a == b or math.abs(a - b) < epsilon
+---end
+---
+---assert(compare_numbers(sio.readfixed2("test", 0), 0.453125))
+---assert(compare_numbers(sio.readfixed2("test", 1), 116.39453125))
+---assert(sio.readfixed2("test", 2) == nil)
+---assert(sio.readfixed2("test", 3) == nil)
+---```
+---
+---__Reference:__
+---
+---* Corresponding C source code: [liolibext.c#L815-828](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/liolibext.c#L815-828)
 ---
 ---@see fio.readfixed2
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
----@return number
+---@return number|nil
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readfixed2(text) end
+function sio.readfixed2(text, position) end
 
+---
+---Read a 4 byte float (used in font files).
+---
+---__Example:__
+---
+---```lua
+---local function compare_numbers(a, b, epsilon)
+---  epsilon = epsilon or 1e-6
+---  return a == b or math.abs(a - b) < epsilon
+---end
+---
+---assert(compare_numbers(sio.readfixed4("test", 0), 116.39628601074))
+---assert(compare_numbers(sio.readfixed4("test", 1), 29797.45098877))
+---assert(sio.readfixed4("test", 2) == nil)
+---```
+---
+---__Reference:__
+---
+---* Corresponding C source code: [liolibext.c#L845-860](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/liolibext.c#L845-860)
 ---
 ---@see fio.readfixed4
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
----@return number
+---@return number|nil
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readfixed4(text) end
+function sio.readfixed4(text, position) end
 
+---
+---Read a 2 byte float (used in font files).
+---
+---__Example:__
+---
+---```lua
+---local function compare_numbers(a, b, epsilon)
+---    epsilon = epsilon or 1e-6
+---    return a == b or math.abs(a - b) < epsilon
+---end
+---
+---assert(compare_numbers(sio.read2dot14("test", 1), 1.8186645507812))
+---assert(compare_numbers(sio.read2dot14("test", 2), 1.5851440429688))
+---assert(compare_numbers(sio.read2dot14("test", 3), 1.803955078125))
+---assert(sio.read2dot14("test", 4) == nil)
+---```
+---
+---__Reference:__
+---
+---* Corresponding C source code: [liolibext.c#L876-889](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/liolibext.c#L876-889)
+---* Corresponding fontforge C source code: [mem.c#L101-L107](https://github.com/fontforge/fontforge/blob/664b5db72e5591f40f3cc86bf1249d9c76fed82d/fontforge/mem.c#L101-L107)
+---* Corresponding fontforge C source code: [ttf2eps.c#L418-L424](https://github.com/fontforge/fontforge/blob/664b5db72e5591f40f3cc86bf1249d9c76fed82d/contrib/fonttools/ttf2eps.c#L418-L424)
 ---
 ---@see fio.read2dot14
 ---
 ---@param text string # A string to read from.
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
----@return number
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.read2dot14(text) end
-
----
----@see fio.setposition
----
----@param text string # A string to read from.
----@param p integer
+---@return number|nil
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.setposition(text, p) end
+function sio.read2dot14(text, position) end
 
 ---
----@see fio.getposition
+---__Example:__
 ---
----@param text string # A string to read from.
+---```lua
+---local b1, b2, b3, b4 = sio.readbytes("test", 1, 4)
+----- t: decimal=116 hexadecimal=74 binary=01110100
+---assert(b1 == 116)
+----- e: decimal=101 hexadecimal=65 binary=01100101
+---assert(b2 == 101)
+----- s: decimal=115 hexadecimal=73 binary=01110011
+---assert(b3 == 115)
+----- t: decimal=116 hexadecimal=74 binary=01110100
+---assert(b4 == 116)
+---```
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.getposition(text) end
-
+---__Reference:__
 ---
----@see fio.skipposition
----
----@param text string # A string to read from.
----@param n integer
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.skipposition(text, n) end
-
+---* Corresponding C source code: [liolibext.c#L982-1001](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/liolibext.c#L982-1001)
 ---
 ---@see fio.readbytes
 ---
 ---@param text string # A string to read from.
----@param n integer
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
+---@param number integer # The number of bytes to be read.
 ---
 ---@return integer ...
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readbytes(text, n) end
+function sio.readbytes(text, position, number) end
 
+---
+---__Example:__
+---
+---```lua
+---local t = sio.readbytetable("test", 1, 4)
+----- t: decimal=116 hexadecimal=74 binary=01110100
+---assert(t[1] == 116)
+----- e: decimal=101 hexadecimal=65 binary=01100101
+---assert(t[2] == 101)
+----- s: decimal=115 hexadecimal=73 binary=01110011
+---assert(t[3] == 115)
+----- t: decimal=116 hexadecimal=74 binary=01110100
+---assert(t[4] == 116)
+---```
+---
+---__Reference:__
+---
+---* Corresponding C source code: [liolibext.c#L945-965](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/liolibext.c#L945-965)
 ---
 ---@see fio.readbytetable
 ---
 ---@param text string # A string to read from.
----@param n integer
+---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
+---@param number integer # The number of bytes to be read.
 ---
 ---@return table<integer, integer>
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readbytetable(text, n) end
-
----
----@see fio.readline
----
----@param text string # A string to read from.
----
----@return string
----
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function sio.readline(text) end
+function sio.readbytetable(text, position, number) end
 
 return sio
