@@ -1,8 +1,5 @@
 ---@meta
 boolean = {}
-
----
-
 ---
 ---Return the number one or zero.
 ---

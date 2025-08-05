@@ -16,9 +16,6 @@
 -- with this program. If not, see <https://www.gnu.org/licenses/>.
 --
 -- ----------------------------------------------------------------------------
-
----
-
 ---
 ---@meta
 ---The font library provides the interface into the internals of the font system,

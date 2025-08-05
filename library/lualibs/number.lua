@@ -6,9 +6,6 @@ number = {}
 ---https://github.com/latex3/lualibs/blob/main/lualibs-number.lua
 ---https://github.com/latex3/lualibs/blob/main/lualibs-util-dim.lua
 ---https://github.com/latex3/lualibs/blob/main/lualibs-util-str.lua
-
----
-
 ---
 ---__Reference:__
 ---

@@ -16,9 +16,6 @@
 -- with this program. If not, see <https://www.gnu.org/licenses/>.
 --
 -- ----------------------------------------------------------------------------
-
----
-
 ---
 ---@meta
 mplib = {}
@@ -423,8 +420,6 @@ function MpFig.italcorr() end
 ---
 ---@return number|nil
 function MpFig.charcode() end
-
----
 
 ---
 ---All graphical objects have a field `type` that gives the object type as a
