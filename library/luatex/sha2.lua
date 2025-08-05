@@ -19,6 +19,7 @@
 
 ---
 ---@meta
+
 ---
 ---# Hashes conform `sha2`
 ---

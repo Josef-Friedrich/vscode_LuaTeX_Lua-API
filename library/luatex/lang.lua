@@ -19,6 +19,7 @@
 
 ---
 ---@meta
+
 ---
 ---This library provides the interface to *LuaTeX*'s structure representing a
 ---language, and the associated functions.

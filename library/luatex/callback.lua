@@ -25,6 +25,8 @@
 
 ---
 ---@meta
+
+---
 ---This library has functions that register, find and list callbacks. Callbacks are
 ---*Lua* functions that are called in well defined places. There are two kind of
 ---callbacks: those that mix with existing functionality, and those that (when

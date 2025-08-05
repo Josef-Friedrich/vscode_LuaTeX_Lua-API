@@ -19,6 +19,7 @@
 
 ---
 ---@meta
+
 ---
 ---# Binary input from strings with `sio`
 ---

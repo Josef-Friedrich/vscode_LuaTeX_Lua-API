@@ -7,6 +7,8 @@
 
 ---
 ---@meta
+
+---
 ---`LuaZip` is a lightweight Lua extension library that can be used to read files stored inside zip files. It uses `zziplib` to do all the hard work.
 ---
 ---The API exposed to Lua is very simple and very similiar to the usual file handling functions provided by the I/O Lua standard library. In fact, the API is so similar that parts of this manual are extracted from the Lua manual, copyrighted by Tecgraf, PUC-Rio.

@@ -12,6 +12,8 @@
 
 ---
 ---@meta
+
+---
 ---There are four `string`-like tables of functions:
 ---`ascii`, `latin1`, `utf8` and `grapheme`.
 ---

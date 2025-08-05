@@ -19,6 +19,7 @@
 
 ---
 ---@meta
+
 ---
 ---The `pdfscanner` library allows interpretation of *PDF* content streams and
 ---`/ToUnicode` (cmap) streams. You can get those streams from the `pdfe` library.

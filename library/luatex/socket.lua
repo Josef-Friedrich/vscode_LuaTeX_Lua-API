@@ -7,6 +7,7 @@
 
 ---
 ---@meta
+
 ---
 ---https://lunarmodules.github.io/luasocket/socket.html
 ---
