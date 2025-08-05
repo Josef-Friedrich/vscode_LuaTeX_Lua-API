@@ -2,10 +2,10 @@
 ---Changes to upstream: global zlib table
 
 ---
----@meta
 ---The definitions are developed in this repository: https://github.com/LuaCATS/lzlib
 
 ---
+---@meta
 ---`lzlib`, by Tiago Dionizio.
 ---
 ---__Reference:__
@@ -279,5 +279,3 @@ function ZStream:close() end
 ---
 ---@return number adler
 function ZStream.adler() end
-
-return zlib

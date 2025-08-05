@@ -3,10 +3,10 @@
 ---Changes to upstream: global zip table
 
 ---
----@meta
 ---The definitions are developed in this repository: https://github.com/LuaCATS/luazip
 
 ---
+---@meta
 ---`LuaZip` is a lightweight Lua extension library that can be used to read files stored inside zip files. It uses `zziplib` to do all the hard work.
 ---
 ---The API exposed to Lua is very simple and very similiar to the usual file handling functions provided by the I/O Lua standard library. In fact, the API is so similar that parts of this manual are extracted from the Lua manual, copyrighted by Tecgraf, PUC-Rio.
@@ -379,5 +379,3 @@ function ZInternalFile:close() end
 ---
 ---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
 function ZInternalFile:lines() end
-
-return zip

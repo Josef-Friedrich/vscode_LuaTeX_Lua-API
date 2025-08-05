@@ -3,9 +3,10 @@
 ---Changes to upstream: global socket table
 
 ---
----@meta
 ---The definitions are developed in this repository: https://github.com/LuaCATS/luasocket
 
+---
+---@meta
 ---
 ---https://lunarmodules.github.io/luasocket/socket.html
 ---
@@ -1025,5 +1026,3 @@ function socket.udp6() end
 
 --#endregion
 --}}}
-
-return socket

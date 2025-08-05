@@ -1,21 +1,24 @@
----
----Copyright (C) 2022-2025 by Josef Friedrich <josef@friedrich.rocks>
-------------------------------------------------------------------------
----
----This program is free software: you can redistribute it and/or modify it
----under the terms of the GNU General Public License as published by the
----Free Software Foundation, either version 2 of the License, or (at your
----option) any later version.
----
----This program is distributed in the hope that it will be useful, but
----WITHOUT ANY WARRANTY; without even the implied warranty of
----MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
----Public License for more details.
----
----You should have received a copy of the GNU General Public License along
----with this program. If not, see <https://www.gnu.org/licenses/>.
----@meta
+-- ----------------------------------------------------------------------------
+-- Copyright (C) 2022-2025 by Josef Friedrich <josef@friedrich.rocks>
+-- ----------------------------------------------------------------------------
+--
+-- This program is free software: you can redistribute it and/or modify it
+-- under the terms of the GNU General Public License as published by the
+-- Free Software Foundation, either version 2 of the License, or (at your
+-- option) any later version.
+--
+-- This program is distributed in the hope that it will be useful, but
+-- WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+-- Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License along
+-- with this program. If not, see <https://www.gnu.org/licenses/>.
+--
+-- ----------------------------------------------------------------------------
 
+---
+---@meta
 ---
 ---# Binary input from strings with `sio`
 ---
@@ -644,5 +647,3 @@ function sio.readbytes(text, position, number) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readbytetable(text, position, number) end
-
-return sio

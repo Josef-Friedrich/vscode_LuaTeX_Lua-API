@@ -8,10 +8,10 @@
 ---Changes to the upstream project: global unicode table
 
 ---
----@meta
 ---The definitions are developed in this repository: https://github.com/LuaCATS/slnunicode
 
 ---
+---@meta
 ---There are four `string`-like tables of functions:
 ---`ascii`, `latin1`, `utf8` and `grapheme`.
 ---
@@ -904,5 +904,3 @@ function unicode.utf8.sub(s, i, j) end
 ---
 ---😱 [Types](https://github.com/LuaCATS/slnunicode/blob/main/library/unicode.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/slnunicode/pulls)
 function unicode.utf8.upper(s) end
-
-return unicode
