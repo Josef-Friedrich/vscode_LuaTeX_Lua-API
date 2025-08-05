@@ -16,6 +16,7 @@
 -- with this program. If not, see <https://www.gnu.org/licenses/>.
 --
 -- ----------------------------------------------------------------------------
+
 ---
 ---@meta
 ---The fontloader library is sort of independent of the rest in the sense that it

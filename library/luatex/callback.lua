@@ -22,6 +22,7 @@
 -- with this program. If not, see <https://www.gnu.org/licenses/>.
 --
 -- ----------------------------------------------------------------------------
+
 ---
 ---@meta
 ---This library has functions that register, find and list callbacks. Callbacks are
