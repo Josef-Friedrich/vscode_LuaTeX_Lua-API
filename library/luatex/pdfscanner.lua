@@ -18,6 +18,8 @@
 -- ----------------------------------------------------------------------------
 
 ---
+
+---
 ---@meta
 ---
 ---The `pdfscanner` library allows interpretation of *PDF* content streams and
