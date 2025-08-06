@@ -103,7 +103,7 @@ node.direct = {}
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [texnodes.c#L493-L542](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L493-L542)
+---* Corresponding C source code: [texnodes.c#L493-L542](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/source/texk/web2c/luatexdir/tex/texnodes.c#L493-L542)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias NodeTypeName
@@ -1098,33 +1098,43 @@ function node.direct.uses_font(d, font) end
 ---@field class integer # spacing related class
 
 ---
+---__Reference:__
+---
+---* Corresponding C source code: [texnodes.c#L956-1006](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/source/texk/web2c/luatexdir/tex/texnodes.c#L956-1006)
+---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias WhatsitTypeId
 ---|0  # open
 ---|1  # write
 ---|2  # close
 ---|3  # special
----|6  # save_pos
----|7  # late_lua
----|8  # user_defined
+---|4  # late_special
+---|7  # save_pos
+---|8  # late_lua
+---|9  # user_defined
 ---|16 # pdf_literal
----|17 # pdf_refobj
----|18 # pdf_annot
----|19 # pdf_start_link
----|20 # pdf_end_link
----|21 # pdf_dest
----|22 # pdf_action
----|23 # pdf_thread
----|24 # pdf_start_thread
----|25 # pdf_end_thread
----|26 # pdf_thread_data
----|27 # pdf_link_data
----|28 # pdf_colorstack
----|29 # pdf_setmatrix
----|30 # pdf_save
----|31 # pdf_restore
----|32 # pdf_link_state
+---|17 # pdf_late_literal
+---|18 # pdf_refobj
+---|19 # pdf_annot
+---|20 # pdf_start_link
+---|21 # pdf_end_link
+---|22 # pdf_dest
+---|23 # pdf_action
+---|24 # pdf_thread
+---|25 # pdf_start_thread
+---|26 # pdf_end_thread
+---|27 # pdf_thread_data
+---|28 # pdf_link_data
+---|29 # pdf_colorstack
+---|30 # pdf_setmatrix
+---|31 # pdf_save
+---|32 # pdf_restore
+---|33 # pdf_link_state
 
+---
+---__Reference:__
+---
+---* Corresponding C source code: [texnodes.c#L956-1006](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/source/texk/web2c/luatexdir/tex/texnodes.c#L956-1006)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@alias WhatsitTypeName
@@ -1132,26 +1142,28 @@ function node.direct.uses_font(d, font) end
 ---| 'write' # 1
 ---| 'close' # 2
 ---| 'special' # 3
----| 'save_pos' # 6
----| 'late_lua' # 7
----| 'user_defined' # 8
+---| 'late_special' # 4
+---| 'save_pos' # 7
+---| 'late_lua' # 8
+---| 'user_defined' # 9
 ---| 'pdf_literal' # 16
----| 'pdf_refobj' # 17
----| 'pdf_annot' # 18
----| 'pdf_start_link' # 19
----| 'pdf_end_link' # 20
----| 'pdf_dest' # 21
----| 'pdf_action' # 22
----| 'pdf_thread' # 23
----| 'pdf_start_thread' # 24
----| 'pdf_end_thread' # 25
----| 'pdf_thread_data' # 26
----| 'pdf_link_data' # 27
----| 'pdf_colorstack' # 28
----| 'pdf_setmatrix' # 29
----| 'pdf_save' # 30
----| 'pdf_restore' # 31
----| 'pdf_link_state' # 32
+---| 'pdf_late_literal' # 17
+---| 'pdf_refobj' # 18
+---| 'pdf_annot' # 19
+---| 'pdf_start_link' # 20
+---| 'pdf_end_link' # 21
+---| 'pdf_dest' # 22
+---| 'pdf_action' # 23
+---| 'pdf_thread' # 24
+---| 'pdf_start_thread' # 25
+---| 'pdf_end_thread' # 26
+---| 'pdf_thread_data' # 27
+---| 'pdf_link_data' # 28
+---| 'pdf_colorstack' # 29
+---| 'pdf_setmatrix' # 30
+---| 'pdf_save' # 31
+---| 'pdf_restore' # 32
+---| 'pdf_link_state' # 33
 
 ---
 ---Whatsit nodes come in many subtypes that you can ask for them by running
@@ -1637,12 +1649,72 @@ function node.direct.is_node(item) end
 ---Return a table that maps node id numbers to node type strings, providing an
 ---overview of the possible top-level `id` types.
 ---
+---__Example:__
+---
+---```lua
+---assert.same(
+---  node.types(),
+---  {
+---    [0] = "hlist",
+---    [1] = "vlist",
+---    [2] = "rule",
+---    [3] = "ins",
+---    [4] = "mark",
+---    [5] = "adjust",
+---    [6] = "boundary",
+---    [7] = "disc",
+---    [8] = "whatsit",
+---    [9] = "local_par",
+---    [10] = "dir",
+---    [11] = "math",
+---    [12] = "glue",
+---    [13] = "kern",
+---    [14] = "penalty",
+---    [15] = "unset",
+---    [16] = "style",
+---    [17] = "choice",
+---    [18] = "noad",
+---    [19] = "radical",
+---    [20] = "fraction",
+---    [21] = "accent",
+---    [22] = "fence",
+---    [23] = "math_char",
+---    [24] = "sub_box",
+---    [25] = "sub_mlist",
+---    [26] = "math_text_char",
+---    [27] = "delim",
+---    [28] = "margin_kern",
+---    [29] = "glyph",
+---    [30] = "align_record",
+---    [31] = "pseudo_file",
+---    [32] = "pseudo_line",
+---    [33] = "page_insert",
+---    [34] = "split_insert",
+---    [35] = "expr_stack",
+---    [36] = "nested_list",
+---    [37] = "span",
+---    [38] = "attribute",
+---    [39] = "glue_spec",
+---    [40] = "attribute_list",
+---    [41] = "temp",
+---    [42] = "align_stack",
+---    [43] = "movement_stack",
+---    [44] = "if_stack",
+---    [45] = "unhyphenated",
+---    [46] = "hyphenated",
+---    [47] = "delta",
+---    [48] = "passive",
+---    [49] = "shape",
+---  }
+---)
+---```
+---
 ---__Reference:__
 ---
 ---* Source file of the `LuaTeX` manual: [luatex-nodes.tex#L1218-L1224](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1218-L1224)
 ---* Corresponding C source code: [lnodelib.c#L3066-L3069](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3066-L3069)
 ---
----@return table
+---@return table<integer, string>
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.types() end
@@ -1650,15 +1722,47 @@ function node.types() end
 ---
 ---Provides a table of subtype mappings.
 ---
----TEX’s ‘whatsits’ all have the same id. The various subtypes are defined by their subtype fields.
-
+---TeX’s ‘whatsits’ all have the same id. The various subtypes are defined by their subtype fields.
+---
+---__Example:__
+---
+---```lua
+---assert.same(node.whatsits(), {
+---  [0] = "open",
+---  [1] = "write",
+---  [2] = "close",
+---  [3] = "special",
+---  [4] = "late_special",
+---  [7] = "save_pos",
+---  [8] = "late_lua",
+---  [9] = "user_defined",
+---  [16] = "pdf_literal",
+---  [17] = "pdf_late_literal",
+---  [18] = "pdf_refobj",
+---  [19] = "pdf_annot",
+---  [20] = "pdf_start_link",
+---  [21] = "pdf_end_link",
+---  [22] = "pdf_dest",
+---  [23] = "pdf_action",
+---  [24] = "pdf_thread",
+---  [25] = "pdf_start_thread",
+---  [26] = "pdf_end_thread",
+---  [27] = "pdf_thread_data",
+---  [28] = "pdf_link_data",
+---  [29] = "pdf_colorstack",
+---  [30] = "pdf_setmatrix",
+---  [31] = "pdf_save",
+---  [32] = "pdf_restore",
+---  [33] = "pdf_link_state",
+---})
+---```
 ---
 ---__Reference:__
 ---
 ---* Source file of the `LuaTeX` manual: [luatex-nodes.tex#L1226-L1233](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1226-L1233)
 ---* Corresponding C source code: [lnodelib.c#L3073-L3076](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3073-L3076)
 ---
----@return table
+---@return table<integer, string>
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.whatsits() end
@@ -1666,10 +1770,64 @@ function node.whatsits() end
 ---
 ---Convert a single type name to its internal numeric representation.
 ---
----```lua
----node.id('glyph') -- 29
----```
+---__Example:__
 ---
+---```lua
+---local function equals(name, id)
+---  assert.equals(node.id(name), id)
+---end
+---
+---equals("hlist", 0)
+---equals("vlist", 1)
+---equals("rule", 2)
+---equals("ins", 3)
+---equals("mark", 4)
+---equals("adjust", 5)
+---equals("boundary", 6)
+---equals("disc", 7)
+---equals("whatsit", 8)
+---equals("local_par", 9)
+---equals("dir", 10)
+---equals("math", 11)
+---equals("glue", 12)
+---equals("kern", 13)
+---equals("penalty", 14)
+---equals("unset", 15)
+---equals("style", 16)
+---equals("choice", 17)
+---equals("noad", 18)
+---equals("radical", 19)
+---equals("fraction", 20)
+---equals("accent", 21)
+---equals("fence", 22)
+---equals("math_char", 23)
+---equals("sub_box", 24)
+---equals("sub_mlist", 25)
+---equals("math_text_char", 26)
+---equals("delim", 27)
+---equals("margin_kern", 28)
+---equals("glyph", 29)
+---equals("align_record", 30)
+---equals("pseudo_file", 31)
+---equals("pseudo_line", 32)
+---equals("page_insert", 33)
+---equals("split_insert", 34)
+---equals("expr_stack", 35)
+---equals("nested_list", 36)
+---equals("span", 37)
+---equals("attribute", 38)
+---equals("glue_spec", 39)
+---equals("attribute_list", 40)
+---equals("temp", 41)
+---equals("align_stack", 42)
+---equals("movement_stack", 43)
+---equals("if_stack", 44)
+---equals("unhyphenated", 45)
+---equals("hyphenated", 46)
+---equals("delta", 47)
+---equals("passive", 48)
+---equals("shape", 49)
+---```
 ---__Reference:__
 ---
 ---* Source file of the `LuaTeX` manual: [luatex-nodes.tex#L1235-L1244](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1235-L1244)
@@ -1692,9 +1850,9 @@ function node.id(type) end
 ---represents a node, and `nil` otherwise.
 ---
 ---```lua
----node.type(29) -- glyph
----node.type(node.new("glyph")) -- node
----node.type('xxx') -- nil
+---assert.equals(node.type(29), "glyph")
+---assert.equals(node.type(node.id("glyph")), "glyph")
+---assert.is_nil(node.type("xxx"))
 ---```
 ---
 ---__Reference:__
@@ -1711,9 +1869,39 @@ function node.type(n) end
 ---
 ---Convert a single `whatsit` name to its internal numeric representation (subtype).
 ---
+---__Example:__
+---
 ---```lua
----node.subtype('pdf_literal') -- 16
----node.subtype('xxx') -- nil
+---local function equals(name, id)
+---  assert.equals(node.subtype(name), id)
+---end
+---
+---equals("open", 0)
+---equals("write", 1)
+---equals("close", 2)
+---equals("special", 3)
+---equals("late_special", 4)
+---equals("save_pos", 7)
+---equals("late_lua", 8)
+---equals("user_defined", 9)
+---equals("pdf_literal", 16)
+---equals("pdf_late_literal", 17)
+---equals("pdf_refobj", 18)
+---equals("pdf_annot", 19)
+---equals("pdf_start_link", 20)
+---equals("pdf_end_link", 21)
+---equals("pdf_dest", 22)
+---equals("pdf_action", 23)
+---equals("pdf_thread", 24)
+---equals("pdf_start_thread", 25)
+---equals("pdf_end_thread", 26)
+---equals("pdf_thread_data", 27)
+---equals("pdf_link_data", 28)
+---equals("pdf_colorstack", 29)
+---equals("pdf_setmatrix", 30)
+---equals("pdf_save", 31)
+---equals("pdf_restore", 32)
+---equals("pdf_link_state", 33)
 ---```
 ---
 ---__Reference:__
@@ -1730,6 +1918,412 @@ function node.subtype(whatsit_type_name) end
 ---
 ---Return an array of valid field names for a particular type of
 ---node.
+------
+---__Example:__
+---
+---```lua
+---local types = {}
+---for type_id, type in pairs(node.types()) do
+---  if type_id ~= 8 then
+---    types[type] = {}
+---    for field_id, field in pairs(node.fields(type_id)) do
+---      types[type][field_id] = field
+---    end
+---  end
+---end
+---
+---assert.same(types, {
+---  accent = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "nucleus",
+---    "sub",
+---    "sup",
+---    "accent",
+---    "bot_accent",
+---    "top_accent",
+---    "overlay_accent",
+---    "fraction",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  adjust = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "head",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  align_record = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  align_stack = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  attribute = { "id", "number", "value", [0] = "next" },
+---  attribute_list = { "id", [0] = "next" },
+---  boundary = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "value",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  choice = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "display",
+---    "text",
+---    "script",
+---    "scriptscript",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  delim = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "small_fam",
+---    "small_char",
+---    "large_fam",
+---    "large_char",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  delta = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  dir = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "dir",
+---    "level",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  disc = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "pre",
+---    "post",
+---    "replace",
+---    "penalty",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  expr_stack = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  fence = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "delim",
+---    "italic",
+---    "height",
+---    "depth",
+---    "options",
+---    "class",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  fraction = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "width",
+---    "num",
+---    "denom",
+---    "left",
+---    "right",
+---    "middle",
+---    "fam",
+---    "options",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  glue = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "leader",
+---    "width",
+---    "stretch",
+---    "shrink",
+---    "stretch_order",
+---    "shrink_order",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  glue_spec = {
+---    "id",
+---    "width",
+---    "stretch",
+---    "shrink",
+---    "stretch_order",
+---    "shrink_order",
+---    [0] = "next",
+---  },
+---  glyph = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "char",
+---    "font",
+---    "lang",
+---    "left",
+---    "right",
+---    "uchyph",
+---    "components",
+---    "xoffset",
+---    "yoffset",
+---    "width",
+---    "height",
+---    "depth",
+---    "expansion_factor",
+---    "data",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  hlist = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "width",
+---    "depth",
+---    "height",
+---    "dir",
+---    "shift",
+---    "glue_order",
+---    "glue_sign",
+---    "glue_set",
+---    "head",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  hyphenated = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  if_stack = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  ins = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "cost",
+---    "depth",
+---    "height",
+---    "spec",
+---    "head",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  kern = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "kern",
+---    "expansion_factor",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  local_par = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "pen_inter",
+---    "pen_broken",
+---    "dir",
+---    "box_left",
+---    "box_left_width",
+---    "box_right",
+---    "box_right_width",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  margin_kern = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "width",
+---    "glyph",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  mark = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "class",
+---    "mark",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  math = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "surround",
+---    "width",
+---    "stretch",
+---    "shrink",
+---    "stretch_order",
+---    "shrink_order",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  math_char = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "fam",
+---    "char",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  math_text_char = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "fam",
+---    "char",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  movement_stack = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  nested_list = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  noad = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "nucleus",
+---    "sub",
+---    "sup",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  page_insert = {
+---    "id",
+---    "subtype",
+---    "height",
+---    "last_ins_ptr",
+---    "best_ins_ptr",
+---    "width",
+---    "stretch",
+---    "shrink",
+---    "stretch_order",
+---    "shrink_order",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  passive = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  penalty = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "penalty",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  pseudo_file = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  pseudo_line = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  radical = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "nucleus",
+---    "sub",
+---    "sup",
+---    "left",
+---    "degree",
+---    "width",
+---    "options",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  rule = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "width",
+---    "depth",
+---    "height",
+---    "dir",
+---    "index",
+---    "left",
+---    "right",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  shape = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  span = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  split_insert = {
+---    "id",
+---    "subtype",
+---    "height",
+---    "last_ins_ptr",
+---    "best_ins_ptr",
+---    "broken_ptr",
+---    "broken_ins",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  style = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "style",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  sub_box = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "head",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  sub_mlist = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "head",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  temp = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  unhyphenated = { "id", "subtype", [-1] = "prev", [0] = "next" },
+---  unset = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "width",
+---    "depth",
+---    "height",
+---    "dir",
+---    "shrink",
+---    "glue_order",
+---    "glue_sign",
+---    "stretch",
+---    "span",
+---    "head",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---  vlist = {
+---    "id",
+---    "subtype",
+---    "attr",
+---    "width",
+---    "depth",
+---    "height",
+---    "dir",
+---    "shift",
+---    "glue_order",
+---    "glue_sign",
+---    "glue_set",
+---    "head",
+---    [-1] = "prev",
+---    [0] = "next",
+---  },
+---})
+---```
 ---
 ---If you want to get the valid fields for a “whatsit”, you have to
 ---supply the second argument also. In other cases, any given second argument will
@@ -1750,9 +2344,43 @@ function node.fields(id, subtype) end
 ---
 ---Return a boolean that is only `true` if `n` is actually a node, and it has the field.
 ---
+---__Example:__
+---
+---```lua
+---local glyph = node.new("glyph")
+---
+---for _, field in ipairs({
+---  "prev",
+---  "next",
+---  "id",
+---  "subtype",
+---  "attr",
+---  "char",
+---  "font",
+---  "lang",
+---  "left",
+---  "right",
+---  "uchyph",
+---  "components",
+---  "xoffset",
+---  "yoffset",
+---  "width",
+---  "height",
+---  "depth",
+---  "expansion_factor",
+---  "data",
+---}) do
+---  assert.is_true(node.has_field(glyph, field))
+---end
+---
+---  assert.is_false(node.has_field(glyph, "xxx"))
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L2993-L3000](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2993-L3000)
+---
+---@see node.direct.has_field
 ---
 ---@param n Node
 ---@param field string
@@ -1765,9 +2393,42 @@ function node.has_field(n, field) end
 ---
 ---Return a boolean that is only `true` if `d` is actually a node, and it has the field.
 ---
+---__Example:__
+---
+---```lua
+---local glyph = node.direct.todirect(node.new("glyph"))
+---for _, field in ipairs({
+---  "prev",
+---  "next",
+---  "id",
+---  "subtype",
+---  "attr",
+---  "char",
+---  "font",
+---  "lang",
+---  "left",
+---  "right",
+---  "uchyph",
+---  "components",
+---  "xoffset",
+---  "yoffset",
+---  "width",
+---  "height",
+---  "depth",
+---  "expansion_factor",
+---  "data",
+---}) do
+---  assert.is_true(node.direct.has_field(glyph, field))
+---end
+---
+---assert.is_false(node.direct.has_field(glyph, "xxx"))
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L3041-L3049](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3041-L3049)
+---
+---@see node.has_field
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param field string
@@ -1786,10 +2447,29 @@ function node.direct.has_field(d, field) end
 ---the second argument is required. As with all node functions, this function
 ---creates a node at the *TeX* level.
 ---
+---__Example:__
+---
+---```lua
+---for type_id, node_type in pairs(node.types()) do
+---  if node_type == "whatsit" then
+---    for subtype_id, subtype in pairs(node.whatsits()) do
+---      local n = node.new(node_type, subtype)
+---      assert.equals(n.id, type_id)
+---      assert.equals(n.subtype, subtype_id)
+---    end
+---  else
+---    local n = node.new(node_type)
+---    assert.equals(n.id, type_id)
+---  end
+---end
+---```
+---
 ---__Reference:__
 ---
 ---* Source file of the `LuaTeX` manual: [luatex-nodes.tex#L1299-L1314](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1299-L1314)
 ---* Corresponding C source code: [lnodelib.c#L2055-L2060](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2055-L2060)
+---
+---@see node.direct.new
 ---
 ---@param id integer|NodeTypeName
 ---@param subtype? integer|string
@@ -1808,10 +2488,31 @@ function node.new(id, subtype) end
 ---the second argument is required. As with all node functions, this function
 ---creates a node at the *TeX* level.
 ---
+---__Example:__
+---
+---```lua
+---for type_id, node_type in pairs(node.types()) do
+---  if node_type == "whatsit" then
+---    for subtype_id, subtype in pairs(node.whatsits()) do
+---      local direct = node.direct.new(node_type, subtype)
+---      local n = node.direct.tonode(direct)
+---      assert.equals(n.id, type_id)
+---      assert.equals(n.subtype, subtype_id)
+---    end
+---  else
+---    local direct = node.direct.new(node_type)
+---    local n = node.direct.tonode(direct)
+---    assert.equals(n.id, type_id)
+---  end
+---end
+---```
+---
 ---__Reference:__
 ---
 ---* Source file of the `LuaTeX` manual: [luatex-nodes.tex#L1299-L1314](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1299-L1314)
 ---* Corresponding C source code: [lnodelib.c#L2064-L2069](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2064-L2069)
+---
+---@see node.new
 ---
 ---@param id integer|NodeTypeName
 ---@param subtype? integer|string
@@ -2656,6 +3357,15 @@ function node.direct.is_char(d, font) end
 ---Signal if the glyph is already turned into a character reference
 ---or not by examining the subtype.
 ---
+---__Example:__
+---
+---```lua
+---local character, font = node.is_glyph(node.new("glyph"))
+---assert.equals(character, 0)
+---assert.equals(font, 0)
+---assert.is_false(node.is_glyph(node.new("hlist")))
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L3026-L3037](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3026-L3037)
@@ -2671,6 +3381,16 @@ function node.is_glyph(n) end
 ---
 ---Signal if the glyph is already turned into a character reference
 ---or not by examining the subtype.
+---
+---__Example:__
+---
+---```lua
+---local character, font =
+---  node.direct.is_glyph(node.direct.todirect(node.new("glyph")))
+---assert.equals(character, 0)
+---assert.equals(font, 0)
+---assert.is_false(node.direct.is_glyph(node.direct.todirect(node.new("hlist"))))
+---```
 ---
 ---__Reference:__
 ---
@@ -2690,9 +3410,14 @@ function node.direct.is_glyph(n) end
 ---__Example:__
 ---
 ---```lua
----for n in node.traverse(head) do
----   ...
----end
+---callback.register("post_linebreak_filter", function(head)
+---  for n, type, subtype in node.traverse(head.head) do
+---    assert.is_type(n, "userdata")
+---    assert.is_type(type, "number")
+---    assert.is_type(subtype, "number")
+---  end
+---  return head
+---end)
 ---```
 ---
 ---It should be clear from the definition of the function `f` that even though
@@ -3907,9 +4632,20 @@ function node.family_font(fam) end
 ---
 ---Convert a userdata node into its numeric reference in the memory table.
 ---
+---__Example:__
+---
+---```lua
+---local n = node.new("glyph")
+---local d = node.direct.todirect(n)
+---local from_direct = node.direct.tonode(d)
+---assert.equals(n, from_direct)
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L6552-L6565](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6552-L6565)
+---
+---@see node.direct.tonode
 ---
 ---@param n Node
 ---
@@ -3921,9 +4657,20 @@ function node.direct.todirect(n) end
 ---
 ---Convert numeric reference in the memory table of a node into a userdata node.
 ---
+---__Example:__
+---
+---```lua
+---local n = node.new("glyph")
+---local d = node.direct.todirect(n)
+---local from_direct = node.direct.tonode(d)
+---assert.equals(n, from_direct)
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L6570-L6581](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6570-L6581)
+---
+---@see node.direct.todirect
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
@@ -4213,6 +4960,17 @@ function node.direct.getchar(d) end
 ---
 ---Set the `width`, `height` and `depth` fields of `hlist`, `vlist`, `rule` or `unset` nodes.
 ---
+---__Example:__
+---
+---```lua
+---local n = node.new("hlist") --[[@as HlistNode]]
+---local d = node.direct.todirect(n)
+---node.direct.setwhd(d, 1, 2, 3)
+---assert.equals(n.width, 1)
+---assert.equals(n.height, 2)
+---assert.equals(n.depth, 3)
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L1307-L1346](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1307-L1346)
@@ -4233,7 +4991,7 @@ function node.direct.setwhd(d, width, height, depth) end
 ---* Corresponding C source code: [lnodelib.c#L1350-L1378](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1350-L1378)
 ---
 ---@param n Node
----@param get_ex boolean
+---@param get_expansion_factor? boolean
 ---
 ---@return integer width
 ---@return integer height
@@ -4241,17 +4999,38 @@ function node.direct.setwhd(d, width, height, depth) end
 ---@return integer|nil ex # If the node is a `glyph` and `get_ex` is true
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function node.getwhd(n, get_ex) end
+function node.getwhd(n, get_expansion_factor) end
 
 ---
 ---Return the `width`, `height` and `depth` of a list, rule or (unexpanded) `glyph` as well as `glue` (its spec is looked at) and `unset` node.
+---
+---__Example:__
+---
+---```lua
+---local hlist = node.new("hlist") --[[@as HlistNode]]
+---hlist.width = 1
+---hlist.height = 2
+---hlist.depth = 3
+---local width, height, depth, expansion_factor =
+---node.direct.getwhd(node.direct.todirect(hlist))
+---assert.equals(width, 1)
+---assert.equals(height, 2)
+---assert.equals(depth, 3)
+---assert.is_nil(expansion_factor)
+---
+---local glpyh = node.new("glyph") --[[@as GlyphNode]]
+---glpyh.expansion_factor = 3
+---local _, _, _, expansion_factor =
+---  node.direct.getwhd(node.direct.todirect(glpyh), true)
+---assert.equals(expansion_factor, 3)
+---```
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L1277-L1305](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1277-L1305)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
----@param get_ex boolean
+---@param get_expansion_factor? boolean
 ---
 ---@return integer width
 ---@return integer height
@@ -4259,7 +5038,7 @@ function node.getwhd(n, get_ex) end
 ---@return integer|nil ex # If the node is a `glyph` and `get_ex` is true
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
-function node.direct.getwhd(d, get_ex) end
+function node.direct.getwhd(d, get_expansion_factor) end
 
 ---
 ---Set the `pre`, `post`, `replace`, `subtype` and `penalty` on a `disc` node.
@@ -4402,9 +5181,19 @@ function node.direct.getleader(d) end
 ---
 ---Set the value of a generic node field.
 ---
+---__Example:__
+---
+---```lua
+---local n = node.new("glyph")
+---node.setfield(n, "char", 2)
+---assert.equals(node.getfield(n, "char"), 2)
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L7348-L7364](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7348-L7364)
+---
+---@see node.direct.setfield
 ---
 ---@param n Node
 ---@param field string
@@ -4416,9 +5205,19 @@ function node.setfield(n, field, value) end
 ---
 ---Set the value of a generic node field.
 ---
+---__Example:__
+---
+---```lua
+---local d = node.direct.todirect(node.new("glyph"))
+---node.direct.setfield(d, "char", 3)
+---assert.equals(node.direct.getfield(d, "char"), 3)
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L7660-L8188](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7660-L8188)
+---
+---@see node.setfield
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param field string
@@ -4615,6 +5414,15 @@ function node.direct.setdir(d, dir) end
 ---
 ---Get the direction  of `dir`, `hlist`, `vlist`, `rule` and `local_par` nodes as a string.
 ---
+---__Example:__
+---
+---```lua
+---local n = node.new("hlist")
+---local d = node.direct.todirect(n)
+---node.direct.setdir(d, "TLT")
+---assert.equals(node.direct.getdir(d), "TLT")
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L1047-L1067](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1047-L1067)
@@ -4641,6 +5449,15 @@ function node.direct.setdirection(d, dir) end
 
 ---
 ---Get the direction of `dir`, `hlist`, `vlist`, `rule` and `local_par` nodes as an integer.
+---
+---__Example:__
+---
+---```lua
+---local n = node.new("hlist")
+---local d = node.direct.todirect(n)
+---node.direct.setdir(d, "LTL")
+---assert.equals(node.direct.getdirection(d), 2)
+---```
 ---
 ---__Reference:__
 ---
@@ -5193,7 +6010,187 @@ function node.make_extensible(fnt, chr, size, overlap, horizontal, attlist) end
 ---__Example:__
 ---
 ---```lua
----node.subtypes('fence') -- {"left", "middle", "right", "no", [0] = "unset"}
+---local subtypes = {}
+---
+---for _, node_type in pairs(node.types()) do
+---  local subtype = node.subtypes(node_type)
+---  if subtype then
+---    subtypes[node_type] = subtype
+---  end
+---end
+---
+---assert.same(subtypes, {
+---  accent = {
+---    "fixedtop",
+---    "fixedbottom",
+---    "fixedboth",
+---    [0] = "bothflexible",
+---  },
+---  adjust = { "pre", [0] = "normal" },
+---  boundary = { "user", "protrusion", "word", [0] = "cancel" },
+---  dir = { "cancel", [0] = "normal" },
+---  disc = {
+---    "explicit",
+---    "automatic",
+---    "regular",
+---    "first",
+---    "second",
+---    [0] = "discretionary",
+---  },
+---  fence = { "left", "middle", "right", "no", [0] = "unset" },
+---  glue = {
+---    "lineskip",
+---    "baselineskip",
+---    "parskip",
+---    "abovedisplayskip",
+---    "belowdisplayskip",
+---    "abovedisplayshortskip",
+---    "belowdisplayshortskip",
+---    "leftskip",
+---    "rightskip",
+---    "topskip",
+---    "splittopskip",
+---    "tabskip",
+---    "spaceskip",
+---    "xspaceskip",
+---    "parfillskip",
+---    "mathskip",
+---    "thinmuskip",
+---    "medmuskip",
+---    "thickmuskip",
+---    [0] = "userskip",
+---    [98] = "conditionalmathskip",
+---    [99] = "muglue",
+---    [100] = "leaders",
+---    [101] = "cleaders",
+---    [102] = "xleaders",
+---    [103] = "gleaders",
+---  },
+---  glyph = {
+---    "character",
+---    "ligature",
+---    [0] = "unset",
+---    [4] = "ghost",
+---    [8] = "left",
+---    [16] = "right",
+---  },
+---  hlist = {
+---    "line",
+---    "box",
+---    "indent",
+---    "alignment",
+---    "cell",
+---    "equation",
+---    "equationnumber",
+---    "math",
+---    "mathchar",
+---    "hextensible",
+---    "vextensible",
+---    "hdelimiter",
+---    "vdelimiter",
+---    "overdelimiter",
+---    "underdelimiter",
+---    "numerator",
+---    "denominator",
+---    "limits",
+---    "fraction",
+---    "nucleus",
+---    "sup",
+---    "sub",
+---    "degree",
+---    "scripts",
+---    "over",
+---    "under",
+---    "accent",
+---    "radical",
+---    [0] = "unknown",
+---  },
+---  kern = {
+---    "userkern",
+---    "accentkern",
+---    "italiccorrection",
+---    [0] = "fontkern",
+---  },
+---  math = { "endmath", [0] = "beginmath" },
+---  noad = {
+---    "opdisplaylimits",
+---    "oplimits",
+---    "opnolimits",
+---    "bin",
+---    "rel",
+---    "open",
+---    "close",
+---    "punct",
+---    "inner",
+---    "under",
+---    "over",
+---    "vcenter",
+---    [0] = "ord",
+---  },
+---  penalty = {
+---    "linebreakpenalty",
+---    "linepenalty",
+---    "wordpenalty",
+---    "finalpenalty",
+---    "noadpenalty",
+---    "beforedisplaypenalty",
+---    "afterdisplaypenalty",
+---    "equationnumberpenalty",
+---    [0] = "userpenalty",
+---  },
+---  radical = {
+---    "uradical",
+---    "uroot",
+---    "uunderdelimiter",
+---    "uoverdelimiter",
+---    "udelimiterunder",
+---    "udelimiterover",
+---    [0] = "radical",
+---  },
+---  rule = {
+---    "box",
+---    "image",
+---    "empty",
+---    "user",
+---    "over",
+---    "under",
+---    "fraction",
+---    "radical",
+---    "outline",
+---    [0] = "normal",
+---  },
+---  vlist = {
+---    "line",
+---    "box",
+---    "indent",
+---    "alignment",
+---    "cell",
+---    "equation",
+---    "equationnumber",
+---    "math",
+---    "mathchar",
+---    "hextensible",
+---    "vextensible",
+---    "hdelimiter",
+---    "vdelimiter",
+---    "overdelimiter",
+---    "underdelimiter",
+---    "numerator",
+---    "denominator",
+---    "limits",
+---    "fraction",
+---    "nucleus",
+---    "sup",
+---    "sub",
+---    "degree",
+---    "scripts",
+---    "over",
+---    "under",
+---    "accent",
+---    "radical",
+---    [0] = "unknown",
+---  },
+---})
 ---```
 ---
 ---__Reference:__
@@ -5208,20 +6205,44 @@ function node.make_extensible(fnt, chr, size, overlap, horizontal, attlist) end
 function node.subtypes(subtype) end
 
 ---
+---__Example:__
+---
+---```lua
+---assert.equals(
+---  node.tostring(node.new("glyph")),
+---  "<node    nil <    234 >    nil : glyph 0>"
+---)
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L5913-L5918](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5913-L5918)
 ---
+---@see node.direct.tostring
+---
 ---@param n Node
+---
 ---@return string # For example `<node    nil <    234 >    nil : glyph 0>`
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.tostring(n) end
 
 ---
+---__Example:__
+---
+---```lua
+---assert.equals(
+---  node.direct.tostring(node.direct.todirect(node.new("glyph"))),
+---  "<node    nil <    234 >    nil : glyph 0>"
+---)
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L5922-L5931](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5922-L5931)
+---
+---@see node.tostring
+---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
 ---@return string # For example `<direct    nil <    234 >    nil : glyph 0>`
@@ -5230,9 +6251,20 @@ function node.tostring(n) end
 function node.direct.tostring(d) end
 
 ---
+---__Example:__
+---
+---```lua
+---assert.equals(
+---  tostring(node.usedlist()),
+---  "<node    nil <    234 >    239 : dir 0>"
+---)
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L6471-L6476](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6471-L6476)
+---
+---@see node.direct.usedlist
 ---
 ---@return Node n
 ---
@@ -5240,9 +6272,17 @@ function node.direct.tostring(d) end
 function node.usedlist() end
 
 ---
+---__Example:__
+---
+---```lua
+---assert.equals(node.direct.usedlist(), 234)
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L6480-L6484](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L6480-L6484)
+---
+---@see node.usedlist
 ---
 ---@return integer d
 ---
@@ -5260,7 +6300,46 @@ function node.direct.usedlist() end
 ---__Example:__
 ---
 ---```lua
----node.values('dir') -- { "TLT", "TRT", "LTL", "RTT" },
+---assert.same(
+---  node.values("dir"),
+---  { [0] = "TLT", [1] = "TRT", [2] = "LTL", [3] = "RTT" }
+---)
+---assert.same(
+---  node.values("direction"),
+---  { [0] = "TLT", [1] = "TRT", [2] = "LTL", [3] = "RTT" }
+---)
+---assert.same(
+---  node.values("glue"),
+---  { [0] = "normal", [1] = "fi", [2] = "fil", [3] = "fill", [4] = "filll" }
+---)
+---assert.same(
+---  node.values("pdf_literal"),
+---  {
+---    [0] = "origin",
+---    [1] = "page",
+---    [2] = "always",
+---    [3] = "raw",
+---    [4] = "text",
+---    [5] = "font",
+---    [6] = "special",
+---  }
+---)
+---assert.same(
+---  node.values("pdf_action"),
+---  { [0] = "page", [1] = "goto", [2] = "thread", [3] = "user" }
+---)
+---assert.same(
+---  node.values("pdf_window"),
+---  { [0] = "unset", [1] = "new", [2] = "nonew" }
+---)
+---assert.same(
+---  node.values("color_stack"),
+---  { [0] = "set", [1] = "push", [2] = "pop", [3] = "current" }
+---)
+---assert.same(
+---  node.values("pagestate"),
+---  { [0] = "empty", [1] = "box_there", [2] = "inserts_only" }
+---)
 ---```
 ---
 ---__Reference:__
