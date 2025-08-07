@@ -315,6 +315,60 @@ node.direct = {}
 ---makes more sense to refer to a list by `head`, sometimes `list` makes
 ---more sense.
 ---
+---__Example:__
+---
+---```lua
+---assert.node_type("hlist", nil, {
+---  id = "hlist (0)",
+---  subtypes = {
+---    "unknown (0)",
+---    "line (1)",
+---    "box (2)",
+---    "indent (3)",
+---    "alignment (4)",
+---    "cell (5)",
+---    "equation (6)",
+---    "equationnumber (7)",
+---    "math (8)",
+---    "mathchar (9)",
+---    "hextensible (10)",
+---    "vextensible (11)",
+---    "hdelimiter (12)",
+---    "vdelimiter (13)",
+---    "overdelimiter (14)",
+---    "underdelimiter (15)",
+---    "numerator (16)",
+---    "denominator (17)",
+---    "limits (18)",
+---    "fraction (19)",
+---    "nucleus (20)",
+---    "sup (21)",
+---    "sub (22)",
+---    "degree (23)",
+---    "scripts (24)",
+---    "over (25)",
+---    "under (26)",
+---    "accent (27)",
+---    "radical (28)",
+---  },
+---  fields = {
+---    "next (0)",
+---    "id (1)",
+---    "subtype (2)",
+---    "attr (3)",
+---    "width (4)",
+---    "depth (5)",
+---    "height (6)",
+---    "dir (7)",
+---    "shift (8)",
+---    "glue_order (9)",
+---    "glue_sign (10)",
+---    "glue_set (11)",
+---    "head (12)",
+---  },
+---})
+---```lua
+---
 ---__Reference:__
 ---
 ---* Source file of the `LuaTeX` manual: [luatex-nodes.tex#L78-L108](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L78-L108)
@@ -682,6 +736,35 @@ function node.direct.effective_glue(d, parent, round) end
 ---|3 # left
 ---|4 # right
 
+---
+---__Example:__
+---
+---```lua
+---assert.node_type("glyph", nil, {
+---  id = "glyph (29)",
+---  subtypes = { "unset (0)", "character (1)", "ligature (2)" },
+---  fields = {
+---    "next (0)",
+---    "id (1)",
+---    "subtype (2)",
+---    "attr (3)",
+---    "char (4)",
+---    "font (5)",
+---    "lang (6)",
+---    "left (7)",
+---    "right (8)",
+---    "uchyph (9)",
+---    "components (10)",
+---    "xoffset (11)",
+---    "yoffset (12)",
+---    "width (13)",
+---    "height (14)",
+---    "depth (15)",
+---    "expansion_factor (16)",
+---    "data (17)",
+---  },
+---})
+---```
 ---
 ---__Reference:__
 ---
@@ -3666,9 +3749,26 @@ function node.direct.end_of_math(d) end
 ---function is called with `current` equal to `head`, it will be
 ---changed.
 ---
+---__Example:__
+---
+---```lua
+---local g1 = node.new("glyph")
+---local g2 = node.new("glyph")
+---local g3 = node.new("glyph")
+---
+---g1.next = g2
+---g2.next = g3
+---assert.equals(g1.next, g2)
+---
+---local head, current = node.remove(g1, g2)
+---assert.equals(g1.next, g3)
+---assert.equals(head, g1)
+---assert.equals(current, g3)
+---```
+---
 ---__Reference:__
 ---
----* Source file of the `LuaTeX` manual: [luatex-nodes.tex#L1775-L1791](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1775-L1791)
+---* Source file of the `LuaTeX` manual: [luatex-nodes.tex#L1778-1794](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-nodes.tex#L1778-1794)
 ---* Corresponding C source code: [lnodelib.c#L2176-L2215](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2176-L2215)
 ---
 ---@param head Node
@@ -3692,10 +3792,32 @@ function node.remove(head, current) end
 ---function is called with `current` equal to `head`, it will be
 ---changed.
 ---
+---@see node.direct.remove
+---
+---__Example:__
+---
+---```lua
+---local g1 = node.direct.new("glyph")
+---local g2 = node.direct.new("glyph")
+---local g3 = node.direct.new("glyph")
+---
+---node.direct.setnext(g1, g2)
+---node.direct.setnext(g2, g3)
+---
+---assert.equals(node.direct.getnext(g1), g2)
+---
+---local head, current = node.direct.remove(g1, g2)
+---assert.equals(node.direct.getnext(g1), g3)
+---assert.equals(head, g1)
+---assert.equals(current, g3)
+---```
+---
 ---__Reference:__
 ---
 ---* Source file of the `LuaTeX` manual: [luatex-nodes.tex#L1775-L1791](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L1775-L1791)
 ---* Corresponding C source code: [lnodelib.c#L2219-L2267](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L2219-L2267)
+---
+---@see node.remove
 ---
 ---@param head integer
 ---@param current integer # A node following the list `head`.
@@ -4856,13 +4978,17 @@ function node.direct.setboth(d, prev, next) end
 ---__Example:__
 ---
 ---```lua
----local d1 = node.direct.new("glyph")
----local d2 = node.direct.new("glyph")
----local d3 = node.direct.new("glyph")
----node.direct.setboth(d1, d2, d3)
----local prev, next = node.direct.getboth(d1)
----assert.equals(prev, d2)
----assert.equals(next, d3)
+---local n1 = node.new("glyph")
+---local n2 = node.new("glyph")
+---local n3 = node.new("glyph")
+---
+---n1.next = n2
+---n2.next = n3
+---node.slide(n1) -- to set n2.prev
+---
+---local prev, next = node.getboth(n2)
+---assert.equals(prev, n1)
+---assert.equals(next, n3)
 ---```
 ---
 ---__Reference:__
@@ -4882,9 +5008,23 @@ function node.getboth(n) end
 ---
 ---Return the previous and next pointer of a node.
 ---
+---__Example:__
+---
+---```lua
+---local d1 = node.direct.new("glyph")
+---local d2 = node.direct.new("glyph")
+---local d3 = node.direct.new("glyph")
+---node.direct.setboth(d1, d2, d3)
+---local prev, next = node.direct.getboth(d1)
+---assert.equals(prev, d2)
+---assert.equals(next, d3)
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L1851-L1862](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L1851-L1862)
+---
+---@see node.getboth
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---
