@@ -1,6 +1,6 @@
--- ----------------------------------------------------------------------------
+-- -----------------------------------------------------------------------------
 -- Copyright (C) 2022-2025 by Josef Friedrich <josef@friedrich.rocks>
--- ----------------------------------------------------------------------------
+-- -----------------------------------------------------------------------------
 --
 -- This program is free software: you can redistribute it and/or modify it
 -- under the terms of the GNU General Public License as published by the
@@ -15,7 +15,10 @@
 -- You should have received a copy of the GNU General Public License along
 -- with this program. If not, see <https://www.gnu.org/licenses/>.
 --
--- ----------------------------------------------------------------------------
+-- -----------------------------------------------------------------------------
+
+-- A helper table to better navigate through the documentation using the
+-- outline: https://github.com/Josef-Friedrich/LuaTeX_Lua-API#navigation-table-_n
 
 ---
 ---@meta
@@ -3670,9 +3673,16 @@ function node.direct.count(id, d, e) end
 ---Signal if the glyph is already turned into a character reference
 ---or not by examining the subtype.
 ---
+---__Example:__
+---
+---```lua
+---assert.equals(node.is_char(node.new("glyph")), 0)
+---assert.equals(node.is_char(node.new("hlist")), nil)
+---```
+---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L3004-L3024](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L3004-L3024)
+---* Corresponding C source code: [lnodelib.c#L3004-3024](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/source/texk/web2c/luatexdir/lua/lnodelib.c#L3004-3024)
 ---
 ---@param n Node
 ---@param font? integer
@@ -3689,7 +3699,7 @@ function node.is_char(n, font) end
 ---
 ---__Reference:__
 ---
----* Corresponding C source code: [lnodelib.c#L7572-L7592](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L7572-L7592)
+---* Corresponding C source code: [lnodelib.c#L7572-L7592](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/source/texk/web2c/luatexdir/lua/lnodelib.c#L7576-7596)
 ---
 ---@param d integer # The index number of the node in the memory table for direct access.
 ---@param font? integer
@@ -5318,7 +5328,7 @@ function node.getid(n) end
 ---__Example:__
 ---
 ---```lua
----assert.equals(node.getid(node.new("glyph")), 29)
+---assert.equals(node.direct.getid(node.direct.todirect(node.new("glyph"))), 29)
 ---```
 ---
 ---__Reference:__
@@ -5338,7 +5348,9 @@ function node.direct.getid(d) end
 ---__Example:__
 ---
 ---```lua
----assert.equals(node.direct.getid(node.direct.todirect(node.new("glyph"))), 29)
+---local hlist = node.direct.new("hlist")
+---node.direct.setsubtype(hlist, 2)
+---assert.equals(node.direct.getsubtype(hlist), 2)
 ---```
 ---
 ---__Reference:__
@@ -5354,6 +5366,15 @@ function node.direct.setsubtype(d, subtype) end
 ---
 ---Return the `subtype` of a node.
 ---
+---__Example:__
+---
+---```lua
+---local hlist = node.new("hlist")
+---hlist.subtype = 2
+---
+---assert.equals(node.getsubtype(hlist), 2)
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L544-L558](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L544-L558)
@@ -5367,6 +5388,14 @@ function node.getsubtype(n) end
 
 ---
 ---Return the `subtype` of a node.
+---
+---__Example:__
+---
+---```lua
+---local hlist = node.direct.new("hlist")
+---node.direct.setsubtype(hlist, 2)
+---assert.equals(node.direct.getsubtype(hlist), 2)
+---```
 ---
 ---__Reference:__
 ---
@@ -5832,6 +5861,14 @@ function node.direct.setfield(d, field, value) end
 ---
 ---Other field names are often shared so a specific getter makes no sense.
 ---
+---__Example:__
+---
+---```lua
+---local n = node.new("glyph") --[[@as GlyphNode]]
+---n.char = 123
+---assert.equals(node.getfield(n, "char"), 123)
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L5189-L5207](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L5189-L5207)
@@ -5848,6 +5885,14 @@ function node.getfield(n, field) end
 ---Get the value of a generic node field.
 ---
 ---Other field names are often shared so a specific getter makes no sense.
+---
+---__Example:__
+---
+---```lua
+---local d = node.direct.todirect(node.new("glyph"))
+---node.direct.setfield(d, "char", 3)
+---assert.equals(node.direct.getfield(d, "char"), 3)
+---```
 ---
 ---__Reference:__
 ---
