@@ -24,41 +24,18 @@
 ---@meta
 
 ---
----# Binary input from files with `fio`
----
----There is a whole set of helpers for reading numbers and strings from a file:
----`fio.readcardinal1`, `fio.readcardinal2`, `fio.readcardinal3`, `fio.readcardinal4`, `fio.readcardinaltable`, `fio.readinteger1`, `fio.readinteger2`,
----`fio.readinteger3`, `fio.readinteger4`, `fio.readintegertable`, `fio.readfixed2`, `fio.readfixed4`,
----`fio.read2dot14`, `fio.setposition`, `fio.getposition`, `fio.skipposition`, `fio.readbytes`, `fio.readbytetable`. They work on normal *Lua* file handles.
+---Binary input from files with `fio` (file input-output)
 ---
 ---This library provides a set of functions for reading numbers from a file and
 ---in addition to the regular `io` library functions.
 ---
----|                            |                                     |
----|----------------------------|-------------------------------------|
----| `readcardinal1(f)`         | a 1 byte unsigned integer           |
----| `readcardinal2(f)`         | a 2 byte unsigned integer           |
----| `readcardinal3(f)`         | a 3 byte unsigned integer           |
----| `readcardinal4(f)`         | a 4 byte unsigned integer           |
----| `readcardinaltable(f,n,b)` | `n` cardinals of `b` bytes          |
----| `readinteger1(f)`          | a 1 byte signed integer             |
----| `readinteger2(f)`          | a 2 byte signed integer             |
----| `readinteger3(f)`          | a 3 byte signed integer             |
----| `readinteger4(f)`          | a 4 byte signed integer             |
----| `readintegertable(f,n,b)`  | `n` integers of `b` bytes           |
----| `readfixed2(f)`            | a 2 byte float (used in font files) |
----| `readfixed4(f)`            | a 4 byte float (used in font files) |
----| `read2dot14(f)`            | a 2 byte float (used in font files) |
----| `setposition(f,p)`         | goto position `p`                   |
----| `getposition(f)`           | get the current position            |
----| `skipposition(f,n)`        | skip `n` positions                  |
----| `readbytes(f,n)`           | `n` bytes                           |
----| `readbytetable(f,n)`       | `n` bytes                           |
----
 ---There are eight additional little endian variants for the `cardinal[1-4]`
 ---and `integer[1-4]` readers: `cardinal[1-4]le` and `integer[1-4]le`.
 ---
---- https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/liolibext.c
+---__Reference:__
+---
+---* Corresponding C source code: [liolibext.c](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/master/source/texk/web2c/luatexdir/lua/liolibext.c)
+---* Source file of the `LuaTeX` manual: [luatex-lua.tex#L655-697](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-lua.tex#L655-697)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 fio = {}
@@ -91,7 +68,7 @@ fio = {}
 ---
 ---@param file file* # A file handle.
 ---
----@return integer # A 1 byte unsigned integer
+---@return integer # A 1 byte unsigned integer.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function fio.readcardinal1(file) end
@@ -184,6 +161,8 @@ function fio.readcardinal3(file) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function fio.readcardinal4(file) end
 
+---
+---Read `number` unsigned integers of `bytes` as a table from a file.
 ---
 ---__Example:__
 ---
@@ -446,6 +425,8 @@ function fio.readinteger3(file) end
 function fio.readinteger4(file) end
 
 ---
+---Read `number` signed integers of `bytes` as a table from a file.
+---
 ---__Example:__
 ---
 ---```lua
@@ -483,6 +464,8 @@ function fio.readinteger4(file) end
 function fio.readintegertable(file, number, bytes) end
 
 ---
+---Read a 1 byte signed little endian integer (8-bit) from a file.
+---
 ---__Example:__
 ---
 ---```lua
@@ -514,6 +497,8 @@ function fio.readintegertable(file, number, bytes) end
 function fio.readinteger1le(file) end
 
 ---
+---Read a 2 byte signed little endian integer (16-bit) from a file.
+---
 ---__Example:__
 ---
 ---```lua
@@ -542,6 +527,8 @@ function fio.readinteger1le(file) end
 function fio.readinteger2le(file) end
 
 ---
+---Read a 3 byte signed little endian integer (24-bit) from a file.
+---
 ---__Example:__
 ---
 ---```lua
@@ -568,6 +555,8 @@ function fio.readinteger2le(file) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function fio.readinteger3le(file) end
 
+---
+---Read a 4 byte signed little endian integer (32-bit) from a file.
 ---
 ---__Example:__
 ---
@@ -596,7 +585,7 @@ function fio.readinteger3le(file) end
 function fio.readinteger4le(file) end
 
 ---
----Read a 2 byte float (used in font files).
+---Read a 2 byte float (used in font files) from a file.
 ---
 ---__Example:__
 ---
@@ -624,7 +613,7 @@ function fio.readinteger4le(file) end
 function fio.readfixed2(file) end
 
 ---
----Read a 4 byte float (used in font files).
+---Read a 4 byte float (used in font files) from a file.
 ---
 ---__Example:__
 ---
@@ -651,7 +640,7 @@ function fio.readfixed2(file) end
 function fio.readfixed4(file) end
 
 ---
----Read a 2 byte float (used in font files).
+---Read a 2 byte float (used in font files) from a file.
 ---
 ---__Example:__
 ---
@@ -740,7 +729,7 @@ function fio.setposition(file, position) end
 ---
 ---@param file file* # A file handle.
 ---
----@return integer position
+---@return integer position # The current position in bytes.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/fio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function fio.getposition(file) end
@@ -778,7 +767,7 @@ function fio.getposition(file) end
 function fio.skipposition(file, number) end
 
 ---
----Read `number` bytes.
+---Read `number` bytes from a file.
 ---
 ---__Example:__
 ---
@@ -813,7 +802,7 @@ function fio.skipposition(file, number) end
 function fio.readbytes(file, number) end
 
 ---
----Read `number` bytes as a table.
+---Read `number` bytes as a table from a file.
 ---
 ---__Example:__
 ---

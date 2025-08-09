@@ -1,3 +1,6 @@
+-- A helper table to better navigate through the documentation using the
+-- outline: https://github.com/Josef-Friedrich/LuaTeX_Lua-API#navigation-table-_n
+
 ---
 ---https://github.com/TeX-Live/luatex/tree/master/source/texk/web2c/luatexdir/luasocket/src/socket.lua
 ---Changes to upstream: global socket table

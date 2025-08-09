@@ -24,39 +24,24 @@
 ---@meta
 
 ---
----# Binary input from strings with `sio`
+---Binary input from strings with `sio` (string input-output)
 ---
----A similar set of function as in the `fio` library is available in the `sio` library: `sio.readcardinal1`, `sio.readcardinal2`,
----`sio.readcardinal3`, `sio.readcardinal4`, `sio.readcardinaltable`, `sio.readinteger1`, `sio.readinteger2`,
----`sio.readinteger3`, `sio.readinteger4`, `sio.readintegertable`, `sio.readfixed2`, `sio.readfixed4`,
----`sio.read2dot14`, `sio.setposition`, `sio.getposition`, `sio.skipposition`, `sio.readbytes` and
----`sio.readbytetable`. Here the first argument is a string instead of a
----file handle. More details can be found in the previous section.
+---This library provides a set of functions for reading numbers from a string and
+---in addition to the regular `io` library functions.
 ---
----|                            |                                     |
----|----------------------------|-------------------------------------|
----| `readcardinal1(s)`         | a 1 byte unsigned integer           |
----| `readcardinal2(s)`         | a 2 byte unsigned integer           |
----| `readcardinal3(s)`         | a 3 byte unsigned integer           |
----| `readcardinal4(s)`         | a 4 byte unsigned integer           |
----| `readcardinaltable(s,n,b)` | `n` cardinals of `b` bytes          |
----| `readinteger1(s)`          | a 1 byte signed integer             |
----| `readinteger2(s)`          | a 2 byte signed integer             |
----| `readinteger3(s)`          | a 3 byte signed integer             |
----| `readinteger4(s)`          | a 4 byte signed integer             |
----| `readintegertable(s,n,b)`  | `n` integers of `b` bytes           |
----| `readfixed2(s)`            | a 2 byte float (used in font files) |
----| `readfixed4(s)`            | a 4 byte float (used in font files) |
----| `read2dot14(s)`            | a 2 byte float (used in font files) |
----| `setposition(s,p)`         | goto position `p`                   |
----| `getposition(s)`           | get the current position            |
----| `skipposition(s,n)`        | skip `n` positions                  |
----| `readbytes(s,n)`           | `n` bytes                           |
----| `readbytetable(f,n)`       | `n` bytes                           |
+---There are eight additional little endian variants for the `cardinal[1-4]`
+---and `integer[1-4]` readers: `cardinal[1-4]le` and `integer[1-4]le`.
+---
+---__Reference:__
+---
+---* Corresponding C source code: [liolibext.c](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/master/source/texk/web2c/luatexdir/lua/liolibext.c)
+---* Source file of the `LuaTeX` manual: [luatex-lua.tex#L701-714](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-lua.tex#L701-714)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 sio = {}
 
+---
+---Read a 1 byte unsigned integer (8-bit) from a string.
 ---
 ---__Example:__
 ---
@@ -82,11 +67,13 @@ sio = {}
 ---@param text string # A string to read from.
 ---@param position integer # The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
----@return integer|nil # a 1 byte unsigned integer
+---@return integer|nil # A 1 byte unsigned integer.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readcardinal1(text, position) end
 
+---
+---Read a 2 byte unsigned integer (16-bit) from a string.
 ---
 ---__Example:__
 ---
@@ -108,11 +95,13 @@ function sio.readcardinal1(text, position) end
 ---@param text string # A string to read from.
 ---@param position integer # The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
----@return integer|nil # a 2 byte unsigned integer
+---@return integer|nil # A 2 byte unsigned integer.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readcardinal2(text, position) end
 
+---
+---Read a 3 byte unsigned integer (24-bit) from a string.
 ---
 ---__Example:__
 ---
@@ -134,11 +123,13 @@ function sio.readcardinal2(text, position) end
 ---@param text string # A string to read from.
 ---@param position integer # The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
----@return integer|nil # a 3 byte unsigned integer
+---@return integer|nil # A 3 byte unsigned integer.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readcardinal3(text, position) end
 
+---
+---Read a 4 byte unsigned integer (32-bit) from a string.
 ---
 ---__Example:__
 ---
@@ -161,11 +152,13 @@ function sio.readcardinal3(text, position) end
 ---@param text string # A string to read from.
 ---@param position integer # The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
----@return integer|nil # a 4 byte unsigned integer
+---@return integer|nil # A 4 byte unsigned integer.
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readcardinal4(text, position) end
 
+---
+---Read `number` unsigned integers of `bytes` as a table from a string.
 ---
 ---__Example:__
 ---
@@ -193,6 +186,8 @@ function sio.readcardinal4(text, position) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readcardinaltable(text, position, number, bytes) end
 
+---
+---Read a 1 byte unsigned little endian integer (8-bit) from a string.
 ---
 ---__Example:__
 ---
@@ -224,6 +219,9 @@ function sio.readcardinaltable(text, position, number, bytes) end
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readcardinal1le(text, position) end
+
+---
+---Read a 2 byte unsigned little endian integer (16-bit) from a string.
 ---
 ---__Example:__
 ---
@@ -252,6 +250,8 @@ function sio.readcardinal1le(text, position) end
 function sio.readcardinal2le(text, position) end
 
 ---
+---Read a 3 byte unsigned little endian integer (24-bit) from a string.
+---
 ---__Example:__
 ---
 ---```lua
@@ -278,6 +278,8 @@ function sio.readcardinal2le(text, position) end
 function sio.readcardinal3le(text, position) end
 
 ---
+---Read a 4 byte unsigned little endian integer (32-bit) from a string.
+---
 ---__Example:__
 ---
 ---```lua
@@ -302,6 +304,8 @@ function sio.readcardinal3le(text, position) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readcardinal4le(text, position) end
 
+---
+---Read a 1 byte signed integer (8-bit) from a string.
 ---
 ---__Example:__
 ---
@@ -333,6 +337,8 @@ function sio.readcardinal4le(text, position) end
 function sio.readinteger1(text, position) end
 
 ---
+---Read a 2 byte signed integer (16-bit) from a string.
+---
 ---__Example:__
 ---
 ---```lua
@@ -358,6 +364,8 @@ function sio.readinteger1(text, position) end
 function sio.readinteger2(text, position) end
 
 ---
+---Read a 3 byte signed integer (24-bit) from a string.
+---
 ---__Example:__
 ---
 ---```lua
@@ -382,6 +390,8 @@ function sio.readinteger2(text, position) end
 function sio.readinteger3(text, position) end
 
 ---
+---Read a 4 byte signed integer (32-bit) from a file.
+---
 ---__Example:__
 ---
 ---```lua
@@ -404,6 +414,8 @@ function sio.readinteger3(text, position) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readinteger4(text, position) end
 
+---
+---Read `number` signed integers of `bytes` as a table from a string.
 ---
 ---__Example:__
 ---
@@ -436,6 +448,8 @@ function sio.readinteger4(text, position) end
 function sio.readintegertable(text, position, number, bytes) end
 
 ---
+---Read a 1 byte signed little endian integer (8-bit) from a string.
+---
 ---__Example:__
 ---
 ---```lua
@@ -458,7 +472,7 @@ function sio.readintegertable(text, position, number, bytes) end
 ---
 ---@see fio.readinteger1le
 ---
----@param text string
+---@param text string # A string to read from.
 ---@param position integer The position in bytes from which to read. `1` and not `0` reads from the first byte.
 ---
 ---@return integer
@@ -466,6 +480,8 @@ function sio.readintegertable(text, position, number, bytes) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readinteger1le(text, position) end
 
+---
+---Read a 2 byte signed little endian integer (16-bit) from a string.
 ---
 ---__Example:__
 ---
@@ -494,6 +510,8 @@ function sio.readinteger1le(text, position) end
 function sio.readinteger2le(text, position) end
 
 ---
+---Read a 3 byte signed little endian integer (24-bit) from a string.
+---
 ---__Example:__
 ---
 ---```lua
@@ -520,6 +538,8 @@ function sio.readinteger2le(text, position) end
 function sio.readinteger3le(text, position) end
 
 ---
+---Read a 4 byte signed little endian integer (32-bit) from a string.
+---
 ---__Example:__
 ---
 ---```lua
@@ -545,7 +565,7 @@ function sio.readinteger3le(text, position) end
 function sio.readinteger4le(text, position) end
 
 ---
----Read a 2 byte float (used in font files).
+---Read a 2 byte float (used in font files) from a string.
 ---
 ---__Example:__
 ---
@@ -571,7 +591,7 @@ function sio.readinteger4le(text, position) end
 function sio.readfixed2(text, position) end
 
 ---
----Read a 4 byte float (used in font files).
+---Read a 4 byte float (used in font files) from a string.
 ---
 ---__Example:__
 ---
@@ -596,7 +616,7 @@ function sio.readfixed2(text, position) end
 function sio.readfixed4(text, position) end
 
 ---
----Read a 2 byte float (used in font files).
+---Read a 2 byte float (used in font files) from a string.
 ---
 ---__Example:__
 ---
@@ -623,6 +643,8 @@ function sio.readfixed4(text, position) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.read2dot14(text, position) end
 
+---
+---Read `number` bytes from a string.
 ---
 ---__Example:__
 ---
@@ -653,6 +675,8 @@ function sio.read2dot14(text, position) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/sio.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function sio.readbytes(text, position, number) end
 
+---
+---Read `number` bytes as a table from a string.
 ---
 ---__Example:__
 ---

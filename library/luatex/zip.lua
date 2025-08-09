@@ -1,3 +1,6 @@
+-- A helper table to better navigate through the documentation using the
+-- outline: https://github.com/Josef-Friedrich/LuaTeX_Lua-API#navigation-table-_n
+
 ---
 ---https://github.com/TeX-Live/luatex/tree/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/luazip
 ---Changes to upstream: global zip table
