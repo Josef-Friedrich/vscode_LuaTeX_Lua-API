@@ -104,6 +104,63 @@ node.direct = {}
 ---|3 # "RTT" cjk
 
 ---
+---__Example:__
+---
+---```lua
+---assert.same(node.types(), {
+---  [0] = "hlist",
+---  [1] = "vlist",
+---  [2] = "rule",
+---  [3] = "ins",
+---  [4] = "mark",
+---  [5] = "adjust",
+---  [6] = "boundary",
+---  [7] = "disc",
+---  [8] = "whatsit",
+---  [9] = "local_par",
+---  [10] = "dir",
+---  [11] = "math",
+---  [12] = "glue",
+---  [13] = "kern",
+---  [14] = "penalty",
+---  [15] = "unset",
+---  [16] = "style",
+---  [17] = "choice",
+---  [18] = "noad",
+---  [19] = "radical",
+---  [20] = "fraction",
+---  [21] = "accent",
+---  [22] = "fence",
+---  [23] = "math_char",
+---  [24] = "sub_box",
+---  [25] = "sub_mlist",
+---  [26] = "math_text_char",
+---  [27] = "delim",
+---  [28] = "margin_kern",
+---  [29] = "glyph",
+---  [30] = "align_record",
+---  [31] = "pseudo_file",
+---  [32] = "pseudo_line",
+---  [33] = "page_insert",
+---  [34] = "split_insert",
+---  [35] = "expr_stack",
+---  [36] = "nested_list",
+---  [37] = "span",
+---  [38] = "attribute",
+---  [39] = "glue_spec",
+---  [40] = "attribute_list",
+---  [41] = "temp",
+---  [42] = "align_stack",
+---  [43] = "movement_stack",
+---  [44] = "if_stack",
+---  [45] = "unhyphenated",
+---  [46] = "hyphenated",
+---  [47] = "delta",
+---  [48] = "passive",
+---  [49] = "shape",
+---})
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L493-L542](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/source/texk/web2c/luatexdir/tex/texnodes.c#L493-L542)
@@ -161,6 +218,63 @@ node.direct = {}
 ---| 'passive' # 48 `passive_node`
 ---| 'shape' # 49 `shape_node`
 
+---
+---__Example:__
+---
+---```lua
+---assert.same(node.types(), {
+---  [0] = "hlist",
+---  [1] = "vlist",
+---  [2] = "rule",
+---  [3] = "ins",
+---  [4] = "mark",
+---  [5] = "adjust",
+---  [6] = "boundary",
+---  [7] = "disc",
+---  [8] = "whatsit",
+---  [9] = "local_par",
+---  [10] = "dir",
+---  [11] = "math",
+---  [12] = "glue",
+---  [13] = "kern",
+---  [14] = "penalty",
+---  [15] = "unset",
+---  [16] = "style",
+---  [17] = "choice",
+---  [18] = "noad",
+---  [19] = "radical",
+---  [20] = "fraction",
+---  [21] = "accent",
+---  [22] = "fence",
+---  [23] = "math_char",
+---  [24] = "sub_box",
+---  [25] = "sub_mlist",
+---  [26] = "math_text_char",
+---  [27] = "delim",
+---  [28] = "margin_kern",
+---  [29] = "glyph",
+---  [30] = "align_record",
+---  [31] = "pseudo_file",
+---  [32] = "pseudo_line",
+---  [33] = "page_insert",
+---  [34] = "split_insert",
+---  [35] = "expr_stack",
+---  [36] = "nested_list",
+---  [37] = "span",
+---  [38] = "attribute",
+---  [39] = "glue_spec",
+---  [40] = "attribute_list",
+---  [41] = "temp",
+---  [42] = "align_stack",
+---  [43] = "movement_stack",
+---  [44] = "if_stack",
+---  [45] = "unhyphenated",
+---  [46] = "hyphenated",
+---  [47] = "delta",
+---  [48] = "passive",
+---  [49] = "shape",
+---})
+---```
 ---
 ---__Reference:__
 ---
@@ -2404,6 +2518,28 @@ function node.direct.uses_font(d, font) end
 ---@field thread_attr integer # extra thread information
 
 ---
+---__Example:__
+---
+---```lua
+---assert.node_type("whatsit", "pdf_start_thread", {
+---  id = "whatsit (8)",
+---  subtype = "pdf_start_thread (25)",
+---  fields = {
+---    "prev (-1)",
+---    "next (0)",
+---    "id (1)",
+---    "subtype (2)",
+---    "attr (3)",
+---    "width (4)",
+---    "depth (5)",
+---    "height (6)",
+---    "named_id (7)",
+---    "thread_id (8)",
+---    "thread_attr (9)",
+---  },
+---})
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L1176-L1183](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1176-L1183)
@@ -2418,6 +2554,16 @@ function node.direct.uses_font(d, font) end
 ---@field tread_id integer # the thread id  string  the thread name
 ---@field thread_attr integer # extra thread information
 
+---
+---__Example:__
+---
+---```lua
+---assert.node_type("whatsit", "pdf_end_thread", {
+---  id = "whatsit (8)",
+---  subtype = "pdf_end_thread (26)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)", "attr (3)" },
+---})
+---```
 ---
 ---__Reference:__
 ---
@@ -2439,6 +2585,25 @@ function node.direct.uses_font(d, font) end
 ---without changing the stack size. `current` keyword instructs just to use the current stack value
 ---without modifying the stack at all.
 ---
+---__Example:__
+---
+---```lua
+---assert.node_type("whatsit", "pdf_colorstack", {
+---  id = "whatsit (8)",
+---  subtype = "pdf_colorstack (29)",
+---  fields = {
+---    "prev (-1)",
+---    "next (0)",
+---    "id (1)",
+---    "subtype (2)",
+---    "attr (3)",
+---    "stack (4)",
+---    "cmd (5)",
+---    "data (6)",
+---  },
+---})
+---```
+---
 ---__Reference:__
 ---
 ---* Source file of the `LuaTeX` manual: [pdftex-t.tex#L3954-L3980](https://github.com/tex-mirror/pdftex/blob/6fb2352aa70a23ad3830f1434613170be3f3cd74/doc/manual/pdftex-t.tex#L3954-L3980)
@@ -2451,21 +2616,148 @@ function node.direct.uses_font(d, font) end
 ---@field data string # General text that is placed on top of the stack, for example `1 0 0 rg 1 0 0 RG`. `rg` only colors filled outlines while the stroke color is set with `RG`. From the [PDF Reference, fourth edition](https://opensource.adobe.com/dc-acrobat-sdk-docs/pdfstandards/pdfreference1.5_v6.pdf), 4.5.7 Color Operators Page 251: `gray G`: Set the stroking color space to DeviceGray. `gray` is a number between 0.0 (black) and 1.0 (white). `gray g`: Same as `G`, but for nonstroking operations. `r g b RG`: Set the stroking color space to DeviceRGB. Each operand must be a number between 0.0 (minimum intensity) and 1.0 (maximum intensity). `r g b rg`: same as `RG`, but for nonstroking operations. `c m y k K`: Set the stroking color space to DeviceCMYK. Each operand must be a number between 0.0 (zero concentration) and 1.0 (maximum concentration). `c m y k k`: Same as `K`, but for nonstroking operations.
 
 ---
+---__Example:__
+---
+---```lua
+---assert.node_type("whatsit", "pdf_setmatrix", {
+---  id = "whatsit (8)",
+---  subtype = "pdf_setmatrix (30)",
+---  fields = {
+---    "prev (-1)",
+---    "next (0)",
+---    "id (1)",
+---    "subtype (2)",
+---    "attr (3)",
+---    "data (4)",
+---  },
+---})
+---```
+---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfSetmatrixWhatsitNode
 ---@field attr Node # A list of attributes.
 ---@field data string # data
 
 ---
+---__Example:__
+---
+---```lua
+---assert.node_type("whatsit", "pdf_save", {
+---  id = "whatsit (8)",
+---  subtype = "pdf_save (31)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)", "attr (3)" },
+---})
+---```
+---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfSaveWhatsitNode
 ---@field attr Node # A list of attributes.
 
 ---
+---__Example:__
+---
+---```lua
+---assert.node_type("whatsit", "pdf_restore", {
+---  id = "whatsit (8)",
+---  subtype = "pdf_restore (32)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)", "attr (3)" },
+---})
+---```
+---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfRestoreWhatsitNode
 ---@field attr Node # A list of attributes.
 
+---
+---__Example:__
+---
+---```lua
+---assert.node_type(
+---  "whatsit",
+---  "pdf_thread_data",
+---  {
+---    id = "whatsit (8)",
+---    subtype = "pdf_thread_data (27)",
+---    fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---  }
+---)
+---```
+---
+---https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/source/texk/web2c/luatexdir/tex/texnodes.c#L1065
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---@class PdfThreadDataWhatsitNode
+
+---
+---__Example:__
+---
+---```lua
+---assert.node_type(
+---  "whatsit",
+---  "pdf_link_data",
+---  {
+---    id = "whatsit (8)",
+---    subtype = "pdf_link_data (28)",
+---    fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---  }
+---)
+---```
+---
+---https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/source/texk/web2c/luatexdir/tex/texnodes.c#L1066
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---@class PdfLinkDataWhatsitNode
+
+---
+---__Example:__
+---
+---```lua
+---assert.node_type("whatsit", "pdf_link_state", {
+---  id = "whatsit (8)",
+---  subtype = "pdf_link_state (33)",
+---  fields = {
+---    "prev (-1)",
+---    "next (0)",
+---    "id (1)",
+---    "subtype (2)",
+---    "attr (3)",
+---    "value (4)",
+---  },
+---})
+---```
+---
+---https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/source/texk/web2c/luatexdir/tex/texnodes.c#L1141-1143
+---
+---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---@class PdfLinkStateWhatsitNode
+---@field attr Node # A list of attributes.
+---@field value integer
+
+---
+---__Example:__
+---
+---```lua
+---assert.node_type("unset", nil, {
+---  id = "unset (15)",
+---  fields = {
+---    "prev (-1)",
+---    "next (0)",
+---    "id (1)",
+---    "subtype (2)",
+---    "attr (3)",
+---    "width (4)",
+---    "depth (5)",
+---    "height (6)",
+---    "dir (7)",
+---    "shrink (8)",
+---    "glue_order (9)",
+---    "glue_sign (10)",
+---    "stretch (11)",
+---    "span (12)",
+---    "head (13)",
+---  },
+---})
+---```
 ---
 ---__Reference:__
 ---
@@ -2486,17 +2778,72 @@ function node.direct.uses_font(d, font) end
 ---@field head Node
 
 ---
+---__Example:__
+---
+---```lua
+---assert.node_type("align_record", nil, {
+---  id = "align_record (30)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---})
+---```
+---
+---https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/source/texk/web2c/luatexdir/tex/texnodes.c#L523
+---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class AlignRecordNode: Node
 
+---
+---__Example:__
+---
+---```lua
+---assert.node_type("pseudo_file", nil, {
+---  id = "pseudo_file (31)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---})
+---```
+---
+---https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/source/texk/web2c/luatexdir/tex/texnodes.c#L524
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PseudoFileNode: Node
 
 ---
+---__Example:__
+---
+---```lua
+---assert.node_type("pseudo_line", nil, {
+---  id = "pseudo_line (32)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---})
+---```
+---
+---https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/source/texk/web2c/luatexdir/tex/texnodes.c#L525
+---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PseudoLineNode: Node
 
+---
+---__Example:__
+---
+---```lua
+---assert.node_type("page_insert", nil, {
+---  id = "page_insert (33)",
+---  fields = {
+---    "prev (-1)",
+---    "next (0)",
+---    "id (1)",
+---    "subtype (2)",
+---    "height (3)",
+---    "last_ins_ptr (4)",
+---    "best_ins_ptr (5)",
+---    "width (6)",
+---    "stretch (7)",
+---    "shrink (8)",
+---    "stretch_order (9)",
+---    "shrink_order (10)",
+---  },
+---})
+---```
 ---
 ---__Reference:__
 ---
@@ -2505,6 +2852,25 @@ function node.direct.uses_font(d, font) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PageInsertNode: Node
 
+---
+---__Example:__
+---
+---```lua
+---assert.node_type("split_insert", nil, {
+---  id = "split_insert (34)",
+---  fields = {
+---    "prev (-1)",
+---    "next (0)",
+---    "id (1)",
+---    "subtype (2)",
+---    "height (3)",
+---    "last_ins_ptr (4)",
+---    "best_ins_ptr (5)",
+---    "broken_ptr (6)",
+---    "broken_ins (7)",
+---  },
+---})
+---```
 ---
 ---__Reference:__
 ---
@@ -2519,6 +2885,15 @@ function node.direct.uses_font(d, font) end
 ---@field broken_ins integer
 
 ---
+---__Example:__
+---
+---```lua
+---assert.node_type("expr_stack", nil, {
+---  id = "expr_stack (35)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---})
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L474](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L474)
@@ -2526,6 +2901,15 @@ function node.direct.uses_font(d, font) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class ExprStackNode: Node
 
+---
+---__Example:__
+---
+---```lua
+---assert.node_type("nested_list", nil, {
+---  id = "nested_list (36)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---})
+---```
 ---
 ---__Reference:__
 ---
@@ -2538,14 +2922,10 @@ function node.direct.uses_font(d, font) end
 ---__Example:__
 ---
 ---```lua
----assert.node_type(
----  "attribute",
----  nil,
----  {
----    id = "attribute (38)",
----    fields = { "next (0)", "id (1)", "number (2)", "value (3)" },
----  }
----)
+---assert.node_type("span", nil, {
+---  id = "span (37)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---})
 ---```
 ---
 ---__Reference:__
@@ -2555,6 +2935,15 @@ function node.direct.uses_font(d, font) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class SpanNode: Node
 
+---
+---__Example:__
+---
+---```lua
+---assert.node_type("attribute", nil, {
+---  id = "attribute (38)",
+---  fields = { "next (0)", "id (1)", "number (2)", "value (3)" },
+---})
+---```
 ---
 ---__Reference:__
 ---
@@ -2584,6 +2973,15 @@ function node.direct.uses_font(d, font) end
 ---@class AttributeListNode: Node
 
 ---
+---__Example:__
+---
+---```lua
+---assert.node_type("temp", nil, {
+---  id = "temp (41)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---})
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L480](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L480)
@@ -2591,6 +2989,15 @@ function node.direct.uses_font(d, font) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class TempNode: Node
 
+---
+---__Example:__
+---
+---```lua
+---assert.node_type("align_stack", nil, {
+---  id = "align_stack (42)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---})
+---```
 ---
 ---__Reference:__
 ---
@@ -2600,6 +3007,15 @@ function node.direct.uses_font(d, font) end
 ---@class AlignStackNode: Node
 
 ---
+---__Example:__
+---
+---```lua
+---assert.node_type("movement_stack", nil, {
+---  id = "movement_stack (43)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---})
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L482](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L482)
@@ -2607,6 +3023,15 @@ function node.direct.uses_font(d, font) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class MovementStackNode: Node
 
+---
+---__Example:__
+---
+---```lua
+---assert.node_type("if_stack", nil, {
+---  id = "if_stack (44)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---})
+---```
 ---
 ---__Reference:__
 ---
@@ -2616,6 +3041,15 @@ function node.direct.uses_font(d, font) end
 ---@class IfStackNode: Node
 
 ---
+---__Example:__
+---
+---```lua
+---assert.node_type("unhyphenated", nil, {
+---  id = "unhyphenated (45)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---})
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L484](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L484)
@@ -2624,6 +3058,15 @@ function node.direct.uses_font(d, font) end
 ---@class UnhyphenatedNode: Node
 
 ---
+---__Example:__
+---
+---```lua
+---assert.node_type("hyphenated", nil, {
+---  id = "hyphenated (46)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---})
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L485](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L485)
@@ -2631,6 +3074,15 @@ function node.direct.uses_font(d, font) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class HyphenatedNode: Node
 
+---
+---__Example:__
+---
+---```lua
+---assert.node_type("delta", nil, {
+---  id = "delta (47)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---})
+---```
 ---
 ---__Reference:__
 ---
@@ -2641,6 +3093,15 @@ function node.direct.uses_font(d, font) end
 
 ---
 ---Used in the line breaking algorithm.
+---
+---__Example:__
+---
+---```lua
+---assert.node_type("passive", nil, {
+---  id = "passive (48)",
+---  fields = { "prev (-1)", "next (0)", "id (1)", "subtype (2)" },
+---})
+---```
 ---
 ---__Reference:__
 ---
