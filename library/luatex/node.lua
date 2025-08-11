@@ -2481,6 +2481,11 @@ function node.direct.uses_font(d, font) end
 ---@field data string # the name of the destination
 
 ---
+---`\pdfthread [ ⟨rule spec⟩ ] [ ⟨attr spec⟩ ] ⟨id spec⟩ (h, v, m)`
+---
+---Defines a bead within an article thread. Thread beads with same identifiers (spread across the
+---document) will be joined together.
+---
 ---__Example:__
 ---
 ---```lua
@@ -2506,6 +2511,7 @@ function node.direct.uses_font(d, font) end
 ---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L1185-L1192](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1185-L1192)
+---* Hàn Thế  Thành and others. The pdfTEX user manual, pdfTEX 1.40.27, February 12, 2025, page 51 [pdftex-a.pdf](http://mirrors.ctan.org/systems/doc/pdftex/manual/pdftex-a.pdf)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfThreadWhatsitNode
@@ -2517,6 +2523,16 @@ function node.direct.uses_font(d, font) end
 ---@field tread_id integer # the thread id  string  the thread name
 ---@field thread_attr integer # extra thread information
 
+---
+---`\pdftstartthread [ ⟨rule spec⟩ ] [ ⟨attr spec⟩ ] ⟨id spec⟩ (v, m)`
+---
+---This uses the same syntax as `\pdfthread`, apart that it must be followed by a `\pdfendthread`.
+---`\pdfstartthread` and the corresponding `\pdfendthread` must end up in vboxes with the same
+---nesting level; all vboxes between them will be added into the thread.
+---In the output routine, if there are other newly created boxes which have the same nesting level
+---as the vbox(es) containing `\pdfstartthread` and `\pdfendthread`, they will be also added into the
+---thread, which is probably not what you want. To avoid such undesired behavior, it’s often enough
+---to wrap boxes that shouldn’t belong to the thread by a box to change their box nesting level.
 ---
 ---__Example:__
 ---
@@ -2543,6 +2559,7 @@ function node.direct.uses_font(d, font) end
 ---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L1176-L1183](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1176-L1183)
+---* Hàn Thế  Thành and others. The pdfTEX user manual, pdfTEX 1.40.27, February 12, 2025, page 51 [pdftex-a.pdf](http://mirrors.ctan.org/systems/doc/pdftex/manual/pdftex-a.pdf)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfStartThreadWhatsitNode
@@ -2554,6 +2571,10 @@ function node.direct.uses_font(d, font) end
 ---@field tread_id integer # the thread id  string  the thread name
 ---@field thread_attr integer # extra thread information
 
+---
+---`\pdfendthread (v, m)`
+---
+---This ends an article thread started before by `\pdfstartthread`.
 ---
 ---__Example:__
 ---
@@ -2568,6 +2589,7 @@ function node.direct.uses_font(d, font) end
 ---__Reference:__
 ---
 ---* Corresponding C source code: [texnodes.c#L1145-L1146](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/tex/texnodes.c#L1145-L1146)
+---* Hàn Thế  Thành and others. The pdfTEX user manual, pdfTEX 1.40.27, February 12, 2025, page 51 [pdftex-a.pdf](http://mirrors.ctan.org/systems/doc/pdftex/manual/pdftex-a.pdf)
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 ---@class PdfEndThreadWhatsitNode
@@ -4082,8 +4104,7 @@ function node.direct.free(n) end
 function node.direct.free(d) end
 
 ---
----Free the *TeX* memory allocated for the specified node.
----and return nothing.
+---Free the *TeX* memory allocated for the specified node and return nothing.
 ---
 ---__Reference:__
 ---
@@ -4095,8 +4116,7 @@ function node.direct.free(d) end
 function node.flush_node(n) end
 
 ---
----Free the *TeX* memory allocated for the specified node.
----and return nothing.
+---Free the *TeX* memory allocated for the specified node and return nothing.
 ---
 ---__Reference:__
 ---
@@ -7660,6 +7680,14 @@ function node.direct.setsplit(l, r) end
 ---
 ---Assign values to the properties table.
 ---
+---__Example:__
+---
+---```lua
+---local n = node.new("glyph")
+---node.setproperty(n, "Some value")
+---assert.equals(node.getproperty(n), "Some value")
+---```
+---
 ---__Reference:__
 ---
 ---* Source file of the `LuaTeX` manual: [lnodelib.c#L8397-L8410](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8397-L8410)
@@ -7674,18 +7702,35 @@ function node.setproperty(n, value) end
 ---
 ---Assign values to the properties table.
 ---
+---__Example:__
+---
+---```lua
+---local d = node.direct.new("glyph")
+---node.direct.setproperty(d, "Some value")
+---assert.equals(node.direct.getproperty(d), "Some value")
+---```
+---
 ---__Reference:__
 ---
 ---* Source file of the `LuaTeX` manual: [lnodelib.c#L8397-L8410](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8397-L8410)
 ---* Corresponding C source code: [lnodelib.c#L8418-L8431](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8418-L8431)
 ---
----@param d integer # The index number of the node in the memory table for direct access.---@param value any
+---@param d integer # The index number of the node in the memory table for direct access.
+---@param value any
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.direct.setproperty(d, value) end
 
 ---
 ---Each node also can have a properties table and you can get properties using the `getproperty` function.
+---
+---__Example:__
+---
+---```lua
+---local n = node.new("glyph")
+---node.setproperty(n, "Some value")
+---assert.equals(node.getproperty(n), "Some value")
+---```
 ---
 ---__Reference:__
 ---
@@ -7702,6 +7747,14 @@ function node.getproperty(node) end
 ---
 ---Each node also can have a properties table and you can get properties using the `getproperty` function.
 ---
+---__Example:__
+---
+---```lua
+---local d = node.direct.new("glyph")
+---node.direct.setproperty(d, "Some value")
+---assert.equals(node.direct.getproperty(d), "Some value")
+---```
+---
 ---__Reference:__
 ---
 ---* Source file of the `LuaTeX` manual: [luatex-nodes.tex#L2520-L2523](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/manual/luatex-nodes.tex#L2520-L2523)
@@ -7715,11 +7768,14 @@ function node.getproperty(node) end
 function node.direct.getproperty(d) end
 
 ---
----Managing properties in the node (de)allocator functions is disabled by default and is enabled by:
+---Enable managing properties in the node (de)allocator functions.
+---
+---Managing properties in the node (de)allocator functions is disabled by default.
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L8351-L8360](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8351-L8360)
+---* Source file of the `LuaTeX` manual: [luatex-nodes.tex#L2636-2683](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-nodes.tex#L2636-2683)
 ---
 ---@param enable boolean
 ---@param use_metatable? boolean
@@ -7728,11 +7784,14 @@ function node.direct.getproperty(d) end
 function node.set_properties_mode(enable, use_metatable) end
 
 ---
----Managing properties in the node (de)allocator functions is disabled by default and is enabled by:
+---Enable managing properties in the node (de)allocator functions.
+---
+---Managing properties in the node (de)allocator functions is disabled by default.
 ---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L8351-L8360](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8351-L8360)
+---* Source file of the `LuaTeX` manual: [luatex-nodes.tex#L2636-2683](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-nodes.tex#L2636-2683)
 ---
 ---@param enable boolean
 ---@param use_metatable? boolean
@@ -7740,6 +7799,17 @@ function node.set_properties_mode(enable, use_metatable) end
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.direct.set_properties_mode(enable, use_metatable) end
 
+---
+---__Example:__
+---
+---```lua
+---local n = node.new("glyph")
+---node.setproperty(n, "Some properties")
+---assert.equals(node.get_properties_table()[n], "Some properties")
+---
+---node.flush_properties_table()
+---assert.is_nil(node.get_properties_table()[n])
+---```
 ---
 ---__Reference:__
 ---
@@ -7749,6 +7819,20 @@ function node.direct.set_properties_mode(enable, use_metatable) end
 function node.flush_properties_table() end
 
 ---
+---__Example:__
+---
+---```lua
+---local d = node.direct.new("glyph")
+---node.direct.setproperty(d, "Some properties")
+---
+---assert.same(node.direct.get_properties_table(), {
+---  [234] = "Some properties",
+---})
+---
+---node.direct.flush_properties_table()
+---assert.same(node.direct.get_properties_table(), {})
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L8364-L8375](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8364-L8375)
@@ -7757,21 +7841,51 @@ function node.flush_properties_table() end
 function node.direct.flush_properties_table() end
 
 ---
+---__Example:__
+---
+---```lua
+---local glyph1 = node.new("glyph")
+---node.setproperty(glyph1, "Properties of glyph 1")
+---
+---local glyph2 = node.new("glyph")
+---node.setproperty(glyph2, "Properties of glyph 2")
+---
+---assert.equals(node.get_properties_table()[glyph1], "Properties of glyph 1")
+---assert.equals(node.get_properties_table()[glyph2], "Properties of glyph 2")
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L8439-L8443](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8439-L8443)
+---* Source file of the `LuaTeX` manual: [luatex-nodes.tex#L2625-2626](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-nodes.tex#L2625-2626)
 ---
----@return table
+---@return table<Node, any>
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.get_properties_table() end
 
 ---
+---__Example:__
+---
+---```lua
+---local glyph1 = node.direct.new("glyph")
+---node.direct.setproperty(glyph1, "Properties of glyph 1")
+---
+---local glyph2 = node.direct.new("glyph")
+---node.direct.setproperty(glyph2, "Properties of glyph 2")
+---
+---assert.same(node.direct.get_properties_table(), {
+---  [234] = "Properties of glyph 1",
+---  [241] = "Properties of glyph 2",
+---})
+---```
+---
 ---__Reference:__
 ---
 ---* Corresponding C source code: [lnodelib.c#L8433-L8437](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/f52b099f3e01d53dc03b315e1909245c3d5418d3/source/texk/web2c/luatexdir/lua/lnodelib.c#L8433-L8437)
+---* Source file of the `LuaTeX` manual: [luatex-nodes.tex#L2625-2626](https://gitlab.lisn.upsaclay.fr/texlive/luatex/-/blob/4f2b914d365bab8a2747afe6e8c86d0f1c8475f7/manual/luatex-nodes.tex#L2625-2626)
 ---
----@return table
+---@return table<integer, any>
 ---
 ---😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
 function node.direct.get_properties_table() end
