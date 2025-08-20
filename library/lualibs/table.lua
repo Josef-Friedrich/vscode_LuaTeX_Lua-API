@@ -14,7 +14,7 @@
 ---
 ---@return table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.sorted(tab) end
 
 ---
@@ -32,7 +32,7 @@ function table.sorted(tab) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.keys(tab) end
 
 ---
@@ -52,7 +52,7 @@ function table.keys(tab) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.sortedkeys(tab) end
 
 ---
@@ -72,7 +72,7 @@ function table.sortedkeys(tab) end
 ---
 ---@return string[]
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.sortedhashkeys(tab, cmp) end
 
 ---
@@ -95,7 +95,7 @@ function table.sortedhashkeys(tab, cmp) end
 ---
 ---@return fun(): key: integer, value: any
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.sortedhash(tab, cmp) end
 
 ---
@@ -114,7 +114,7 @@ function table.sortedhash(tab, cmp) end
 ---
 ---@return fun(): key: integer, value: any
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.sortedpairs(tab, cmp) end
 
 ---
@@ -160,7 +160,7 @@ function table.sortedpairs(tab, cmp) end
 ---* Corresponding Lua source code: [lualibs-table.lua#L965-L974](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-table.lua#L965-L974)
 ---* Corresponding Lua source code: [lualibs-util-tab.lua#L715-L909](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-tab.lua#L715-L909)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.serialize(root, name, specification) end
 
 ---
@@ -173,7 +173,7 @@ function table.serialize(root, name, specification) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.print(tab) end
 
 ---
@@ -184,7 +184,7 @@ function table.print(tab) end
 ---* Context Lua Documents, July 8, 2023: [page 79](https://www.pragma-ade.nl/general/manuals/cld-mkiv.pdf)
 ---* Corresponding Lua source code: [lualibs-table.lua#L987-L1013](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-table.lua#L987-L1013)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.tofile(filename, root, name, specification) end
 
 ---
@@ -194,7 +194,7 @@ function table.tofile(filename, root, name, specification) end
 ---
 ---* Context Lua Documents, July 8, 2023: [page 77](https://www.pragma-ade.nl/general/manuals/cld-mkiv.pdf)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.tohandle(handle, root, name, specification) end
 
 ---
@@ -219,7 +219,7 @@ function table.tohandle(handle, root, name, specification) end
 ---
 ---@return boolean
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.identical(a, b) end
 
 ---
@@ -244,7 +244,7 @@ function table.identical(a, b) end
 ---
 ---@return boolean
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.are_equal(a, b, n, m) end
 
 ---
@@ -270,7 +270,7 @@ function table.are_equal(a, b, n, m) end
 ---
 ---@return table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.tohash(tab, value) end
 
 ---
@@ -294,7 +294,7 @@ function table.tohash(tab, value) end
 ---
 ---@return table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.fromhash(tab) end
 
 ---
@@ -319,7 +319,7 @@ function table.fromhash(tab) end
 ---
 ---@return table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.swapped(tab, s) end
 
 ---
@@ -338,7 +338,7 @@ function table.swapped(tab, s) end
 ---
 ---@param tab any[] # An indexed table (array table, table with consecutive integers as indices).
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.reverse(tab) end
 
 ---
@@ -359,7 +359,7 @@ function table.reverse(tab) end
 ---
 ---@return any[] # An indexed table (array table, table with consecutive integers as indices).
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.reversed(tab) end
 
 ---
@@ -383,7 +383,7 @@ function table.reversed(tab) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.mirrored(tab) end
 
 ---
@@ -411,7 +411,7 @@ function table.mirrored(tab) end
 ---
 ---@return any[] tab # An indexed table (array table, table with consecutive integers as indices).
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.append(tab, list) end
 
 ---
@@ -439,7 +439,7 @@ function table.append(tab, list) end
 ---
 ---@return any[] tab # An indexed table (array table, table with consecutive integers as indices).
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.prepend(tab, list) end
 
 ---
@@ -457,7 +457,7 @@ function table.prepend(tab, list) end
 ---
 ---@return table tab
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.merge(tab, ...) end
 
 ---
@@ -475,7 +475,7 @@ function table.merge(tab, ...) end
 ---
 ---@return any[] tab # An indexed table (array table, table with consecutive integers as indices).
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.imerge(tab, ...) end
 
 ---
@@ -493,7 +493,7 @@ function table.imerge(tab, ...) end
 ---
 ---@return table new_tab
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.merged(...) end
 
 ---
@@ -511,7 +511,7 @@ function table.merged(...) end
 ---
 ---@return any[] new_tab # An indexed table (array table, table with consecutive integers as indices).
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.imerged(...) end
 
 ---
@@ -529,7 +529,7 @@ function table.imerged(...) end
 ---
 ---@return table new_tab
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.copy(tab, tables) end
 
 ---
@@ -549,7 +549,7 @@ function table.copy(tab, tables) end
 ---
 ---@return table new_tab
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.fastcopy(tab, metatabletoo) end
 
 ---
@@ -562,7 +562,7 @@ function table.fastcopy(tab, metatabletoo) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.flattened(tab, f, depth) end
 
 ---
@@ -580,7 +580,7 @@ function table.flattened(tab, f, depth) end
 ---
 ---@return table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.loweredkeys(tab) end
 
 ---
@@ -591,7 +591,7 @@ function table.loweredkeys(tab) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.contains(tab, v) end
 
 ---
@@ -599,7 +599,7 @@ function table.contains(tab, v) end
 ---
 ---* Context Lua Documents, July 8, 2023: [page 83](https://www.pragma-ade.nl/general/manuals/cld-mkiv.pdf)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.unique(old) end
 
 ---
@@ -610,7 +610,7 @@ function table.unique(old) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.count(tab) end
 
 ---
@@ -621,7 +621,7 @@ function table.count(tab) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.sequenced(tab, sep, simple) end
 
 ---
@@ -631,7 +631,7 @@ function table.sequenced(tab, sep, simple) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.getn(tab) end
 
 ---
@@ -641,7 +641,7 @@ function table.getn(tab) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.strip(tab) end
 
 ---
@@ -651,7 +651,7 @@ function table.strip(tab) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.allkeys(tab) end
 
 ---
@@ -663,7 +663,7 @@ function table.allkeys(tab) end
 ---
 ---@return any[]
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.sortedhashonly(tab) end
 
 ---
@@ -673,7 +673,7 @@ function table.sortedhashonly(tab) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.sortedindexonly(tab) end
 
 ---
@@ -681,7 +681,7 @@ function table.sortedindexonly(tab) end
 ---
 ---* Corresponding Lua source code: [lualibs-table.lua#L497-L503](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-table.lua#L497-L503)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.derive(parent) end
 
 ---
@@ -691,7 +691,7 @@ function table.derive(parent) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.is_simple_table(tab, hexify, accurate) end
 
 ---
@@ -701,7 +701,7 @@ function table.is_simple_table(tab, hexify, accurate) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.collapsed(tab, f, h) end
 
 ---
@@ -711,7 +711,7 @@ function table.collapsed(tab, f, h) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.collapsedhash(tab, h) end
 
 ---
@@ -721,7 +721,7 @@ function table.collapsedhash(tab, h) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.unnest(tab) end
 
 ---
@@ -729,7 +729,7 @@ function table.unnest(tab) end
 ---
 ---* Corresponding Lua source code: [lualibs-table.lua#L1155-L1170](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-table.lua#L1155-L1170)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.sparse(old, nest, keeptables) end
 
 ---
@@ -739,7 +739,7 @@ function table.sparse(old, nest, keeptables) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.compact(tab) end
 
 ---
@@ -749,7 +749,7 @@ function table.compact(tab) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.hashed(tab) end
 
 ---
@@ -759,7 +759,7 @@ function table.hashed(tab) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.is_empty(tab) end
 
 ---
@@ -769,7 +769,7 @@ function table.is_empty(tab) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.sub(tab, i, j) end
 
 ---
@@ -779,7 +779,7 @@ function table.sub(tab, i, j) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.has_one_entry(tab) end
 
 ---
@@ -789,7 +789,7 @@ function table.has_one_entry(tab) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.values(tab, s) end
 
 ---
@@ -799,7 +799,7 @@ function table.values(tab, s) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.filtered(tab, pattern, sort, cmp) end
 
 ---
@@ -809,7 +809,7 @@ function table.filtered(tab, pattern, sort, cmp) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.toxml(tab, specification) end
 
 ---
@@ -819,7 +819,7 @@ function table.toxml(tab, specification) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.fastserialize(tab, prefix) end
 
 ---
@@ -827,7 +827,7 @@ function table.fastserialize(tab, prefix) end
 ---
 ---* Corresponding Lua source code: [lualibs-util-tab.lua#L490-L503](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-tab.lua#L490-L503)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.deserialize(str) end
 
 ---
@@ -835,7 +835,7 @@ function table.deserialize(str) end
 ---
 ---* Corresponding Lua source code: [lualibs-util-tab.lua#L507-L521](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-tab.lua#L507-L521)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.load(filename, loader) end
 
 ---
@@ -843,7 +843,7 @@ function table.load(filename, loader) end
 ---
 ---* Corresponding Lua source code: [lualibs-util-tab.lua#L523-L525](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-tab.lua#L523-L525)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.save(filename, t, n) end
 
 ---
@@ -853,7 +853,7 @@ function table.save(filename, t, n) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.drop(tab, slow) end
 
 ---
@@ -863,7 +863,7 @@ function table.drop(tab, slow) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.twowaymapper(tab) end
 
 ---
@@ -871,7 +871,7 @@ function table.twowaymapper(tab) end
 ---
 ---* Corresponding Lua source code: [lualibs-util-tab.lua#L949-L951](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-tab.lua#L949-L951)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.orderedhash() end
 
 ---
@@ -881,7 +881,7 @@ function table.orderedhash() end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.ordered(tab) end
 
 ---
@@ -889,7 +889,7 @@ function table.ordered(tab) end
 ---
 ---* Corresponding Lua source code: [lualibs-util-tab.lua#L982-L996](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-util-tab.lua#L982-L996)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.combine(target, source) end
 
 ---
@@ -899,7 +899,7 @@ function table.combine(target, source) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.makeweak(tab) end
 
 ---
@@ -909,7 +909,7 @@ function table.makeweak(tab) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.setmetatableindex(tab, f) end
 
 ---
@@ -919,7 +919,7 @@ function table.setmetatableindex(tab, f) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.setmetatablenewindex(tab, f) end
 
 ---
@@ -929,7 +929,7 @@ function table.setmetatablenewindex(tab, f) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.setmetatablecall(tab, f) end
 
 ---
@@ -939,7 +939,7 @@ function table.setmetatablecall(tab, f) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.setmetatableindices(tab, f, n, c) end
 
 ---
@@ -949,7 +949,7 @@ function table.setmetatableindices(tab, f, n, c) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.setmetatablekey(tab, key, value) end
 
 ---
@@ -959,7 +959,7 @@ function table.setmetatablekey(tab, key, value) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.getmetatablekey(tab, key, value) end
 
 ---
@@ -969,7 +969,7 @@ function table.getmetatablekey(tab, key, value) end
 ---
 ---@param tab table
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.tocsv(tab, specification) end
 
 ---
@@ -977,5 +977,5 @@ function table.tocsv(tab, specification) end
 ---
 ---https://github.com/latex3/lualibs/blob/a86c5cdf063692ff7d31da439bddd88c1a3ec0c9/lualibs-compat.lua#L13-L19
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/table.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function table.reverse_hash(h) end

@@ -6,7 +6,7 @@ dir = {}
 ---
 ---* Corresponding source code: [lualibs-dir.lua#L74-L76](https://github.com/latex3/lualibs/blob/116ffb3eddeb32663879200b91bc3177d74ee1ff/lualibs-dir.lua#L74-L76)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function dir.current() end
 
 ---
@@ -14,7 +14,7 @@ function dir.current() end
 ---
 ---* Corresponding source code: [lualibs-dir.lua#L169-L182](https://github.com/latex3/lualibs/blob/116ffb3eddeb32663879200b91bc3177d74ee1ff/lualibs-dir.lua#L169-L182)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function dir.globpattern(path, patt, recurse, method) end
 
 ---
@@ -22,7 +22,7 @@ function dir.globpattern(path, patt, recurse, method) end
 ---
 ---* Corresponding source code: [lualibs-dir.lua#L188-L221](https://github.com/latex3/lualibs/blob/116ffb3eddeb32663879200b91bc3177d74ee1ff/lualibs-dir.lua#L188-L221)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function dir.collectpattern(path, patt, recurse, result) end
 
 ---
@@ -38,7 +38,7 @@ function dir.collectpattern(path, patt, recurse, result) end
 ---
 ---* Corresponding source code: [lualibs-dir.lua#L259-L302](https://github.com/latex3/lualibs/blob/116ffb3eddeb32663879200b91bc3177d74ee1ff/lualibs-dir.lua#L259-L302)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function dir.glob(str, t) end
 
 ---
@@ -46,7 +46,7 @@ function dir.glob(str, t) end
 ---
 ---* Corresponding source code: [lualibs-dir.lua#L321-L348](https://github.com/latex3/lualibs/blob/116ffb3eddeb32663879200b91bc3177d74ee1ff/lualibs-dir.lua#L321-L348)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function dir.globfiles(path, recurse, func, files) end
 
 ---
@@ -54,7 +54,7 @@ function dir.globfiles(path, recurse, func, files) end
 ---
 ---* Corresponding source code: [lualibs-dir.lua#L352-L378](https://github.com/latex3/lualibs/blob/116ffb3eddeb32663879200b91bc3177d74ee1ff/lualibs-dir.lua#L352-L378)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function dir.globdirs(path, recurse, func, files) end
 
 ---
@@ -66,7 +66,7 @@ function dir.globdirs(path, recurse, func, files) end
 ---
 ---@return string
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function dir.ls(pattern) end
 
 ---
@@ -76,7 +76,7 @@ function dir.ls(pattern) end
 ---
 ---@param ... string
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function dir.makedirs(...) end
 
 ---
@@ -86,7 +86,7 @@ function dir.makedirs(...) end
 ---
 ---@param ... string
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function dir.mkdirs(...) end
 
 ---
@@ -96,7 +96,7 @@ function dir.mkdirs(...) end
 ---
 ---@param str string
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function dir.expandname(str) end
 
 ---
@@ -104,7 +104,7 @@ function dir.expandname(str) end
 ---
 ---* Corresponding source code: [lualibs-dir.lua#L605-L613](https://github.com/latex3/lualibs/blob/116ffb3eddeb32663879200b91bc3177d74ee1ff/lualibs-dir.lua#L605-L613)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function dir.push() end
 
 ---
@@ -112,7 +112,7 @@ function dir.push() end
 ---
 ---* Corresponding source code: [lualibs-dir.lua#L615-L621](https://github.com/latex3/lualibs/blob/116ffb3eddeb32663879200b91bc3177d74ee1ff/lualibs-dir.lua#L615-L621)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function dir.pop() end
 
 ---
@@ -120,5 +120,5 @@ function dir.pop() end
 ---
 ---* Corresponding source code: [lualibs-dir.lua#L623-L640](https://github.com/latex3/lualibs/blob/116ffb3eddeb32663879200b91bc3177d74ee1ff/lualibs-dir.lua#L623-L640)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function dir.found() end

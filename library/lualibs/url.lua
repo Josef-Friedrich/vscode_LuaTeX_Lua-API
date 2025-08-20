@@ -61,7 +61,7 @@ url = {}
 ---
 ---@return Url
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function url.hashed(str) end
 
 ---
@@ -81,7 +81,7 @@ function url.hashed(str) end
 ---
 ---@return string[]
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function url.split(str) end
 
 ---
@@ -91,7 +91,7 @@ function url.split(str) end
 ---
 ---@return string
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function url.construct(hash) end
 
 ---
@@ -108,7 +108,7 @@ function url.construct(hash) end
 ---
 ---@return string|false
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function url.hasscheme(str) end
 
 ---
@@ -129,7 +129,7 @@ function url.hasscheme(str) end
 ---
 ---@return string
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function url.addscheme(str, scheme) end
 
 ---
@@ -146,7 +146,7 @@ function url.addscheme(str, scheme) end
 ---
 ---@return string
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function url.filename(filename) end
 
 ---
@@ -162,7 +162,7 @@ function url.filename(filename) end
 ---
 ---* Corresponding Lua source code: [lualibs-url.lua#L342-L348](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-url.lua#L342-L348)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 ---
 ---@see url.toquery
 ---
@@ -180,7 +180,7 @@ function url.query(str) end
 ---
 ---* Corresponding Lua source code: [lualibs-url.lua#L350-L365](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-url.lua#L350-L365)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 ---
 ---@see url.query
 ---
@@ -194,7 +194,7 @@ function url.toquery(data) end
 ---
 ---@param path string
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function url.barepath(path) end
 
 ---
@@ -202,7 +202,7 @@ function url.barepath(path) end
 ---
 ---@param str string
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function url.decode(str) end
 
 ---
@@ -210,7 +210,7 @@ function url.decode(str) end
 ---
 ---@param str string
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function url.encode(str) end
 
 ---
@@ -218,7 +218,7 @@ function url.encode(str) end
 ---
 ---@param str string
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function url.escape(str) end
 
 ---
@@ -226,7 +226,7 @@ function url.escape(str) end
 ---
 ---@param str string
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function url.unescape(str) end
 
 ---
@@ -234,5 +234,5 @@ function url.unescape(str) end
 ---
 ---@param str string
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/url.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function url.unescapeget(str) end

@@ -12,5 +12,6 @@ boolean = {}
 ---@param value any
 ---
 ---@return integer
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/dir.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/boolean.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function boolean.tonumber(value) end

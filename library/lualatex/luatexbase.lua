@@ -2,6 +2,7 @@
 
 ---
 ---The Lua source file is location in `texmf-dist/tex/latex/base/ltluatex.lua`
+---
 ---😱 [Types](https://github.com/TeXLuaCATS/LuaLaTeX/blob/main/library/luatexbase.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/LuaLaTeX/pulls)
 luatexbase = {}
 
@@ -17,6 +18,7 @@ luatexbase = {}
 ---@param callback CallbackName
 ---@param func function
 ---@param description string # A textual description of the function.
+---
 ---😱 [Types](https://github.com/TeXLuaCATS/LuaLaTeX/blob/main/library/luatexbase.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/LuaLaTeX/pulls)
 function luatexbase.add_to_callback(callback, func, description) end
 
@@ -34,6 +36,7 @@ function luatexbase.add_to_callback(callback, func, description) end
 ---
 ---@return function func
 ---@return string description # A textual description of the function.
+---
 ---😱 [Types](https://github.com/TeXLuaCATS/LuaLaTeX/blob/main/library/luatexbase.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/LuaLaTeX/pulls)
 function luatexbase.remove_from_callback(callback, description) end
 

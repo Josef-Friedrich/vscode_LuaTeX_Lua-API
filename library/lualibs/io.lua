@@ -9,7 +9,7 @@ io = {}
 ---
 ---* Corresponding Lua source code: [lualibs-io.lua#L56-L65](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-io.lua#L56-L65)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.readall(f) end
 
 ---
@@ -38,7 +38,7 @@ function io.readall(f) end
 ---
 ---@return any
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.loaddata(filename, textmode) end
 
 ---
@@ -46,7 +46,7 @@ function io.loaddata(filename, textmode) end
 ---
 ---* Corresponding Lua source code: [lualibs-io.lua#L126-L148](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-io.lua#L126-L148)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.copydata(source, target, action) end
 
 ---
@@ -92,7 +92,7 @@ function io.copydata(source, target, action) end
 ---
 ---@return boolean
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.savedata(filename, data, separator, append) end
 
 ---
@@ -100,7 +100,7 @@ function io.savedata(filename, data, separator, append) end
 ---
 ---* Corresponding Lua source code: [lualibs-io.lua#L179-L235](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-io.lua#L179-L235)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.loadlines(filename, n) end
 
 ---
@@ -108,7 +108,7 @@ function io.loadlines(filename, n) end
 ---
 ---* Corresponding Lua source code: [lualibs-io.lua#L239-L248](https://github.com/latex3/lualibs/blob/26fe094de645fdee79f65d9fc93040a53cb97272/lualibs-io.lua#L239-L248)
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.loadchunk(filename, n) end
 
 ---
@@ -132,7 +132,7 @@ function io.loadchunk(filename, n) end
 ---
 ---@return boolean
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.exists(filename) end
 
 ---
@@ -168,7 +168,7 @@ function io.exists(filename) end
 ---
 ---@return integer
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.size(filename) end
 
 ---
@@ -194,7 +194,7 @@ function io.size(filename) end
 ---
 ---@return integer line_count # The line count of a file object `object`.
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.noflines(object) end
 
 ---
@@ -241,7 +241,7 @@ function io.noflines(object) end
 ---
 ---@return fun(): string, string|nil, string|nil, string|nil
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.characters(object, group) end
 
 ---
@@ -277,7 +277,7 @@ function io.characters(object, group) end
 ---
 ---@return fun(): string, string|nil, string|nil, string|nil
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.bytes(object, group) end
 
 ---
@@ -312,7 +312,7 @@ function io.bytes(object, group) end
 ---@param default? string
 ---@param options? string[]
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.ask(question, default, options) end
 
 ---
@@ -343,7 +343,7 @@ function io.ask(question, default, options) end
 ---@param count integer
 ---
 ---@return integer
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.readnumber(object, offset, count) end
 
 ---
@@ -373,7 +373,7 @@ function io.readnumber(object, offset, count) end
 ---@param count integer
 ---
 ---@return integer
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.readnumber(object, count) end
 
 ---
@@ -400,7 +400,7 @@ function io.readnumber(object, count) end
 ---@param length integer
 ---
 ---@return string
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.readstring(object, offset, length) end
 
 ---
@@ -426,5 +426,5 @@ function io.readstring(object, offset, length) end
 ---@param length integer
 ---
 ---@return string
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/lualibs/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/Lualibs/blob/main/library/io.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/Lualibs/pulls)
 function io.readstring(object, length) end

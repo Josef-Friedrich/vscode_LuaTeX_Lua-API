@@ -13,17 +13,20 @@ nodes = {}
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+---
+---😱 [Types](https://github.com/TeXLuaCATS/LuaOTFload/blob/main/library/nodes.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/LuaOTFload/pulls)
 function nodes.simple_font_handler() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+---
+---😱 [Types](https://github.com/TeXLuaCATS/LuaOTFload/blob/main/library/nodes.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/LuaOTFload/pulls)
 function nodes.tonode() end
 
 ---
 ---Warning! Undocumented code!<p>
 ---TODO: Please contribute
----https://github.com/Josef-Friedrich/LuaTeX_Lua-API#how-to-contribute
+---
+---😱 [Types](https://github.com/TeXLuaCATS/LuaOTFload/blob/main/library/nodes.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/LuaOTFload/pulls)
 function nodes.tonut() end

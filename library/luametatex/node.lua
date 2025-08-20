@@ -27,5 +27,5 @@ node.direct = {}
 ---@return integer new_head
 ---@return integer badness # The second return value is the badness of the generated box.
 ---
----😱 [Types](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/blob/main/library/luametatex/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/Josef-Friedrich/LuaTeX_Lua-API/pulls)
+---😱 [Types](https://github.com/TeXLuaCATS/LuaMetaTeX/blob/main/library/node.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/TeXLuaCATS/LuaMetaTeX/pulls)
 function node.direct.vpack(head, height, info, dir) end
